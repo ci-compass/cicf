@@ -133,7 +133,7 @@ Many more topics that you can read about if interested:
 
 * [the PATH](https://www.cs.purdue.edu/homes/bb/cs348/www-S08/unix_path.html)
 * [Exit Codes](https://www.redhat.com/sysadmin/linux-shell-command-exit-codes)
-* [Quoting](https://teaching.idallen.com/cst8207/13w/notes/440_quotes.html)
+* [Quoting](https://rg1-teaching.mpi-inf.mpg.de/unixffb-ss98/quoting-guide.html) and [here](https://teaching.idallen.com/cst8207/13w/notes/440_quotes.html)
 * Shell scripting
 
 
