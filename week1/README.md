@@ -13,7 +13,11 @@ To begin, follow the VM instal and setup guide to get the VM running on your lap
 
 Once the VM is running, open up the terminal.
 
-`sudo apt install git xclip firefox-esr`
+    sudo apt update
+
+and then
+
+    sudo apt install git xclip firefox-esr
 
 And type in the password.
 This will install some programs we will need.
@@ -142,6 +146,7 @@ Many more topics that you can read about if interested:
 There are a lot of other tutorials on the command line.
 Especially recommended is The Software Carpentry course.
 - Software Carpentry [course on the unix shell](https://swcarpentry.github.io/shell-novice/).
+- [The Shell Scripting Tutorial](https://www.shellscript.sh/)
 - [Introduction to the Unix Command Line](https://codethechange.stanford.edu/guides/guide_unix_commands.html#)
 - [The Command Line: a comprehensive Guide](https://hackernoon.com/the-command-line-a-comprehensive-guide)
 - [Bash Reference Manual](https://www.gnu.org/software/bash/manual/html_node/index.html) exhaustive reference manual. Extremely detailed list of everything the Bash shell can do.
