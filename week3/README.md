@@ -1,10 +1,11 @@
 # CICF Week 3
 
-The goals for week 2 lab are:
+The goals for week 3 lab are:
 
 1. Install and use the Jupyter notebook application on your VM.
 1. Be able to create, edit, and run notebooks.
-1. 
+1. Use the NumPy and MatPlotLib packages.
+1. Download data from LIGO and know what an HDF5 file is.
 
 
 
@@ -111,7 +112,7 @@ NumPy has routines to do basic linear algebra, such as finding a matrix inverse,
     k
 
 Inverses
-    
+
     from numpy.linalg import nl
     kinv = nl.inv(k)
     kinv
@@ -126,11 +127,9 @@ Matrix visualization:
     plt.matshow(a)
 
 
-### LIGO Data and MatPlotLib
+### Working with LIGO Data
 
 Lets plot some data from the LIGO observatory.
-
-    
 This dataset is in a binary format called HDF5.
 
     import h5py
@@ -158,19 +157,15 @@ Lets load some of the data into an array.
     plt.plot(range(N), strain[:N])
 
 
-
 ## Resources
 
-Parts of this lesson were taken from the [LIGO data tutorial](https://gwosc.org/tutorial02/), the introduction to 
+Parts of this tutorial were taken from the [LIGO data tutorial](https://gwosc.org/tutorial02/).
 
-
-- Jupyter Manual
-- Literate Programming is a specific instance of the idea that code and documentation should be more mixed together. Here is a [Knuth paper](http://www.literateprogramming.com/knuthweb.pdf) and an [amazing website](http://www.literateprogramming.com/articles.html) (not Knuth's) with more information that you ever thought existed on program documentation.
+- [Jupyter Manual](https://docs.jupyter.org/en/latest/)
 - [Python Reference](https://docs.python.org/3/) for the most recent version of Python. (n.b. we are using an old verion, 3.9, on the VMs).
 - [NumPy for Absolute Beginners](https://numpy.org/doc/stable/user/absolute_beginners.html)
-- SciPy
-- MatPlotLib
-
+- [MatPlotLib](https://matplotlib.org/)
+- Literate Programming is a specific instance of the idea that code and documentation should be more mixed together. Here is a [Knuth paper](http://www.literateprogramming.com/knuthweb.pdf) and an [amazing website](http://www.literateprogramming.com/articles.html) (not Knuth's) with more information that you ever thought existed on program documentation.
 - [HDF5](https://docs.hdfgroup.org/hdf5/v1_14/_intro_h_d_f5.html) is a file format that supports efficient storage and transfer of numeric data.
 
 
