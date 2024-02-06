@@ -38,9 +38,9 @@ Go into week 3 and start juypter:
     cd week3
     jupyter notebook
 
-Select the introduction notebook, 
+Select the introduction notebook, `Introduction.ipynb`.
 Read through the notebook and run the commands.
-When finished look at the tutorial for Python notebook, and then the third notebook.
+When finished look at the tutorial for Python notebook, `QuickTourOfPython.ipynb`, and then the third notebook, `PythonPackages.ipynb`.
 
 
 ## Resources
