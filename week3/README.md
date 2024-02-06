@@ -8,7 +8,6 @@ The goals for week 3 lab are:
 1. Download data from LIGO and know what an HDF5 file is.
 
 
-
 ## Tutorial
 
 We need to install Jupyter on our VMs:
@@ -167,5 +166,7 @@ Parts of this tutorial were taken from the [LIGO data tutorial](https://gwosc.or
 - [MatPlotLib](https://matplotlib.org/)
 - Literate Programming is a specific instance of the idea that code and documentation should be more mixed together. Here is a [Knuth paper](http://www.literateprogramming.com/knuthweb.pdf) and an [amazing website](http://www.literateprogramming.com/articles.html) (not Knuth's) with more information that you ever thought existed on program documentation.
 - [HDF5](https://docs.hdfgroup.org/hdf5/v1_14/_intro_h_d_f5.html) is a file format that supports efficient storage and transfer of numeric data.
-
+- [Markdown Cheat Sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+- The always useful Software Carpentry [Python course](https://swcarpentry.github.io/python-novice-inflammation/)
+- All of the [released LIGO data](https://gwosc.org/data/)
 
