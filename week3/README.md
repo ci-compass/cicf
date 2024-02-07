@@ -47,6 +47,7 @@ When finished look at the tutorial for Python notebook, `QuickTourOfPython.ipynb
 
 - The always useful Software Carpentry [Python course](https://swcarpentry.github.io/python-novice-inflammation/)
 - [Jupyter Manual](https://docs.jupyter.org/en/latest/)
+- An excellent [Python for Scientific Computing](https://aaltoscicomp.github.io/python-for-scicomp/jupyter/) tutorial.
 - [Python Reference](https://docs.python.org/3/) for the most recent version of Python. (n.b. we are using an old verion, 3.9, on the VMs).
 - [NumPy for Absolute Beginners](https://numpy.org/doc/stable/user/absolute_beginners.html)
 - [MatPlotLib](https://matplotlib.org/)
