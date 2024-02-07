@@ -2,11 +2,16 @@
 
 The goals for the week 4 lab are to:
 
-1. Get more familar with Git
+1. Create git repositories. Commit changes. Create and merge branches.
 1. Create a GitHub account
-1. Make changes to a Git repo and push changes for others
+1. Make a pull request
 
 ## Tutorial
+
+This tutorial will focus on one particular tool discussed in the lecture, the Git distributed version control software.
+Focusing on this tool makes sense since it is useful for any situation involving sharing text files between people.
+
+
 
 
 
@@ -23,11 +28,18 @@ CVS (ancient, old, please never use)
 - [The Biggest and Weirdest Commits in Linux Kernel Git History](https://www.destroyallsoftware.com/blog/2017/the-biggest-and-weirdest-commits-in-linux-kernel-git-history) (2017)
 
 Developers love to design algorithms—including ways that people should organize software development with Git.
-- [Git Workflows](https://www.atlassian.com/git/tutorials/comparing-workflows)
+- (https://www.atlassian.com/git/tutorials/comparing-workflows)
 - [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 - [Github flow](https://docs.github.com/en/get-started/using-github/github-flow)
-- There are too many to name. Organizational needs are important, since open source software is developed differently than closed source, and mobile apps are different than webapps. (e.g. Webapps can deploy a new version continuously unlike mobile apps). Scientific software is likewise different since it is usually for a specific purpose. 
+- There are too many to name. Organizational needs are important, since open source software is developed differently than closed source, and mobile apps are different than webapps. (e.g. Webapps can deploy a new version continuously unlike mobile apps). Scientific software is likewise different since it is usually for a specific purpose.
 - [Example](https://github.com/elastic/elasticsearch-formal-models/pull/29) of a GitHub Pull Request and comments
+
+There are lots of coding standards.
+- The Python [PEP 8](https://peps.python.org/pep-0008/) standard for the Python standard library.
+- Google [Style Guides](https://google.github.io/styleguide/) for many different languages.
+- [JPL Institutional Coding Standard for the C Programming Language](https://andrewbanks.com/wp-content/uploads/2019/07/JPL_Coding_Standard_C.pdf)
+- [The Power of 10 Rules](https://en.wikipedia.org/wiki/The_Power_of_10:_Rules_for_Developing_Safety-Critical_Code)
+- [NASA F' Flight Software Framework](https://nasa.github.io/fprime/UsersGuide/dev/code-style.html)
 
 Issue tracking is basically a big list but with ability to sort based on metadata.
 
