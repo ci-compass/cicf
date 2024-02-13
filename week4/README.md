@@ -81,7 +81,7 @@ Since this is the first commit, nothing has changed yet, so the standard practic
 Exit nano with CTRL-X and save the message.
 You've made a commit.
 
-(Do a `git status`. Has anything changed?)
+(Run `git status`. Has anything changed?)
 
 We can now ask Git for the repository history with `git log`.
 
@@ -98,17 +98,62 @@ Since this was the first commit, it doesn't have any parent commits.
 Most commits will have one parent.
 A few may have more than one parent ("merge commits").
 
-Let's add a second file.
-We will make a file consisting of 100 numbers and then update the README file:
+Lets make a change to the README file.
+Change 'A' the 'The' and add a second line.
 
-    $ seq 100 > numbers.txt
+    $ git diff
+    $ git add README.md
+    $ git commit
+
+This makes a second commit.
+Notice that we need to "add" the README file, even though it was already "added" and we just changed it.
+The add refers to adding it to the next commit.
+
+The "diff" is in a format called a "unified diff".
+Lines that were added are prefixed with a plus sign `+`, lines that were removed are prefixed with a minus sign `-`.
+You can see when each line in a file was changed by using `git blame`
+
+    git blame README.md
+
+Let's add a second file.
+We will add a batch file that makes a list of numbers.
+
+    $ nano make-numbers.sh
+
+Type in:
+
+    #!/bin/bash
+    
+    seq 100 > numbers.txt
+
+Make the file executable and then run it:
+
+    $ chmod +x make-numbers.sh
+    $ ./make-numbers.sh
+
+It will create a `numbers.txt` file.
+
+    $ ls
     $ git status
-    $ git add numbers.txt
+
+We want to track the script file and non track the output file:
+
+    $ git add make-numbers.sh
+    $ nano .gitignore
+
+In this new file add a single line
+
+    numbers.txt
+
+This will tell git to not track and to ignore this file.
+
+    $ git status
+
     $ git status
     On branch main
     Changes to be committed:
       (use "git restore –staged <file>..." to unstage)
-             new file:    numbers.txt
+             new file:    make-numbers.sh
 
 This shows that the git add does not immediately make the commit happen.
 Instead it is keeping the file in a "staging area" until the commit command is issued.
@@ -119,11 +164,7 @@ Instead it is keeping the file in a "staging area" until the commit command is i
 
     $ git diff
     $ git add README.md
-    $ git commit -m "Add numbers file"
-
-Notice that we need to "add" the README file, even though it was already "added" and we just changed it.
-The add refers to adding it to the next commit.
-
+    $ git commit -m "Add make-numbers script"
 
 ### Working with GitHub
 
@@ -141,14 +182,15 @@ Upper left menu > Settings > SSH and GPG Keys
 
     cat ~/.ssh/id_ed25519.pub
 
-
 Now lets reset and get a copy of a repository I have prepared:
 
     $ cd
-    $ git clone git@github.com/cicf-2024.git
+    $ git clone git@github.com:dbrower/cicf-2024.git
 
 A clone will make a copy of the repository specified onto the VM.
-It will also make a subdirectory called "cicf-2024" and check out the most recent commit. Notice that the local copy of the repository on the VM has a "remote" to the repository we cloned it from. This is to make it easier to move changes back to the source repository.
+It will also make a subdirectory called "cicf-2024" and check out the most recent commit.
+Notice that the local copy of the repository on the VM has a "remote" to the repository we cloned it from.
+This is to make it easier to move changes back to the source repository.
 
     $ cd cicf-2024
     $ git remote –v
@@ -201,6 +243,7 @@ It is hard to overstate the importance and usefulness of Git in modern software 
 However, the user interface leaves a lot to be desired.
 
 - Software Carpentry's [Version Control with Git](https://swcarpentry.github.io/git-novice/)
+- Roger Dudler's [git - the simple guide](https://rogerdudler.github.io/git-guide/)
 - There are many Git hosting sites, these are the big three: [Github](https://github.com), [Gitlab](https://about.gitlab.com/), [Bitbucket](https://bitbucket.org/)
 - Git is by far the most used version control system, but it isn't the only one: [Mercurial](https://www.mercurial-scm.org/), [Fossil](https://www2.fossil-scm.org/home/doc/trunk/www/index.wiki), [Subversion](https://subversion.apache.org/), [CVS]
 CVS (ancient, old, please never use)
