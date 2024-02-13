@@ -73,10 +73,10 @@ The `git commit` actually saves files to the repository.
 When you run this, a text editor will appear.
 Git is asking you to type a message to remind you of what this change is doing.
 The lines starting with a hash `#` will be removed by Git before saving.
-They are reminding you of what files this commit will be updating.
+Git puts them there as a reminder of what files this commit will be updating.
 
 A commit message should consist of at least one line giving a brief summary of the changes.
-And then if more information is desired, enter a blank line and then write as much as you care to.
+Then if more information is desired, enter a blank line and then write as much as you care to.
 Since this is the first commit, nothing has changed yet, so the standard practice is to use "Initial commit".
 Exit nano with CTRL-X and save the message.
 You've made a commit.
@@ -93,6 +93,7 @@ We can now ask Git for the repository history with `git log`.
         Initial Commit
 
 Every commit has a name consisting of a bunch of random-ish numbers and letters, a date, an author, and 0 or more parent commits.
+(It is a SHA1 hash of the contents of the commit, including the current date, committer, etc).
 Since this was the first commit, it doesn't have any parent commits.
 Most commits will have one parent.
 A few may have more than one parent ("merge commits").
@@ -100,82 +101,98 @@ A few may have more than one parent ("merge commits").
 Let's add a second file.
 We will make a file consisting of 100 numbers and then update the README file:
 
-$ seq 100 > numbers.txt
-$ git add numbers.txt
-$ git status
-On branch main
-Changes to be committed:
-  (use "git restore –staged <file>..." to unstage)
-         new file:    numbers.txt
+    $ seq 100 > numbers.txt
+    $ git status
+    $ git add numbers.txt
+    $ git status
+    On branch main
+    Changes to be committed:
+      (use "git restore –staged <file>..." to unstage)
+             new file:    numbers.txt
 
-This shows that the git add does not immediately make the commit happen. Instead it is kept in a "staging area" until the commit command is issued.
+This shows that the git add does not immediately make the commit happen.
+Instead it is keeping the file in a "staging area" until the commit command is issued.
 
-$ nano README.md
+    $ nano README.md
 
-Use the numbers file for test data
+    Use the numbers file for test data
 
-$ git diff
-$ git add README.md
-$ git commit -m "Add numbers file"
+    $ git diff
+    $ git add README.md
+    $ git commit -m "Add numbers file"
 
----
+Notice that we need to "add" the README file, even though it was already "added" and we just changed it.
+The add refers to adding it to the next commit.
+
+
 ### Working with GitHub
 
 Most projects are shared using a Git hosting service.
-One of the biggest is GitHub, and now we will look at how it is used. There are many open source and open science libraries and applications on GitHub.
+These services just keep a copy of the repository.
+One of the biggest is GitHub, and now we will look at how it is used.
+There are many open source and open science libraries and applications on GitHub.
 
-First you need to create an account on it if you don't have one already. Accounts are free. Sign up at github.com
+First you need to create an account on it if you don't have one already.
+Accounts are free. Sign up at [github.com](https://github.com)
 
-Once you have done this we need to get your credentials on to the VM. The easiest way I found to do this is to use a command line tool "gh" to interact with GitHub. So, lets install Firefox and gh on the VM:
+Once you have done this we need to add the key on the VM to your GitHub account.
+Open firefox and sign in.
+Upper left menu > Settings > SSH and GPG Keys
 
-$ sudo apt install firefox gh
+    cat ~/.ssh/id_ed25519.pub
 
-You will have to enter the login password to get this to work.
 
 Now lets reset and get a copy of a repository I have prepared:
 
-$ cd
-$ git clone https://github.com/dbrower/cicf-2023
+    $ cd
+    $ git clone git@github.com/cicf-2024.git
 
-A clone will make a copy of the repository specified onto the VM. It will also make a subdirectory called "cicf-2023" and check out the most recent commit. Notice that the local copy of the repository on the VM has a "remote" to the repository we cloned it from. This is to make it easier to move changes back to the source repository.
+A clone will make a copy of the repository specified onto the VM.
+It will also make a subdirectory called "cicf-2024" and check out the most recent commit. Notice that the local copy of the repository on the VM has a "remote" to the repository we cloned it from. This is to make it easier to move changes back to the source repository.
 
-$ cd cicf-2023
-$ git remote –list
+    $ cd cicf-2024
+    $ git remote –v
+    $ git remote rename origin upstream
 
 Lets see if the python file works.
 
-$ python3 fib.py
+    $ python3 fib.py
 
-It is common to make a branch for a change so that you can make more than one commit. Then later you can ask people to review the entire branch at once. The branch serves as a way to keep the commits that you are making off the main branch for the time being.
+It is common to make a branch for a change so that you can make more than one commit.
+Then later you can ask people to review the entire branch at once.
+The branch serves as a way to keep the commits that you are making off the main branch for the time being.
 
-$ git checkout -b add-contact-info
-$ nano README.md
-$ git add README.md
-$ git commit
+    $ git checkout -b add-contact-info
+    $ nano README.md
+    $ git add README.md
+    $ git commit
 
-Usually for a project you will not have access rights to add changes to someone else's repository. The solution is for you to make your own copy of the repository on the hosting service and then put your changes there. This is called "forking a repository" (in the Github parlance). To do this we need to use the GitHub command line tool:
+Notice the change is not on the hosting service yet.
+To do that I need to copy the change there
 
-$ gh auth login
-$ gh repo fork
-$ git push origin -u add-contact-info
+    git push upstream add-contact-info
 
-The last command will copy the changes you committed to the branch in your copy of the repository on GitHub. You can then ask owner of the original repository to merge them into their repo. On GitHub, at least, this is called a "pull request". The following command will open the web page for your forced copy of the repository and from there you can choose "Create Pull Request".
+Usually for a project you will not have access rights to add changes to someone else's repository.
+The solution is for you to make your own copy of the repository on the hosting service and then put your changes there.
+This is called "forking a repository" (in the Github parlance).
+[View the repo](https://github.com/dbrower/cicf-2024) on the github service and choose to fork it.
 
-$ gh browse
+Add the fork "remote" to the checked out repository.
 
+    git remote add origin _your forked repo_
 
+Now push your changes up to your fork of the repo:
+
+    git push origin add-contact-info
+
+View the changes in the browser.
+
+You can then ask owner of the original repository to merge them into their repo.
+On GitHub, at least, this is called a "pull request".
+The following command will open the web page for your forced copy of the repository and from there you can choose "Create Pull Request".
 Choose the "Compare & pull request" button. On the next page make sure the base branch is the main branch in the dbrower copy of the repository. (It will look slightly different from the screenshot since the screenshot is not working from a fork of the repository.)
 
-And then select "Create pull request"
-
-
-Assignment
-Make a clone of this repository and make a change of some kind on a branch. Then make a fork and push your change to it. Finally, make a Pull request with your change.
-
-
----
-
-
+And then select "Create pull request".
 
 
 ## Resources
