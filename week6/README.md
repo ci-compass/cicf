@@ -22,9 +22,9 @@ I mention this because I went ahead a few days ago and I created user accounts
 for each of you. I saved your public key with your account. That means you can
 log in using your private key on your laptop's VM and it will match up with
 the public key installed in that AMI. Let's do that now:
-
+```
 ssh Username@XXX.XXX.XXX.XXX
-
+```
 Obviously, don't literally put "Username" there, but instead put your
 username created for this lab. In my case, I would use "escott". The
 XXX.XXX.XXX.XXX part is the IP address of the instance we just created.
