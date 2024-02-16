@@ -1,0 +1,25 @@
+create user cicf with password 'cicfsummer';
+create database experiments;
+create role experimenter;
+grant connect on database experiments to experimenter;
+create role experimenter;
+grant connect on database experiments to experimenter;
+grant all privileges on database experiments to experimenter;
+grant experimenter to cicf;
+grant all privileges on database experiments to cicf;
+\c experiments
+create table devices (instrument int PRIMARY KEY, description varchar(255) );
+grant all on devices to experimenter;
+grant all on results to experimenter;
+insert into devices VALUES (1, 'HP voltmeter');
+insert into devices VALUES (2, 'Agilent multimeter');
+insert into results VALUES (1, 1, 1.6);
+insert into results VALUES (2, 1, 1.7);
+insert into results VALUES (3, 1, 1.65);
+insert into results VALUES (4, 2, 1.9);
+insert into results VALUES (5, 2, 2.2);
+select * from devices;
+select * from results;
+select * from results where volts > 1.6;
+select * from results, devices;
+select * from devices, results where results.instrument = devices.instrument;
