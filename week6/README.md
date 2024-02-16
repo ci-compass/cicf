@@ -32,3 +32,86 @@ It's in the form of four numbers separated by periods. My command a few
 days ago looked like "ssh escott@18.222.52.104", but I can guarantee you
 the address will be different today.
 
+# CICF Week 6: Intro to Cloud Computing
+
+For the week6 lab, we will walk through the process of launching a 
+virtual machine in the AWS cloud using EC2. It is recommended that you
+create an account on the aws website, before coming for the lab. If you
+already dont have an account, you can sign up for an account at
+
+https://aws.amazon.com/free 
+
+The goals for the week 6 lab are to:
+
+1. Log into AWS Management Control
+2. Configure launch options for EC2
+3. Launch a Virtual Machine in EC2 Oregon Region
+4. Connect to the running Virtual Machine via SSH
+
+## Tutorial
+
+This tutorial will walk you through on how to launch a virtual machine in 
+the Amazon cloud using EC2.
+
+### Creating an AWS account
+It is recommended that you create an account on the AWS website, before 
+coming for the lab. If you already dont have an account, you can sign up for
+an account at
+
+https://aws.amazon.com/free 
+
+### Login to AWS Management Console
+
+Login to the AWS Management Console by signing in with your username and
+password, by clicking the orange button on the top right at this page
+
+https://aws.amazon.com
+
+Once you logon, you will see your AWS Management Console similar to the
+image below
+
+![AWS Management Console](./images/aws-management-console.png)
+
+Once logged in, make sure you select Oregon as your AWS region.
+To do this, you will see region (orange colored text) next to your
+username on the top right of the page. Click on the region and select 
+**US West (Oregon) us-west-2**
+
+### Launch a virtual machine with EC2
+
+Next, we will launch the EC2 console. To do this on your AWS 
+Console page, look for **Build a Solution**. The first option there is
+*Launch a virtual machine With EC2 (2 mins)* . Click on that. This will
+bring you to the EC2 dashboard similar to the image below
+
+![EC2 Dashboard](./images/aws-ec2-dashboard.png)
+
+There you would see an orange button in the middle of the page, that says
+**Launch Instance**. Click on that. This will take you to the EC2
+Launch an Instance Wizard. We will go through the main options for
+us to launch the instance.
+
+#### Name and Tags
+
+Name and tags allows you to give a descriptive name for the Virtual Machine 
+instance that you will be launching. In our case, we can name it 
+`cicf-week6-instance`. 
+
+![EC2 Launch an Instance: Name and tags](./images/aws-ec2-name-tag.png)
+
+#### Application and OS Images (Amazon Machine Image) 
+
+Next we will select the Amazon Machine Image (AMI) to launch. The AMI
+is a virtual machine image contains the software configuration (operating system
+(OS), application server, and applications) required to launch your instance.
+
+You will see an option to launch images of different types such as
+* Amazon Linux
+* Mac OS
+* Windows
+* Ubuntu etc
+
+We will select Amazon Linux image that is also eligible for free tier.
+In our case, we select **Amazon Linux 2023 AMI**.
+
+![EC2 Launch an Instance: Application and OS Images](./images/aws-ec2-ami.png)
