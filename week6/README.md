@@ -91,7 +91,7 @@ There you would see an orange button in the middle of the page, that says
 Launch an Instance Wizard. We will go through the main options for
 us to launch the instance.
 
-#### Name and Tags
+#### Step 1: Name and Tags
 
 Name and tags allows you to give a descriptive name for the Virtual Machine 
 instance that you will be launching. In our case, we can name it 
@@ -99,7 +99,7 @@ instance that you will be launching. In our case, we can name it
 
 ![EC2 Launch an Instance: Name and tags](./images/aws-ec2-name-tag.png)
 
-#### Application and OS Images (Amazon Machine Image) 
+#### Step 2: Application and OS Images (Amazon Machine Image) 
 
 Next we will select the Amazon Machine Image (AMI) to launch. The AMI
 is a virtual machine image contains the software configuration (operating system
@@ -116,7 +116,7 @@ In our case, we select **Amazon Linux 2023 AMI**.
 
 ![EC2 Launch an Instance: Application and OS Images](./images/aws-ec2-ami.png)
 
-#### Instance Type
+#### Step 3: Configure Instance Type
 
 Next we will select the instance type. Instance type dictates what type 
 (how many cores, memory, cpu type, storage) of machine comes up. We will
@@ -124,7 +124,7 @@ opt for the smallest and free tier eligible one called **t2.micro**.
 
 ![EC2 Launch an Instance: Instance type](./images/aws-ec2-instancetype.png)
 
-#### Key pair(login)
+#### Step 4: Key pair(login)
 
 Next we will generate a key pair (ssh keypair) to be able to logon to the 
 virtual machine once it starts in EC2. Since this is our first time, 
@@ -159,7 +159,7 @@ For example
 
 ![EC2 Launch an Instance: Selected Key Pair](./images/aws-ec2-selected-keypair.png)
 
-#### Network Settings
+#### Step 5: Configure Network Settings
 
 Next, we will configure the network settings. The network settings essentially
 allow you to define the network in which your virtual machine will be launched.
@@ -182,7 +182,7 @@ is more locked down (i.e. restricted to a range of IPs)
 
 ![EC2 Launch an Instance: Network Settings](./images/aws-ec2-network.png)
 
-#### Configure Storage
+#### Step 6: Configure Storage
 
 In the next step, you have an option of associating additonal volumes
 (think of them as adding hard disks to your machine) to your virtual
@@ -193,7 +193,7 @@ do with the root volume with the instance.
 
 We will skip this.
 
-#### Summary and Launch Instance
+#### Step 7: Summary and Launch Instance
 
 The last section on the EC2 launch wizard is the summary page, where
 you will see an orange button that asks you to launch the instance.
