@@ -115,3 +115,88 @@ We will select Amazon Linux image that is also eligible for free tier.
 In our case, we select **Amazon Linux 2023 AMI**.
 
 ![EC2 Launch an Instance: Application and OS Images](./images/aws-ec2-ami.png)
+
+#### Instance Type
+
+Next we will select the instance type. Instance type dictates what type 
+(how many cores, memory, cpu type, storage) of machine comes up. We will
+opt for the smallest and free tier eligible one called **t2.micro**.
+
+![EC2 Launch an Instance: Instance type](./images/aws-ec2-instancetype.png)
+
+#### Key pair(login)
+
+Next we will generate a key pair (ssh keypair) to be able to logon to the 
+virtual machine once it starts in EC2. Since this is our first time, 
+we will first create a keypair by clicking on **create new keypair**.
+
+![EC2 Launch an Instance: Key Pair](./images/aws-ec2-keypair.png)
+
+This will bring up the create key pair dialog box. We will opt for
+the **pem** format, and name our key *username-cicf*.
+
+![EC2 Launch an Instance: Create Key Pair](./images/aws-ec2-create-keypair.png)
+
+The downloaded keypair, we will store in $HOME/.ec2 directory. 
+In the terminal on your laptop, do the following
+
+```
+$ mkdir ~/.ec2
+```
+
+Then move the file into ~/.ec2 from your dowloads folder. Depending on your
+OS you will run a command similar to below
+
+```
+$ mv ~/Downloads/<username>-cicf.pem ~/.ec2
+```
+
+Replace <username> with your username and ~/Downloads with path to 
+the directory where you pem file was downloaded to.
+
+Going back to the browser, make sure your keypair is selected.
+For example 
+
+![EC2 Launch an Instance: Selected Key Pair](./images/aws-ec2-selected-keypair.png)
+
+#### Network Settings
+
+Next, we will configure the network settings. The network settings essentially
+allow you to define the network in which your virtual machine will be launched.
+The most pertinent that you need to know of are
+
+**Auto-assign public IP** whether you want a public IP addresses assigned to the
+that starts up. In our case, since we want to be able `ssh` into the Virtual
+Machine after it starts up, the answer is yes.
+
+**Firewall (security groups)** A security group is a set of firewall rules 
+that controls the traffic to and from your instance. Inbound rules control 
+the incoming traffic to your instance, and outbound rules control the 
+outgoing traffic from your instance. You can assign one or more security 
+groups to your instance. In our case, we will create a security group and
+click on the option *Allow SSH traffic from* and have it set to **Anywhere**.
+
+The above means, that we can connect to this instance using ssh from
+anywhere on the internet. In practise, for real world work this setting
+is more locked down (i.e. restricted to a range of IPs)
+
+![EC2 Launch an Instance: Network Settings](./images/aws-ec2-network.png)
+
+#### Configure Storage
+
+In the next step, you have an option of associating additonal volumes
+(think of them as adding hard disks to your machine) to your virtual
+machine instance. In our case we will not add any extra volumes, but
+do with the root volume with the instance.
+
+#### Advanced Details
+
+We will skip this.
+
+#### Summary and Launch Instance
+
+The last section on the EC2 launch wizard is the summary page, where
+you will see an orange button that asks you to launch the instance.
+
+![EC2 Launch an Instance: Summary](./images/aws-ec2-summary.png)
+
