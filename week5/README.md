@@ -126,9 +126,25 @@ Edit the key we just made by pasting in the file contents.
 And then save it.
 
 Now upload some files.
-We want hello.py and fib-first
+We want hello.py.
 
+Copy the credentials into the store.py file.
+Run `store.py`.
+Refresh the bucket, nothing should have happened.
+Now upload the `fib-first` file to the bucket and rerun `store.py`.
+Refresh the bucket, there should be a new object named `result-first`
+It should contain the 16th Fibonacci number, which is 987.
 
+The name is not quite right.
+Lets put a breakpoint into the file
+Before line 25 insert the line `breakpoint()`.
+
+When we run the script, it will stop in the debugger.
+We can see variables with `p` prefix.
+There are three ways to advance execution: stepping, next, or continue.
+Step will take the smallest possible increase, in that it will go into functions and stop.
+Next will stop at the next line of the program.
+Continue will keep running until another breakpoint or until the program ends.
 
 
 

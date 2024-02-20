@@ -8,22 +8,20 @@ from minio import Minio
 # read the contents and if it is a single integer N, make a new object having
 # the name `result-*` that contains the N-th fibinocci number.
 
-ACCESS_ID = ""
+ACCESS_KEY = ""
 SECRET_KEY = ""
 bucket_name = "cicf-data"
 
-c = Minio("localhost:9000", ACCESS, SECRET_KEY, secure=False)
+c = Minio("localhost:9000", ACCESS_KEY, SECRET_KEY, secure=False)
 
 def fib(n):
-    if n <= 0:
-        return 0
     a,b = 0, 1
     while n > 0:
         a,b = b, a+b
         n -= 1
     return a
 
-for obj in c.list_objects(bucket_name)
+for obj in c.list_objects(bucket_name):
     name = obj.object_name
     if not re.match("fib-.*", name):
         continue
@@ -39,7 +37,7 @@ for obj in c.list_objects(bucket_name)
         result = "Too big"
     else:
         result = str(fib(n))
-    new_name = "result-" + name[4:]
-    c.put_object(bucket_name, new_name, io.BytesIO(result), -1)
+    new_name = "result-" + name
+    c.put_object(bucket_name, new_name, io.BytesIO(bytes(result, 'utf-8')), len(result))
 
 
