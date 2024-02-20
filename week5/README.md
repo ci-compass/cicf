@@ -91,7 +91,7 @@ And we need to configure a root user and password.
 
     mkdir -p data
 
-    docker run -d -p 9000:9000 -p 9001:9001 -v $(pwd)/data -e "MINIO_ROOT_USER=cicf" -e "MINIO_ROOT_PASSWORD=cicf1234" minio/minio server /data --console-address ":9001"
+    docker run -d -p 9000:9000 -p 9001:9001 -v $(pwd)/data:/data -e "MINIO_ROOT_USER=cicf" -e "MINIO_ROOT_PASSWORD=cicf1234" minio/minio server /data --console-address ":9001"
 
 The container should have started and be running in the background.
 Docker printed the id for this container.
@@ -129,6 +129,11 @@ And then save it.
 
 Now upload some files.
 We want hello.py.
+
+Install the Python Minio library
+
+    sudo apt install python3-pip
+    pip3 install minio
 
 Copy the credentials into the store.py file.
 Run `store.py`.
