@@ -2,7 +2,9 @@
 
 The goals for week 5 lab are:
 
-1.
+1. Make and run a simple Docker image.
+1. Run a service packaged in an external Docker image.
+1. Use the Python debugger (pdb).
 
 ## Tutorial
 
@@ -158,3 +160,6 @@ Continue will keep running until another breakpoint or until the program ends.
 - [jq](https://jqlang.github.io/jq/) is a great command line tool for working with JSON files. And there is a [playground](https://jqplay.org/) for messing around.
 - [misadventures in process containment](https://apenwarr.ca/log/?m=201901)
 - [Fibonacci Sequence](https://oeis.org/A000045) on the OEIS.
+- Minio Python client [reference documentation](https://min.io/docs/minio/linux/developers/python/API.html#put_object)
+
+- A [tutorial on using GNSS reflection data](https://gnssrefl.readthedocs.io/en/latest/pages/docker_cl_instructions.html) to measure snow and water height that uses a docker image.
