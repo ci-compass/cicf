@@ -250,7 +250,7 @@ successfully terminated.
 
 ![EC2 Terminate Instance: Terminate Successful](./images/aws-ec2-instance-terminate-successful.png)
 
-### Terminate vs Shutdown
+### Terminate vs Shutdown/STOP
 
 Alternatively we could have changed the state to shutdown of the instance.
 The difference between terminating and shutdown is that the associated EBS
