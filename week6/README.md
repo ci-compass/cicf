@@ -166,3 +166,22 @@ you will see an orange button that asks you to launch the instance.
 
 ![EC2 Launch an Instance: Summary](./images/aws-ec2-summary.png)
 
+Click on the launch button, and you should see the instance being
+launched. In a minute or so, the status bar should turn green, and 
+you should see a message like shown below
+
+![EC2 Launch an Instance: Summary](./images/aws-ec2-launchedinstance.png)
+
+## Connect to the running Virtual Machine via SSH
+
+Now, we will try and connect to the launched instance using the
+ssh keypair we generated in the previous section. 
+
+In order to navigate to launched instance, you can click on
+the Instances menu in the left menu bar of the EC2 dashboard. After
+clicking on this, you should see all of your instances. In our case
+it is only one instance, and it should indicate that it 
+is in running state. If you just launched the instance, you will 
+see messages such as starting up etc, in the instances state.
+
+![EC2 Launch an Instance: Summary](./images/aws-ec2-instances-dashboard.png)
