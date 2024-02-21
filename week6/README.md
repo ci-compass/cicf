@@ -1,11 +1,14 @@
 # CICF Week 6: Intro to Cloud Computing
 
+**Prerequisite: Create an AWS account**
+
 For the week6 lab, we will walk through the process of launching a 
 virtual machine in the AWS cloud using EC2. It is recommended that you
 create an account on the aws website, before coming for the lab. If you
 already dont have an account, you can sign up for an account at
 
 https://aws.amazon.com/free 
+
 
 The goals for the week 6 lab are to:
 
@@ -18,14 +21,20 @@ The goals for the week 6 lab are to:
 ## Tutorial
 
 This tutorial will walk you through on how to launch a virtual machine in 
-the Amazon cloud using EC2.
+the Amazon cloud using EC2. We start the tutorial by reviewing a 
+short video on doing compute in Amazon EC2 from the AWS Educate Website.
 
-### Creating an AWS account
-It is recommended that you create an account on the AWS website, before 
-coming for the lab. If you already dont have an account, you can sign up for
-an account at
+We will review the module Titled **Getting Started With Compute Lab**
+accessible at https://awseducate.instructure.com/courses/907 . 
 
-https://aws.amazon.com/free 
+When the course starts; a minute or so in you will get to the slide
+about what is in the course. Select Amazon Elastic Compute Cloud EC2 
+box, as shown below
+
+![Amazon Educate Course 907 on EC2](./images/aws-educate-course-907-ec2.png)
+
+**Copyright Amazon Educate**
+
 
 ### Login to AWS Management Console
 
