@@ -184,4 +184,11 @@ it is only one instance, and it should indicate that it
 is in running state. If you just launched the instance, you will 
 see messages such as starting up etc, in the instances state.
 
-![EC2 Launch an Instance: Summary](./images/aws-ec2-instances-dashboard.png)
+![EC2 Connect to Instance: Instance Dashboard](./images/aws-ec2-instances-dashboard.png)
+
+Click on the instance id (starts with i- prefix) of the instance you want 
+to connect to. Clicking on this, will get you to the details of the 
+instance you just launched 
+
+![EC2 Connect to Instance: Instance Details](./images/aws-ec2-instance-detail.png)
+
