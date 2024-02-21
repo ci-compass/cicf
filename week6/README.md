@@ -192,3 +192,32 @@ instance you just launched
 
 ![EC2 Connect to Instance: Instance Details](./images/aws-ec2-instance-detail.png)
 
+On the instance details page, you will see a lot of details.
+Two of them are of particular interest to us 
+
+* Public IPv4 DNS: This is the IP address of your instance that you can connect to from your laptop
+* Key pair assigned at launch: This is the SSH key we have to use to connect
+
+To copy the the ip address you click the 2 small overlapping squares
+
+Now to connect to the instance you open the terminal on your laptop,
+and run the following command
+
+ssh -i ~/.ec2/<username>-cicf.pem ec2user@<public IPv4 address>
+
+An example invocation is below 
+
+```
+$  ssh -i ~/.ec2/vahi-cicf.pem ec2-user@ec2-35-89-250-152.us-west-2.compute.amazonaws.com
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+
+```
