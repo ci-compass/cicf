@@ -9,16 +9,17 @@ already dont have an account, you can sign up for an account at
 
 https://aws.amazon.com/free 
 
+**Goals**
 
 The goals for the week 6 lab are to:
 
-1. Log into AWS Management Control
-2. Configure launch options for EC2
-3. Launch a Virtual Machine in EC2 Oregon Region
+1. Review a video giving overview of Amazon EC2
+2. Log into AWS Management Control
+3. Configure and launch a Virtual Machine in EC2 Oregon Region
 4. Connect to the running Virtual Machine via SSH
 5. Terminate your running instance
 
-## Tutorial
+## 1. Review video giving overview of Amazon EC2 
 
 This tutorial will walk you through on how to launch a virtual machine in 
 the Amazon cloud using EC2. We start the tutorial by reviewing a 
@@ -33,10 +34,19 @@ box, as shown below
 
 ![Amazon Educate Course 907 on EC2](./images/aws-educate-course-907-ec2.png)
 
+The lesson should be covered in about 10 minutes (max 15 minutes).
+For the class recommend, stopping at the Amazon EC2 usecases slide.
+
 **Copyright Amazon Educate**
 
+The above video, gives us an overview of Amazon EC2, and what it can be
+used for.
 
-### Login to AWS Management Console
+Now we move to the hands on part of this class, where we will
+login to AWS Console, and launch a virtual machine in the Amazon EC2
+cloud, connect to it and then shut it down.
+
+## 2. Login to AWS Management Console
 
 Login to the AWS Management Console by signing in with your username and
 password, by clicking the orange button on the top right at this page
@@ -53,7 +63,7 @@ To do this, you will see region (orange colored text) next to your
 username on the top right of the page. Click on the region and select 
 **US West (Oregon) us-west-2**
 
-### Launch a virtual machine with EC2
+## 3. Configure and launch a Virtual Machine in EC2 Oregon Region
 
 Next, we will launch the EC2 console. To do this on your AWS 
 Console page, look for **Build a Solution**. The first option there is
@@ -67,7 +77,7 @@ There you would see an orange button in the middle of the page, that says
 Launch an Instance Wizard. We will go through the main options for
 us to launch the instance.
 
-#### Step 1: Name and Tags
+### Step 1: Name and Tags
 
 Name and tags allows you to give a descriptive name for the Virtual Machine 
 instance that you will be launching. In our case, we can name it 
@@ -75,7 +85,7 @@ instance that you will be launching. In our case, we can name it
 
 ![EC2 Launch an Instance: Name and tags](./images/aws-ec2-name-tag.png)
 
-#### Step 2: Application and OS Images (Amazon Machine Image) 
+### Step 2: Application and OS Images (Amazon Machine Image) 
 
 Next we will select the Amazon Machine Image (AMI) to launch. The AMI
 is a virtual machine image contains the software configuration (operating system
@@ -92,7 +102,7 @@ In our case, we select **Amazon Linux 2023 AMI**.
 
 ![EC2 Launch an Instance: Application and OS Images](./images/aws-ec2-ami.png)
 
-#### Step 3: Configure Instance Type
+### Step 3: Configure Instance Type
 
 Next we will select the instance type. Instance type dictates what type 
 (how many cores, memory, cpu type, storage) of machine comes up. We will
@@ -100,7 +110,7 @@ opt for the smallest and free tier eligible one called **t2.micro**.
 
 ![EC2 Launch an Instance: Instance type](./images/aws-ec2-instancetype.png)
 
-#### Step 4: Key pair(login)
+### Step 4: Key pair(login)
 
 Next we will generate a key pair (ssh keypair) to be able to logon to the 
 virtual machine once it starts in EC2. Since this is our first time, 
@@ -135,7 +145,7 @@ For example
 
 ![EC2 Launch an Instance: Selected Key Pair](./images/aws-ec2-selected-keypair.png)
 
-#### Step 5: Configure Network Settings
+### Step 5: Configure Network Settings
 
 Next, we will configure the network settings. The network settings essentially
 allow you to define the network in which your virtual machine will be launched.
@@ -158,18 +168,18 @@ is more locked down (i.e. restricted to a range of IPs)
 
 ![EC2 Launch an Instance: Network Settings](./images/aws-ec2-network.png)
 
-#### Step 6: Configure Storage
+### Step 6: Configure Storage
 
 In the next step, you have an option of associating additonal volumes
 (think of them as adding hard disks to your machine) to your virtual
 machine instance. In our case we will not add any extra volumes, but
 do with the root volume with the instance.
 
-#### Advanced Details
+### Advanced Details
 
 We will skip this.
 
-#### Step 7: Summary and Launch Instance
+### Step 7: Summary and Launch Instance
 
 The last section on the EC2 launch wizard is the summary page, where
 you will see an orange button that asks you to launch the instance.
@@ -182,7 +192,7 @@ you should see a message like shown below
 
 ![EC2 Launch an Instance: Summary](./images/aws-ec2-launchedinstance.png)
 
-## Connect to the running Virtual Machine via SSH
+## 4. Connect to the running Virtual Machine via SSH
 
 Now, we will try and connect to the launched instance using the
 ssh keypair we generated in the previous section. 
@@ -232,7 +242,7 @@ $  ssh -i ~/.ec2/vahi-cicf.pem ec2-user@ec2-35-89-250-152.us-west-2.compute.amaz
 
 ```
 
-## Terminate your running instance
+## 5. Terminate your running instance
 
 Remember, that we are running in the Cloud. And you are charged for everthing.
 Even though in this exercise, we launched a VM from the free tier; your account
@@ -269,7 +279,10 @@ Therefore, you should only stop an instance if you plan to restart it again
 within a reasonable timeframe. Otherwise, you might want to terminate an instance
 instead of stopping it for cost saving purposes.
 
+## Resources
 
+1. AWS Educate https://aws.amazon.com/education/awseducate/
+2. Tutorial: Get started with Amazon EC2 Linux instances https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html 
 
 
 
