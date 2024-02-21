@@ -238,7 +238,7 @@ instance to terminate the instance
 On changing the state to terminate, you will get a pop up warning box, asking 
 for confirmation. Click on the orange terminate button
 
-![EC2 Terminate Instance: Terminate Warning ](./images/aws-ec2-instance-warning.png)
+![EC2 Terminate Instance: Terminate Warning ](./images/aws-ec2-instance-terminate-warning.png)
 
 On terminating the instance, the instance gets shutdown and your instance
 IP address etc gets deallocated. Also, more importantly you will no longer be 
@@ -248,7 +248,7 @@ will be lost.
 You should now see a green banner on the instance details page saying 
 successfully terminated. 
 
-![EC2 Terminate Instance: Terminate Successful](./images/aws-ec2-instance-successful.png)
+![EC2 Terminate Instance: Terminate Successful](./images/aws-ec2-instance-terminate-successful.png)
 
 ### Terminate vs Shutdown
 
