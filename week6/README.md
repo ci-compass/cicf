@@ -13,6 +13,7 @@ The goals for the week 6 lab are to:
 2. Configure launch options for EC2
 3. Launch a Virtual Machine in EC2 Oregon Region
 4. Connect to the running Virtual Machine via SSH
+5. Terminate your running instance
 
 ## Tutorial
 
@@ -221,3 +222,46 @@ $  ssh -i ~/.ec2/vahi-cicf.pem ec2-user@ec2-35-89-250-152.us-west-2.compute.amaz
        _/m/'
 
 ```
+
+## Terminate your running instance
+
+Remember, that we are running in the Cloud. And you are charged for everthing.
+Even though in this exercise, we launched a VM from the free tier; your account
+only has a small set free tier hours assigned. 
+
+Go back to your instance details page of your instance on the dashboard.
+Click on the instance state drop down menu on the top, and change the
+instance to terminate the instance
+
+![EC2 Terminate Instance: Terminate ](./images/aws-ec2-instance-terminate.png)
+
+On changing the state to terminate, you will get a pop up warning box, asking 
+for confirmation. Click on the orange terminate button
+
+![EC2 Terminate Instance: Terminate Warning ](./images/aws-ec2-instance-warning.png)
+
+On terminating the instance, the instance gets shutdown and your instance
+IP address etc gets deallocated. Also, more importantly you will no longer be 
+charged for instance usage. Any data that was stored locally on the instance
+will be lost.
+
+You should now see a green banner on the instance details page saying 
+successfully terminated. 
+
+![EC2 Terminate Instance: Terminate Successful](./images/aws-ec2-instance-successful.png)
+
+### Terminate vs Shutdown
+
+Alternatively we could have changed the state to shutdown of the instance.
+The difference between terminating and shutdown is that the associated EBS
+volume would have been decoupled but not deleted. The volume will continue to 
+persist in its availability zone. Standard charges for EBS volumes will apply. 
+Therefore, you should only stop an instance if you plan to restart it again
+within a reasonable timeframe. Otherwise, you might want to terminate an instance
+instead of stopping it for cost saving purposes.
+
+
+
+
+
+
