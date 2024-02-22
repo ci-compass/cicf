@@ -374,12 +374,12 @@ DELETE FROM escott WHERE game='Galaga';
 SELECT * FROM escott;
 ```
 
-As you can probably imagine, *DELETE is as dangerous as it can be*. If
+As you can probably imagine, **DELETE is as dangerous as it can be**. If
 you forget the WHERE clause, or if you get it wrong, you can delete a
 lot of data. What I *always* do these days is first write a SELECT
 statement to check my WHERE clause, then I hit up arrow to edit that
 command, remove the SELECT part, and insert the DELETE FROM. Notice I
-said "these days". There was an incident a couple decades ago where I
+said "these days". There was an incident many, many years ago in which I
 just fired off a DELETE and accidently blew away a table, in
 production. It took close to 18 hours to recover that one.
 
