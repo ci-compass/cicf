@@ -293,6 +293,7 @@ data. Being able to change the data in a row is handy sometimes, and
 deleting data is a pretty useful thing, too. Let's take a look at each
 of these, but first...
 
+#### CREATE TABLE
 First, let's create a table we can play with.
 ```
 CREATE TABLE whammy (game varchar(255) PRIMARY KEY,
@@ -314,7 +315,72 @@ can indicate that it's a PRIMARY KEY. In this example, game is the
 PRIMARY KEY. That means every row must have a unique game - there can
 not be two rows for "Quake".
 
+#### INSERT INTO
+
+Now that our table has been created, it is completely empty. Execute a
+SELECT statement to prove to yourself that it's empty. Now, insert
+some data. Feel free to change the values to be more reflective of the
+state of gaming post 1992.
+
+```
+INSERT INTO escott VALUES('Pac Man', 22000);
+INSERT INTO escott VALUES('Galaga',1420);
+INSERT INTO escott VALUES('Rogue',106);
+```
+
+That put three rows into the table. Let's try to add a fourth row, but
+one that duplicates a game already in there.
+
+```
+INSERT INTO escott VALUES('Galaga',3000);
+```
+
+And...  kablooey! We get an error message telling us we've violated
+the PRIMARY KEY constraint on the column "games".
+
+Does the column "highscore" have a similar constraint? Looking at the
+CREATE TABLE command, it seems fairly obvious that game has the
+constraint and "highscore" doesn't, but let's prove it to ourselves:
+
+```
+INSERT INTO escott VALUES('Defender', 22000);
+```
+
+So, indeed, game and game alone is the primary key for this table.
+
+#### UPDATE
+
+When we tried to insert a second 'Galaga' row, it was almost like we
+were trying to change the table to show my new high score instead of
+my old one. To do that, can use the UPDATE command.
+```
+UPDATE escott SET highscore=3000 WHERE game='Galaga';
+SELECT * from escott;
+```
+
+Try to use UPDATE sparingly. When you need it, you need it, but it has
+two problems:
+1. It's slow.
+2. You need to stop and ask yourself "Why am I changing this data? Am
+I violating the integrity of the scientific process? Am I violating
+Generally Accepted Accounting Practices (GAAP)?"
 
 
+#### DELETE
+
+You can delete rows from a table as well...
+```
+DELETE FROM escott WHERE game='Galaga';
+SELECT * FROM escott;
+```
+
+As you can probably imagine, *DELETE is as dangerous as it can be*. If
+you forget the WHERE clause, or if you get it wrong, you can delete a
+lot of data. What I *always* do these days is first write a SELECT
+statement to check my WHERE clause, then I hit up arrow to edit that
+command, remove the SELECT part, and insert the DELETE FROM. Notice I
+said "these days". There was an incident a couple decades ago where I
+just fired off a DELETE and accidently blew away a table, in
+production. It took close to 18 hours to recover that one.
 
 
