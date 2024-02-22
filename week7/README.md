@@ -188,8 +188,11 @@ At this point, `psql` has connected and will be showing this prompt:
 
 experiments=>
 
+### Reading Data with SQL
+
 Let's play with some commands. The
 semicolons at the ends of the lines are important.
+
 
 ```
 \d
@@ -232,7 +235,7 @@ combines every row of one table with every row of another table, a
 join only matches the rows that meet the filter criteria in the WHERE
 clause.
 
-Finally, we don't have to select every column. We can specify which
+We don't have to select every column. We can specify which
 ones we want.
 ```
 SELECT results.reading, results.volts, devices.description
@@ -244,7 +247,40 @@ lines. The database server will keep reading lines and adding them
 onto the current query until it finally comes to a semicolon. And
 that's why you have to end queries with a semicolon. :-)
 
+Here's something very useful: a SQL statement can do math, much
+like any other programming language. Consider the case of wanting to
+know how much power was being produced by an experiment, rather than
+just the voltage. The formula for power is V^2/R, or in other words
+voltage squared divided by the resistance the current is flowing
+into. Let's assume it's a five ohm resistance.
 
+```
+SELECT reading, (volts * volts)/5 FROM results;
+```
+
+We can also compute "aggregate" values, like sums, averages, and
+counts. To see how many rows there are in the results table,
+```
+SELECT count(*) FROM results;
+```
+to see the average voltage,
+```
+SELECT avg(volts) FROM results;
+```
+Total voltage:
+```
+SELECT sum(volts) FROM results;
+```
+There's also maximum and minimum:
+```
+SELECT max(volts), min(volts) FROM results;
+```
+
+
+SQL is very versatile. It can be proven that any computer program that
+can be written, can be written in SQL. It might not be an appropriate
+way to go about it - I would never write a video game in SQL - but it
+can be done.
 
 
 
