@@ -134,8 +134,11 @@ Then move the file into ~/.ec2 from your dowloads folder. Depending on your
 OS you will run a command similar to below
 
 ```
-$ mv ~/Downloads/<username>-cicf.pem ~/.ec2
+$ mv ~/Downloads/USERNAME-cicf.pem ~/.ec2
+$ chmod 600 ~/.ec2/USERNAME-cicf.pem
 ```
+
+**Note:** Replace USERNAME with your username
 
 Replace <username> with your username and ~/Downloads with path to 
 the directory where you pem file was downloaded to.
@@ -223,7 +226,12 @@ To copy the the ip address you click the 2 small overlapping squares
 Now to connect to the instance you open the terminal on your laptop,
 and run the following command
 
-ssh -i ~/.ec2/<username>-cicf.pem ec2user@<public IPv4 address>
+```
+ssh -i ~/.ec2/USERNAME-cicf.pem ec2user@PUBLIC-IPv4-ADDRESS
+```
+
+Note: Replace USERNAME and PUBLIC-IPv4-ADDRESS with your account and instance
+details.
 
 An example invocation is below 
 
