@@ -283,6 +283,38 @@ way to go about it - I would never write a video game in SQL - but it
 can be done.
 
 
+### Data Manipulation in SQL
+
+The lion's share of work done by RDBMSes is SELECT statements. They
+can be pretty involved, requiring dozens of steps and huge amounts of
+processing. That's why they get so much attention. On the other hand,
+there wouldn't be anything to SELECT if there wasn't a way to add
+data. Being able to change the data in a row is handy sometimes, and
+deleting data is a pretty useful thing, too. Let's take a look at each
+of these, but first...
+
+First, let's create a table we can play with.
+```
+CREATE TABLE whammy (game varchar(255) PRIMARY KEY,
+                     highscore int);
+```
+There are several things to notice here.
+* Not only is the command split over two lines, but the second line is
+neatly indented. Unlike Python, SQL doesn't care if you indent your
+lines or not. As a best practice, though, you really should.
+* Don't actually use the name "whammy". Use something unique so you
+don't step on each other's toes. Maybe the name of your first pet, or
+the object closest to your stove, or whatever.
+* The statement has a bunch of "column name" and "type" pairs. Going
+across, the column "game" is of type "varchar(255)". This is an archaic
+way of saying "string". The "highscore" column is of type integer.
+* There really should be a way of uniquely identifying every row in a
+table. If you have a column that you know will always be unique, you
+can indicate that it's a PRIMARY KEY. In this example, game is the
+PRIMARY KEY. That means every row must have a unique game - there can
+not be two rows for "Quake".
+
+
 
 
 
