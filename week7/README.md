@@ -69,12 +69,28 @@ solve that...
 ls -la
 ```
 
+Notice there is a ".ssh" directory (how can we tell it's a
+directory?). The dot is there to hide the directory - we rarely care
+about it, so it's hidden from us. Less visual noise.
 
+Sometimes, though, we do care about it. :-)
 
+Let's set our current working directory to that .ssh directory and see
+if there is anything interesting in there. (Of course there is!)
+
+```
 cd .ssh
 ls -l
+```
 
+### Basic Linux Security Topics
+
+The file "authorized keys" is interesting. Take a look at the
+contents.
+```
 more authorized_keys
+```
+
 
 cd
 pwd
