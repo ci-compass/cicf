@@ -23,7 +23,8 @@ the way. It has happened to me.
 
 The `ssh` command can be used to run a single command remotely. For
 instance,
-```ssh username@18.222.52.104 uptime
+```
+ssh username@18.222.52.104 uptime
 ```
 will run the `uptime` command on the EC2 cloud instance we created for
 you, and it will report how long it has been since the Linux
