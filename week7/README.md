@@ -1,16 +1,25 @@
-# Week 6: Intro to Cloud Computing
+# Week 7: More on Cloud Computing, with Databases
 
-Bad news - the semester is half gone already. Where did the time go?  Anyway.
+## Goals
+
+This weeks activity will expose you the following:
+
+1. Logging in to cloud computing instances, including security topics.
+2. Using Relational Databases - a highly structured way to store and retrieve data
+3. Taking a look at a "Document Store" database.
 
 
+# Tutorial
 
-Step 1: Logging in to the newly-created instance.
+##Part 1: Logging in to the newly-created instance.
 
 The command is:
+```
 ssh username@18.222.52.104
+```
 
 You should replace "username" with the actual username we emailed to you.
-For instance, I would type "ssh escott@18.222.52.104".
+For instance, I would type `ssh escott@18.222.52.104`
 
 
 
