@@ -26,7 +26,10 @@ the Amazon cloud using EC2. We start the tutorial by reviewing a
 short video on doing compute in Amazon EC2 from the AWS Educate Website.
 
 We will review the module Titled **Getting Started With Compute Lab**
-accessible at https://awseducate.instructure.com/courses/907 . 
+accessible at [https://awseducate.instructure.com](https://awseducate.instructure.com)
+via Getting Started >> Getting Started with Compute (Lab).
+
+![Amazon Educate Course 907 on EC2](./images/aws-getting-started-compute-lab.png)
 
 When the course starts; a minute or so in you will get to the slide
 about what is in the course. Select Amazon Elastic Compute Cloud EC2 
