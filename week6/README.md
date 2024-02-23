@@ -230,10 +230,10 @@ Now to connect to the instance you open the terminal on your laptop,
 and run the following command
 
 ```
-ssh -i ~/.ec2/USERNAME-cicf.pem ec2user@PUBLIC-IPv4-ADDRESS
+ssh -i ~/.ec2/USERNAME-cicf.pem ec2-user@PUBLIC_IPv4_ADDRESS
 ```
 
-Note: Replace USERNAME and PUBLIC-IPv4-ADDRESS with your account and instance
+Note: Replace USERNAME and PUBLIC_IPv4_ADDRESS with your account and instance
 details.
 
 An example invocation is below 
