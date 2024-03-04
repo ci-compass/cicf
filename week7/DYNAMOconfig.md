@@ -142,7 +142,7 @@ difficult the first time.
 
 ## Generating an AWS Access Key.
 
-OK, to be fair, generating an access key isn't complicated _per se_, it's
+OK, to be fair, generating an access key isn't complicated exactly, it's
 just that there are a lot of different ways to go about it depending
 on how sophisticated your Identity and Access Management (IAM)
 policies are. Given that there is precisely one of you and you don't

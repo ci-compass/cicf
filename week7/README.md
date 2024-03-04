@@ -161,12 +161,12 @@ just use an instance I already have running.
 
 The instance we're going to use is running an RDBMS called
 "Postgres".  Postgres has a long and storied history, being the second
-Open Source, totally free database "Ingres" was the first, from the
+Open Source, totally free database. "Ingres" was the first, from the
 same research group headed by Michael Stonebreaker. For his work on
 Ingres, Postgres, and many subsequent RDBMSes, and his foundational
 work on new technologies in databases, he won a Turing Award.
 
-Let's connect to this running database.
+Let's connect to this running database server.
 ```
 psql --host=$DBHOST --user=cicf experiments
 ```
@@ -180,10 +180,16 @@ on one database, it's 99+% identical across all the other relational
 databases. On the other hand, the monitoring and control commands are
 unique to each one.
 
+Like most database servers, Postgres can host many independent
+databases on the same server. Unlike many database servers, Postgres
+even let's a single command work on data across all of the databases
+on the server at once. We won't be using that, but it's nice that it's
+there.
+
 Anyway. Once `psql` connects, it will print a little information and
-then a prompt. The "experiments" part at the end says "once you've
-connected to the database server, set up everything so my commands
-refer to the actual database called "experiments".
+then a prompt. The "experiments" part at the end says "We've connected
+to the database server and set up everything so typed commands refer
+to the actual database called "experiments".
 
 At this point, `psql` has connected and will be showing this prompt:
 
@@ -295,7 +301,10 @@ deleting data is a pretty useful thing, too. Let's take a look at each
 of these, but first...
 
 #### CREATE TABLE
-First, let's create a table we can play with.
+First, let's create a table we can play with. Since there are a bunch
+of you all doing the same thing, don't use "whammy" for your table
+name. Pick something else, or N-1 of you will get an error message
+saying the table "whammy" already exists...
 ```
 CREATE TABLE whammy (game varchar(255) PRIMARY KEY,
                      highscore int);
@@ -340,7 +349,7 @@ And...  kablooey! We get an error message telling us we've violated
 the PRIMARY KEY constraint on the column "games".
 
 Does the column "highscore" have a similar constraint? Looking at the
-CREATE TABLE command, it seems fairly obvious that game has the
+CREATE TABLE command, it seems fairly obvious that "game" has the
 constraint and "highscore" doesn't, but let's prove it to ourselves:
 
 ```
@@ -353,7 +362,7 @@ So, indeed, game and game alone is the primary key for this table.
 
 When we tried to insert a second 'Galaga' row, it was almost like we
 were trying to change the table to show my new high score instead of
-my old one. To do that, can use the UPDATE command.
+my old one. To do that, we can use the UPDATE command.
 ```
 UPDATE escott SET highscore=3000 WHERE game='Galaga';
 SELECT * from escott;
@@ -383,5 +392,14 @@ command, remove the SELECT part, and insert the DELETE FROM. Notice I
 said "these days". There was an incident many, many years ago in which I
 just fired off a DELETE and accidently blew away a table, in
 production. It took close to 18 hours to recover that one.
+
+When you're done playing with Posgres, use the ```\q``` command to
+exit psql.
+
+That is a quick-and-dirty introduction to relational databases in
+general and to Postgres and RDS in particular. In the next section,
+we'll take a look at a different kind of database entirely.
+
+
 
 
