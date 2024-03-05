@@ -255,8 +255,8 @@ but inconvenient.
 ![save the keys](accessShots/28onlyChanceToSaveKey.png)
 
 To use this key, we just need to set a couple of environment variables
-(AWS_ACCESS_KEY and AWS_ACCESS_SECRET_KEY to the values we saved. We
-also need to set AWS_DEFAULT_REGION to whatever region we're using -
+(`AWS_ACCESS_KEY` and `AWS_ACCESS_SECRET_KEY` to the values we saved. We
+also need to set `AWS_DEFAULT_REGION` to whatever region we're using -
 for our demo we've been using "us-east-2", aka "Ohio".
 
 OK, now everything is set up to use Dynamo from a program. Have a
