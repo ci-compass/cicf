@@ -401,5 +401,10 @@ general and to Postgres and RDS in particular. In the next section,
 we'll take a look at a different kind of database entirely.
 
 
+## Resources
+
+* [sqlite](https://www.sqlite.org/) is a relational database that doesn't use a client/server architecture and is available or easily installed on most computers. It is a good place to practice working with database. It is also easy to work with and many problems are easily solved by importing data into a new SQLite database and then running a query.
+* ["A relational model of data for large shared data banks"](https://doi.org/10.1145/362384.362685) by E.F. Codd (1970) is one of the first papers on relational database.
+* A [relational algebra](https://en.wikipedia.org/wiki/Relational_algebra) provides the theoritical foundation for the operations on a relational database (i.e. projections and joins).
 
 
