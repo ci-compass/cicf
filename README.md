@@ -13,3 +13,8 @@ The CICF course is developed and run by
 * Don Brower
 * Sarowar Hossain
 
+
+# Thanks
+
+The CICF course was developed with support from the National Science Foundation Office of Advanced Cyberinfrastructure in the Directorate for Computer Information Science under Grant #2127548.
+
