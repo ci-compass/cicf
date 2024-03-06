@@ -244,7 +244,7 @@ However, the user interface leaves a lot to be desired.
 
 - Software Carpentry's [Version Control with Git](https://swcarpentry.github.io/git-novice/)
 - Roger Dudler's [git - the simple guide](https://rogerdudler.github.io/git-guide/)
-- There are many Git hosting sites, these are the big three: [Github](https://github.com), [Gitlab](https://about.gitlab.com/), [Bitbucket](https://bitbucket.org/)
+- There are many Git hosting sites, these are the big three: [Github](https://github.com), [Gitlab](https://about.gitlab.com/), [Bitbucket](https://bitbucket.org/). There are also many smaller ones, such as [SourceHut](https://sourcehut.org/).
 - Git is by far the most used version control system, but it isn't the only one: [Mercurial](https://www.mercurial-scm.org/), [Fossil](https://www2.fossil-scm.org/home/doc/trunk/www/index.wiki), [Subversion](https://subversion.apache.org/), [CVS]
 CVS (ancient, old, please never use)
 - [The Biggest and Weirdest Commits in Linux Kernel Git History](https://www.destroyallsoftware.com/blog/2017/the-biggest-and-weirdest-commits-in-linux-kernel-git-history) (2017)
