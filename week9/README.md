@@ -199,4 +199,5 @@ Jeff Bezos on [two types of decisions](https://www.sec.gov/Archives/edgar/data/1
 * [List of HTTP Methods](https://en.wikipedia.org/wiki/HTTP#Request_methods)
 * JSON [RFC 4627: The application/json Media Type for JavaScript Object Notation (JSON)](https://www.ietf.org/rfc/rfc4627.txt)
 * ORCID [API v3.0 Guide](https://github.com/ORCID/orcid-model/blob/master/src/main/resources/record_3.0/README.md)
+* Python Flask [minimal application](https://flask.palletsprojects.com/en/3.0.x/quickstart/#a-minimal-application)
 
