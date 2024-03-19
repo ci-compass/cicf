@@ -150,16 +150,24 @@ Lets adjust by removing the last three digits (i.e. dividing by 1000):
 
 Lets now look at this briefly on the command line:
 
-    curl -s -v
+    curl -s -v "https://orcid.org/0000-0002-1825-0097" 2>&1 | less
 
+This displays the original webpage.
+Note that the request is on lines starting with a ">"
+and the response headers are on lines starting with "<".
 
+    curl -s -v -L -H "Accept: application/json" "https://orcid.org/0000-0002-1825-0097" 2>&1 | less
 
+We can change the accept header:
 
+    curl -s -v -L -H "Accept: application/xml" "https://orcid.org/0000-0002-1825-0097" 2>&1 | less
 
+We can change the method:
 
+    curl -s -v -L -X "POST" -H "Accept: application/xml" "https://orcid.org/0000-0002-1825-0097" 2>&1 | less
 
+In this case we get a response with status code 405, indicating an error.
 
-curl -v -H "Accept: application/xml" "https://pub.orcid.org/v3.0/0000-0002-0036-9460"
 
 
 ## Resources
