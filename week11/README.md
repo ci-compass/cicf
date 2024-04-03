@@ -22,17 +22,19 @@ We are going to work with the Titanic dataset.
 Lets first look at the [dataset](https://github.com/datasciencedojo/datasets/blob/master/titanic.csv)
 This dataset is a passenger manifest from the Titanic.
 
-The rest of this section is in the notebook `random-forest.ipynb`.
+The rest of this section is in the notebook [random-forest.ipynb](random-forest.ipynb).
 
 ## Resources
 
-- [Astronomers Dig Up the Stars That Birthed the Milky Way](https://www.quantamagazine.org/with-ai-astronomers-dig-up-the-stars-that-birthed-the-milky-way-20230328/)
-- [Cornell Machine Learning Course](https://www.cs.cornell.edu/courses/cs4780/2015fa/page4/)
-- [Google Machine Learning Course](https://developers.google.com/machine-learning/crash-course/ml-intro)
-- [Visualization](https://colah.github.io/posts/2014-10-Visualizing-MNIST/)
+Sources for the tutorial notebook:
 
 - [Random Forests - Practical Deep Learning for Coders](https://course.fast.ai/Lessons/lesson6.html)
+- ["How Random Forests Really Work"](https://www.kaggle.com/code/jhoward/how-random-forests-really-work/).
+- [Neural Net Foundations](https://course.fast.ai/Lessons/lesson3.html)
+
+Other Interesting links:
 
 - [Google Colab](https://colab.research.google.com/) provides a Jupyter notebook-like interface on top of a cloud computing platform. Definately worth looking at.
-
-https://github.com/fastai/fastbook/blob/master/04_mnist_basics.ipynb
+- [Titanic - Machine Learning from Disaster](https://www.kaggle.com/competitions/titanic/data) is the Kaggle competition I mentioned.- [Astronomers Dig Up the Stars That Birthed the Milky Way](https://www.quantamagazine.org/with-ai-astronomers-dig-up-the-stars-that-birthed-the-milky-way-20230328/)
+- [Cornell Machine Learning Course](https://www.cs.cornell.edu/courses/cs4780/2015fa/page4/)
+- [Google Machine Learning Course](https://developers.google.com/machine-learning/crash-course/ml-intro)
