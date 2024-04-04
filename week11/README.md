@@ -1,5 +1,8 @@
 # CICF Week 11
 
+This week we will look at some data wrangling on a tabular dataset.
+We will then fit a decision tree and a random forest model to the data.
+
 ## Tutorial
 
 This class focuses more on the tools and concepts you might encounter related to cyberinfrastructure.
