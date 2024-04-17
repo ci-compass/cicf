@@ -42,3 +42,4 @@ Again, this is based in part on two other excellent notebooks
 - [MNIST Visualization](https://colah.github.io/posts/2014-10-Visualizing-MNIST/)
 - [How does a neural net really work?](https://www.kaggle.com/code/jhoward/how-does-a-neural-net-really-work)
 - [Looking inside neural nets](https://ml4a.github.io/ml4a/looking_inside_neural_nets/) is a fun article discussing and showing how image decoding works.
+- [A Visual Guide to Vision Transformers](https://blog.mdturp.ch/posts/2024-04-05-visual_guide_to_vision_transformer.html)
