@@ -244,6 +244,7 @@ However, the user interface leaves a lot to be desired.
 
 - Software Carpentry's [Version Control with Git](https://swcarpentry.github.io/git-novice/)
 - Roger Dudler's [git - the simple guide](https://rogerdudler.github.io/git-guide/)
+- [Comprehensive Reference to Git](https://git-scm.com/book/en/v2)
 - There are many Git hosting sites, these are the big three: [Github](https://github.com), [Gitlab](https://about.gitlab.com/), [Bitbucket](https://bitbucket.org/). There are also many smaller ones, such as [SourceHut](https://sourcehut.org/).
 - Git is by far the most used version control system, but it isn't the only one: [Mercurial](https://www.mercurial-scm.org/), [Fossil](https://www2.fossil-scm.org/home/doc/trunk/www/index.wiki), [Subversion](https://subversion.apache.org/), [CVS]
 CVS (ancient, old, please never use)
@@ -275,7 +276,6 @@ Testing is a huge area to learn about.
 - [Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development). Developers love to create methodologies.
 - [Checking in on the state of TDD](https://redmonk.com/kholterhoff/2023/07/12/checking-in-on-the-state-of-tdd/) (2023-07-12)
 - [Types of tests](https://www.atlassian.com/continuous-delivery/software-testing/types-of-software-testing)
-
 - [Model Checking](https://en.wikipedia.org/wiki/Model_checking) can verify correctness of programs to a specification. In this way it is the other side of the coin from testing. They are based on [temporal logics](https://en.wikipedia.org/wiki/Computation_tree_logic). One example of a model checker is [TLA+](https://lamport.azurewebsites.net/tla/tla.html).
 
 
