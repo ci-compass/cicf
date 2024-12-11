@@ -9,47 +9,76 @@ The goals for the week 1 lab are to:
 
 ## Tutorial
 
-To begin, follow the VM instal and setup guide to get the VM running on your laptop.
+Begin by downloading the approprate VM software and VM image (see the [VM README](../vm/README.md)).
+Sign in on the account:
 
-Once the VM is running, open up the terminal.
+    username: cicf
+    password: cicf
 
-    sudo apt update
+Once the VM is running and you have logged in, open up the terminal.
+This will make a window with a prompt:
 
-and then
+```
+adfadfadf
+```
 
-    sudo apt install git xclip firefox-esr
-
-And type in the password.
-This will install some programs we will need.
-THe `sudo` takes its arguments and runs them as `root`, which is the admistrator
-account on unix systems.
-The command we are running as root is `apt`, which handles the software packages
-on this distribution of Linux.
-
+This is the command line, or shell.
 Every shell starts in your home directory.
-Run `pwd`.
-This gives an absolute path telling you where the current working directory is.
-We signed with the username "debian".
+The `$` is the prompt, and tells us that the shell is ready for us to type a command to run.
+The text in the window keeps getting added to and the most recent line and/or prompt is always at the bottom.
+The oldest line is at the top of the window.
+
+Type `pwd` and press "return".
+You should see `/home/cicf/` appear.
+We have just run the command `pwd`.
+This command prints the current working directory to the command line.
+The shell then prints a new prompt.
+
 Run `ls` to list the files in the current directory.
 Try `'ls -l`.
-Run `ls -a`. These extra files have names that start with a dot and are called "dotfiles".
-The `ls` command does not display this files by default.
-The files are hidden for convinence, since they are still there.
-Dotfiles are used for configuration files and directories.
+Run `ls -a`.
+We can pass _options_ after the command name.
+Each command can take different options.
+For the `ls` command, the option `-a` tells it to list _every_ file, including those
+whose names start with a period (aka "dot").
+These files whose names that start with a dot and are called "dotfiles",
+and `ls` does not list them by default.
+This is for convinence, since these files are usually used for configuration files and directories.
 
-What happens if we mistype a command? We get an error of some kind:
+What happens if we mistype a command? We get an error message:
 
 ```bash
 debian@debian:~$ abcdef
 bash: abcdef: command not found
 ```
 
-There is a command that asks the shell which program it will run for a given
-command `which cat`.
+This is the shell telling us that it has no idea how to execute the command `abcdef`.
+It could be that we mistyped the command.
+Or maybe the program is not installed.
+Or the program is not in any location that the shell goes to look for commands to run.
 
-Try up arrow and down arrow. Try tab completion. `cd Doc` and then press tab. Then `cd ../D`.
+There is a command `which` that asks the shell to tell us where the program for a given command is.
 
-We can list the envrionment variables using `env`.
+```bash
+$ which abcdef
+$ which cat
+/bin/cat
+```
+
+The first command did not display anything, so there is no program named `abcdef`.
+The second command displayed `/bin/cat` which is telling is where the program is in the filesystem.
+
+**History** To make typing easier, the shell keeps a history of commands you have typed.
+Use the up arrow to go backward in history to previous commands.
+Use the down arrow to go forward in history toward the more recent commands.
+
+**Tab Compleation** The shell will also try to complete commands and files that it knows about.
+Press the tab key to ask the shell to try completaing what you have typed.
+It will fill in as much as it can.
+Type `cd Doc` (don't press return) and then press tab.
+Then `cd ../D`.
+
+**Envrionment variables** We can list the envrionment variables using `env`.
 There are a lot of them.
 Try `env | less`.
 This will leave you in a pager program called "less".
@@ -64,21 +93,43 @@ It has quirky keyboard controls:
 
 We can access envrionment variables in the shell, e.g. `echo $SHELL`.
 
+**Return codes** Each command has a return code.
+It is not usually displayed, but it can sometimes be helpful.
+The return code is a number between 0 and 255.
+The code 0 means everything was successful.
+Non-zero codes indicate errors, the exact meaning depends on the command being run.
+The shell sets the variable `$?` to be equal to the return code of the previous command.
+
+```
+$ cat abcdefg
+cat: abcdefg: No such file or directory
+$ echo $?
+1
+```
+
+
 ### Git
 
-Git is an extremely useful tool in programming and scientific computing.
+Git is an extremely useful tool for programming and scientific computing.
 A git _repository_ is used to track and share changes to a set of files, such as
-source code or documentation.
-We interact with a git repo by making a copy to our computer. This is called
-"cloning" the repository.
-Then if we make changes we can update our local repository (a _commit_) and
-share by moving these changes to other repositories (a _push_).
+source code project, our analysis scripts, or documentation.
+We interact with a git repo by first making a copy to our computer.
+This is called "cloning" the repository.
+When we make changes to these files we can update our local repository (via a _commit_) and
+share the changes by moving these changes to other repositories (a _push_).
 
 Lets clone the CICF repository:
 
 `git clone https://github.com/ci-compass/cicf`
 
-The clone will be in the directory `cicf`.
+This tells Git to copy the repository at the given URL onto our VM.
+By default Git will make a directory named `cicf` and put everything inside there.
+
+```
+cd cicf
+ls
+ls -a
+```
 
 ```
 cd cicf/week1
@@ -117,8 +168,9 @@ Enter your name, email address, and paste the public key into the last field.
 
 ### More
 
-A useful tool to edit text files is called a ... text editor.
-There are many. For this class we will use one called `nano`.
+A _text editor_ useful tool to edit text files.
+There are many.
+For this class we will use one called `nano`.
 
 `nano README.md`
 
@@ -129,9 +181,7 @@ used to glue programs and commands together.
 
 `nano make-files.sh`
 
-shell is _almost_ a programming language, but really clunky and error-prone.
-best to use it to do the bare minimum to manulipluate files and glue other
-programs together.
+The shell provides some primitives to make scripts and is _almost_ a programming language, but really clunky and error-prone.
 
 Many more topics that you can read about if interested:
 
