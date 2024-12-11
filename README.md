@@ -1,4 +1,5 @@
 # CICF
+
 This repository contains auxiliary material for the [Ci Compass Fellowship](https://ci-compass.org/student-fellowships/) technical course.
 
 Videos and Slides are available on the shared CICF drive.
