@@ -33,7 +33,7 @@ When it is finished, lets download a dataset we'll need later.
 
 ```console
 cd cicf/week3
-wget https://gwosc.org/archive/data/S5/814743552/H-H2_LOSC_4_V1-815235072-4096.hdf5/
+wget https://gwosc.org/archive/data/S5/814743552/H-H2_LOSC_4_V1-815235072-4096.hdf5
 ```
 
 And then start Jupyter with the command
