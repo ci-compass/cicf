@@ -4,7 +4,7 @@ This repository contains auxiliary material for the [Ci Compass Fellowship](http
 
 Videos and Slides are available on the shared CICF drive.
 
-# The Program
+# Spring 2025 Program
 
 | week                | content                                             |
 |---------------------|-----------------------------------------------------|
@@ -22,8 +22,8 @@ Videos and Slides are available on the shared CICF drive.
 | [week 11](./week11) | Machine Learning                                    |
 | [week 12](./week12) | Neural Networks                                     |
 
-(Note that things are getting re-arranged for this year's CICF
-program; targets of the links above may not be final.)
+(Please note that things are getting re-arranged for 2025 Spring
+program.  Targets of the links above are not final at the moment.)
 
 # People and Contact
 
