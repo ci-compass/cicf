@@ -1,6 +1,8 @@
 # CICF
 
-This repository contains auxiliary material for the [Ci Compass Fellowship](https://ci-compass.org/student-fellowships/) technical course.
+This repository contains auxiliary material for the [Ci Compass
+Fellowship](https://ci-compass.org/student-fellowships/) technical
+course.
 
 Videos and Slides are available on the shared CICF drive.
 
@@ -38,5 +40,7 @@ The CICF course is developed and run by
 
 # Thanks
 
-The CICF course was developed with support from the National Science Foundation Office of Advanced Cyberinfrastructure in the Directorate for Computer Information Science under Grant #2127548.
+The CICF course was developed with support from the National Science
+Foundation Office of Advanced Cyberinfrastructure in the Directorate
+for Computer Information Science under Grant #2127548.
 
