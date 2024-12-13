@@ -39,23 +39,13 @@ yet, do this:
 git clone https://github.com/ci-compass/cicf ~/cicf
 ```
 
-### Getting a LIGO dataset
+## Run Jupyter
 
-Once we have installed what we need, let us download a dataset.  We
-will need this later.  Go to `week03` directory in your CICF
-repository clone using `cd` command (as shown below), and then run
-`wget` with the URL of the data set (as shown below).
+Go to `week03` directory in your CICF repository clone using `cd`
+command, and then start Jupyter with the command below:
 
 ```console
 cd ~/cicf/week03
-wget https://gwosc.org/archive/data/S5/814743552/H-H2_LOSC_4_V1-815235072-4096.hdf5
-```
-
-## Run Jupyter
-
-And then start Jupyter with the command below:
-
-```console
 jupyter notebook
 ```
 
@@ -206,10 +196,27 @@ import matplotlib.pyplot as plt
 plt.matshow(a)
 ```
 
-### Working with LIGO Data
+## Working with LIGO Data
 
-Lets plot some data from the LIGO observatory.
-This dataset is in a binary format called HDF5.
+In this part of the tutorial, let us plot some data from the LIGO observatory.  
+
+### Getting a LIGO dataset
+
+Go to the the `week03` directory of your CICF repository clone, and
+then run `wget` with the URL of the data set as its argument (as shown
+below).
+
+```console
+cd ~/cicf/week03
+wget https://gwosc.org/archive/data/S5/814743552/H-H2_LOSC_4_V1-815235072-4096.hdf5
+```
+
+That will download a file named `H-H2_LOSC_4_V1-815235072-4096.hdf5`,
+and it is about 123MB in size.  This is a dataset, and it is in a
+binary format called [HDF5].  We will use the h5py library that we
+installed earlier to work with this file.
+
+[HDF5]: https://en.wikipedia.org/wiki/Hierarchical_Data_Format
 
 ```python
 import h5py
