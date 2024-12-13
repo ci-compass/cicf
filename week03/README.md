@@ -8,7 +8,7 @@ The goals for week 3 lab are:
 4. Download data from LIGO and know what an HDF5 file is.
 
 
-## Tutorial
+## Getting set up
 
 We need to install a couple of Debian packages on our VMs, using the
 [apt] package manager:
@@ -28,13 +28,30 @@ pip install jupyter numpy scipy matplotlib h5py
 [apt]: https://wiki.debian.org/AptCLI
 [pip]: https://pip.pypa.io/en/stable/
 
-Once we have installed what we need, let us download a dataset.  We
-will need this later.
+
+### Checking out CICF repository
+
+You should have cloned the CICF git repository in the home directory
+of your VM in the first week itself.  In case you have not done that
+yet, do this:
 
 ```console
-cd cicf/week03
+git clone https://github.com/ci-compass/cicf ~/cicf
+```
+
+### Getting a LIGO dataset
+
+Once we have installed what we need, let us download a dataset.  We
+will need this later.  Go to `week03` directory in your CICF
+repository clone using `cd` command (as shown below), and then run
+`wget` with the URL of the data set (as shown below).
+
+```console
+cd ~/cicf/week03
 wget https://gwosc.org/archive/data/S5/814743552/H-H2_LOSC_4_V1-815235072-4096.hdf5
 ```
+
+## Run Jupyter
 
 And then start Jupyter with the command below:
 
