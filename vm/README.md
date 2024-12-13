@@ -1,18 +1,48 @@
 Virtual Machine
 ---------------
 
-A few of the tutorials use a virtual machine (VM) image that you run locally on your computer.
-While it can take some effort to set up the virtual machine, it does let us do three things:
+A few of the tutorials use a virtual machine (VM) image that you run locally on
+your computer. This lets us provide a consistent environment for everyone
+regardless of the operating system on their computer or laptop. It also
+provides a way for each fellow to go through the tutorials on their own time
+and explore topics they find interesting.
 
-1. You can run an experiment with the lesson topics on your own. Especially since we try to no require any third-party services.
-2. You can get familar with the command line and with Unix/Linux like environments.
-3. We can provide common lessons regardless of what brand or kind of computer you are using.
+A big goal of the CICF technical program is to provide experience with using
+the command line. Many previous fellows have commented that more familiarity
+with the command line would be helpful. We want every fellow to be comfortable
+with using the command line—especially those who do the summer internship
 
-Additionally, exploring the virtual machine on your own computer will be help you become more comfortable using the command line.
-Especially those who do the summer internship, many have commented that more familiarity with the command line would be helpful.
+We chose a Linux distribution for the VM since Linux has become ubiquitous in
+scientific computing, and you will certainly encounter it if you continue
+working with scientific cyberinfrastructure. There are many Linux
+_distributions_, and we have chosen Debian just because the choice had to be
+made. All of them are similar enough that experience with one will transfer to
+others.
 
-Linux has become ubiquitious in scientific computing, and for this reason we have chosen a Linux distribution for the VM.
-There are many Linux _distributions_, and we have chosen Debian just because the choice had to be made.
+## Getting Started
+
+Download the pre-made image from the CICF shared drive.
+(See below if you want to make your own image from scratch).
+Then choose the appropriate section below depending on the operating system on your computer. 
+
+### OS X
+
+You need to install a virtual machine emulator.
+There are many out there; we have chosen to use [UTM](https://mac.getutm.app/).
+There are many ways to get and install it:
+
+1. You can install it using the [Mac App Store](https://apps.apple.com/us/app/utm-virtual-machines/id1538878817). This method costs $9.99.
+1. You can [download a disk image](https://github.com/utmapp/UTM/releases/latest/download/UTM.dmg) and install it from there.
+1. If you have [Homebrew](https://brew.sh/) installed already, you can use that: `brew install utm`
+
+Once UTM is installed, either download the UTM machine image from the CICF shared drive (easy) or make your image using the instructions below (hard).
+Then start UTM
+
+
+
+
+
+----
 
 Pre-made images will be available for student fellows to download.
 You can also build one yourself using the instructions given here.
