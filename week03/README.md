@@ -43,7 +43,8 @@ jupyter notebook
 ```
 
 You will see a browser window open displaying your filesystem.
-Navigate to `cicf/week03/introduction.ipynb` and open it.
+Navigate to [cicf/week03/Introduction.ipynb](./Introduction.ipynb) and
+open it.
 
 A Jupyter notebook consists of a bunch of _cells_ which contain either
 text (in [Markdown] format), or python code and its output.
