@@ -220,7 +220,7 @@ installed earlier to work with this file.
 
 ```python
 import h5py
-dataFile = h5py.File('814743552/H-H2_LOSC_4_V1-815235072-4096.hdf5/', 'r')
+dataFile = h5py.File('H-H2_LOSC_4_V1-815235072-4096.hdf5', 'r')
 ```
 
 We can look at the dataset:
