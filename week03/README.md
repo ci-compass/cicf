@@ -47,7 +47,9 @@ Navigate to [cicf/week03/Introduction.ipynb](./Introduction.ipynb) and
 open it.
 
 A Jupyter notebook consists of a bunch of _cells_ which contain either
-text (in [Markdown] format), or python code and its output.
+code or text (in [Markdown] format) and its output.  We will use
+Python code in our examples.  It is possible to use other programming
+languages also in Jupyter notebooks.
 
 [Markdown]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
