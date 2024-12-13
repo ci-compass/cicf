@@ -46,9 +46,9 @@ You will see a browser window open displaying your filesystem.
 Navigate to `cicf/week03/introduction.ipynb` and open it.
 
 A Jupyter notebook consists of a bunch of _cells_ which contain either
-text (in
-[Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-format), or python code and its output.
+text (in [Markdown] format), or python code and its output.
+
+[Markdown]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
 The python code is _runnable_, which means you can select a python
 cell and then choose the menu option "Cell > Run Cells".  Try running
