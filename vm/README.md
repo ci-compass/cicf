@@ -23,36 +23,63 @@ others.
 
 Download the pre-made image from the CICF shared drive.
 (See below if you want to make your own image from scratch).
-Then choose the appropriate section below depending on the operating system on your computer. 
+Then choose the appropriate section below depending on the operating system on your computer.
 
 ### OS X
 
 You need to install a virtual machine emulator.
-There are many out there; we have chosen to use [UTM](https://mac.getutm.app/).
-There are many ways to get and install it:
+We have chosen to use [UTM](https://mac.getutm.app/).
+There are a few ways to install it:
 
 1. You can install it using the [Mac App Store](https://apps.apple.com/us/app/utm-virtual-machines/id1538878817). This method costs $9.99.
 1. You can [download a disk image](https://github.com/utmapp/UTM/releases/latest/download/UTM.dmg) and install it from there.
-1. If you have [Homebrew](https://brew.sh/) installed already, you can use that: `brew install utm`
+1. If you have [Homebrew](https://brew.sh/) installed already, you can use that. Run `brew install utm`
 
 Once UTM is installed, either download the UTM machine image from the CICF shared drive (easy) or make your image using the instructions below (hard).
-Then start UTM
+Then start UTM.
+Under the "File" menu choose "Open", and then select the UTM image file you downloaded.
+This will add the image as an option in the main window.
+Now press the play button next to the name to start image.
+The VM "screen" will be displayed in a new window.
+Your mouse should just work.
+If your mouse is _captured_, meaning it cannot escape the virtual image to select other things on your computer, press Command-Option to release it.
+
+### Windows
 
 
 
 
 
-----
 
-Pre-made images will be available for student fellows to download.
-You can also build one yourself using the instructions given here.
+## Creating a VM Image
+
+This section is for reference.
+If you are a fellow, download a pre-made image and follow the instructions above in the Getting Started section.
 
 
-## Creating the VM Image
+### OS X Steps for UTM
 
-The virtualizer/emulator used depends on the host computer. For OSX we use UTM.
+We start with the pre-built Debian 12 image for ARM.
+(select new virtualized image with a pre-built image).
+The default log-in is `debian / debian`.
+Once there open a terminal.
 
-### OSX Steps for UTM
+```
+$ sudo apt update
+$ sudo apt upgrade
+$ sudo reboot
+```
+Once the system restarts, open a terminal again and then
+```
+$ sudo adduser cicf
+# give user password: cicf
+$ sudo apt install git
+$ git clone https://github.com/ci-compass/cicf
+```
+
+rename image to "CICF-Y4-MACOS-ARM"
+
+
 
 Got a another method that uses a pre-made Debian 12 image.
 
