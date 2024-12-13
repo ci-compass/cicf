@@ -10,23 +10,20 @@ The goals for week 3 lab are:
 
 ## Tutorial
 
-We need to install Jupyter on our VMs:
+We need to install a couple of Debian packages on our VMs, using the
+`apt` package manager:
 
 ```console
-sudo apt install jupyter
+sudo apt install python3-pip wget
 ```
 
 Type `Y` to confirm installation.
 
-We also need some python packages:
+We also need some Python packages, and these we can install using
+`pip3`:
 
 ```console
-sudo apt install python3-pip
-sudo apt install wget
-pip3 install numpy
-pip3 install scipy
-pip3 install matplotlib
-pip3 install h5py
+pip3 install jupyter numpy scipy matplotlib h5py
 ```
 
 When it is finished, lets download a dataset we'll need later.
