@@ -19,28 +19,28 @@ sudo apt install python3-pip wget
 
 Type `Y` to confirm installation.
 
-We also need some Python packages, and these we can install using
-`pip3`:
+We also need some Python packages. These we can install using `pip3`:
 
 ```console
 pip3 install jupyter numpy scipy matplotlib h5py
 ```
 
-When it is finished, lets download a dataset we'll need later.
+Once we have installed what we need, let us download a dataset.  We
+will need this later.
 
 ```console
-cd cicf/week3
+cd cicf/week03
 wget https://gwosc.org/archive/data/S5/814743552/H-H2_LOSC_4_V1-815235072-4096.hdf5
 ```
 
-And then start Jupyter with the command
+And then start Jupyter with the command below:
 
 ```console
 jupyter notebook
 ```
 
 You will see a browser window open displaying your filesystem.
-Navigate to `cicf/week3/introduction.ipynb` and open it.
+Navigate to `cicf/week03/introduction.ipynb` and open it.
 
 A Jupyter notebook consists of a bunch of _cells_ which contain either
 text (in
