@@ -11,7 +11,7 @@ The goals for week 3 lab are:
 ## Tutorial
 
 We need to install a couple of Debian packages on our VMs, using the
-`apt` package manager:
+[apt] package manager:
 
 ```console
 sudo apt install python3-pip wget
@@ -19,11 +19,14 @@ sudo apt install python3-pip wget
 
 Type `Y` to confirm installation.
 
-We also need some Python packages. These we can install using `pip3`:
+We also need some Python packages. These we can install using [pip]:
 
 ```console
-pip3 install jupyter numpy scipy matplotlib h5py
+pip install jupyter numpy scipy matplotlib h5py
 ```
+
+[apt]: https://wiki.debian.org/AptCLI
+[pip]: https://pip.pypa.io/en/stable/
 
 Once we have installed what we need, let us download a dataset.  We
 will need this later.
