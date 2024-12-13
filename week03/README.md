@@ -3,9 +3,9 @@
 The goals for week 3 lab are:
 
 1. Install and use the Jupyter notebook application on your VM.
-1. Be able to create, edit, and run notebooks.
-1. Use the NumPy and MatPlotLib packages.
-1. Download data from LIGO and know what an HDF5 file is.
+2. Be able to create, edit, and run notebooks.
+3. Use the NumPy and MatPlotLib packages.
+4. Download data from LIGO and know what an HDF5 file is.
 
 
 ## Tutorial
@@ -58,7 +58,7 @@ Commands to try:
 
 ```python
 56
-```    
+```
 
 This produces an output. Notice the python input and output cells are
 numbered in the order that they are run.
@@ -81,7 +81,7 @@ import math
 
 2*math.PI*5
 ```
-    
+
 The last command has an error. We can fix it and rerun the cell. It
 should be `2*math.pi*5`.
 
@@ -201,21 +201,21 @@ We can look at the dataset:
 ```python
 for k in dataFile.keys():
     print(k)
-```        
+```
 
 And
 
 ```python
 for k,v in dataFile['meta'].items():
     print(k,v)
-```    
+```
 
 That is not quite what we want:
 
 ```python
 for k,v in dataFile['meta'].items():
     print(k,v[...])
-```        
+```
 
 Lets load some of the data into an array.
 
