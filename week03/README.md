@@ -28,6 +28,25 @@ pip install jupyter numpy scipy matplotlib h5py
 [apt]: https://wiki.debian.org/AptCLI
 [pip]: https://pip.pypa.io/en/stable/
 
+If you are confused about the software we just installed, the below
+table might help:
+
+| package            | description                                                |
+|:-------------------|:-----------------------------------------------------------|
+| [python3-pip][pip] | Python package installer                                   |
+| [wget]             | Command-line program used to download files                |
+| [jupyter]          | An interactive computing environment                       |
+| [numpy]            | Python library for multidimensional arrays, matrices, etc. |
+| [scipy]            | Python library for scientific computing                    |
+| [matplotlib]       | Python 2D plotting library                                 |
+| [h5py]             | Python library to work with [HDF5] data                    |
+
+[wget]: https://www.gnu.org/software/wget/
+[jupyter]: https://jupyter.org/
+[numpy]: https://numpy.org/
+[scipy]: https://scipy.org/
+[matplotlib]: https://matplotlib.org/
+[h5py]: https://www.h5py.org/
 
 ### Checking out CICF repository
 
