@@ -211,10 +211,10 @@ cd ~/cicf/week03
 wget https://gwosc.org/archive/data/S5/814743552/H-H2_LOSC_4_V1-815235072-4096.hdf5
 ```
 
-That will download a file named `H-H2_LOSC_4_V1-815235072-4096.hdf5`,
-and it is about 123MB in size.  This is a dataset, and it is in a
-binary format called [HDF5].  We will use the h5py library that we
-installed earlier to work with this file.
+That should download a file `H-H2_LOSC_4_V1-815235072-4096.hdf5`,
+which is about 123MB in size.  This file is in a format called [HDF5],
+commonly used to store scientific data.  We will use the Python h5py
+package that we installed earlier to work with this file.
 
 [HDF5]: https://en.wikipedia.org/wiki/Hierarchical_Data_Format
 
