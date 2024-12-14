@@ -220,34 +220,34 @@ installed earlier to work with this file.
 
 ```python
 import h5py
-dataFile = h5py.File('H-H2_LOSC_4_V1-815235072-4096.hdf5', 'r')
+data = h5py.File('H-H2_LOSC_4_V1-815235072-4096.hdf5', 'r')
 ```
 
 We can look at the dataset:
 
 ```python
-for k in dataFile.keys():
+for k in data.keys():
     print(k)
 ```
 
 And
 
 ```python
-for k,v in dataFile['meta'].items():
+for k,v in data['meta'].items():
     print(k,v)
 ```
 
 That is not quite what we want:
 
 ```python
-for k,v in dataFile['meta'].items():
+for k,v in data['meta'].items():
     print(k,v[...])
 ```
 
 Lets load some of the data into an array.
 
 ```python
-strain = dataFile['strain']['Strain']
+strain = data['strain']['Strain']
 N = 5000
 plt.plot(range(N), strain[:N])
 ```
