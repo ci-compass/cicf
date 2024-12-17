@@ -58,6 +58,15 @@ yet, do this:
 git clone https://github.com/ci-compass/cicf ~/cicf
 ```
 
+We will keep updating the repository throughout the course. Make sure
+you have the latest changes by changing to `~/cicf` directory and then
+doing a `git pull`:
+
+```console
+cd ~/cicf
+git pull --autostash
+```
+
 ## Run Jupyter
 
 Go to `week03` directory in your CICF repository clone using `cd`
