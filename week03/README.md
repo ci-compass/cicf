@@ -48,6 +48,35 @@ table might help:
 [matplotlib]: https://matplotlib.org/
 [h5py]: https://www.h5py.org/
 
+### A note about virtual environments
+
+Note that when you do `pip install jupyter numpy scipy matplotlib
+h5py` (as we have done above), they will get installed in a folder in
+your home directory.
+
+This will work just fine for now, but over time this will become
+messy.  You will install packages which will need to install other
+packages that have conflicting requirements. You will install
+different versions of Python, which probably will not work with the
+packages you have installed already.  You will encounter conflicts,
+and you will have to clean up the mess.
+
+To avoid the mess, you will use what is called a _virtual
+environment_, usually inside your project directory.  For each of your
+Python projects, you will create its own lightweight, isolated virtual
+environment. You will install the packages each project need in their
+own virtual environment.
+
+We can figure out the details later. For now just bear in mind that
+virtual environments are a solution to a problem that you are likely
+to encounter in the future. You can find a friendly explanation
+[here](venv-realpython), and official documentation
+[here](venv-pythonorg).
+
+[venv-pythonorg]: https://docs.python.org/3/library/venv.html
+[venv-realpython]: https://realpython.com/python-virtual-environments-a-primer/
+
+
 ### Checking out CICF repository
 
 You should have cloned the CICF git repository in the home directory
