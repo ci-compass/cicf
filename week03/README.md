@@ -293,39 +293,9 @@ package that we installed earlier to work with this file.
 
 [HDF5]: https://en.wikipedia.org/wiki/Hierarchical_Data_Format
 
-```python
-import h5py
-data = h5py.File('H-H2_LOSC_4_V1-815235072-4096.hdf5', 'r')
-```
+Open [4-plot-ligo-data.ipynb](./4-plot-ligo-data.ipynb) in your
+Jupyter environment, and work through the notebook.
 
-We can look at the dataset:
-
-```python
-for k in data.keys():
-    print(k)
-```
-
-And
-
-```python
-for k,v in data['meta'].items():
-    print(k,v)
-```
-
-That is not quite what we want:
-
-```python
-for k,v in data['meta'].items():
-    print(k,v[...])
-```
-
-Lets load some of the data into an array.
-
-```python
-strain = data['strain']['Strain']
-N = 5000
-plt.plot(range(N), strain[:N])
-```
 
 ## Resources
 
