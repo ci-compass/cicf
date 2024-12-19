@@ -106,29 +106,47 @@ cd ~/cicf/week03
 jupyter notebook
 ```
 
-You will see a browser window open displaying your filesystem.
-Navigate to [cicf/week03/Introduction.ipynb](./Introduction.ipynb) and
-open it.
+A browser window will open, listing the contents of `~/cicf/week03`
+directory, where you will find four files with `.ipynb` extension.
+They are the Jupyter notebooks that we will use this week.  Let us
+work through them in sequence.
+
+### The first notebook: introduction to Jupyter
+
+Open [1-introduction.ipynb](./introduction.ipynb) by double clicking
+on it.  The notebook will open in a new browser tab.
 
 A Jupyter notebook consists of a bunch of _cells_ which contain either
-code or text (in [Markdown] format) and its output.  We will use
-Python code in our examples.  It is possible to use other programming
-languages also in Jupyter notebooks.
+code or text (in [Markdown] format) and its output.  In CICF examples
+we will (mostly?) use Python code in our examples, but it is possible
+to use other programming languages also in Jupyter notebooks.
+
+(A fun fact: the name Jupyter is an amalgamation of [Julia], Python,
+and [R] -- the three programming languages supported by Jupyter.)
 
 [Markdown]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+[Julia]: https://julialang.org/
+[R]: https://www.r-project.org/
 
-The python code is _runnable_, which means you can select a python
-cell and then choose the menu option "Cell > Run Cells".  Try running
-both of the python cells in the notebook.
+The code in the notebooks is _runnable_, directly from the browser
+window.  You can select a python cell and then choose the menu option
+"Cell > Run Cells".  Follow the text along, and try out the
+instructions to run the code present in the notebook.
 
-Commands to try:
+### The second notebook: a quick tour of Python
+
+You can also create new code cells in this notebook, and write some
+code in those cells, and try running them.
+
+This is a line of code:
 
 ```python
-56
+42
 ```
 
-This produces an output. Notice the python input and output cells are
-numbered in the order that they are run.
+Running a cell with the above code produces an output. Notice the
+python input and output cells are numbered in the order that they are
+run.
 
 ```python
 56+7
