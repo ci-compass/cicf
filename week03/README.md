@@ -170,7 +170,7 @@ import math
 The last command has an error. We can fix it and rerun the cell. It
 should be `2*math.pi*5`.
 
-### NumPy
+### The third notebook: Python packages
 
 The `math` library is part of the Python standard library.
 
@@ -271,11 +271,11 @@ import matplotlib.pyplot as plt
 plt.matshow(a)
 ```
 
-## Working with LIGO Data
+### The fourth notebook: working with LIGO data
 
 In this part of the tutorial, let us plot some data from the LIGO observatory.  
 
-### Getting a LIGO dataset
+#### Getting a LIGO dataset
 
 Go to the the `week03` directory of your CICF repository clone, and
 then run `wget` with the URL of the data set as its argument (as shown
