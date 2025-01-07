@@ -54,7 +54,7 @@ for Computer Information Science under Grant #2127548.
 [week05]: ./week05-containers-and-debugging
 [week06]: ./week06-architecture-and-archives
 [week07]: ./week07-fair-data
-[week08]: ./week07-cloud-computing
+[week08]: ./week08-cloud-computing
 [week10]: ./week10-data-workflows
 [week11]: ./week11-machine-learning
 [week11b]: ./week11b-neural-networks
