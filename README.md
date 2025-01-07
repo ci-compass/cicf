@@ -46,9 +46,10 @@ for Computer Information Science under Grant #2127548.
 
 ## License
 
-The content in this repository is available under [Creative Commons
-Attribution-ShareAlike 4.0 International][cc-by-sa] license.  Code
-snippets may be used under [CC0 1.0 Universal][cc-zero] license.
+The lessons and text content in this repository is available under
+[Creative Commons Attribution-ShareAlike 4.0 International][cc-by-sa]
+license.  Code snippets may be used under [CC0 1.0 Universal][cc-zero]
+license.
 
 
 <!-- References -->
