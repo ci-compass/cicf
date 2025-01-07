@@ -44,6 +44,14 @@ The CICF course was developed with support from the National Science
 Foundation Office of Advanced Cyberinfrastructure in the Directorate
 for Computer Information Science under Grant #2127548.
 
+## License
+
+The lessons and text content in this repository is available under
+[Creative Commons Attribution-ShareAlike 4.0 International][cc-by-sa]
+license.  Code snippets may be used under [CC0 1.0 Universal][cc-zero]
+license.
+
+
 <!-- References -->
 
 [week00]: ./week00-vm-setup
@@ -58,3 +66,6 @@ for Computer Information Science under Grant #2127548.
 [week10]: ./week10-data-workflows
 [week11]: ./week11-machine-learning
 [week11b]: ./week11b-neural-networks
+
+[cc-by-sa]: https://creativecommons.org/licenses/by-sa/4.0/
+[cc-zero]: https://creativecommons.org/publicdomain/zero/1.0/
