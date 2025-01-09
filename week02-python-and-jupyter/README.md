@@ -109,18 +109,18 @@ git pull --autostash
 
 ## Run Jupyter
 
-Go to `week03` directory in your CICF repository clone using `cd`
-command, and then start Jupyter with the command below:
+Go to `week02-python-and-jupyter` directory in your CICF repository
+clone using `cd` command, and then start Jupyter:
 
 ```console
-cd ~/cicf/week03
+cd ~/cicf/week02-python-and-jupyter
 jupyter notebook
 ```
 
-A browser window will open, listing the contents of `~/cicf/week03`
-directory, where you will find four files with `.ipynb` extension.
-They are the Jupyter notebooks that we will use this week.  Let us
-work through them in sequence.
+A browser window will open, listing the contents of
+`week02-python-and-jupyter` directory, where you will find some files
+with `.ipynb` extension.  They are the Jupyter notebooks that we will
+use this week.  Let us work through them in sequence.
 
 ### The first notebook: introduction to Jupyter
 
