@@ -24,13 +24,27 @@ Running `apt update` will update package information from Debian's
 software repositories.  Once that is done, run the next command:
 
 ```console
-sudo apt install python3-pip wget
+sudo apt install python3-pip python3-venv wget
 ```
 
 Type `Y` to confirm installation.
 
 We will also need some additional Python packages. These we can
-install using [pip]:
+install using [pip], inside what is called a "virtual environment".
+Create a virtual environment and activate it with these commands:
+
+```console
+python -m venv ~/venv
+source ~/venv/bin/activate
+```
+
+If that worked, you should see a prompt like:
+
+```console
+(venv) cicf@debian: $
+```
+
+Now install the Python packages:
 
 ```console
 pip install jupyter numpy scipy matplotlib h5py
@@ -61,26 +75,24 @@ table might help:
 
 ### A note about virtual environments
 
-Note that when you do `pip install jupyter numpy scipy matplotlib
-h5py` (as we have done above), they will get installed in a folder in
-your home directory.
+Virtual environments allow you to install Python packages in a
+location that is isolated from the rest of the system.  This way, when
+you install Debian packages written in Python using `apt`, they will
+not conflict with the packages you installed using `pip` for your
+projects.
 
-This will work just fine for now, but over time this will become
-messy.  You will install packages which will need to install other
-packages that have conflicting requirements. You will install
-different versions of Python, which probably will not work with the
-packages you have installed already.  You will encounter conflicts,
-and you will have to clean up the mess.
+Typically, for each of your Python projects, you will create its own
+lightweight, isolated virtual environment, usually inside the project
+directory.  And then you will install the packages each project need
+in its own virtual environment.
 
-To avoid the mess, you will use what is called a _virtual
-environment_, usually inside your project directory.  For each of your
-Python projects, you will create its own lightweight, isolated virtual
-environment. You will install the packages each project need in their
-own virtual environment.
+(Although in this tutorial, you will note that you just set up a
+virtual environment in your home directory. This should work just fine
+for us, for now.)
 
-We can figure out the details later. For now just bear in mind that
-virtual environments are a solution to a problem that you are likely
-to encounter in the future. You can find a friendly explanation
+You can figure out details eventually.  For now just bear in mind that
+virtual environments are a solution to a problem that you are very
+likely to encounter in the future. You can find a friendly explanation
 [here](venv-realpython), and official documentation
 [here](venv-pythonorg).
 
