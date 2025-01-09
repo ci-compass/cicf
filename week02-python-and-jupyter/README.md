@@ -29,19 +29,19 @@ cd ~/cicf
 git pull --autostash
 ```
 
-## Installing software packages
+## Install some software
 
-We need to install a couple of Debian packages on our VMs using the
-[apt] package manager:
+We need to install some Debian packages on our VM using the [apt]
+package manager.  But first, we needto run an `apt update` to update
+package information from Debian's software repositories.  
 
 ```console
 sudo apt update
 ```
 
-Enter the password when prompted. 
+Enter the password when prompted.
 
-Running `apt update` will update package information from Debian's
-software repositories.  Once that is done, run the next command:
+Once that is done, run the next command:
 
 ```console
 sudo apt install python3-pip python3-venv wget
