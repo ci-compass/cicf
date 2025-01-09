@@ -7,12 +7,32 @@ The goals for week 3 lab are:
 3. Use the NumPy and MatPlotLib packages.
 4. Download data from LIGO and know what an HDF5 file is.
 
+Start your VM, launch a terminal, and be prepared to run a few
+commands in that terminal.
 
-## Getting set up
+## Update your copy of CICF repository
+
+You should have done a `git clone` of the CICF repository in the home
+directory of your VM in the first week itself.  In case you have not
+done that yet, run this command:
+
+```console
+git clone https://github.com/ci-compass/cicf ~/cicf
+```
+
+Since we will keep updating the repository throughout the course, you
+will have to make sure you have the latest changes in your local copy.
+Change to `~/cicf` directory and then do a `git pull`:
+
+```console
+cd ~/cicf
+git pull --autostash
+```
+
+## Installing software packages
 
 We need to install a couple of Debian packages on our VMs using the
-[apt] package manager.  Start your VM, launch a terminal, and run the
-below commands in the terminal:
+[apt] package manager:
 
 ```console
 sudo apt update
@@ -99,25 +119,6 @@ likely to encounter in the future. You can find a friendly explanation
 [venv-pythonorg]: https://docs.python.org/3/library/venv.html
 [venv-realpython]: https://realpython.com/python-virtual-environments-a-primer/
 
-
-### Checking out CICF repository
-
-You should have cloned the CICF git repository in the home directory
-of your VM in the first week itself.  In case you have not done that
-yet, do this:
-
-```console
-git clone https://github.com/ci-compass/cicf ~/cicf
-```
-
-Since we will keep updating the repository throughout the course, you
-will have to make sure you have the latest changes in your local copy.
-Change to `~/cicf` directory and then do a `git pull`:
-
-```console
-cd ~/cicf
-git pull --autostash
-```
 
 ## Run Jupyter
 
