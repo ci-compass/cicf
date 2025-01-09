@@ -1,3 +1,3 @@
-# CICF Week 7
+# CICF Week 6
 
 <!-- TODO: WRITE ME -->
