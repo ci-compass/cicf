@@ -1,8 +1,8 @@
-# CICF Week 6: Intro to Cloud Computing
+# CICF Week 8: Intro to Cloud Computing
 
 **Prerequisite: Create an AWS account**
 
-For the week6 lab, we will walk through the process of launching a 
+For the week 8 lab, we will walk through the process of launching a
 virtual machine in the AWS cloud using EC2. It is recommended that you
 create an account on the aws website, before coming for the lab. If you
 already dont have an account, you can sign up for an account at

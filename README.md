@@ -1,41 +1,44 @@
 # CICF
 
-This repository contains auxiliary material for the [Ci Compass
-Fellowship](https://ci-compass.org/student-fellowships/) technical
+This repository contains the hands-on tutorials and auxiliary material for the
+[CI Compass Fellowship](https://ci-compass.org/student-fellowships/) technical
 course.
 
-Videos and Slides are available on the shared CICF drive.
+Videos and Slides are available to fellows on the shared CICF drive.
 
 # Spring 2025 Program
 
 | week                | content                                             |
 |---------------------|-----------------------------------------------------|
-| [week 0][vm]        | Setting up a virtual machine                        |
-| [week 1][week01]    | Command line                                        |
-| [week 2][week02]    | Python and scientific programming                   |
-| [week 3][week03]    | Overview of scientific computing                    |
-| [week 4][week04]    | Git and coding standards                            |
-| [week 5][week05]    | Containers and debugging                            |
-| [week 6][week06]    | FAIR data and systems                               |
-| [week 7][week07]    | Software architecture and systems; digital archives |
-| [week 8][week08]    | Cloud computing                                     |
-| week 9              | Spring break!                                       |
-| [week 10][week10]   | Data workflows                                      |
-| [week 11][week11]   | Machine Learning                                    |
-| [week 11b][week11b] | Neural Networks                                     |
+| [Week 0][vm]        | Setting up a virtual machine                        |
+| [Week 1][week01]    | Command line                                        |
+| [Week 2][week02]    | Python and scientific programming                   |
+| [Week 3][week03]    | Overview of scientific computing                    |
+| [Week 4][week04]    | Git and coding standards                            |
+| [Week 5][week05]    | Containers and debugging                            |
+| [Week 6][week06]    | FAIR data and systems                               |
+| [Week 7][week07]    | Software architecture and systems; digital archives |
+| [Week 8][week08]    | Cloud computing                                     |
+| Week 9              | Spring break!                                       |
+| [Week 10][week10]   | Data workflows                                      |
+| [Week 11][week11]   | Machine Learning                                    |
+| [Week 11b][week11b] | Neural Networks                                     |
 
 (Please note that things are getting re-arranged for 2025 Spring
 program.  Targets of the links above are not final at the moment.)
 
 # People and Contact
 
-The CICF course is developed and run by 
+The CICF course was created and is run by the following team:
 
 * Angela Murillo
 * Nicole Virdone
-* Erik Scott
 * Don Brower
+* Sajith Sasidharan
 * Sarowar Hossain
+* Jaya Bharti
+* Christina Clark
+* Erik Scott
 
 
 # Thanks
@@ -44,7 +47,7 @@ The CICF course was developed with support from the National Science
 Foundation Office of Advanced Cyberinfrastructure in the Directorate
 for Computer Information Science under Grant #2127548.
 
-## License
+# License
 
 The lessons and text content in this repository is available under
 [Creative Commons Attribution-ShareAlike 4.0 International][cc-by-sa]
