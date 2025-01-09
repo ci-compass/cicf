@@ -98,9 +98,9 @@ yet, do this:
 git clone https://github.com/ci-compass/cicf ~/cicf
 ```
 
-We will keep updating the repository throughout the course. Make sure
-you have the latest changes by changing to `~/cicf` directory and then
-doing a `git pull`:
+Since we will keep updating the repository throughout the course, you
+will have to make sure you have the latest changes in your local copy.
+Change to `~/cicf` directory and then do a `git pull`:
 
 ```console
 cd ~/cicf
