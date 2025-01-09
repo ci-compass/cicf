@@ -1,4 +1,4 @@
-# CICF Week 9
+# CICF Week 7
 
 The goals for this week are to
 

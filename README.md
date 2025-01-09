@@ -16,8 +16,8 @@ Videos and Slides are available on the shared CICF drive.
 | [week 3][week03]    | Overview of scientific computing                    |
 | [week 4][week04]    | Git and coding standards                            |
 | [week 5][week05]    | Containers and debugging                            |
-| [week 6][week06]    | Software architecture and systems; digital archives |
-| [week 7][week07]    | FAIR data and systems                               |
+| [week 6][week06]    | FAIR data and systems                               |
+| [week 7][week07]    | Software architecture and systems; digital archives |
 | [week 8][week08]    | Cloud computing                                     |
 | week 9              | Spring break!                                       |
 | [week 10][week10]   | Data workflows                                      |
@@ -60,8 +60,8 @@ license.
 [week03]: ./week03-scientific-computing
 [week04]: ./week04-git-and-coding-standards
 [week05]: ./week05-containers-and-debugging
-[week06]: ./week06-architecture-and-archives
-[week07]: ./week07-fair-data
+[week06]: ./week06-fair-data
+[week07]: ./week07-architecture-and-archives
 [week08]: ./week08-cloud-computing
 [week10]: ./week10-data-workflows
 [week11]: ./week11-machine-learning
