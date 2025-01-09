@@ -10,8 +10,18 @@ The goals for week 3 lab are:
 
 ## Getting set up
 
-We need to install a couple of Debian packages on our VMs, using the
-[apt] package manager:
+We need to install a couple of Debian packages on our VMs using the
+[apt] package manager.  Start your VM, launch a terminal, and run the
+below commands in the terminal:
+
+```console
+sudo apt update
+```
+
+Enter the password when prompted. 
+
+Running `apt update` will update package information from Debian's
+software repositories.  Once that is done, run the next command:
 
 ```console
 sudo apt install python3-pip wget
@@ -19,7 +29,8 @@ sudo apt install python3-pip wget
 
 Type `Y` to confirm installation.
 
-We also need some Python packages. These we can install using [pip]:
+We will also need some additional Python packages. These we can
+install using [pip]:
 
 ```console
 pip install jupyter numpy scipy matplotlib h5py
