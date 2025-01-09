@@ -10,7 +10,7 @@ Videos and Slides are available on the shared CICF drive.
 
 | week                | content                                             |
 |---------------------|-----------------------------------------------------|
-| [week 0][week00]    | Setting up a virtual machine                        |
+| [week 0][vm]        | Setting up a virtual machine                        |
 | [week 1][week01]    | Command line                                        |
 | [week 2][week02]    | Python and scientific programming                   |
 | [week 3][week03]    | Overview of scientific computing                    |
@@ -54,7 +54,7 @@ license.
 
 <!-- References -->
 
-[week00]: ./week00-vm-setup
+[vm]: ./vm
 [week01]: ./week01-commandline
 [week02]: ./week02-python-and-jupyter
 [week03]: ./week03-scientific-computing
