@@ -33,9 +33,10 @@ The CICF course is developed and run by
 
 * Angela Murillo
 * Nicole Virdone
-* Erik Scott
 * Don Brower
+* Sajith Sasidharan
 * Sarowar Hossain
+* Erik Scott
 
 
 # Thanks
