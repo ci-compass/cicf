@@ -21,8 +21,8 @@ others.
 
 ## Getting Started
 
-Download the pre-made image from the CICF shared drive.
-(See below if you want to make your own image from scratch).
+Download the approprate pre-made image from the CICF shared drive.
+Get the `utm` image  if your computer is a Mac, and get the `` image if it uses Windows.
 Then choose the appropriate section below depending on the operating system on your computer.
 
 ### OS X
@@ -43,35 +43,41 @@ Now press the play button next to the name to start image.
 The VM "screen" will be displayed in a new window.
 Your mouse should just work.
 If your mouse is _captured_, meaning it cannot escape the virtual image to select other things on your computer, press Command-Option to release it.
+Skip to the section [Using the VM Image](#using-the-vm-image).
 
 ### Windows
 
 We use VirtualBox to run the VMs on Windows.
-Download and install [VirtualBox ](https://www.virtualbox.org/wiki/Downloads) for Windows hosts.
+Download and install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) for Windows hosts.
 
 
+Continue with the next section, [Using the VM Image](#using-the-vm-image).
 
 ## Using the VM Image
 
-At this point it shouldn't matter whether your host machine is a Mac or Windows.
-Boot the image.
-You can sign in using the username `cicf` and password `cicf`.
-After boot you should see a desktop envrionment.
-On your first boot is is worthwhile to update the packages on your machine by doing this:
+At this point it doesn't matter whether your host machine is a Mac or Windows.
+Using the VM manager you installed, boot the image if you haven't already.
+You will eventually see a sign-in screen.
+Log in using the username `cicf` and password `cicf`.
+After signing in you should see a desktop envrionment.
+The first time you sign in it is worthwhile to update the packages on your machine by doing this:
 
 1. Open a terminal window (the black box with a ">" on the bottom bar).
 1. Type `sudo apt update` and press return. It will ask for your password. Type it (`cicf`) and press return. Many lines of text will scroll by.
 1. When the `$` prompt appears again type `sudo apt upgrade` and press return.
 1. Reboot the machine by typing `sudo reboot` and pressing return.
 
+If you ever mess up your VM image, say by running an ill-advised command, you can always download a copy of the original VM image
+and re-install it by following these steps again (minus needing to download install UTM or VirtualBox).
 
 ## Creating a VM Image
 
-This section is for reference.
-If you are a fellow, download a pre-made image and follow the instructions above in the Getting Started section.
+This section is for reference, and student fellows can ignore it when installing and setting up a VM on their computer.
+If you are a fellow, download a pre-made image and follow the instructions above in the [Getting Started](#getting-started) section.
 
 ### OS X Steps for UTM
 
+These are the steps used to create the downloadable VM image for UTM.
 
 1. Download the [ARM64 Debian 12 installer](https://cdimage.debian.org/debian-cd/current/arm64/iso-cd/)
 1. Using UTM, make a new virtual machine and set up the CD drive to point to the downloaded ISO image.
