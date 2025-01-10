@@ -3,9 +3,10 @@ title: Plot LIGO data
 jupyter: python3
 ---
 
-
-
-You should have downloaded a file named `H-H2_LOSC_4_V1-815235072-4096.hdf5` from LIGO, following the README of this week.  Let open this file using the h5py library that we had installed earlier and explore the data in the file.
+You should have downloaded a file named
+`H-H2_LOSC_4_V1-815235072-4096.hdf5` from LIGO, following the README
+of this week.  Let open this file using the h5py library that we had
+installed earlier and explore the data in the file.
 
 ```{python}
 import h5py
@@ -33,7 +34,8 @@ for k,v in data['meta'].items():
     print(k,v[...])
 ```
 
-Let us load some of the data into an array, and plot the array using matplotlib:
+Let us load some of the data into an array, and plot the array using
+matplotlib:
 
 ```{python}
 import matplotlib.pyplot as plt
