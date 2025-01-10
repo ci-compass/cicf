@@ -7,3 +7,7 @@ all: $(NOTEBOOKS)
 
 ../%.ipynb: %.qmd
 	quarto convert $< --output $@
+
+.PHONY: clean
+clean:
+	rm -f $(NOTEBOOKS)
