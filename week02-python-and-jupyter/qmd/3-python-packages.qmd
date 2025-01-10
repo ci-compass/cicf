@@ -1,7 +1,4 @@
----
-title: Python packages
-jupyter: python3
----
+# Python packages
 
 Python took over the world in large part because of the thousands of
 packages available. A "package" is a bunch of code that does something

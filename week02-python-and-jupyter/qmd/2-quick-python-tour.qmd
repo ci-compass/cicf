@@ -1,7 +1,4 @@
----
-title: A Very Quick Tour of Python
-jupyter: python3
----
+# A Very Quick Tour of Python
 
 In this notebook, we'll look at some of the language features of
 python and how to use them. **This entire notebook assumes you have

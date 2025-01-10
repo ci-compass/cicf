@@ -1,7 +1,4 @@
----
-title: A Very Quick Tour of Jupyter
-jupyter: python3
----
+# A Very Quick Tour of Jupyter
 
 First, congratulations!  You've successfully navigated to a Jupyter
 Notebook and opened it. Jupyter is a convenient and productive way to

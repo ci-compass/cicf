@@ -1,7 +1,4 @@
----
-title: Plot LIGO data
-jupyter: python3
----
+# Plot LIGO data
 
 You should have downloaded a file named
 `H-H2_LOSC_4_V1-815235072-4096.hdf5` from LIGO, following the README
