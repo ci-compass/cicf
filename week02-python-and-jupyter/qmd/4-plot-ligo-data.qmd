@@ -1,0 +1,45 @@
+---
+title: Plot LIGO data
+jupyter: python3
+---
+
+
+
+You should have downloaded a file named `H-H2_LOSC_4_V1-815235072-4096.hdf5` from LIGO, following the README of this week.  Let open this file using the h5py library that we had installed earlier and explore the data in the file.
+
+```{python}
+import h5py
+data = h5py.File('H-H2_LOSC_4_V1-815235072-4096.hdf5', 'r')
+```
+
+We can look at the dataset:
+
+```{python}
+for k in data.keys():
+    print(k)
+```
+
+And:
+
+```{python}
+for k,v in data['meta'].items():
+    print(k,v)
+```
+
+That is not quite what we want:
+
+```{python}
+for k,v in data['meta'].items():
+    print(k,v[...])
+```
+
+Let us load some of the data into an array, and plot the array using matplotlib:
+
+```{python}
+import matplotlib.pyplot as plt
+
+strain = data['strain']['Strain']
+N = 5000
+plt.plot(range(N), strain[:N])
+```
+
