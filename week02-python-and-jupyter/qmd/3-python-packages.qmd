@@ -56,6 +56,10 @@ a list.
 
 ## Installing new packages
 
+The `math` module is part of the Python standard library.  It
+implements a routines to calculate few standard functions and some
+basic probability distributions.
+
 There are other packages that you would have to download to use. Let's
 look at an example very useful for scientific computing: numpy. 
 

@@ -157,18 +157,6 @@ notebook.
 
 ### The third notebook: Python packages
 
-The `math` library is part of the Python standard library.
-
-It implements a routines to calculate few standard functions and some
-basic probability distributions.
-
-As noted in the lecture Python does not have an efficient built-in
-array data type (rather, it approximates arrays by using lists and
-nested lists).
-
-The NumPy library implements an efficient array datatype, and is used
-as a foundation for almost all scientific Python software.
-
 ```python
 import numpy as np
 ```
