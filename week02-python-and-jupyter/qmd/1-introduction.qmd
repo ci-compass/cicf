@@ -1,10 +1,29 @@
 # A Very Quick Tour of Jupyter
 
 First, congratulations!  You've successfully navigated to a Jupyter
-Notebook and opened it. Jupyter is a convenient and productive way to
-**keep notes and code together**. Think of it as being like a regular
-old paper Lab Notebook, except this notebook can have runable code in
-it that can be **run directly from the notebook**.
+Notebook and opened it. 
+
+Jupyter is a convenient and productive way to **keep notes and code
+together**. Think of it as being like a regular old paper Lab
+Notebook, except this notebook can have runable code in it that can be
+**run directly from the notebook**.
+
+A Jupyter notebook consists of a bunch of _cells_ which contain either
+code or text (in [Markdown] format) and its output.  In CICF examples
+we will (mostly?) use Python code in our examples, but it is possible
+to use other programming languages also in Jupyter notebooks.
+
+(A fun fact: the name Jupyter is an amalgamation of [Julia], Python,
+and [R] -- the three programming languages supported by Jupyter.)
+
+[Markdown]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+[Julia]: https://julialang.org/
+[R]: https://www.r-project.org/
+
+The code in the notebooks is _runnable_, directly from the browser
+window.  You can select a python cell and then choose the menu option
+"Cell > Run Cells".  Follow the text along, and try out the
+instructions to run the code present in the notebook.
 
 Notice that a notebook is made up of a series of cells that start at
 the top and go down. In a sense, it's laid out a bit like a one-column

@@ -156,28 +156,6 @@ clicking on the "open" button that will appear when you select a
 notebook.
 
 
-### The first notebook: introduction to Jupyter
-
-Open [1-introduction.ipynb](./introduction.ipynb) by double clicking
-on it.  The notebook will open in a new browser tab.
-
-A Jupyter notebook consists of a bunch of _cells_ which contain either
-code or text (in [Markdown] format) and its output.  In CICF examples
-we will (mostly?) use Python code in our examples, but it is possible
-to use other programming languages also in Jupyter notebooks.
-
-(A fun fact: the name Jupyter is an amalgamation of [Julia], Python,
-and [R] -- the three programming languages supported by Jupyter.)
-
-[Markdown]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
-[Julia]: https://julialang.org/
-[R]: https://www.r-project.org/
-
-The code in the notebooks is _runnable_, directly from the browser
-window.  You can select a python cell and then choose the menu option
-"Cell > Run Cells".  Follow the text along, and try out the
-instructions to run the code present in the notebook.
-
 ### The second notebook: a quick tour of Python
 
 Open [2-quick-python-tour.ipynb](./2-quick-python-tour.ipynb) and work
