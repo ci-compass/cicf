@@ -155,30 +155,6 @@ You can open each these notebooks by double clicking them, or by
 clicking on the "open" button that will appear when you select a
 notebook.
 
-
-### The second notebook: a quick tour of Python
-
-Open [2-quick-python-tour.ipynb](./2-quick-python-tour.ipynb) and work
-through the text and code to learn juuust enough Python to get you
-started
-
-You can also try creating new code (and text) cells there, and run
-them. 
-
-What would you do when the code you wrote contains some error?  You
-can fix them, and re-run the cell.
-
-Consider this code:
-
-```python
-import math
-
-2*math.PI*5
-```
-
-Trying to run that code will result in an error.  The correct code
-should be `2*math.pi*5`.
-
 ### The third notebook: Python packages
 
 The `math` library is part of the Python standard library.
