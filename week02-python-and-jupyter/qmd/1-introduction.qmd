@@ -10,11 +10,13 @@ Notebook, except this notebook can have runable code in it that can be
 
 A Jupyter notebook consists of a bunch of _cells_ which contain either
 code or text (in [Markdown] format) and its output.  In CICF examples
-we will (mostly?) use Python code in our examples, but it is possible
-to use other programming languages also in Jupyter notebooks.
+we are likely to use Python code (unless there is a change of mind),
+but it is possible to use other programming languages also in Jupyter
+notebooks.
 
 (A fun fact: the name Jupyter is an amalgamation of [Julia], Python,
-and [R] -- the three programming languages supported by Jupyter.)
+and [R] -- the three programming languages originally supported by
+Jupyter.)
 
 [Markdown]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 [Julia]: https://julialang.org/
