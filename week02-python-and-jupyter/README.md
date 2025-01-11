@@ -164,10 +164,8 @@ instructions to run the code present in the notebook.
 You should have learned enough about working with Jupyter notebooks.
 Open [2-quick-python-tour.ipynb](./2-quick-python-tour.ipynb) and work
 through the text and code to learn juuust enough Python to get you
-started.
-
-You can also create new code cells in this notebook, and write some
-code in those cells, and try running them.
+started.  You can also try creating new code (and text) cells there,
+and run them.
 
 This is a line of code:
 
