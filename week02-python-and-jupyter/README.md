@@ -163,31 +163,15 @@ instructions to run the code present in the notebook.
 
 Open [2-quick-python-tour.ipynb](./2-quick-python-tour.ipynb) and work
 through the text and code to learn juuust enough Python to get you
-started.  You can also try creating new code (and text) cells there,
-and run them.
+started
 
-This is a line of code:
+You can also try creating new code (and text) cells there, and run
+them. 
 
-```python
-42
-```
+What would you do when the code you wrote contains some error?  You
+can fix them, and re-run the cell.
 
-Running a cell with the above code produces an output. Notice the
-python input and output cells are numbered in the order that they are
-run.
-
-```python
-56+7
-```
-
-The python cells will evaluate the expression and return its value
-
-```python
-print("hello")
-```
-
-Note that `print()` is an expression that outputs something the the
-screen and then return the value `None`.
+Consider this code:
 
 ```python
 import math
@@ -195,7 +179,7 @@ import math
 2*math.PI*5
 ```
 
-The last command has an error. We can fix it and rerun the cell. It
+Trying to run that code will result in an error.  The correct code
 should be `2*math.pi*5`.
 
 ### The third notebook: Python packages
