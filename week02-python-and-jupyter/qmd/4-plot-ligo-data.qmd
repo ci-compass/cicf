@@ -1,16 +1,18 @@
 # Plot LIGO data
 
-In this part of the tutorial, let us plot some data from the LIGO
-observatory.  
+In this part of the tutorial, let us download some data from the LIGO
+observatory, and plot it.  
 
-#### Getting a LIGO dataset
+Open a new terminal. In the terminal, use `cd` command to change to
+the directory `~/cicf/week02-python-and-jupyter`:
 
-Go to the the `week03` directory of your CICF repository clone, and
-then run `wget` with the URL of the data set as its argument (as shown
-below).
+```{console}
+cd ~/cicf/week02-python-and-jupyter
+```
 
-```console
-cd ~/cicf/week03
+Now run `wget` with the URL of the data set as its argument:
+
+```{console}
 wget https://gwosc.org/archive/data/S5/814743552/H-H2_LOSC_4_V1-815235072-4096.hdf5
 ```
 
@@ -21,17 +23,8 @@ package that we installed earlier to work with this file.
 
 [HDF5]: https://en.wikipedia.org/wiki/Hierarchical_Data_Format
 
-Open [4-plot-ligo-data.ipynb](./4-plot-ligo-data.ipynb) in your
-Jupyter environment, and work through the notebook.
-
-
-
-
-
-You should have downloaded a file named
-`H-H2_LOSC_4_V1-815235072-4096.hdf5` from LIGO, following the README
-of this week.  Let open this file using the h5py library that we had
-installed earlier and explore the data in the file.
+Let open this file using the h5py library that we had installed
+earlier, and explore the data in the file.
 
 ```{python}
 import h5py
