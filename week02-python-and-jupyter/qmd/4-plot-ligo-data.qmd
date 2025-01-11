@@ -6,13 +6,13 @@ observatory, and plot it.
 Open a new terminal. In the terminal, use `cd` command to change to
 the directory `~/cicf/week02-python-and-jupyter`:
 
-```{console}
+```{shell}
 cd ~/cicf/week02-python-and-jupyter
 ```
 
 Now run `wget` with the URL of the data set as its argument:
 
-```{console}
+```{shell}
 wget https://gwosc.org/archive/data/S5/814743552/H-H2_LOSC_4_V1-815235072-4096.hdf5
 ```
 
