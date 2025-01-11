@@ -8,4 +8,5 @@ H-H2_LOSC_4_V1-815235072-4096.hdf5
 venv/
 
 /week02-python-and-jupyter/qmd/*.html
+/week02-python-and-jupyter/qmd/*.ipynb
 /week02-python-and-jupyter/qmd/*_files/
