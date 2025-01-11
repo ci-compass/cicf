@@ -155,32 +155,6 @@ You can open each these notebooks by double clicking them, or by
 clicking on the "open" button that will appear when you select a
 notebook.
 
-### The fourth notebook: working with LIGO data
-
-In this part of the tutorial, let us plot some data from the LIGO observatory.  
-
-#### Getting a LIGO dataset
-
-Go to the the `week03` directory of your CICF repository clone, and
-then run `wget` with the URL of the data set as its argument (as shown
-below).
-
-```console
-cd ~/cicf/week03
-wget https://gwosc.org/archive/data/S5/814743552/H-H2_LOSC_4_V1-815235072-4096.hdf5
-```
-
-That should download a file `H-H2_LOSC_4_V1-815235072-4096.hdf5`,
-which is about 123MB in size.  This file is in a format called [HDF5],
-commonly used to store scientific data.  We will use the Python h5py
-package that we installed earlier to work with this file.
-
-[HDF5]: https://en.wikipedia.org/wiki/Hierarchical_Data_Format
-
-Open [4-plot-ligo-data.ipynb](./4-plot-ligo-data.ipynb) in your
-Jupyter environment, and work through the notebook.
-
-
 ## Resources
 
 Parts of this tutorial were taken from the [LIGO data tutorial](https://gwosc.org/tutorial02/).
