@@ -1,18 +1,15 @@
 # A Very Quick Tour of Python
 
 In this notebook, we'll look at some of the language features of
-python and how to use them. **This entire notebook assumes you have
-some programming experience already**. This might be in Java,
-Javascript, C, C++, or even (shudder) Fortran.
+python and how to use them.  Some prior programming experience might
+be useful here, with Java, Javascript, C, C++, or Python.
 
-Just kidding. I have *wonderful* memories of Fortran. And even today,
-if you absolutely need that last half a percent of efficiency, it's
-the way to go.
+In the [previous notebook](./1-introduction.ipynb), we ran a print
+statement and did some basic arithmetic, and that was our first steps
+with running some Python code in Jupyter.
 
-In the **Introduction** notebook, we ran a print statement and did
-some basic arithmetic. Click in the next cell with the example code
-and press Shift+Enter to run it.
-
+Click in the next cell with the example code and press Shift+Enter to
+run it.
 
 ```{python}
 prius_weight = 4000
@@ -22,10 +19,8 @@ just_the_normal_car_weight = prius_weight - battery_weight
 print ("If you took the battery out of a Prius it would weigh", just_the_normal_car_weight, "pounds.")
 ```
 
-That code could be in almost any language - virtually all "procedural
-programming" languages overwhelmingly work the same way.
-
-Python has the arithmetic "operators" you expect:
+It should be obvious what the code above does.  Python has all the
+usual arithmetic "operators" you would expect:
 
 ```{python}
 sum = 4 + 2
