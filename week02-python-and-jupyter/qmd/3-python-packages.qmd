@@ -59,6 +59,8 @@ a list.
 There are other packages that you would have to download to use. Let's
 look at an example very useful for scientific computing: numpy. 
 
+<!-- TODO: add discussion about pip and pypi -->
+
 Numpy is a package for making numerically-intensive programming easier
 and for making it run faster. It brings it's own datatype to the game:
 an actual array!  Numpy's arrays are quite fast -- substantially
