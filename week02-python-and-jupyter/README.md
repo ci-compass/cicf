@@ -161,6 +161,11 @@ instructions to run the code present in the notebook.
 
 ### The second notebook: a quick tour of Python
 
+You should have learned enough about working with Jupyter notebooks.
+Open [2-quick-python-tour.ipynb](./2-quick-python-tour.ipynb) and work
+through the text and code to learn juuust enough Python to get you
+started.
+
 You can also create new code cells in this notebook, and write some
 code in those cells, and try running them.
 
