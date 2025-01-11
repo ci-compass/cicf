@@ -155,64 +155,6 @@ You can open each these notebooks by double clicking them, or by
 clicking on the "open" button that will appear when you select a
 notebook.
 
-### The third notebook: Python packages
-
-```python
-import numpy as np
-```
-
-The critical NumPy data type is the array.
-
-"NumPy arrays are faster and more compact than Python lists. An array
-consumes less memory and is convenient to use."
-([source](https://numpy.org/doc/stable/user/absolute_beginners.html))
-The one caveat with NumPy arrays is that all the elements inside an
-array need to have the same data type (e.g. integer, float, double).
-
-```python
-a = np.array([[1,2,3,4], [5,6,7,8], [9,10,11,12]])
-```
-
-The `array()` function will turn nested lists into an array.
-You can also make new arrays by asking for a zero array of a given size
-
-```python
-z = np.zeros(3)
-z
-```
-
-or ones:
-
-```python
-m = np.ones((3,3))
-```
-
-(note that the dimensions are given as a _tuple_).
-You can get the dimensions of an array with the `.shape()` method:
-
-```python
-m.shape()
-z.shape()
-```
-
-You can also element-wise add, subtract, or multiply:
-
-```python
-z + 3
-```
-
-Or
-
-```python
-a % 2
-```
-
-Comparisons are element wise
-
-```python
-a > 5
-```
-
 ### NumPy Linear Algebra
 
 NumPy has routines to do basic linear algebra, such as finding a

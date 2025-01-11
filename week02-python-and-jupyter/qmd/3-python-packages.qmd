@@ -81,18 +81,62 @@ import numpy as np
 The "as np" part lets us specify a *namespace*, in this case a nice,
 short name so we don't have to type out "numpy" *every single time*.
 
-Now we can create an array or two...
+The critical NumPy data type is the array.
+
+"NumPy arrays are faster and more compact than Python lists. An array
+consumes less memory and is convenient to use."
+([source](https://numpy.org/doc/stable/user/absolute_beginners.html))
+The one caveat with NumPy arrays is that all the elements inside an
+array need to have the same data type (e.g. integer, float, double).
+
+Now we can create an array or two:
 
 ```{python}
 a = np.array([[1,2,3,4], [5,6,7,8], [9,10,11,12]])
 ```
+
+The `array()` function will turn nested lists into an array.
+You can also make new arrays by asking for a zero array of a given size
 
 ```{python}
 z = np.zeros(3)
 print(z)
 ```
 
-There are convenience functions to get information about the array...
+or ones:
+
+```python
+m = np.ones((3,3))
+```
+
+(note that the dimensions are given as a _tuple_).
+
+You can also element-wise add, subtract, or multiply:
+
+```python
+z + 3
+```
+
+Or
+
+```python
+a % 2
+```
+
+Comparisons are element wise
+
+```python
+a > 5
+```
+
+You can get the dimensions of an array with the `.shape()` method:
+
+```python
+m.shape()
+z.shape()
+```
+
+There are convenience functions to get information about the array:
 
 ```{python}
 print(a.shape)
