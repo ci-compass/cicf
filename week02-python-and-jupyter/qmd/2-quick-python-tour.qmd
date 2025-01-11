@@ -65,7 +65,7 @@ print(2 ** 81)
 
 Notice how big those numbers are?  Python (at least, all modern
 versions) represent integers with 64 bits. This will hold numbers from
-positive to negative 9 billion billon, give or take a little. If youb
+positive to negative 9 billion billon, give or take a little. If you
 want to count the atoms in a micromole, knock yourself out.
 
 Parentheses work as expected for explicitly forcing a particular order
