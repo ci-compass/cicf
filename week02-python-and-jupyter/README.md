@@ -135,7 +135,14 @@ jupyter notebook
 A browser window will open, listing the contents of
 `week02-python-and-jupyter` directory, where you will find some files
 with `.ipynb` extension.  They are the Jupyter notebooks that we will
-use this week.  Let us work through them in sequence.
+use this week.
+
+![Jupyter](./img/jupyter.png)
+
+Let us work through them in sequence.  You can open each one of these
+notebooks by double clicking on them, or by clicking on the "open"
+button that will appear when you click a notebook.
+
 
 ### The first notebook: introduction to Jupyter
 
