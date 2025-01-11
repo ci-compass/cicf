@@ -139,9 +139,21 @@ use this week.
 
 ![Jupyter](./img/jupyter.png)
 
-Let us work through them in sequence.  You can open each one of these
-notebooks by double clicking on them, or by clicking on the "open"
-button that will appear when you click a notebook.
+Working through these notebooks is your task this week:
+
+- [1-introduction.ipynb](./introduction.ipynb) is an introduction to
+  Jupyter.
+- [2-quick-python-tour.ipynb](./2-quick-python-tour.ipynb) is a quick
+  introduction of Python programming language.
+- [3-python-packages.ipynb](./3-python-packages.ipynb) is an overview
+  of Python packages.
+- [4-plot-ligo-data.ipynb](./4-plot-ligo-data.ipynb) is a notebook
+  that will walk you through working with some science data in
+  Jupyter.
+
+You can open each these notebooks by double clicking them, or by
+clicking on the "open" button that will appear when you select a
+notebook.
 
 
 ### The first notebook: introduction to Jupyter
