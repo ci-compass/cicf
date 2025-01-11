@@ -141,7 +141,7 @@ use this week.
 
 Working through these notebooks is your task this week:
 
-- [1-introduction.ipynb](./introduction.ipynb) is an introduction to
+- [1-introduction.ipynb](./1-introduction.ipynb) is an introduction to
   Jupyter.
 - [2-quick-python-tour.ipynb](./2-quick-python-tour.ipynb) is a quick
   introduction of Python programming language.
