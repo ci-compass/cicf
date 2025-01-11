@@ -168,7 +168,41 @@ that:
 k @ kinv
 ```
 
-For a complete list of operators, see: http://docs.python.org/library/operator.html#mapping-operators-to-functions
+For a complete list of operators, see:
+http://docs.python.org/library/operator.html#mapping-operators-to-functions
+
+### NumPy Linear Algebra
+
+NumPy has routines to do basic linear algebra, such as finding a
+matrix inverse, or solving a linear system.
+
+```python
+k = np.array([1,1,1], [1,1,0], [1,0,0])
+k
+```
+
+Inverses
+
+```python
+from numpy.linalg import nl
+kinv = nl.inv(k)
+kinv
+```
+
+And matrix multiplication
+
+```python
+k @ kinv
+```
+
+Matrix visualization:
+
+```python
+import matplotlib.pyplot as plt
+plt.matshow(a)
+```
+
+## Further steps
 
 We've just scratched the surface of what numpy can do. Imagine how
 much the other thousands of Python packages can do!  The nice thing

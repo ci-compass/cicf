@@ -155,37 +155,6 @@ You can open each these notebooks by double clicking them, or by
 clicking on the "open" button that will appear when you select a
 notebook.
 
-### NumPy Linear Algebra
-
-NumPy has routines to do basic linear algebra, such as finding a
-matrix inverse, or solving a linear system.
-
-```python
-k = np.array([1,1,1], [1,1,0], [1,0,0])
-k
-```
-
-Inverses
-
-```python
-from numpy.linalg import nl
-kinv = nl.inv(k)
-kinv
-```
-
-And matrix multiplication
-
-```python
-k @ kinv
-```
-
-Matrix visualization:
-
-```python
-import matplotlib.pyplot as plt
-plt.matshow(a)
-```
-
 ### The fourth notebook: working with LIGO data
 
 In this part of the tutorial, let us plot some data from the LIGO observatory.  
