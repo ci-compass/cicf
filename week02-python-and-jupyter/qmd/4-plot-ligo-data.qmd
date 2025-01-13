@@ -1,0 +1,65 @@
+# Plot LIGO data
+
+In this part of the tutorial, let us download some data from the LIGO
+observatory, and plot it.  
+
+Open a new terminal. In the terminal, use `cd` command to change to
+the directory `~/cicf/week02-python-and-jupyter`:
+
+```
+cd ~/cicf/week02-python-and-jupyter
+```
+
+Now run `wget` with the URL of the data set as its argument:
+
+```
+wget https://gwosc.org/archive/data/S5/814743552/H-H2_LOSC_4_V1-815235072-4096.hdf5
+```
+
+That should download a file `H-H2_LOSC_4_V1-815235072-4096.hdf5`,
+which is about 123MB in size.  This file is in a format called [HDF5],
+commonly used to store scientific data.  We will use the Python h5py
+package that we installed earlier to work with this file.
+
+[HDF5]: https://en.wikipedia.org/wiki/Hierarchical_Data_Format
+
+Let open this file using the h5py library that we had installed
+earlier, and explore the data in the file.
+
+```{python}
+import h5py
+data = h5py.File('H-H2_LOSC_4_V1-815235072-4096.hdf5', 'r')
+```
+
+We can look at the dataset:
+
+```{python}
+for k in data.keys():
+    print(k)
+```
+
+And:
+
+```{python}
+for k,v in data['meta'].items():
+    print(k,v)
+```
+
+That is not quite what we want:
+
+```{python}
+for k,v in data['meta'].items():
+    print(k,v[...])
+```
+
+Let us load some of the data into an array, and plot the array using
+matplotlib:
+
+```{python}
+import matplotlib.pyplot as plt
+
+strain = data['strain']['Strain']
+N = 5000
+plt.plot(range(N), strain[:N])
+```
+

@@ -1,0 +1,218 @@
+# A Very Quick Tour of Jupyter
+
+First, congratulations!  You've successfully navigated to a Jupyter
+Notebook and opened it. 
+
+Jupyter is a convenient and productive way to **keep notes and code
+together**. Think of it as being like a regular old paper Lab
+Notebook, except this notebook can have runable code in it that can be
+**run directly from the notebook**.
+
+A Jupyter notebook consists of a bunch of _cells_ which contain either
+code or text (in [Markdown] format) and its output.  In CICF examples
+we are likely to use Python code (unless there is a change of mind),
+but it is possible to use other programming languages also in Jupyter
+notebooks.
+
+(A fun fact: the name Jupyter is an amalgamation of [Julia], Python,
+and [R] -- the three programming languages originally supported by
+Jupyter.)
+
+[Markdown]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+[Julia]: https://julialang.org/
+[R]: https://www.r-project.org/
+
+The code in the notebooks is _runnable_, directly from the browser
+window.  You can select a python cell and then choose the menu option
+"Cell > Run Cells".  Follow the text along, and try out the
+instructions to run the code present in the notebook.
+
+Notice that a notebook is made up of a series of cells that start at
+the top and go down. In a sense, it's laid out a bit like a one-column
+spreadsheet.
+
+Let's start our very first explorations in Jupyter, beginning in the
+next cell. It may not be obvious yet that it's a cell, but soon that
+will change. For now, just keep reading.
+
+## The Canonical "Hello World" Example
+
+There isn't actually any law that requires the first programming
+example in a language to be the "Hello World" program, but that is the
+tradition, and let us stick with the tradition.
+
+Writing a program that just prints out "Hello World" is really easy in
+Python. It's just one line of code: call the "print" function with an
+argument that has the string "Hello, World" in it. That line runs and
+the words are printed on the screen. Super simple. Look in the next
+cell down to see this one line "program".
+
+```{python}
+print("Hello, World")
+```
+
+Look at the line above. That's our print statement and its one
+argument. Over a little bit to the left of it we see, in dark blue,
+the word "In" and a pair of brackets. "In" tells us that we're looking
+at the input part of a cell - the place where we can type stuff. The
+brackets don't have anything in them, but that will change soon.
+
+Let us run that line of code. Looking at the cell, we see the print
+statement. Click on that print statement so the blinking cursor is in
+that cell. Now go to the "Cell" menu and select "Run Cells". We only
+selected the one cell, so it'll only run that one.
+
+Did you see that?  Our Jupyter Notebook just ran that line of Python!
+The output from the print function appears right below the input part
+of the cell. The words "Hello World" appeared.
+
+Granted, Hello World is a pretty unspectacular piece of code, but at
+least the Computer Programming Introduction Cops won't arrest me
+now. Let's do something slightly more interesting now. Take a look at
+the next cell. Then scroll down to the cell after that, where it says
+"Basics of running a cell".
+
+```{python}
+drink_can_ounces = 12
+total_milliliters = drink_can_ounces * 29.5735
+print(total_milliliters)
+```
+
+## Basics of Running a Cell
+
+Let's run the cell right above and see how many milliliters of soda
+water are in the twelve-ounce can I'm looking at. Click in that cell,
+and then this time press and hold the Shift key down and hit
+Enter. We'll call this "Shift+Enter" for convenience.
+
+A couple of things happened. First, the code executed. A variable was
+set equal to 12, then it was multiplied by 29.5735 to convert those
+ounces to milliliters. Finally, the last line prints out the results
+of that conversion.
+
+The second thing that happened was more subtle. Look at the dark blue
+text to the left of it, where it says "In" and has the
+brackets. Inside those brackets there is now a number (probably a "2",
+but the important part is that there's a number).
+
+Make a mental note what that number is.
+
+Click on that cell again and hit Shift+Enter once more. The contents
+of that cell runs once more and it prints out 354.882 again. And this
+time, the blue number in brackets off to the left went up by one.
+
+Jupyter keeps track of the total number of times any of the cells in a
+notebook have run. When a cell is run (also called "executed"), the
+total execution count goes up by one and is printed inside that cell's
+brackets.
+
+Why is this important? One of the handy things about Jupyter is that
+you can runs cells in any order, not just top-to-bottom. By looking at
+the numbers in brackets, you can tell what order the cells were run
+in. This can be handy when you're jumping around.
+
+## Kinds of Cells
+
+By now you may have noticed two distinct kinds of cells in a
+notebook. Cells like this one with text in them are called "Markdown"
+cells. Cells with code in them are called "Code" cells. There are
+other kinds of cells (we added an extension that lets us put video in
+a cell, for instance) but Code and Markdown are the two you'll
+practically always use.
+
+In the Ancient Times, when the earth's crust was still cooling and
+publications were printed on paper, an editor would go through a
+manuscript, fix any errors, and then put in some little marks and
+notes for the typesetter. These symbols would tell the person doing
+the typesetting that some of this text should be in bold, and some of
+this in italics, and would maybe have a scribbled note saying to
+indent the following paragraph differently. The process of the editor
+making all these notations was called "marking up" the manuscript.
+
+Once we started using computers for this kind of thing, the term
+"marking up" was shortened to "markup", and dozens of different
+"markup languages" were invented that would be embedded into text
+files. These "markup files" were then processed ("run off") and the
+processed result could be printed.
+
+It's hard to overstate how nice this was, compared to typewriters and
+typesetting machines anyway.
+
+You're probably familiar with at least one markup language - Hypertext
+Markup Language, aka "HTML". This is a language that expresses how web
+pages are laid out.
+
+Jupyter uses another markup language, and this one is called
+Markdown. Other things use Markdown, also. Reddit supports Markdown
+(alongside what they call the "Fancy Pants Editor") and github uses
+"github flavored Markdown".
+
+Did you notice how this cell has a heading that says "Kinds of Cells"
+and that it's in a larger font than the rest of it?  When I typed that
+line, I started it with a pair of `#` symbols, like this:
+
+```
+## Kinds of Cells
+```
+
+When you "run" a cell that has Markdown text in it, Jupyter processes
+the Markdown instructions in it and produces nicely-formatted output.
+
+Let's do that for ourselves!
+
+Click somewhere in this cell to make it the "current" cell that we're
+working with. Now add a new cell right below here. On the "Insert"
+menu select "Insert Cell Below" and, a lot like a spreadsheet, it will
+create a new cell for us right below this one.  Newly created cells
+default to being Code cells. Let's change that new one to a Markdown
+cell. Go to the Cell menu, look in the "Cell Type" submenu, and select
+"Markdown". Jupyter now knows the cell will contain Markdown-formatted
+text instead of executable code.
+
+In that new cell, enter the following Markdown text:
+
+```
+# This is a Level 1 Heading
+
+## This is a Level 2 heading.
+
+This sentence has a **bold** word and an _italicized_ one.
+```
+
+It's important to have a space between the "#" symbols and the first
+                                            #word of your heading.
+
+As you enter text and Markdown commands, Jupyter will give you sort of
+a "preview" of what to expect. Once you're done entering the text, hit
+Shift+Enter.  Presto!  That Markdown text has been neatly formatted
+and looks rather nice.
+
+And a note to scientists and mathematicians: LaTeX is another markup
+language. Markdown is a much, much simpler one. If you need to, there
+are converters to take Markdown and turn it into LaTeX. You can copy
+Markdown right out of your Jupyter notebook, convert it, and paste it
+into your journal articles.
+
+Writing code in a cell is just as easy as Markdown text. Make this the
+current cell (click on it) and add another cell below this one. It
+will default to being a code cell. Add the following code:
+
+```
+x = 4
+y = 6
+z = 2*x + y
+print(z)
+```
+
+When you have that typed in, hit Shift+Enter to execute it.
+
+Running that code will cause it to print "14".
+
+## Next Steps
+
+Good job! You've learned how to open Jupyter notebooks, how to run
+code that's contained in them, and how to add your own Code and
+Markdown cells. You're well on your way to being a proficient and
+productive Jupyter user.  Coming up, we'll look at some more Jupyter
+features that you'll need to do your daily work with it.
+
