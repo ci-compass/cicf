@@ -9,10 +9,10 @@ or libraries, or both.  A Python library is a collection of code that
 people can reuse when writing new applications or even other
 libraries.
 
-When you install Python, you get a set of libraries also, called the
-Python standard library.  Python is said to be a "batteries included"
-programming language, because its standard library is useful enough to
-accomplish many common tasks such as:
+When you install Python, a set of libraries called the [Python
+standard library][stdlib] also gets installed.  Python is said to be a
+"batteries included" programming language, because its standard
+library is useful to accomplish many common tasks related to:
 
 - Working with text, math, time, dates, etc.;
 - Working with various data structures such as lists, sets, and
@@ -20,14 +20,36 @@ accomplish many common tasks such as:
 - Reading and writing files;
 - Reading and writing data from networked systems;
 - Working with processes and threads;
-- Working with the operating system; and
-- Debugging and profiling; 
+- Working with the operating system; 
+- Debugging and profiling; and
+- Much more!
+
+[stdlib]: https://docs.python.org/3/library/index.html
 
 ## Python modules
 
-<!-- TODO: WRITEME -->
+When you write small programs, usually a single file can contain all
+the code you need to write.  But as the program grows or when you work
+on bigger projects, you will need to break down related components
+into separate files and organize them in a manner that makes sense to
+yourself and other people.
 
-## Generating random numbers
+Python libraries and programs are organized as _modules_, which is
+essentially a collection of files and directories.  An example package
+named `mypackage` (which is totally made-up, of course) could be
+organized like so:
+
+```
+mypackage/
+    __init__.py
+    module1.py
+    module2.py
+```
+
+<!-- real example: requests library, maybe? -->
+
+
+## Example: generating random numbers using `random` module
 
 Let us consider an example of generating random numbers using Python
 standard library.
