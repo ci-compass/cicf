@@ -204,11 +204,14 @@ plt.matshow(a)
 
 ## Further steps
 
-We've just scratched the surface of what numpy can do. Imagine how
+We have only scratched the surface of what numpy can do. Imagine how
 much the other thousands of Python packages can do!  The nice thing
 about software development, when it's done correctly, is that pieces
-build on top of other pieces. The "SciPy" package, for instance, has
-modules for integration, differentiation, linear algebra (because you
-can't have too much linear algebra, amiright?), signal processing,
-image processing (yes, a special case of signal processing)... lots of
-stuff.  Lots of packages then build on top of SciPy.
+build on top of other pieces.
+
+The [SciPy] package, for instance, has modules for integration,
+differentiation, linear algebra, signal processing, image processing
+(which is special case of signal processing), and so on.  Lots of
+packages then build on top of SciPy.
+
+[SciPy]: https://scipy.org/
