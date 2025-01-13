@@ -56,14 +56,24 @@ a list.
 
 ## Installing new packages
 
+<!-- TODO: WRITEME -->
+
+### Python package index
+
+<!-- TODO: WRITEME -->
+
+### Conda
+
+<!-- TODO: WRITEME -->
+
+## An example: the numpy package
+
 The `math` module is part of the Python standard library.  It
 implements a routines to calculate few standard functions and some
 basic probability distributions.
 
 There are other packages that you would have to download to use. Let's
 look at an example very useful for scientific computing: numpy. 
-
-<!-- TODO: add discussion about pip and pypi -->
 
 Numpy is a package for making numerically-intensive programming easier
 and for making it run faster. It brings it's own datatype to the game:
