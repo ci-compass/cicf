@@ -180,3 +180,16 @@ Parts of this tutorial were taken from the [LIGO data tutorial](https://gwosc.or
 - The always useful Software Carpentry [Python
   course](https://swcarpentry.github.io/python-novice-inflammation/)
 - All of the [released LIGO data](https://gwosc.org/data/)
+
+## Note to the staff (and to the curious)
+
+The Jupyter notebooks in this directory are actually generated from
+the `.qmd` files in the `qmd/` directory, using [Quarto].  The first
+three were the original notebooks from CICF year 3 written by Erik
+Scott, and I (Sajith S) converted them to markdown to Quarto.
+
+I am doing this because I would rather be using a text editor than
+anything else.  Future maintainers of these lessons should be free to
+choose whichever format they prefer.
+
+[Quarto]: https://quarto.org/
