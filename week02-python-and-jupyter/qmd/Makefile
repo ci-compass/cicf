@@ -11,3 +11,5 @@ all: $(NOTEBOOKS)
 .PHONY: clean
 clean:
 	rm -f $(NOTEBOOKS)
+	rm -f *.ipynb *.html
+	rm -rf *_files
