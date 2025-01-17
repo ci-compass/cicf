@@ -33,6 +33,18 @@ Let us go over this.
 
 TODO: add a screenshot here.
 
+## JupyterLab
+
+TODO: add a screenshot here.
+
+## JupyterLab instances out there
+
+- Google Colab
+- GitHub's thing
+- MS Planetary Computer
+- FABRIC's JupyterLab instance
+- Chameleon project's JupyterLab instance
+
 
 # Python
 
