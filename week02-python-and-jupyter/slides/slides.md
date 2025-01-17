@@ -216,22 +216,23 @@ awfully hot!
 ## Another list example
 
 ```python
-grades = ["A", "B", "C", "D", "F"]
-print (len(grades))     # prints 5
-print(grades[0])        # prints A
-print(grades[4])        # prints F
-print(grades[5])        # this will raise an error!
+>>> grades = ["A", "B", "C", "D", "F"]
+>>> print(len(grades))
+5
+>>> print(grades[0])
+A
+>>> print(grades[4])
+F
+>>> print(grades[5])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: list index out of range
 ```
 
-Notice the first element in a list is numbered 0!
-
-## Indexing
+Notice the first element in a list is numbered 0 (zero).  
 
 Any time you index into a list, Python always counts starting at 0,
-not 1.
-
-Forgetting this will likely be a big source of mistakes.
-
+not 1. Forgetting this will likely be a big source of mistakes.
 
 ## Strings
 
