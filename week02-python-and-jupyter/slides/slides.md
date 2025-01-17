@@ -5,6 +5,8 @@ format:
     reference-doc: cicf-template.pptx
   revealjs:
     theme: default
+#  beamer:
+#    theme: default
 ---
 
 # Greetings and salutations!
