@@ -427,20 +427,52 @@ mypackage.subpackage.submodule1.some_other_function()
 
 ## What are packages?
 
-TODO
+- Packages are a way to distribute Python software.
+- Packages can contain libraries (example: NumPy, SciPy...) or
+  applications (example: Jupyter). Or sometimes both.
+- Packages are a collection of modules.
+- You can install packages, and use in your projects.
 
-## Python Package Index
+## An example package: NumPy
 
-If you're trying to do something, there's a really good chance someone
-else already has. If they did a good job, there's a decent chance
-they've released it to the public.
+You would install NumPy like so:
 
-PyPi indexes and stores these packages (modules)
+```
+pip install numpy
+```
+
+And then use it like so:
+
+```python
+>>> import numpy as np
+>>> rng = np.random.default_rng()
+>>> samples = rng.normal(size=2500)
+>>> samples
+array([ 1.61380659,  1.21211191, -0.30766142, ...,  1.77788338,
+       -3.08686752, -0.20901042])
+```
+
+(An example of generating normally distributed random numbers, from
+<https://numpy.org/>.)
+
+## Python Package Index (PyPI)
+
+- For most common needs with Python, there's a really good chance
+  someone already has created a solution and published it in Python
+  Package Index, also known as PyPI (<https://pypi.org/>).
+
+- PyPI is a large repository of Python packages.
+  - "601,286 projects; 6,499,014 releases; 13,103,667 files; 893,449
+     users" at the time of writing this.  That is huge!
 
 ## pip
 
-TODO
-
+- `pip` is a commandline tool used to install Python packages from
+  PyPI
+  - (also from other Python repositories, sometimes)
+- `pip` itself is hosted on PyPI: <https://pypi.org/project/pip/>
+  - so you can `pip install --upgrade pip` when there are new `pip`
+    releases on PyPI.
 
 ## conda
 
