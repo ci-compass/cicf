@@ -217,13 +217,13 @@ awfully hot!
 
 ```python
 >>> grades = ["A", "B", "C", "D", "F"]
->>> print(len(grades))
+>>> len(grades)
 5
->>> print(grades[0])
+>>> grades[0]
 A
->>> print(grades[4])
+>>> grades[4]
 F
->>> print(grades[5])
+>>> grades[5]
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 IndexError: list index out of range
