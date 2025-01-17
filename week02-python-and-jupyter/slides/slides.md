@@ -314,17 +314,20 @@ yields the single string `"Hi there, human"`
 - Easy to create your own:
 
 ```python
-import math
+import math  # use Python's math module.
 
 def area_of_circle(radius):
     """
-    Compute area of a circle
+    Compute area of a circle.
 
     :param radius: radius of the circle.
     """
     result = math.pi * radius ** 2
     return result
 ```
+
+We have also sneakily introduced usage of modules and comment syntax
+here!
 
 ## Calling a function
 
