@@ -487,7 +487,17 @@ Conda evidently handles package management and dependency resolution
 better than pip.
 :::
 
+# Working with LIGO data
 
-## Working with LIGO data
+## LIGO data
 
-TODO
+- LIGO (<https://www.ligo.caltech.edu/>) is an NSF major facility that
+  studies gravitational waves.
+  
+- LIGO makes experimental data available for the public.
+
+- One of your tasks this week is to download some of this data, and
+  plot it in a Jupyter notebook.
+
+
+# FIN
