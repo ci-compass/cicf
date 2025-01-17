@@ -1,6 +1,5 @@
 ---
 title: "CICF Week 2: Scientific Python Programming"
-author: "Sajith Sasidharan"
 format:
   pptx:
     reference-doc: cicf-template.pptx
