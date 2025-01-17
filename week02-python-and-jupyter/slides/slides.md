@@ -366,7 +366,7 @@ Bob lives at 1234 Wooded Way
 ```
 
 
-## Error Handling with exceptions
+## Error handling with exceptions
 
 When an unrecoverable error occurs, the Python runtime "throws" an
 exception that is "caught" by an exception handler.
@@ -377,6 +377,9 @@ try:
 except:
   print("Number of people was zero, no valid answer!")
 ```
+
+If you do not catch an exception, your program will fail with an error
+message.
 
 ## Modules
 
