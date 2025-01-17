@@ -196,19 +196,21 @@ Notice colons at the ends of the `if`, `for`, and `else` statements.
 
 ## Lists
 
-Python lists are like arrays in other languages, except:
+Python lists are like arrays in C++ and Java, except:
 
-- they can grow (and shrink) as needed
-- the different elements of an array don't all have to be the same type
+- They can grow (and shrink) as needed.
+- The different elements of an array don't all have to be the same
+  type.
 
-Lists are fundamentally one-dimensional. If you would normally use a
-2D array for something, use a list of lists instead.
+Lists are one-dimensional. If you would normally use a 2D array for
+something, you would want to use a list of lists.
 
 ## List example
 
 ```python
-temperatures = [ 44.2, 43.6, 107.9, "awfully hot"]
-print (temperatures[3])
+>>> temperatures = [44.2, 43.6, 107.9, "awfully hot!"]
+>>> print(temperatures[3])
+awfully hot!
 ```
 
 ## Another list example
