@@ -1,0 +1,249 @@
+# Python packages
+
+Python became very popular partly because of the thousands of packages
+available.  
+
+A "package" is a collection of Python code that you can use to
+accomplish certain tasks.  Packages can contain application programs,
+or libraries, or both.  A Python library is a collection of code that
+people can reuse when writing new applications or even other
+libraries.
+
+When you install Python, a set of libraries called the [Python
+standard library][stdlib] also gets installed.  Python is said to be a
+"batteries included" programming language, because its standard
+library is useful to accomplish many common tasks related to:
+
+- Working with text, math, time, dates, etc.;
+- Working with various data structures such as lists, sets, and
+  key-value pairs (also called dictionaries).
+- Reading and writing files;
+- Reading and writing data from networked systems;
+- Working with processes and threads;
+- Working with the operating system; 
+- Debugging and profiling; and
+- Much more!
+
+[stdlib]: https://docs.python.org/3/library/index.html
+
+## Python modules
+
+When you write small programs, usually a single file can contain all
+the code you need to write.  But as the program grows or when you work
+on bigger projects, you will need to break down related components
+into separate files and organize them in a manner that makes sense to
+yourself and other people.
+
+Python libraries and programs are organized as _modules_, which is
+essentially a collection of files and directories.  An example package
+named `mypackage` (which is totally made-up, of course) could be
+organized like so:
+
+```
+mypackage/
+    __init__.py
+    module1.py
+    module2.py
+```
+
+<!-- real example: requests library, maybe? -->
+
+
+## Example: generating random numbers using `random` module
+
+Let us consider an example of generating random numbers using Python
+standard library.
+
+The first thing you have to do is tell Python you want to use a module
+called `random`:
+
+```{python}
+import random
+```
+
+Now `random` is an example of a built-in module. Python comes with it
+when it's installed.  In order to generate random numbers, we can use
+the `random()` method from the `random` module:
+
+```{python}
+print(random.random())
+print(random.random())
+print(random.random())
+```
+
+That generates random numbers between zero and one. There are plenty
+of other functions in the random package to do things like generate
+random integers between two values or to randomly shuffle the items in
+a list.
+
+## Installing new packages
+
+<!-- TODO: WRITEME -->
+
+### Python package index
+
+<!-- TODO: WRITEME -->
+
+### Conda
+
+<!-- TODO: WRITEME -->
+
+## An example: the numpy package
+
+The `math` module is part of the Python standard library.  It
+implements a routines to calculate few standard functions and some
+basic probability distributions.
+
+There are other packages that you would have to download to use. Let's
+look at an example very useful for scientific computing: numpy. 
+
+Numpy is a package for making numerically-intensive programming easier
+and for making it run faster. It brings it's own datatype to the game:
+an actual array!  Numpy's arrays are quite fast -- substantially
+faster than Python's regular way of representing arrays as "lists of
+lists" (or in three dimensions, "lists of lists of lists" and so
+forth.
+
+First, let's tell Python we want to use numpy:
+
+```{python}
+import numpy as np
+```
+
+The "as np" part lets us specify a *namespace*, in this case a nice,
+short name so we don't have to type out "numpy" *every single time*.
+
+The critical NumPy data type is the array.
+
+"NumPy arrays are faster and more compact than Python lists. An array
+consumes less memory and is convenient to use."
+([source](https://numpy.org/doc/stable/user/absolute_beginners.html))
+The one caveat with NumPy arrays is that all the elements inside an
+array need to have the same data type (e.g. integer, float, double).
+
+Now we can create an array or two:
+
+```{python}
+a = np.array([[1,2,3,4], [5,6,7,8], [9,10,11,12]])
+```
+
+The `array()` function will turn nested lists into an array.
+You can also make new arrays by asking for a zero array of a given size
+
+```{python}
+z = np.zeros(3)
+print(z)
+```
+
+or ones:
+
+```python
+m = np.ones((3,3))
+```
+
+(note that the dimensions are given as a _tuple_).
+
+You can also element-wise add, subtract, or multiply:
+
+```python
+z + 3
+```
+
+Or
+
+```python
+a % 2
+```
+
+Comparisons are element wise
+
+```python
+a > 5
+```
+
+You can get the dimensions of an array with the `.shape()` method:
+
+```python
+m.shape()
+z.shape()
+```
+
+There are convenience functions to get information about the array:
+
+```{python}
+print(a.shape)
+```
+
+```{python}
+print(z.shape)
+```
+
+The "shape" property tells us how many elements there are in each dimension, and the number of values separated by commas tell use how many dimensions the array has.
+
+(OK, I lied. Shape returns a "tuple" that describes the array and we're printing that out. A tuple is like a list.)
+
+Let's do a little bit of linear algebra. We'll need to bring in the
+"linalg" part of numpy and we'll use the name "nl" as a shorthand.
+
+```{python}
+k = np.array( [ [1,1,1], [1,1,0], [1,0,0] ] )
+
+import numpy.linalg as nl
+kinv = nl.inv(k)
+kinv
+```
+
+Matrix multiplication, anyone? Python has the "@" operator for exactly
+that:
+
+```{python}
+k @ kinv
+```
+
+For a complete list of operators, see:
+http://docs.python.org/library/operator.html#mapping-operators-to-functions
+
+### NumPy Linear Algebra
+
+NumPy has routines to do basic linear algebra, such as finding a
+matrix inverse, or solving a linear system.
+
+```python
+k = np.array([1,1,1], [1,1,0], [1,0,0])
+k
+```
+
+Inverses
+
+```python
+from numpy.linalg import nl
+kinv = nl.inv(k)
+kinv
+```
+
+And matrix multiplication
+
+```python
+k @ kinv
+```
+
+Matrix visualization:
+
+```python
+import matplotlib.pyplot as plt
+plt.matshow(a)
+```
+
+## Further steps
+
+We have only scratched the surface of what numpy can do. Imagine how
+much the other thousands of Python packages can do!  The nice thing
+about software development, when it's done correctly, is that pieces
+build on top of other pieces.
+
+The [SciPy] package, for instance, has modules for integration,
+differentiation, linear algebra, signal processing, image processing
+(which is special case of signal processing), and so on.  Lots of
+packages then build on top of SciPy.
+
+[SciPy]: https://scipy.org/

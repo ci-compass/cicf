@@ -1,0 +1,261 @@
+# A Very Quick Tour of Python
+
+In this notebook, we'll look at some of the language features of
+python and how to use them.  Some prior programming experience might
+be useful here, with Java, Javascript, C, C++, or Python.
+
+In the [previous notebook](./1-introduction.ipynb), we ran a print
+statement and did some basic arithmetic, and that was our first steps
+with running some Python code in Jupyter.
+
+Click in the next cell with the example code and press Shift+Enter to
+run it.
+
+```{python}
+prius_weight = 4000
+battery_weight = 150
+just_the_normal_car_weight = prius_weight - battery_weight
+
+print ("If you took the battery out of a Prius it would weigh", just_the_normal_car_weight, "pounds.")
+```
+
+It should be obvious what the code above does.  Python has all the
+usual arithmetic "operators" you would expect:
+
+```{python}
+sum = 4 + 2
+difference = 4 - 2
+product = 4 * 2
+thingie = 9 / 3
+
+print(sum, difference, product, thingie)
+```
+
+There are also some other operators:
+
+```{python}
+integer_division = 7 // 2
+remainder = 7 % 2
+big_number  = 9 ** 25
+
+print(integer_division, remainder, big_number)
+```
+
+The two slashes next to each other mean "divide this and ignore the
+remainder". The percent sign says "divide this and **only** give us
+the remainder.  Finally, two asterices mean "evaluate the left side
+raised to the right side's power".
+
+The standard order of operations that we learned in school still
+applies here. Exponentiation is done first, then the multiplications
+and divisions, and then finally the additions and subtractions.
+
+Within the same level, operators are evaluated left-to-right:
+
+```{python}
+print(8 - 5 + 3)
+```
+
+There is an exception, though. Exponentiation is done right-to-left
+
+```{python}
+print(2 ** 3 ** 4)
+print(2 ** 81)
+```
+
+Notice how big those numbers are?  Python (at least, all modern
+versions) represent integers with 64 bits. This will hold numbers from
+positive to negative 9 billion billon, give or take a little. If you
+want to count the atoms in a micromole, knock yourself out.
+
+Parentheses work as expected for explicitly forcing a particular order
+of operations:
+
+```{python}
+test_1 = 92
+test_2 = 90
+test_average = (test_1 + test_2) / 2
+print(test_average)
+```
+
+We've been throwing those "print" function calls around without
+talking about them. Print will take any number of arguments, separated
+by commas, and print them out with one space between them. After the
+last item is printed, Python will put out a "newline" character, jump
+down, and get ready to start printing next time at the beginning of
+the next line.
+
+Variables are named "containers" that hold data. We've seen variables
+used as integers and as real numbers (with a decimal point and some
+digits afterwards). Variables can also hold strings:
+
+Variables in Python work similarly to Javascript, if you're familiar
+with that language.
+
+```{python}
+first_part = "super"
+other_part = "conducting"
+sumpreme_coolness = first_part + other_part
+print(sumpreme_coolness)
+```
+
+The "+" operator will concatenate ("jam together") two strings. Notice
+that it did not insert a space. If you need a space, you have to do it
+yourself.
+
+```{python}
+not_as_cool = first_part + " " + other_part
+print(not_as_cool)
+```
+
+A couple of things to notice... First, there are three things being
+concatenated: a variable, a string "literal" with only a single space
+in it, and another variable. Second, when we evaluate a cell and
+create a variable in it, those variables become available to every
+cell further down the line. (If you're curious, there is one instance
+of Python running behind the scenes. Jupyter just crams code into when
+you execute a cell. When Python is done running that, any output is
+put into the notebook right below that block. Running another command
+later, in another cell, sends that code to the one and only Python
+instance associated with the entire notebook. There is no need to
+write insanely long cells, and in fact you should keep them 30-50
+lines at most if you can. Shorter cells are easier to understand and
+debug.
+    
+Python has the same control structures you're used to, it's just that
+syntax is a little different now.
+
+```{python}
+if 5 > 4 :
+    print("arithmetic still works!")
+    print("now back to the show!")
+else:
+    print("it appears we have shifted universes for a few minutes.")
+    print("I have a feeling this will be bad.")
+```
+
+Notice that there is no "then". Notice that there **is** a colon at
+the end of the "if" line. A colon indicates that a "code block" is
+coming up. In our case, these blocks are two lines long. They have to
+be indented, and they have to be indented the same amount. In Python,
+indentation has meaning. The "visual" level that things are indented
+to indicates the "lexical" level of the code block.
+
+Python has loops, as expected:
+
+```{python}
+weight = 6.0
+
+while weight < 11.2:
+    print("running inside the loop!")
+    weight = weight + 4
+
+print("done with the loop now.")
+```
+
+While loops are very versatile (you can test anything to see if you
+should continue) but sometimes you know how many times you want to do
+something and you want a "cleaner" way to express that.
+
+```{python}
+for i in range(1,6):
+    print(i)
+    
+if i == 5:
+    print("we got to 5, like we expected!! Surprise!!")
+else:
+    print("hmmm...")
+    
+```
+
+Notice something funny above: when testing for equality, Phython uses
+two equals signs stuck together with no space between them. This is
+just like Java, Javascript, C, C++...
+
+Notice something else: we specified the range to be from one
+to... well, we said six, but it stopped after five. That's how range
+works: you specify the number to start at and the number that is the
+first one you want it to stop at **and not run the associated code
+block**. I guarantee you either you'll mess this up or you'll have to
+read code written by someone else that has that mistake. I do it all
+the time.
+
+While we're on the subject of "equals sign strangeness", Python has a
+shortcut for using the value of variable, changing it, and storing it
+back in the same variable.
+
+```{python}
+# you could do this
+weight = 6
+weight = weight + 4
+print(weight)
+# or you could do this
+weight = 6
+weight += 4
+print(weight)
+```
+
+Along with the "+=" operator, there is also ``-=``, ``*=``, and ``/=``
+
+Hey, look at that line above... notice that little quoted parts of the
+code are in gray boxes?  Any part of your Markdown that occurs between
+two "backquotes" is shown specially.
+
+Also, did you notice the lines in the cell above that started with a
+"#"?  That character means "everything on tghe rest of the line is
+just a note to myself and should not be run". These "comments" are
+very valuable for reminding yourself what's going on when you come
+back to your code three months later and you can't remember anything.
+
+Back to "for" loops for a minute. These loops can also iterate over a
+list:
+
+```{python}
+for color in [ "red", "green", "blue"] :
+              print(color)
+```
+
+In fact, the "range" function is used to build a list of values and
+then the ``for`` loop steps over it.
+
+(Don't worry - I lied. But conceptually that's what happens. Behind
+the scenes, Python detects when a for loop is stepping through a range
+function and it behaves like Java or C - nice and efficiently.)
+
+That list of colors is interesting, isn't it? Besides integers, real
+numbers, and strings, Python has some other built-in data types. One
+of these is the list.
+
+When writing out a list, surround it with square brackets (as
+above). Separate the individual list items with commas. Notice
+something cool (or dangerous, depending on your point of view: lists
+don't have to contain just all one type of data. You can mix them in
+the same list:
+
+```{python}
+funny_stuff = [13, 19, 44, "Bob Hope", 16]
+```
+
+That is a list of 5 things: three numbers, a string, and one more
+number.  We can access individual elements with "array indexing":
+
+```{python}
+print(funny_stuff[0])
+print(funny_stuff[1])
+print(funny_stuff[2])
+print(funny_stuff[3])
+print(funny_stuff[4])
+```
+
+Like basically every language except Fortran, Python lists store their
+first value at index zero, not one! This trips up everyone sooner or
+later. Sometimes miore than once. Sometimes more than once a minute.
+
+Now you know just enough Python to be dangerous. An excellent tutorial
+on the language is available at
+https://docs.python.org/3/tutorial/index.html and I recommend you
+bookmark that for handy reference.
+
+Now that we're at least a threat to ourselves, if not others, let's go
+to the "Modules" notebook and see why Python has taken over the world.
+
