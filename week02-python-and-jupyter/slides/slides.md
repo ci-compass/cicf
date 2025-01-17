@@ -7,18 +7,19 @@ format:
     theme: default
 ---
 
-#
+# Greetings and salutations!
 
 ## The plan this week:
 
 We have four Jupyter notebooks in the tutorials this week. They will give you:
 
-- a quick tour of Jupyter notebooks.
-- a quick tour of Python programming language.
+- a tour of Jupyter notebooks.
+- a tour of Python programming language.
 - an overview of Python packages.
-- A quick example of working with some LIGO data in Jupyter.
+- An example of working with some LIGO data in Jupyter.
 
-Let us go over this.
+By necessity, we will keep things short and simple, and gloss over
+some things.
 
 # Jupyter notebooks
 
@@ -26,10 +27,11 @@ Let us go over this.
 
 - Jupyter notebooks are a way to write text/documentation, code,
   equations, data, graphs, images, etc. together.
-  - They are kind of like paper lab notebooks.
 - You can view and edit these notebooks in a browser window.
 - You can execute code in these notebooks from the browser window.
 - You can share these notebooks with other people.
+
+They are kind of like paper lab notebooks, but in a browser window.
 
 ## Jupyter notebooks
 
