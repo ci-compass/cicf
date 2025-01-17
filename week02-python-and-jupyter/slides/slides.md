@@ -128,23 +128,6 @@ Two ways:
 You can also write little scripts using an editor or IDE and run them.
 REPL or notebook should be good enough to test things out.
 
-## Variables
-
-Variables are like you expect, except, unlike Java or C++, the are not
-"strongly" typed.
-
-A variable can be a number one moment and then can suddenly become a
-string:
-
-```python
->>> amount = 7
->>> amount
-7
->>> amount = "a whole lot!"
->>> amount
-a whole lot!
-```
-
 ## Structure of a Python program
 
 Python program can be decomposed this way:
@@ -154,7 +137,7 @@ Python program can be decomposed this way:
 - Statements contain expressions.
 - Expressions create and process objects.
 
-::: {.note}
+::: {.notes}
 - We will discuss modules towards the end.
 
 - Statements perform some action.
@@ -165,7 +148,23 @@ Python program can be decomposed this way:
     `42`, `x + y`, `x > y`, `"hello"`, etc.
 :::
 
-## Flow of control
+## Variables
+
+- Variables give names to things.  They work the way you expect.
+
+- Unlike Java or C++, the are not "strongly" typed.  A variable can be
+a number one moment and then can suddenly become a string:
+
+```python
+>>> amount = 7
+>>> amount
+7
+>>> amount = "a whole lot!"
+>>> amount
+a whole lot!
+```
+
+## Control flow statements
 
 You have `if`, `if`/`else`, `for`, `while`, etc.
 
