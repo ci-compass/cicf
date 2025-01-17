@@ -43,11 +43,11 @@ They are kind of like paper lab notebooks, but in a browser window.
 
 ## Jupyter notebooks
 
-TODO: add a screenshot here.
+![image from https://jupyter.org/](./img/jupyter-notebook.png)
 
 ## JupyterLab
 
-TODO: add a screenshot here.
+![image from https://jupyter.org/](./img/jupyter-lab.png)
 
 ## JupyterLab instances out there
 
