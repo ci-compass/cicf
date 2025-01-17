@@ -155,7 +155,7 @@ You have `if`, `if`/`else`, `for`, `while`, etc.
 
 ## Example
 
-Here's a for loop inside of an if statement:
+Here's a `for` loop inside of an `if` statement:
 
 ```python
 if temperature >= 100:
