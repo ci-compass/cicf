@@ -138,10 +138,10 @@ string:
 
 ```python
 >>> amount = 7
->>> print(amount)
+>>> amount
 7
 >>> amount = "a whole lot!"
->>> print(amount)
+>>> amount
 a whole lot!
 ```
 
