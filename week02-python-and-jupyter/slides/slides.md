@@ -86,11 +86,11 @@ Here's a for loop inside of an if statement:
 
 ```python
 if temperature >= 100:
-  print("It boiled!")
-  for sample_tube in range(1,6):
-    print("concentration is: ", tube_concentration [sample_tube])
+    print("It boiled!")
+    for sample_tube in range(1, 6):
+        print("concentration is: ", tube_concentration[sample_tube])
 else:
-  print("Warmed up, but not boiling yet. Try harder.")
+    print("Warmed up, but not boiling yet. Try harder.")
 ```
   
 Notice colons at the ends of the `if`, `for`, and `else` statements.  
