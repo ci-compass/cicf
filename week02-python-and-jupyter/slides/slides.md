@@ -467,9 +467,9 @@ array([ 1.61380659,  1.21211191, -0.30766142, ...,  1.77788338,
 
 ## pip
 
-- `pip` is a commandline tool used to install Python packages from
-  PyPI
-  - (also from other Python repositories, sometimes)
+- `pip` is a command-line tool used to install Python packages from
+  PyPI.
+  - (Also from other Python repositories, sometimes.)
 - `pip` itself is hosted on PyPI: <https://pypi.org/project/pip/>
   - so you can `pip install --upgrade pip` when there are new `pip`
     releases on PyPI.
