@@ -280,6 +280,7 @@ except:
 ```
 
 ## Modules
+
 Modules are well-contained lumps of code that do a specific thing and
 that are easy to incorporate into your own work.
 
@@ -291,9 +292,13 @@ thing (usually). You don't have to think about it, so you can
 concentrate on your own code.
 
 
-## Python packages
+# Python packages
 
-PyPi - Python Package Index
+## What are packages?
+
+TODO
+
+## Python Package Index
 
 If you're trying to do something, there's a really good chance someone
 else already has. If they did a good job, there's a decent chance
@@ -301,10 +306,10 @@ they've released it to the public.
 
 PyPi indexes and stores these packages (modules)
 
-
 ## pip
 
 TODO
+
 
 ## conda
 
