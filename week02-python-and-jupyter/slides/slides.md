@@ -160,13 +160,18 @@ Forgetting this will likely be a big source of mistakes.
 
 ## Strings
 
-Strings in your program can be surrounded by single (') or double (")
-quotation marks. Whichever one you start a string with, you have to
-end with that same kind.
+Strings can be surrounded by single quotes (`'`) or double quotes
+(`"`). Whichever one you start a string with, you have to end with
+that same kind.
 
 ```python
 >>> 'hello' == "hello"
 True
+>>> 'hello"
+  File "<stdin>", line 1
+    'hello"
+    ^
+SyntaxError: unterminated string literal (detected at line 1)
 ```
 
 ## More on strings
