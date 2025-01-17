@@ -276,20 +276,31 @@ Slicing will also work on lists.
 
 ## Dictionaries
 
+Dictionaries (or `dict` objects in Python parlance) contain pairs of
+keys and values:
+
 ```python
-drugs = { 
-   "asprin": 325, 
-   "acetaminophen": 500 
-}
-print (drugs["asprin"])  # prints 325
+>>> drugs = { 
+...    "asprin": 325, 
+...    "acetaminophen": 500 
+... }
+>>> 
+>>> drugs["asprin"]
+325
+>>> drugs["acetaminophen"]
+500
+>>> drugs["ibuprofen"]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'ibuprofen'
 ```
 
 ## Operators
 
-All the usual ones:  +, -, *, /
-Integer division:   7 // 2   yields 3
-Remainder:    7 % 2   yields 1
-Exponentiation: 2 ** 8  yields 256
+- All the usual ones:  +, -, *, /
+- Integer division:   7 // 2   yields 3
+- Remainder:    7 % 2   yields 1
+- Exponentiation: 2 ** 8  yields 256
 
 Operators can be overloaded (have different meanings depending on the
 data type). The plus sign will concatenate strings: "Hi there, " +
