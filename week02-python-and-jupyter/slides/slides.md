@@ -4,9 +4,6 @@ author: "Sajith Sasidharan"
 format:
   pptx:
     reference-doc: cicf-template.pptx
-    toc: true
-    toc-depth: 1
-    toc-title: "This week"
 ---
 
 # The plan this week:
