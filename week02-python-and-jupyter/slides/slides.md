@@ -51,11 +51,17 @@ They are kind of like paper lab notebooks, but in a browser window.
 
 ## JupyterLab instances out there
 
-- Google Colab
-- GitHub's thing
-- MS Planetary Computer
-- FABRIC's JupyterLab instance
-- Chameleon project's JupyterLab instance
+- Google Colab (https://colab.research.google.com/)
+- GitHub Codespaces (https://github.com/codespaces)
+- MicroSoft Planetary Computer (https://planetarycomputer.microsoft.com/)
+- FABRIC's JupyterLab instance (https://jupyter.fabric-testbed.net/)
+- Chameleon project's JupyterLab instance (https://jupyter.chameleoncloud.org/)
+- etc.
+
+You can also:
+
+- Set up an IDE (such as VS Code) to work with notebooks.
+- Preview notebooks from GitHub, sometimes.
 
 
 # Python
