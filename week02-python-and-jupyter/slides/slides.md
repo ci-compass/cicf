@@ -310,27 +310,60 @@ yields the single string `"Hi there, human"`
 
 ## Functions
 
-Lots of built-in functions (print(), range(), etc.)
-Easy to create your own:
+- Lots of built-in functions (`print()`, `range()`, etc.)
+- Easy to create your own:
 
 ```python
-def simpleAlgebra(x, y):
-  result = (x ** 2) + y
-  return result
+import math
+
+def area_of_circle(radius):
+    """
+    Compute area of a circle
+
+    :param radius: radius of the circle.
+    """
+    result = math.pi * radius ** 2
+    return result
 ```
 
 ## Calling a function
 
-```python
-computed_result = simpleAlgebra(4, 3)
-print(computed_result)
-```
+You would call a function like so:
 
-prints "19".
+```python
+>>> area_of_circle(10)
+314.1592653589793
+>>> area_of_circle(5)
+78.53981633974483
+```
 
 ## User defined classes
 
-TODO
+Python classes can't be too strange to those familiar with C++ or
+Java:
+
+```python
+class Customer:
+    """
+    A class to represent a customer
+    """
+    def __init__(self, name, address):
+        """ Constructor """
+        self.name = name
+        self.address = address
+
+    def show(self):
+        """ Print customer details """
+        print(self.name + " lives at " + self.address)
+```
+
+You would use them like so:
+
+```python
+>>> c = Customer("Bob", "1234 Wooded Way")
+>>> c.show()
+Bob lives at 1234 Wooded Way
+```
 
 
 ## Error Handling with exceptions
