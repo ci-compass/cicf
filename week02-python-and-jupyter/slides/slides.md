@@ -90,6 +90,30 @@ style.
 
 ::::
 
+## Trying out code
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+Two ways:
+
+- Use a Jupyter notebook, write code in new cells, and run them.
+- Use the Python REPL ("Read-Eval-Print Loop")
+
+:::
+
+::: {.column width="50%"}
+
+![](./img/repl-hello.png)
+
+:::
+
+::::
+
+You can also write little scripts using an editor or IDE and run them.
+REPL or notebook should be good enough to test things out.
+
 ## Variables
 
 Variables are like you expect, except they have no types.  A variable
