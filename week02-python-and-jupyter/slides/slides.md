@@ -166,7 +166,11 @@ a whole lot!
 
 ## Control flow statements
 
-You have `if`, `if`/`else`, `for`, `while`, etc.
+- You have `if`, `if`/`else`, `for`, `while`, etc.
+
+- `pass` statement is a placeholder when you need to do nothing.
+- `continue` statement will cause a jump to the top of the loop.
+- `break` statement will cause an exit from the loop.
 
 ## Example
 
