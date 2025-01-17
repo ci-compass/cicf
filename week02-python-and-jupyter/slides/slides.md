@@ -57,7 +57,36 @@ TODO: add a screenshot here.
 We will not attempt to teach you Python this week. But!
 
 If you know any other programming language, you can learn Python on
-your own very quickly.
+your own very quickly.  Find a resource that suits your learning
+style.
+
+:::: {.columns}
+
+::: {.column width="20%"}
+
+![](./img/automate.png)
+
+:::
+
+::: {.column width="20%"}
+
+![](./img/learning.png)
+
+:::
+
+::: {.column width="20%"}
+
+![](./img/head-first.png)
+
+:::
+
+::: {.column width="20%"}
+
+![](./img/hard-way.png)
+
+:::
+
+::::
 
 ## Variables
 
