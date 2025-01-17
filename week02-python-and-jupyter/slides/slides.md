@@ -209,7 +209,7 @@ something, you would want to use a list of lists.
 
 ```python
 >>> temperatures = [44.2, 43.6, 107.9, "awfully hot!"]
->>> print(temperatures[3])
+>>> temperatures[3]
 awfully hot!
 ```
 
