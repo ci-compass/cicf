@@ -9,12 +9,7 @@ format:
 #    theme: default
 ---
 
-# Greetings and salutations!
-
-Welcome to week two of CICF.
-
-We will look at Jupyter notebooks and the Python programming language.
-We will work with some science data using Jupyter and Python.
+# Welcome to week two of CICF!
 
 ## The plan this week:
 
