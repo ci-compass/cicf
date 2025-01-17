@@ -279,24 +279,6 @@ except:
   print("Number of people was zero, no valid answer!")
 ```
 
-## Where Python Really Shines
-
-Time to come clean with you: Python isn't all that great a
-language. It's not bad, per se, but there's nothing magical in
-there. There's nothing in there that Scheme wasn't doing in the 1970s,
-and Scheme probably does it all better.
-
-So why is the world crazy about Python and Scheme is barely a
-footnote?
-
-## Python's Selling Pointsa
-
-- Readable, properly-indented code is mandatory.  
-- Strong enough superficial resemblance to older, popular languages to remove some of
-  the "fear factor" in changing.  
-- From nearly the outset, a publicly available repository of
-  pre-written modules to do all sorts of things!
-
 ## Modules
 Modules are well-contained lumps of code that do a specific thing and
 that are easy to incorporate into your own work.
