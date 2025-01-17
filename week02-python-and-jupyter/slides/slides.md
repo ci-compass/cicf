@@ -148,7 +148,15 @@ print(grades[4])        # prints F
 print(grades[5])        # this will raise an error!
 ```
 
-Notice the first element in a list is numbered 0 (zero)!
+Notice the first element in a list is numbered 0!
+
+## Indexing
+
+Any time you index into a list, Python always counts starting at 0,
+not 1.
+
+Forgetting this will likely be a big source of mistakes.
+
 
 ## Strings
 
@@ -175,15 +183,6 @@ print(st[:2])     # prints AB
 ```
 
 Note that this will also work on lists.
-
-
-## Indexing
-
-Any time you index into a list (or a tuple) Python always counts
-starting at 0, not 1.
-
-Forgetting this is likely the number one source of mistakes.
-
 
 
 ## Dictionaries
