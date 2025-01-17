@@ -130,17 +130,20 @@ REPL or notebook should be good enough to test things out.
 
 ## Variables
 
-Variables are like you expect, except they have no types.  A variable
-can be a number one moment and suddenly become a string in the next
-line:
+Variables are like you expect, except, unlike Java or C++, the are not
+"strongly" typed.
+
+A variable can be a number one moment and then can suddenly become a
+string:
 
 ```python
-amount = 7
-amount = “A whole lot!”
-print(amount)
+>>> amount = 7
+>>> print(amount)
+7
+>>> amount = "a whole lot!"
+>>> print(amount)
+a whole lot!
 ```
-
-prints out: `A whole lot!`
 
 ## Statements
 
