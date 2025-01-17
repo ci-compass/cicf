@@ -11,14 +11,20 @@ format:
 
 # Greetings and salutations!
 
+Welcome to week two of CICF.
+
+We will look at Jupyter notebooks and the Python programming language.
+We will work with some science data using Jupyter and Python.
+
 ## The plan this week:
 
-We have four Jupyter notebooks in the tutorials this week. They will give you:
+We have four Jupyter notebooks in the tutorials this week. They will
+give you:
 
-- a tour of Jupyter notebooks.
-- a tour of Python programming language.
-- an overview of Python packages.
-- An example of working with some LIGO data in Jupyter.
+- A quick tour of Jupyter notebooks.
+- A quick tour of Python programming language.
+- A quick overview of Python packages.
+- A quick example of working with some LIGO data in Jupyter.
 
 By necessity, we will keep things short and simple, and gloss over
 some things.
@@ -29,8 +35,8 @@ some things.
 
 - Jupyter notebooks are a way to write text/documentation, code,
   equations, data, graphs, images, etc. together.
-- You can view and edit these notebooks in a browser window.
-- You can execute code in these notebooks from the browser window.
+- You can view and edit these notebooks in a web browser window.
+- You can execute code in these notebooks from the web browser window.
 - You can share these notebooks with other people.
 
 They are kind of like paper lab notebooks, but in a browser window.
