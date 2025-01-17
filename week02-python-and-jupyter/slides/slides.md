@@ -386,16 +386,42 @@ message.
 
 ## Modules
 
-Modules are well-contained lumps of code that do a specific thing and
-that are easy to incorporate into your own work.
+- Modules are _organizational units_ of a Python program.  When you
+create a Python project, you would split your code into logical units,
+called _modules_.
 
-"Well-contained" means whatever it does inside, it almost certainly
-won't cause some strange interaction with your own code.
+- In concrete terms, modules correspond to files.
 
-And being contained means you can just use it and trust it to do its
-thing (usually). You don't have to think about it, so you can
-concentrate on your own code.
+```
+mypackage/
+    __init__.py
+    module1.py
+    module2.py
+    subpackage/
+        __init__.py
+        submodule1.py
+```
 
+## Using modules
+
+- You would use a module in another module like so:
+
+```python
+from mypackage import module1
+from mypackage.subpackage import submodule2 as sm2
+
+module1.some_function()
+sm2.some_other_function()
+```
+
+- Or, equivalently:
+
+```python
+import mypackage
+
+mypackage.module1.some_function()
+mypackage.subpackage.submodule1.some_other_function()
+```
 
 # Python packages
 
