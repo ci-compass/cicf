@@ -105,13 +105,6 @@ Notice colons at the ends of the `if`, `for`, and `else` statements.
 - Do not use tab characters unless you're certain that your editor
   will turn `<tab>` keys into spaces.
 
-## Code blocks
-
-This trips me up every time.
-
-When you have a statement that is followed by a "code block" (such as
-the body of an "if" or a "for") then the statement ends with a colon!
-( : )
 
 ## Data types
 
