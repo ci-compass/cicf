@@ -147,6 +147,7 @@ a whole lot!
 
 ## Statements
 
+TODO
 
 ## Flow of control
 
@@ -180,15 +181,15 @@ Notice colons at the ends of the `if`, `for`, and `else` statements.
 
 ## Basic data types
 
-- Booleans (True and False)
+- Booleans (`True` and `False`)
 - Numbers
-  - Integers (example: -1, 0, 1, 2, …)
-  - Floating point numbers (example: 3.14)
-- Strings (example: “hello world!”)
+  - Integers (example: `-1`, `0`, `1`, `2`, …)
+  - Floating point numbers (example: `3.14`)
+- Strings (example: `"hello world!"`)
 
 ## Built-in data structures
 
-- Lists
+- Lists 
 - Dictionaries
 - Tuples
 - Sets
