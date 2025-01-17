@@ -5,7 +5,9 @@ format:
     reference-doc: cicf-template.pptx
 ---
 
-# The plan this week:
+#
+
+## The plan this week:
 
 We have four Jupyter notebooks in the tutorials this week. They will give you:
 
