@@ -250,20 +250,28 @@ True
 SyntaxError: unterminated string literal (detected at line 1)
 ```
 
-## More on strings
+## Slicing strings and lists
 
 Python strings _act_ just like lists of letters.
 
-Useful syntax for selecting just part of a string:
+Here's some useful syntax for selecting just part of a string:
 
 ```python
-st = "ABCDEFG"
-print(st[2:4])    # prints CD
-print(st[4:])     # prints EFG
-print(st[:2])     # prints AB
+>>> st = "ABCDEFG"
+>>> st[2:4]
+CD
+>>> st[4:]
+EFG
+>>> st[:2]
+AB
+>>> st[0:6:2]
+'ACE'
 ```
 
-Note that this will also work on lists.
+This operation is called "slicing", and has the syntax
+`object[start:end:step]`.
+
+Slicing will also work on lists.
 
 
 ## Dictionaries
