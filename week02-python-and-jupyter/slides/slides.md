@@ -120,17 +120,22 @@ the body of an "if" or a "for") then the statement ends with a colon!
 - Tuples
 - Sets
 
-User defined classes
+- User defined classes
 
-Example:
-# lists
-temperatures = [ 44.2, 43.6, 107.9, "awfully hot"]
-print (temperatures[3])
-
-## dictionaries
+## Lists
 
 ```python
-drugs = { "asprin": 325, "acetaminophen": 500 }
+temperatures = [ 44.2, 43.6, 107.9, "awfully hot"]
+print (temperatures[3])
+```
+
+## Dictionaries
+
+```python
+drugs = { 
+   "asprin": 325, 
+   "acetaminophen": 500 
+}
 print (drugs["asprin"])  # prints 325
 ```
 
