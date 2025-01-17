@@ -3,6 +3,7 @@ title: "CICF Week 2: Scientific Python Programming"
 format:
   pptx:
     reference-doc: cicf-template.pptx
+    fig-width: 300
   revealjs:
     theme: default
 #  beamer:
@@ -38,25 +39,31 @@ They are kind of like paper lab notebooks, but in a browser window.
 
 ## Jupyter notebooks
 
-![image from https://jupyter.org/](./img/jupyter-notebook.png)
+![image from https://jupyter.org/](./img/jupyter-notebook.png){width=50%}
 
 ## JupyterLab
 
-![image from https://jupyter.org/](./img/jupyter-lab.png)
+![image from https://jupyter.org/](./img/jupyter-lab.png){width=50%}
+
 
 ## JupyterLab instances out there
 
-- Google Colab (https://colab.research.google.com/)
-- GitHub Codespaces (https://github.com/codespaces)
-- MicroSoft Planetary Computer (https://planetarycomputer.microsoft.com/)
-- FABRIC's JupyterLab instance (https://jupyter.fabric-testbed.net/)
-- Chameleon project's JupyterLab instance (https://jupyter.chameleoncloud.org/)
+- [Google Colab](https://colab.research.google.com)
+- [Microsoft Planetary
+  Computer](https://planetarycomputer.microsoft.com/)
+- [FABRIC project's JupyterLab
+instance](https://jupyter.fabric-testbed.net/)
+- [Chameleon project's JupyterLab
+instance](https://jupyter.chameleoncloud.org/)
 - etc.
 
-You can also:
+## Also!
 
-- Set up an IDE (such as VS Code) to work with notebooks.
-- Preview notebooks from GitHub, sometimes.
+- You can set up an IDE (such as VS Code or Codium) to work with
+  notebooks.
+- Preview notebooks from GitHub.com, sometimes.
+- [GitHub Codespaces](https://github.com/codespaces) has support for
+  notebooks.
 
 
 # Python
