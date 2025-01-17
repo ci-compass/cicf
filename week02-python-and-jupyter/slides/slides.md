@@ -75,13 +75,14 @@ prints out: `A whole lot!`
 
 ## Statements
 
-Flow of Control Statements (if, for, etc.)
 
-Control structures like you're used to: if, while, for, but with some
-extra features. 
+## Flow of control
 
-Here's a for loop inside of an if statement. Notice colons at the ends
-of the if, for, and else statements.
+You have `if`, `if`/`else`, `for`, `while`, etc.
+
+## Example
+
+Here's a for loop inside of an if statement:
 
 ```python
 if temperature >= 100:
