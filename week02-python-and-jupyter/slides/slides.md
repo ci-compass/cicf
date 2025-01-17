@@ -93,14 +93,17 @@ else:
   print("Warmed up, but not boiling yet. Try harder.")
 ```
   
+Notice colons at the ends of the `if`, `for`, and `else` statements.  
+
 ## Code layout has meaning
 
 - Code blocks are indicated by indentation level
-  - In comparison C++, Java, etc.,  indicate blocks with '{' and '}'
+  - In comparison C, C++ and Java begin blocks with `{` and end them
+    with `}`.
 - Indentation of a code block MUST be the same for the entire block. 
-- Best Practice: indent four spaces. 
+- Best Practice: indent with four spaces.
 - Do not use tab characters unless you're certain that your editor
-  will turn them into spaces.
+  will turn `<tab>` keys into spaces.
 
 ## Code blocks
 
