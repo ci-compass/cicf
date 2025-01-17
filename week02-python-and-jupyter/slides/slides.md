@@ -145,9 +145,25 @@ string:
 a whole lot!
 ```
 
-## Statements
+## Structure of a Python program
 
-TODO
+Python program can be decomposed this way:
+
+- Programs consist of modules.
+- Modules contain statements.
+- Statements contain expressions.
+- Expressions create and process objects.
+
+::: {.note}
+- We will discuss modules towards the end.
+
+- Statements perform some action.
+    - Example: `x = 42` (assignment), `import math` (an import
+      statement)
+
+- Expressions are pieces of code that evaluate to a value. Example:
+    `42`, `x + y`, `x > y`, `"hello"`, etc.
+:::
 
 ## Flow of control
 
