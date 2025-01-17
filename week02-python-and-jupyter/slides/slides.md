@@ -106,7 +106,7 @@ Notice colons at the ends of the `if`, `for`, and `else` statements.
   will turn `<tab>` keys into spaces.
 
 
-## Data types
+## Basic data types
 
 - Booleans (True and False)
 - Numbers
@@ -121,14 +121,70 @@ Notice colons at the ends of the `if`, `for`, and `else` statements.
 - Tuples
 - Sets
 
-- User defined classes
-
 ## Lists
+
+Python lists are like arrays in other languages, except:
+
+- they can grow (and shrink) as needed
+- the different elements of an array don't all have to be the same type
+
+Lists are fundamentally one-dimensional. If you would normally use a
+2D array for something, use a list of lists instead.
+
+## List example
 
 ```python
 temperatures = [ 44.2, 43.6, 107.9, "awfully hot"]
 print (temperatures[3])
 ```
+
+## Another list example
+
+```python
+grades = ["A", "B", "C", "D", "F"]
+print (len(grades))     # prints 5
+print(grades[0])        # prints A
+print(grades[4])        # prints F
+print(grades[5])        # this will raise an error!
+```
+
+Notice the first element in a list is numbered 0 (zero)!
+
+## Strings
+
+Strings in your program can be surrounded by single (') or double (")
+quotation marks. Whichever one you start a string with, you have to
+end with that same kind.
+
+```python
+>>> 'hello' == "hello"
+True
+```
+
+## More on strings
+
+Python strings _act_ just like lists of letters.
+
+Useful syntax for selecting just part of a string:
+
+```python
+st = "ABCDEFG"
+print(st[2:4])    # prints CD
+print(st[4:])     # prints EFG
+print(st[:2])     # prints AB
+```
+
+Note that this will also work on lists.
+
+
+## Indexing
+
+Any time you index into a list (or a tuple) Python always counts
+starting at 0, not 1.
+
+Forgetting this is likely the number one source of mistakes.
+
+
 
 ## Dictionaries
 
@@ -171,6 +227,11 @@ print(computed_result)
 
 prints "19".
 
+## User defined classes
+
+TODO
+
+
 ## Error Handling with exceptions
 
 When an unrecoverable error occurs, the Python runtime "throws" an
@@ -182,50 +243,6 @@ try:
 except:
   print("Number of people was zero, no valid answer!")
 ```
-
-## Lists
-
-Python lists are like arrays in other languages, except:
-
-- they can grow (and shrink) as needed
-- the different elements of an array don't all have to be the same type
-
-Lists are fundamentally one-dimensional. If you would normally use a
-2D array for something, use a list of lists instead.
-
-## List example
-
-```python
-grades = ["A", "B", "C", "D", "F"]
-print (len(grades))     # prints 5
-print(grades[3])        # prints D
-```
-
-Notice the first element in a list is numbered 0 (zero)!
-
-## Strings
-
-Python strings look just like lists of letters.
-
-Literals in your program can be surrounded by single (') or double (")
-quotation marks. Whichever one you start a string with, you have to
-end with that same kind.
-
-Odd but useful syntax for selecting just part of a string:
-
-```python
-st = "ABCDEFG"
-print(st[2:4])    # prints CD
-print(st[4:])     # prints EFG
-print(st[:2])     # prints AB
-```
-
-## Indexing
-
-Any time you index into a list (or a tuple) Python always counts
-starting at 0, not 1.
-
-Forgetting this is likely the number one source of mistakes.
 
 ## Where Python Really Shines
 
