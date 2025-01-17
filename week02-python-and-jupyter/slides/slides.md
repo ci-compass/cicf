@@ -474,38 +474,19 @@ array([ 1.61380659,  1.21211191, -0.30766142, ...,  1.77788338,
   - so you can `pip install --upgrade pip` when there are new `pip`
     releases on PyPI.
 
-## conda
+## Anaconda and `conda`
 
-TODO
+- Anaconda (<https://www.anaconda.com/>) is a "Python distribution".
+- It is a curated collection of Python software, popular in science,
+  AI, and data science communities.
+- `conda` is Anaconda's package manager.
+   - `conda` is Anaconda's alternative to `pip`.
+   
+::: {.notes}   
+Conda evidently handles package management and dependency resolution
+better than pip.
+:::
 
-## More on Python packages
-
-- All kinds of packages
-  - A bit over 500,000 thousand projects!
-  
-Some are very broadly useful:
-
-- Database connectivity, Web access, Lovely graphics
-
-Some are very specific:
-- There are about 220 packages for dealing with Illumina DNA
-  Sequencers, and that's one specific brand of those instruments.
-  
-
-## Example - specific domains
-
-- Want to do crystallography?  87 packages available.
-- Do you like synchrotrons? 113 packages.
-- Most things even vaguely "scientific" have multiple packages
-  available; some may be useful to you.
-
-## Numpy
-
-Let's look more closely at a package
-In the next video, a look at "NumPy".
-
-Numerical algorithms for Python, lovingly hand tuned for speed, tested
-by experts, and used by tons of people.
 
 ## Working with LIGO data
 
