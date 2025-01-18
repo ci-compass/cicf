@@ -263,7 +263,7 @@ Notice colons at the ends of the `if`, `for`, and `else` statements.
   - Floating point numbers (example: `3.14`)
 - Strings (example: `"hello world!"`)
 
-:::
+::: {.notes}
 
 There are also:
 
