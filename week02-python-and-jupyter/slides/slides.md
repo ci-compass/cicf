@@ -548,8 +548,6 @@ called _modules_.
 
 ## Using modules
 
-
-
 ```python
 from mypackage import module1
 from mypackage.subpackage import submodule2 as sm2
@@ -569,6 +567,7 @@ mypackage.subpackage.submodule1.some_other_function()
 
 - You would use a module in another module like in the example.
 - These methods are roughly equivalent.
+
 :::
 
 # Python packages
@@ -628,8 +627,8 @@ The example of generating normally distributed random numbers is from
 - PyPI is a large repository of Python packages.
   - "601,286 projects; 6,499,014 releases; 13,103,667 files; 893,449
      users" at the time of writing this.  That is huge!
-     
-:::     
+
+:::
 
 ## pip
 
@@ -660,6 +659,7 @@ The example of generating normally distributed random numbers is from
 - `conda` is Anaconda's alternative to `pip`.
 - Conda handles package management and dependency resolution better
 than pip.
+
 :::
 
 # Working with LIGO data
