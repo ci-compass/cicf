@@ -242,14 +242,18 @@ Notice colons at the ends of the `if`, `for`, and `else` statements.
 
 ## Code layout has meaning
 
-- Code blocks are indicated by indentation level
+- Code blocks are indicated by indentation level.
   - In comparison C, C++ and Java begin blocks with `{` and end them
     with `}`.
+
+::: {.notes}
+
 - Indentation of a code block MUST be the same for the entire block. 
 - Best Practice: indent with four spaces.
 - Do not use tab characters unless you're certain that your editor
   will turn `<tab>` keys into spaces.
 
+:::
 
 ## Basic data types
 
@@ -277,6 +281,14 @@ There are also:
 
 ## Lists
 
+```python
+>>> temperatures = [44.2, 43.6, 107.9, "awfully hot!"]
+>>> temperatures[3]
+awfully hot!
+```
+
+::: {.notes}
+
 Python lists are like arrays in C++ and Java, except:
 
 - They can grow (and shrink) as needed.
@@ -286,13 +298,7 @@ Python lists are like arrays in C++ and Java, except:
 Lists are one-dimensional. If you would normally use a 2D array for
 something, you would want to use a list of lists.
 
-## List example
-
-```python
->>> temperatures = [44.2, 43.6, 107.9, "awfully hot!"]
->>> temperatures[3]
-awfully hot!
-```
+:::
 
 ## Another list example
 
@@ -310,16 +316,16 @@ Traceback (most recent call last):
 IndexError: list index out of range
 ```
 
+::: {.notes}
+
 Notice the first element in a list is numbered 0 (zero).  
 
 Any time you index into a list, Python always counts starting at 0,
 not 1. Forgetting this will likely be a big source of mistakes.
 
-## Strings
+:::
 
-Strings can be surrounded by single quotes (`'`) or double quotes
-(`"`). Whichever one you start a string with, you have to end with
-that same kind.
+## Strings
 
 ```python
 >>> 'hello' == "hello"
@@ -331,11 +337,15 @@ True
 SyntaxError: unterminated string literal (detected at line 1)
 ```
 
+::: {.notes}
+
+Strings can be surrounded by single quotes (`'`) or double quotes
+(`"`). Whichever one you start a string with, you have to end with
+that same kind.
+
+:::
+
 ## Slicing strings and lists
-
-Python strings _act_ just like lists of letters.
-
-Here's some useful syntax for selecting just part of a string:
 
 ```python
 >>> st = "ABCDEFG"
@@ -349,16 +359,23 @@ AB
 'ACE'
 ```
 
+- Slicing uses the syntax `object[start:end:step]`.
+  - `step` is `1` by default.
+
+::: {.notes}
+
+Python strings _act_ just like lists of letters.  
+
+Here's some useful syntax for selecting just parts of strings (and
+lists).
+
 This operation is called "slicing", and has the syntax
 `object[start:end:step]`.
 
-Slicing will also work on lists.
+:::
 
 
 ## Dictionaries
-
-Dictionaries (or `dict` objects in Python parlance) contain pairs of
-keys and values:
 
 ```python
 >>> drugs = { 
@@ -376,10 +393,14 @@ Traceback (most recent call last):
 KeyError: 'ibuprofen'
 ```
 
-## Tuples
+::: {.notes}
 
-- Tuples construct groups of objects.
-- Example:
+Dictionaries (or `dict` objects in Python parlance) contain pairs of
+keys and values:
+
+:::
+
+## Tuples
 
 ```python
 ()               # An empty tuple.
@@ -387,15 +408,26 @@ KeyError: 'ibuprofen'
 (0, 'Ni', 3.14)  # A four item tuple.
 ```
 
-## Sets
+::: {.notes}
 
-- Sets are structures whose elements are unique.
+- Tuples construct groups of objects.
 - Example:
+
+:::
+
+## Sets
 
 ```python
 {1,2,3}
 {0, 'Ni', 3.14}
 ```
+
+::: {.notes}
+
+- Sets are structures whose elements are unique.
+- Example:
+
+:::
 
 ## Operators
 
@@ -404,16 +436,14 @@ KeyError: 'ibuprofen'
 - Remainder:    `7 % 2`   yields `1`
 - Exponentiation: `2 ** 8`  yields `256`
 
-- Operators can be overloaded: they can have different meanings
-depending on the data type.
+## Operator overloading
+
+- Operators can have different meanings depending on the data type.
 
 - The plus sign will concatenate strings: `"Hi there, " + 'human'`
-yields the single string `"Hi there, human"`
+yields the single string `"Hi there, human"`.
 
 ## Functions
-
-- Lots of built-in functions (`print()`, `range()`, etc.)
-- Easy to create your own:
 
 ```python
 import math  # use Python's math module.
@@ -428,13 +458,6 @@ def area_of_circle(radius):
     return result
 ```
 
-We have also sneakily introduced usage of modules and comment syntax
-here!
-
-## Calling a function
-
-You would call a function like so:
-
 ```python
 >>> area_of_circle(10)
 314.1592653589793
@@ -442,27 +465,29 @@ You would call a function like so:
 78.53981633974483
 ```
 
-## User defined classes
+::: {.notes}
 
-Python classes can't be too strange to those familiar with C++ or
-Java:
+- Lots of built-in functions: `print()`, `range()`, ...
+
+- Easy to create your own.
+
+- We have also sneakily introduced usage of modules and comment syntax
+here!
+
+:::
+
+
+## User defined classes
 
 ```python
 class Customer:
-    """
-    A class to represent a customer
-    """
     def __init__(self, name, address):
-        """ Constructor """
         self.name = name
         self.address = address
 
     def show(self):
-        """ Print customer details """
         print(self.name + " lives at " + self.address)
 ```
-
-You would use them like so:
 
 ```python
 >>> c = Customer("Bob", "1234 Wooded Way")
@@ -470,11 +495,15 @@ You would use them like so:
 Bob lives at 1234 Wooded Way
 ```
 
+::: {.notes}
+
+Python classes can't be too strange to those familiar with C++ or
+Java.
+
+:::
+
 
 ## Error handling with exceptions
-
-When an unrecoverable error occurs, the Python runtime "throws" an
-exception that is "caught" by an exception handler.
 
 ```python
 try:
@@ -483,16 +512,19 @@ except:
   print("Number of people was zero, no valid answer!")
 ```
 
-If you do not catch an exception, your program will fail with an error
-message.
+::: {.notes}
+
+- When an unrecoverable error occurs, the Python runtime "throws" an
+exception that is "caught" by an exception handler.
+
+- If you do not catch an exception, your program will fail with an
+error message.
+
+:::
 
 ## Modules
 
-- Modules are _organizational units_ of a Python program.  When you
-create a Python project, you would split your code into logical units,
-called _modules_.
-
-- In concrete terms, modules correspond to files.
+Modules are Python's _organizational units_.
 
 ```
 mypackage/
@@ -504,9 +536,19 @@ mypackage/
         submodule1.py
 ```
 
+::: {.notes}
+
+- Modules are _organizational units_ of a Python program.  When you
+create a Python project, you would split your code into logical units,
+called _modules_.
+
+- In concrete terms, modules correspond to files.
+
+:::
+
 ## Using modules
 
-- You would use a module in another module like so:
+
 
 ```python
 from mypackage import module1
@@ -516,8 +558,6 @@ module1.some_function()
 sm2.some_other_function()
 ```
 
-- Or, equivalently:
-
 ```python
 import mypackage
 
@@ -525,19 +565,31 @@ mypackage.module1.some_function()
 mypackage.subpackage.submodule1.some_other_function()
 ```
 
+::: {.notes}
+
+- You would use a module in another module like in the example.
+- These methods are roughly equivalent.
+:::
+
 # Python packages
 
 ## What are packages?
 
-- Packages are a way to distribute Python software.
+Packages are the way to distribute Python software.
+
+::: {.notes}
+
+- Packages are the way to distribute Python software.
 - Packages can contain libraries (example: NumPy, SciPy...) or
   applications (example: Jupyter). Or sometimes both.
 - Packages are a collection of modules.
 - You can install packages, and use in your projects.
 
+:::
+
 ## An example package: NumPy
 
-You would install NumPy like so:
+Install NumPy like so:
 
 ```
 pip install numpy
@@ -554,10 +606,20 @@ array([ 1.61380659,  1.21211191, -0.30766142, ...,  1.77788338,
        -3.08686752, -0.20901042])
 ```
 
-(An example of generating normally distributed random numbers, from
-<https://numpy.org/>.)
+::: {.notes}
+
+The example of generating normally distributed random numbers is from
+<https://numpy.org/>.
+
+:::
 
 ## Python Package Index (PyPI)
+
+![](img/pypi.png)
+
+::: {.notes}
+
+- People publish Python packages at PyPI.
 
 - For most common needs with Python, there's a really good chance
   someone already has created a solution and published it in Python
@@ -566,6 +628,8 @@ array([ 1.61380659,  1.21211191, -0.30766142, ...,  1.77788338,
 - PyPI is a large repository of Python packages.
   - "601,286 projects; 6,499,014 releases; 13,103,667 files; 893,449
      users" at the time of writing this.  That is huge!
+     
+:::     
 
 ## pip
 
