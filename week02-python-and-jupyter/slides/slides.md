@@ -92,13 +92,10 @@ They are kind of like paper lab notebooks, but in a browser window.
 
 # Python
 
-## First, a Word about Python
+## First, a little preliminary
 
-We will not attempt to teach you Python this week. But!
-
-If you know any other programming language, you can learn Python on
-your own very quickly.  Find a resource that suits your learning
-style.
+We will not learn all of Python this week.  Plenty of resources are
+out there if/when you need them.
 
 :::: {.columns}
 
@@ -128,7 +125,16 @@ style.
 
 ::::
 
+::: {.notes}
+
+If you know any other programming language, you can learn Python on
+your own very quickly.  Find a resource that suits your learning
+style: books, tutorials, tutorial websites, videos, courses...
+
+:::
+
 ## Trying out code
+
 
 :::: {.columns}
 
