@@ -12,10 +12,14 @@ format:
 
 # Welcome to week two of CICF!
 
-## The plan this week:
+## The plan this week
 
-We have four Jupyter notebooks in the tutorials this week. They will
-give you:
+We will work through four Jupyter notebooks in the tutorials this
+week. 
+
+::: {.notes}
+
+The notebooks will give you:
 
 - A quick tour of Jupyter notebooks.
 - A quick tour of Python programming language.
@@ -24,6 +28,8 @@ give you:
 
 By necessity, we will keep things short and simple, and gloss over
 some things.
+
+:::
 
 # Jupyter notebooks
 
