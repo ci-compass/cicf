@@ -649,20 +649,26 @@ The example of generating normally distributed random numbers is from
 
 ## Anaconda and `conda`
 
+![](img/anaconda.png)
+
+::: {.notes}
+
 - Anaconda (<https://www.anaconda.com/>) is a "Python distribution".
 - It is a curated collection of Python software, popular in science,
   AI, and data science communities.
 - `conda` is Anaconda's package manager.
-   - `conda` is Anaconda's alternative to `pip`.
-   
-::: {.notes}   
-Conda evidently handles package management and dependency resolution
-better than pip.
+- `conda` is Anaconda's alternative to `pip`.
+- Conda handles package management and dependency resolution better
+than pip.
 :::
 
 # Working with LIGO data
 
-## LIGO data
+## Plotting LIGO data
+
+![](img/ligo-plot.png)
+
+::: {.notes}
 
 - LIGO (<https://www.ligo.caltech.edu/>) is an NSF major facility that
   studies gravitational waves.
@@ -671,6 +677,8 @@ better than pip.
 
 - One of your tasks this week is to download some of this data, and
   plot it in a Jupyter notebook.
+
+:::
 
 
 # FIN
