@@ -259,6 +259,15 @@ Notice colons at the ends of the `if`, `for`, and `else` statements.
   - Floating point numbers (example: `3.14`)
 - Strings (example: `"hello world!"`)
 
+:::
+
+There are also:
+
+- Complex numbers (example: `3+4j`)
+- `Decimal()`, `Fraction()` types in the standard library.
+
+:::
+
 ## Built-in data structures
 
 - Lists 
