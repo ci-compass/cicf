@@ -140,10 +140,10 @@ style: books, tutorials, tutorial websites, videos, courses...
 
 ::: {.column width="50%"}
 
-Two ways:
+Two quick ways:
 
-- Use a Jupyter notebook, write code in new cells, and run them.
-- Use the Python REPL ("Read-Eval-Print Loop")
+- Jupyter notebooks
+- REPL
 
 :::
 
@@ -155,8 +155,22 @@ Two ways:
 
 ::::
 
+::: {.notes}
+
+- You should try out the code examples on your own.
+
+- Use a Jupyter notebook, write code in new cells, and run them.
+- Use the Python REPL ("Read-Eval-Print Loop")
+- Run `python3` in a terminal in your VM.
+  - You (very likely) already have `python3` if you run macOS or
+    Linux.
+  - Windows? Install from Windows Store probably. I wouldn't know!
+
 You can also write little scripts using an editor or IDE and run them.
 REPL or notebook should be good enough to test things out.
+
+:::
+
 
 ## Structure of a Python program
 
