@@ -314,6 +314,27 @@ Traceback (most recent call last):
 KeyError: 'ibuprofen'
 ```
 
+## Tuples
+
+- Tuples construct groups of objects.
+- Example:
+
+```python
+()               # An empty tuple.
+(1,)             # A one-item tuple.
+(0, 'Ni', 3.14)  # A four item tuple.
+```
+
+## Sets
+
+- Sets are structures whose elements are unique.
+- Example:
+
+```python
+{1,2,3}
+{0, 'Ni', 3.14}
+```
+
 ## Operators
 
 - All the usual ones:  `+`, `-`, `*`, `/`
