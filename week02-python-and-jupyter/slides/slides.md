@@ -194,10 +194,8 @@ Python programs can be decomposed this way:
 
 ## Variables
 
-- Variables give names to things.  They work the way you expect.
-
-- Unlike Java or C++, the are not "strongly" typed.  A variable can be
-a number one moment and then can suddenly become a string:
+- Variables give names to things.
+- Variables are not strongly typed.
 
 ```python
 >>> amount = 7
@@ -207,6 +205,17 @@ a number one moment and then can suddenly become a string:
 >>> amount
 a whole lot!
 ```
+
+::: {.notes}
+- Variables work the way you expect.
+
+- Unlike Java or C++, the are not "strongly" typed.  A variable can be
+a number one moment and then can suddenly become a string.
+
+- You don't have to declare types of variables.
+
+- Python is said to be dynamically typed.
+:::
 
 ## Control flow statements
 
