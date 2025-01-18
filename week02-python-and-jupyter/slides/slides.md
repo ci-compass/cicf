@@ -633,12 +633,19 @@ The example of generating normally distributed random numbers is from
 
 ## pip
 
+- `pip` is the Python package installer.
+- `pip` is on PyPI: <https://pypi.org/project/pip/>.
+
+::: {.notes}
+
 - `pip` is a command-line tool used to install Python packages from
   PyPI.
   - (Also from other Python repositories, sometimes.)
-- `pip` itself is hosted on PyPI: <https://pypi.org/project/pip/>
+- `pip` itself is on PyPI: <https://pypi.org/project/pip/>
   - so you can `pip install --upgrade pip` when there are new `pip`
     releases on PyPI.
+
+:::
 
 ## Anaconda and `conda`
 
