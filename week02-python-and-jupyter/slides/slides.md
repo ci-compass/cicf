@@ -74,14 +74,21 @@ instance](https://jupyter.fabric-testbed.net/)
 instance](https://jupyter.chameleoncloud.org/)
 - etc.
 
-## Also!
+::: {.notes}
 
-- You can set up an IDE (such as VS Code or Codium) to work with
+- Many organizations and projects host their own JupyterLab instances.
+
+- Google Colab is a fancier, dressed up rich cousin of JupyterLab.
+  Your notebooks will work there.
+
+- You can also set up an IDE (such as VS Code or Codium) to work with
   notebooks.
-- Preview notebooks from GitHub.com, sometimes.
+  
+- You can preview notebooks from GitHub.com, sometimes.
+
 - [GitHub Codespaces](https://github.com/codespaces) has support for
   notebooks.
-
+:::
 
 # Python
 
