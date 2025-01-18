@@ -31,9 +31,15 @@ some things.
 
 :::
 
-# Jupyter notebooks
+# Jupyter
 
-## What are Jupyter notebooks?  Why are they useful?
+## Jupyter notebooks
+
+![image from https://jupyter.org/](./img/jupyter-notebook.png){width=50%}
+
+::: {.notes}
+
+What are Jupyter notebooks?  Why are they useful?
 
 - Jupyter notebooks are a way to write text/documentation, code,
   equations, data, graphs, images, etc. together.
@@ -43,14 +49,19 @@ some things.
 
 They are kind of like paper lab notebooks, but in a browser window.
 
-## Jupyter notebooks
-
-![image from https://jupyter.org/](./img/jupyter-notebook.png){width=50%}
+:::
 
 ## JupyterLab
 
 ![image from https://jupyter.org/](./img/jupyter-lab.png){width=50%}
 
+::: {.notes}
+
+- JupyterLab is a newer, fancier way of working with notebooks.
+- Kind of like a web-based IDE (integrated development environment).
+- You can work with multiple notebooks side by side, use a file
+  browser, and use plugins that enhance functionality.
+:::
 
 ## JupyterLab instances out there
 
