@@ -65,18 +65,18 @@ They are kind of like paper lab notebooks, but in a browser window.
 
 ## JupyterLab instances out there
 
-- [Google Colab](https://colab.research.google.com)
-- [Microsoft Planetary
-  Computer](https://planetarycomputer.microsoft.com/)
-- [FABRIC project's JupyterLab
-instance](https://jupyter.fabric-testbed.net/)
-- [Chameleon project's JupyterLab
-instance](https://jupyter.chameleoncloud.org/)
-- etc.
+![](./img/colab.png){width=50%}
 
 ::: {.notes}
 
 - Many organizations and projects host their own JupyterLab instances.
+
+- [Google Colab](https://colab.research.google.com), [Microsoft
+  Planetary Computer](https://planetarycomputer.microsoft.com/), [FABRIC
+  project's JupyterLab instance](https://jupyter.fabric-testbed.net/),
+  [Chameleon project's JupyterLab
+  instance](https://jupyter.chameleoncloud.org/), etc.
+
 
 - Google Colab is a fancier, dressed up rich cousin of JupyterLab.
   Your notebooks will work there.
