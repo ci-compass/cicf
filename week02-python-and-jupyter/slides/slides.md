@@ -136,7 +136,7 @@ REPL or notebook should be good enough to test things out.
 
 ## Structure of a Python program
 
-Python program can be decomposed this way:
+Python programs can be decomposed this way:
 
 - Programs consist of modules.
 - Modules contain statements.
