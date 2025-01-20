@@ -21,9 +21,9 @@ others.
 
 ## Getting Started
 
-Download the approprate pre-made image from the CICF shared drive.
-Get the `utm` image  if your computer is a Mac, and get the `` image if it uses Windows.
-Then choose the appropriate section below depending on the operating system on your computer.
+We first need to install the VM host program, which will depend on the type of
+operating system on your computer. Once that is done, we will all have the same
+image and your computer's operating system won't matter.
 
 ### OS X
 
@@ -35,22 +35,26 @@ There are a few ways to install it:
 1. You can [download a disk image](https://github.com/utmapp/UTM/releases/latest/download/UTM.dmg) and install it from there.
 1. If you have [Homebrew](https://brew.sh/) installed already, you can use that. Run `brew install utm`
 
-Once UTM is installed, download the UTM machine image from the CICF shared drive.
+Once UTM is installed, download the `cicf-y4.utm` file from the CICF shared drive.
+
 When the image is downloaded, start UTM.
 Under the "File" menu choose "Open", and then select the UTM image file you downloaded.
 This will add the image as an option in the main window.
 Now press the play button next to the name to start image.
 The VM "screen" will be displayed in a new window.
 Your mouse should just work.
-If your mouse is _captured_, meaning it cannot escape the virtual image to select other things on your computer, press Command-Option to release it.
+If your mouse is _captured_, meaning it cannot escape the virtual image to
+select other things on your computer, press Command-Option to release it.
 Skip to the section [Using the VM Image](#using-the-vm-image).
 
 ### Windows
 
 We use VirtualBox to run the VMs on Windows.
 Download and install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) for Windows hosts.
-
-
+Once VirtualBox is installed, download the the `cicf-y4.ova` file from the CICF shared drive.
+Choose the "File > Import Appliance..." menu option, and then select the file you just downloaded.
+The import will take a few minutes.
+Once done, choose the "Start" button to boot the image.
 Continue with the next section, [Using the VM Image](#using-the-vm-image).
 
 ## Using the VM Image
@@ -95,9 +99,23 @@ These are the steps used to create the downloadable VM image for UTM.
 1. Rename the VM image to `cicf-y4`
 
 
-## Windows image
+### Windows Steps for VirtualBox
 
-For Windows, we use VirtualBox to run the VM.
+For Windows, we use VirtualBox to create the VM.
 
-(to be completed)
+1. Download the [ARM64 Debian 12 installer](https://cdimage.debian.org/debian-cd/current/arm64/iso-cd/) debian-12.9.0-amd64-netinst.iso
+1. Create a new VM image in Virtual Box. Make sure "skip unattended installiation" is checked. Memory: 6 GB. Disk: 8 GB.
+1. Boot and install OS.
+```
+       name: CICF
+       server name: cicf-vm
+       username: cicf
+       password: cicf
+```
+1. Of the optional packages, install the XFCE envrionment.
+1. After installation is complete, eject the CD image and reboot.
+1. Verify machine boots correctly. Then turn off the VM.
+1. 
+
+
 
