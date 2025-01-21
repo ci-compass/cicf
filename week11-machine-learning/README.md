@@ -1,53 +1,43 @@
-# CICF Week 2
+# CICF Week 11
+
+This week we will look at some data wrangling on a tabular dataset.
+We will then fit a decision tree and a random forest model to the data.
 
 ## Tutorial
 
-### Machine Learning and AI: new-ish challenges in Scientific Computing
+This class focuses more on the tools and concepts you might encounter related to cyberinfrastructure.
+This means we are not going to cover the mathematics behind the machine learning algorithms in much depth.
+But I encourage you to look at these materials if you find the techniques interesting.
+This and the next tutorials are based on the Practical Deep Learning for Coders lessons by Jeremy Howard. References are included in the [Resources](#Resources) section at the end of this file.
 
-Scientific computing has two main areas these days: simulation, and "pattern finding".
-Simulation is the traditional role: forcasting future situations (e.g. weather, structural engeerning, agent based modeling), creating models that can make good predictions, and running what-if scenerios.
-The new role is as pattern finding, which comes from machine learning and AI.
-For this we want to take a very, very, very large amount of data and find patterns in it by using approximation and statistical algorithms.
-The goal is to conduct non-traditional analysis of scientific data to make _unexpected discoveries_.
+### Random Forests
 
-Why does cyberinfrastructure care about this?
-The ML/AI techniques need:
-* huge amounts of data
-* Fairly simple computation with extremely fast access to the data. (huge RAM, huge parallelism, all tightly connected)
-* Problems often either *are* or *closely resemble* linear algebra
+This section is modeled after the excellent tutorial by Jeremy Howard titled
+["How Random Forests Really Work"](https://www.kaggle.com/code/jhoward/how-random-forests-really-work/).
+I recommend looking at this for more detail on how decision trees and random forests work.
 
-This means that scientific computing is appropriating hardware that have been developed over the past 30 years for graphics.
-Computer graphics involve translating objects in a 3D coordinate system and mapping to 2D to render to the screen.
-Graphics Processing Units are hardware processors developed to do these kind calculations very quickly.
-And they are now finding a second use training AI models.
-The tactic is to make the AI problem look like linear algebra, then do computation on a GPU.
+Open your VM, and `git pull` in the `cicf` folder.
 
-An area of research currently is that while GPUs help with speeding up linear algebra problems, they don't speed the IO or other non-linear processing of the data.
+    sudo apt install graphviz
+    pip install --upgrade jupyter-core nbconvert seaborn fastai
 
+We are going to work with the Titanic dataset.
+Lets first look at the [dataset](https://github.com/datasciencedojo/datasets/blob/master/titanic.csv)
+This dataset is a passenger manifest from the Titanic.
 
-### High Performance Networking:
-
-Moving a terabyte or more of data is **hard**.
-Most networks run the Internet Protocol (IP), usually as (TCP/IP), to coordinate sharing data between computers.
-This protocol was originally designed in early 1980s and data throughput was not a design goal.
-It relies on low latency between nodes and requires, among other things, a round trip message confirmation every 8 to 100k bytes.
-This puts speed limits on the transfer rate based on the speed of light.
-For example, going from North Carloina to San Francisco, there is a 100-150 millisecond round trip time, which gives an approximately 1 MBit/sec transfer rate.
-
-[TCP performance](https://www.potaroo.net/ispcolumn/2000-09-latency.html)
-
-Some ways to speed up data transfers:
-* Put data on a disk drive and ship! high latency, but high throuput. e.g. Amazon snowball and [snowmobile](https://aws.amazon.com/snowmobile/)
-* Use non-TCP and non-IP protocols
-    * [Internet2](https://internet2.edu/), [ESnet (DOE)](https://www.es.net/)
-    * [NSF FABRIC Testbed](https://fabric-testbed.net/)
-    * Industry (e.g. [Facebook](https://engineering.fb.com/category/networking-traffic/)/Apple/Amazon/Netflix/ Google) are using custom high speed networking protocols
-
-### Survey CI landscape at a Major Facility
-
-This is an in class activity. Break into small groups and have 5 minutes to research the network and computing infrastructure deployed at a major facility.
+The rest of this section is in the notebook [random-forest.ipynb](random-forest.ipynb).
 
 ## Resources
 
-- News article on design of new HPC system at TACC: [With Vista, TACC now has three paths to its future horizon superomputer](https://www.nextplatform.com/2024/01/29/with-vista-tacc-now-has-three-paths-to-its-future-horizon-supercomputer/)
+Sources for the tutorial notebook:
 
+- [Random Forests - Practical Deep Learning for Coders](https://course.fast.ai/Lessons/lesson6.html)
+- ["How Random Forests Really Work"](https://www.kaggle.com/code/jhoward/how-random-forests-really-work/).
+- [Neural Net Foundations](https://course.fast.ai/Lessons/lesson3.html)
+
+Other Interesting links:
+
+- [Google Colab](https://colab.research.google.com/) provides a Jupyter notebook-like interface on top of a cloud computing platform. Definately worth looking at.
+- [Titanic - Machine Learning from Disaster](https://www.kaggle.com/competitions/titanic/data) is the Kaggle competition I mentioned.- [Astronomers Dig Up the Stars That Birthed the Milky Way](https://www.quantamagazine.org/with-ai-astronomers-dig-up-the-stars-that-birthed-the-milky-way-20230328/)
+- [Cornell Machine Learning Course](https://www.cs.cornell.edu/courses/cs4780/2015fa/page4/)
+- [Google Machine Learning Course](https://developers.google.com/machine-learning/crash-course/ml-intro)

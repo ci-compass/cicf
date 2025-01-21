@@ -1,4 +1,4 @@
-# CICF Week 12
+# CICF Week 11b
 
 This week we will cover what a neural network is.
 We will build a simple model for the same tabular data as in week 11,

@@ -1,6 +1,6 @@
-# CICF Week 3
+# CICF Week 2
 
-The goals for week 3 lab are:
+The goals for week 2 lab are:
 
 1. Install and use the Jupyter notebook application on your VM.
 2. Be able to create, edit, and run notebooks.
