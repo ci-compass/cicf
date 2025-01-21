@@ -35,10 +35,11 @@ There are a few ways to install it:
 1. You can [download a disk image](https://github.com/utmapp/UTM/releases/latest/download/UTM.dmg) and install it from there.
 1. If you have [Homebrew](https://brew.sh/) installed already, you can use that. Run `brew install utm`
 
-Once UTM is installed, download the `cicf-y4.utm` file from the CICF shared drive.
+Once UTM is installed, download the `cicf-y4.utm.zip` file from the CICF shared drive.
 
-When the image is downloaded, start UTM.
-Under the "File" menu choose "Open", and then select the UTM image file you downloaded.
+When the image is downloaded, unzip it (double click it in the Finder).
+Start UTM.
+Under the "File" menu choose "Open", and then select the UTM image file, `cicf-y4.utm`.
 This will add the image as an option in the main window.
 Now press the play button next to the name to start image.
 The VM "screen" will be displayed in a new window.
@@ -115,7 +116,4 @@ For Windows, we use VirtualBox to create the VM.
 1. Of the optional packages, install the XFCE envrionment.
 1. After installation is complete, eject the CD image and reboot.
 1. Verify machine boots correctly. Then turn off the VM.
-1. 
-
-
 
