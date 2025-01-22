@@ -210,9 +210,7 @@ Running that code will cause it to print "14".
 
 ## Next Steps
 
-Good job! You've learned how to open Jupyter notebooks, how to run
-code that's contained in them, and how to add your own Code and
-Markdown cells. You're well on your way to being a proficient and
-productive Jupyter user.  Coming up, we'll look at some more Jupyter
-features that you'll need to do your daily work with it.
+You have learned how to open Jupyter notebooks, how to run code that's
+contained in them, and how to add your own Code and Markdown cells.
 
+In the next notebook, we will look at the Python programming language.
