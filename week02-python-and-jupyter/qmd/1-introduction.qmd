@@ -118,11 +118,10 @@ in. This can be handy when you're jumping around.
 ## Kinds of Cells
 
 By now you may have noticed two distinct kinds of cells in a
-notebook. Cells like this one with text in them are called "Markdown"
-cells. Cells with code in them are called "Code" cells. There are
-other kinds of cells (we added an extension that lets us put video in
-a cell, for instance) but Code and Markdown are the two you'll
-practically always use.
+notebook. Cells like this one with text in them are "Markdown"
+cells. Cells with code in them are "Code" cells. There are other kinds
+of cells (there is an extension that lets us put video in a cell, for
+instance) but Code and Markdown are the most important ones for now.
 
 In the Ancient Times, when the earth's crust was still cooling and
 publications were printed on paper, an editor would go through a
@@ -148,8 +147,8 @@ pages are laid out.
 
 Jupyter uses another markup language, and this one is called
 Markdown. Other things use Markdown, also. Reddit supports Markdown
-(alongside what they call the "Fancy Pants Editor") and github uses
-"github flavored Markdown".
+(alongside what they call the "Fancy Pants Editor") and GitHub uses
+"GitHub flavored Markdown".
 
 Did you notice how this cell has a heading that says "Kinds of Cells"
 and that it's in a larger font than the rest of it?  When I typed that
