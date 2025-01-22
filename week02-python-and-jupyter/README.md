@@ -157,7 +157,7 @@ You can open each these notebooks by double clicking them, or by
 clicking on the "open" button that will appear when you select a
 notebook.
 
-## JupyterLab
+### JupyterLab
 
 JupyterLab is a newer, fancier, and perhaps nicer way to interact with
 Jupyter notebooks.  You can launch a JupyterLab instance instead of
@@ -169,10 +169,9 @@ jupyter lab
 
 <!-- TODO: add JupyterLab screenshot -->
 
-Perhaps you might prefer JupyterLab.
-
-You are likely to come across JupyterLab instances hosted by various
-organizations and projects.  Some examples:
+Perhaps you might prefer JupyterLab.  You are likely to come across
+JupyterLab instances hosted by various organizations and projects.
+Some examples:
 
 - [Microsoft Planetary Computer](https://planetarycomputer.microsoft.com/)
 - [FABRIC project's JupyterLab instance](https://jupyter.fabric-testbed.net/)
@@ -182,13 +181,23 @@ Google [Colab] also supports Jupyter notebooks.
 
 [Colab]: https://colab.research.google.com/
 
-In fact, using your Google account, you can open this week's notebooks
-straight in Colab.  Try these links:
+In fact, you can open this week's notebooks straight in Colab.  Try
+these links:
 
 - https://colab.research.google.com/github/ci-compass/cicf/blob/main/week02-python-and-jupyter/1-introduction.ipynb
 - https://colab.research.google.com/github/ci-compass/cicf/blob/main/week02-python-and-jupyter/2-quick-python-tour.ipynb
 - https://colab.research.google.com/github/ci-compass/cicf/blob/main/week02-python-and-jupyter/3-python-packages.ipynb
 - https://colab.research.google.com/github/ci-compass/cicf/blob/main/week02-python-and-jupyter/4-plot-ligo-data.ipynb
+
+To run the cells, you will have to sign using a Google account.  
+
+However, note that you won't be able to run commands such as `pip` and
+`wget` in a Colab terminal as we discuss here: in order to be able to
+use a terminal, Colab requires a paid plan.  So you probably won't be
+able to run all the cells in the third and fourth notebooks.
+
+But that is just an irrelevant detail for now.  You already have a
+virtual machine set up to do what you need to do!
 
 ## Resources
 
