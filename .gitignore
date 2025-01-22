@@ -10,3 +10,12 @@ venv/
 /week02-python-and-jupyter/qmd/*.html
 /week02-python-and-jupyter/qmd/*.ipynb
 /week02-python-and-jupyter/qmd/*_files/
+/week02-python-and-jupyter/slides/slides.pptx
+/week02-python-and-jupyter/slides/~$slides.pptx
+/week02-python-and-jupyter/slides/.~lock.slides.pptx#
+/week02-python-and-jupyter/slides/slides.html
+/week02-python-and-jupyter/slides/slides_files/
+/week02-python-and-jupyter/slides/index.html
+/week02-python-and-jupyter/slides/.gitignore
+/week02-python-and-jupyter/slides/index_files/
+/week02-python-and-jupyter/slides/slides.pdf
