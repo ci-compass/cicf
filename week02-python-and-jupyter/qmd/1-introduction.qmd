@@ -52,24 +52,28 @@ print("Hello, World")
 ```
 
 Look at the line above. That's our print statement and its one
-argument. Over a little bit to the left of it we see, in dark blue,
-the word "In" and a pair of brackets. "In" tells us that we're looking
-at the input part of a cell - the place where we can type stuff. The
-brackets don't have anything in them, but that will change soon.
+argument. Over a little bit to the left of it we see a pair of square
+brackets. The brackets don't have anything in them, but that will
+change soon.
 
 Let us run that line of code. Looking at the cell, we see the print
 statement. Click on that print statement so the blinking cursor is in
-that cell. Now go to the "Cell" menu and select "Run Cells". We only
-selected the one cell, so it'll only run that one.
+that cell. Now go to the "Run" menu and select "Run Selected Cell".
+You can also use the keys Shift+Enter to run the current cell.  We
+only selected the one cell, so it'll only run that one.
+
+![](./img/hello-world.png)
 
 Did you see that?  Our Jupyter Notebook just ran that line of Python!
 The output from the print function appears right below the input part
-of the cell. The words "Hello World" appeared.
+of the cell. The words "Hello World" appeared.  
 
-Granted, Hello World is a pretty unspectacular piece of code, but at
-least the Computer Programming Introduction Cops won't arrest me
-now. Let's do something slightly more interesting now. Take a look at
-the next cell. Then scroll down to the cell after that, where it says
+Also, the square brackets now contain the number 1.  This is the
+cell's execution count.  The execution count will increase every time
+you run the cell.
+
+Let's do something slightly more interesting now. Take a look at the
+next cell. Then scroll down to the cell after that, where it says
 "Basics of running a cell".
 
 ```{python}
@@ -90,10 +94,10 @@ set equal to 12, then it was multiplied by 29.5735 to convert those
 ounces to milliliters. Finally, the last line prints out the results
 of that conversion.
 
-The second thing that happened was more subtle. Look at the dark blue
-text to the left of it, where it says "In" and has the
-brackets. Inside those brackets there is now a number (probably a "2",
-but the important part is that there's a number).
+The second thing that happened was more subtle. Look at the text in
+the square brackets to the left of it. Inside those brackets there is
+now a number -- probably a "2", but the important part is that there's
+a number.
 
 Make a mental note what that number is.
 
