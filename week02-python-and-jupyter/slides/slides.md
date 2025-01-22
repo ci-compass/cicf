@@ -262,6 +262,7 @@ Notice colons at the ends of the `if`, `for`, and `else` statements.
   - Integers (example: `-1`, `0`, `1`, `2`, …)
   - Floating point numbers (example: `3.14`)
 - Strings (example: `"hello world!"`)
+- `None`
 
 ::: {.notes}
 
