@@ -137,6 +137,8 @@ A browser window will open, listing the contents of
 with `.ipynb` extension.  They are the Jupyter notebooks that we will
 use this week.
 
+<!-- TODO: update this screenshot -->
+
 ![Jupyter](./img/jupyter.png)
 
 Working through these notebooks is your task this week:
@@ -154,6 +156,39 @@ Working through these notebooks is your task this week:
 You can open each these notebooks by double clicking them, or by
 clicking on the "open" button that will appear when you select a
 notebook.
+
+## JupyterLab
+
+JupyterLab is a newer, fancier, and perhaps nicer way to interact with
+Jupyter notebooks.  You can launch a JupyterLab instance instead of
+old notebook interface, with the command:
+
+```console
+jupyter lab
+```
+
+<!-- TODO: add JupyterLab screenshot -->
+
+Perhaps you might prefer JupyterLab.
+
+You are likely to come across JupyterLab instances hosted by various
+organizations and projects.  Some examples:
+
+- [Microsoft Planetary Computer](https://planetarycomputer.microsoft.com/)
+- [FABRIC project's JupyterLab instance](https://jupyter.fabric-testbed.net/)
+- [Chameleon project's JupyterLab instance](https://jupyter.chameleoncloud.org/)
+
+Google [Colab] also supports Jupyter notebooks.
+
+[Colab]: https://colab.research.google.com/
+
+In fact, using your Google account, you can open this week's notebooks
+straight in Colab.  Try these links:
+
+- https://colab.research.google.com/github/ci-compass/cicf/blob/main/week02-python-and-jupyter/1-introduction.ipynb
+- https://colab.research.google.com/github/ci-compass/cicf/blob/main/week02-python-and-jupyter/2-quick-python-tour.ipynb
+- https://colab.research.google.com/github/ci-compass/cicf/blob/main/week02-python-and-jupyter/3-python-packages.ipynb
+- https://colab.research.google.com/github/ci-compass/cicf/blob/main/week02-python-and-jupyter/4-plot-ligo-data.ipynb
 
 ## Resources
 
