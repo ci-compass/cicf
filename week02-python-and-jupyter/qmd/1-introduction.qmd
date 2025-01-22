@@ -1,7 +1,7 @@
 # A Very Quick Tour of Jupyter
 
 First, congratulations!  You've successfully navigated to a Jupyter
-Notebook and opened it. 
+notebook and opened it.
 
 Jupyter is a convenient and productive way to **keep notes and code
 together**. Think of it as being like a regular old paper Lab
