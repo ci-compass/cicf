@@ -212,6 +212,166 @@ language:
 - Tuples
 - Sets
 
+### Lists
+
+Here is an example of a list:
+
+```{python}
+temperatures = [44.2, 43.6, 107.9, "awfully hot!"]
+```
+
+You write the elements of the list inside square brackets (`[` and
+`]`), with commas to separate them.
+
+Python lists are like arrays in C++ and Java, except:
+
+- Python lists can grow (and shrink) as needed.
+- The different elements of an array do not all have to be the same
+  type.
+  
+Here's another example:
+
+```{python}
+grades = ["A", "B", "C", "D", "F"]
+print(len(grades))
+
+print(grades[0])
+print(grades[1])
+print(grades[2])
+print(grades[3])
+print(grades[4])
+```
+
+Notice the first element in a list is numbered 0 (zero).  Any time you
+index into a list, Python always counts starting at 0,
+not 1. Forgetting this fact will likely be a big source of mistakes.
+
+You can also loop over lists using a `for` statement (we will discuss
+`for` statements later in this notebook):
+
+```{python}
+for grade in grades:
+    print(grade)
+```
+
+If you try to read past a list, that would result in an error. Try
+running the below cell:
+
+```{python}
+grades[5]
+```
+
+Lists are one-dimensional. If you would normally use a 2D array for
+something, you would want to use a list of lists:
+
+```{python}
+list_of_lists = [
+    [1, 2, 3],
+    [],
+    [4, 5, 6]
+]
+print(list_of_lists[1])
+```
+
+`[]` is an empty list, obviously.
+
+
+### Dictionaries
+
+Dictionaries (or `dict` objects in Python parlance) contain pairs of
+keys and values.  You will use them when you want to look up items by
+a key whose value you already know.
+
+```{python}
+drugs = { 
+   "asprin": 325, 
+   "acetaminophen": 500 
+}
+print(drugs["asprin"])
+print(drugs["acetaminophen"])
+```
+
+If you try to look up by a key that does not exist, that would result
+in an error:
+
+```{python}
+drugs["ibuprofen"]
+```
+
+In order to avoid the error, you can do something like this:
+
+```{python}
+value = drugs.get("ibuprofen")
+if value != None:
+    print("Found ibuprofen:", value)
+else:
+    print("Could not find ibuprofen")
+```
+
+You can add new keys and values to an existing dictionary:
+
+```{python}
+drugs["methotrexate"] = 2.5
+print(drugs)
+```
+
+Keys in a dictionary are immutable: you can't change them once they
+are inserted.  But you can change the values associated with them:
+
+```{python}
+drugs["methotrexate"] = 3.5
+print(drugs)
+```
+
+
+### Tuples
+
+Tuples (or `tuple` objects) construct groups of objects.  These are
+all tuples:
+
+```{python}
+()               # An empty tuple.
+(1,)             # A one-item tuple.
+(0, 'Ni', 3.14)  # A four item tuple.
+```
+
+Unlike lists, tuples are immutable: you can't change a tuple's
+elements once the tuple is constructed.  You can use tuples when you
+need to:
+
+- Use a collection of things that remains constant.
+- Return multiple values from a function. (We'll discuss functions
+  later.)
+
+Tuples can be dictionary keys because they are immutable.
+
+```{python}
+locations = {
+    (40.7128, -74.0060): "New York",
+    (51.5074, -0.1278): "London"
+}
+```
+
+The strings that start with `#` are comments.  We will discuss
+comments later in this notebook.
+
+### Sets
+
+Sets (or `set` objects) are structures whose elements are unique.
+
+```{python}
+{1,2,3}
+{0, 'Ni', 3.14}
+```
+
+If you want to get just the unique elements of a list, you can insert
+the list to a set!
+
+```{python}
+numbers = [10,1,1,1,1,2,20]
+unique_numbers = set(numbers)
+print(unique_numbers)
+```
 
 ## Operator overloading
 
