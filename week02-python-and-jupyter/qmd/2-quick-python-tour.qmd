@@ -223,35 +223,38 @@ Along with the `+=` operator, there is also `-=`, `*=`, and `/=`.
 ## Inline code comments
 
 Did you notice the lines in the cell above that started with a `#`?
-That character means "everything on the rest of the line is just a
+
+That `#` character means "everything on the rest of the line is just a
 note to myself and should not be run". These "comments" are very
 valuable for reminding yourself what's going on when you come back to
 your code three months later and you can't remember anything.
 
-Back to "for" loops for a minute. These loops can also iterate over a
+## `for` loops
+
+Back to `for` loops for a minute. These loops can also iterate over a
 list:
 
 ```{python}
-for color in [ "red", "green", "blue"] :
-              print(color)
+for color in ["red", "green", "blue"] :
+    print(color)
 ```
 
-In fact, the "range" function is used to build a list of values and
-then the ``for`` loop steps over it.
+In fact, the `range()` function is used to build a list of values and
+then the `for` loop steps over it.
 
-(Don't worry - I lied. But conceptually that's what happens. Behind
-the scenes, Python detects when a for loop is stepping through a range
-function and it behaves like Java or C - nice and efficiently.)
+## The `list` data structure
 
-That list of colors is interesting, isn't it? Besides integers, real
-numbers, and strings, Python has some other built-in data types. One
-of these is the list.
+That list of colors is interesting, isn't it? 
 
-When writing out a list, surround it with square brackets (as
-above). Separate the individual list items with commas. Notice
-something cool (or dangerous, depending on your point of view: lists
-don't have to contain just all one type of data. You can mix them in
-the same list:
+Besides integers, real numbers, and strings, Python has some other
+built-in data types. One of these is the `list`.
+
+When writing out a list, surround it with square brackets, as
+above. Separate the individual list items with commas. 
+
+Notice something cool (or dangerous, depending on your point of view):
+lists don't have to contain just all one type of data. You can mix
+them in the same list:
 
 ```{python}
 funny_stuff = [13, 19, 44, "Bob Hope", 16]
@@ -268,9 +271,9 @@ print(funny_stuff[3])
 print(funny_stuff[4])
 ```
 
-Like basically every language except Fortran, Python lists store their
-first value at index zero, not one! This trips up everyone sooner or
-later. Sometimes miore than once. Sometimes more than once a minute.
+Like basically every language (except Fortran), Python lists store
+their first value at index zero, not one! This trips up people
+sometimes. Sometimes every once in a while.
 
 Now you know just enough Python to be dangerous. An excellent tutorial
 on the language is available at
