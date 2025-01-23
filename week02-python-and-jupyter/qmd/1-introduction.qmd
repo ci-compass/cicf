@@ -208,7 +208,7 @@ print(z)
 
 When you have that typed in, hit Shift+Enter to execute it.
 
-Running that code will cause it to print "14".
+Running that code will cause it to print `14`.
 
 ## Next Steps
 
