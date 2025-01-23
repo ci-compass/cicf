@@ -83,7 +83,7 @@ To fix this run the following commands in your shell window:
 
     su
     # (password is cicf)
-    usermod -aG sudo username
+    usermod -aG sudo cicf
     exit
 
 
