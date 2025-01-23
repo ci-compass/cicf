@@ -472,6 +472,20 @@ specify the number to start at and the number that is the first one
 you want it to stop at. Forgetting this will result in some
 easy-to-make mistakes.
 
+## `for` loops over lists
+
+Back to `for` loops for a minute. These loops can also iterate over a
+list:
+
+```{python}
+for color in ["red", "green", "blue"] :
+    print(color)
+```
+
+In fact, the `range()` function is used to build a list of values and
+then the `for` loop steps over it.
+
+
 ## Functions
 
 A function is a reusable piece of code that performs a certain task.
@@ -535,19 +549,6 @@ conventions for writing docstrings, and tools for generating such
 documentation from docstrings.
 
 [numpy-reference]: https://numpy.org/doc/stable/reference/index.html
-
-## `for` loops
-
-Back to `for` loops for a minute. These loops can also iterate over a
-list:
-
-```{python}
-for color in ["red", "green", "blue"] :
-    print(color)
-```
-
-In fact, the `range()` function is used to build a list of values and
-then the `for` loop steps over it.
 
 ## The `list` data structure
 
