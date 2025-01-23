@@ -91,17 +91,49 @@ modules: we have linked to it in the beginning of this notebook.
 Those documents might be a little confusing in the beginning, so it is
 perfectly reasonable to look for friendlier resources.
 
-## Installing new packages
+## The Python Package Index (PyPI)
 
-<!-- TODO: WRITEME -->
+In the beginning, we used [pip] to install some Python packages. 
+What happens when you run `pip install` something though?  How does
+`pip` find the packages it need to install?
 
-### Python package index
+By default, `pip` would search the [Python Package Index][pypi] (also
+known as "PyPI") for the package by name, download the appropriate
+version of the package, and install it in your machine.  If the
+package depends on other packages, pip would install those other
+packages also, if they are not already installed.
 
-<!-- TODO: WRITEME -->
+PyPI is a large repository of Python packages maintained by the
+[Python Software Foundation][psf], a non-profit organization that is
+responsible for development and maintenance of the Python programming
+language and its infrastructure.
 
-### Conda
+[pip]: https://pip.pypa.io/en/stable/
+[psf]: https://www.python.org/psf-landing/
 
-<!-- TODO: WRITEME -->
+PyPI happens to be Python's official package repository, and the most
+popular one.  There are other repositories also (such as [TestPyPI]),
+and you can install packages from those other repositories, should you
+ever need to do so.
+
+[TestPyPI]: https://test.pypi.org/
+
+## Anaconda and Conda
+
+[Anaconda] is a commercially supported "Python distribution".
+Anaconda provides a curated collection of software that uses a
+different packaging format, and it is not necessarily tied to just
+Python.  There are Anaconda packages written in other programming
+languages also.  Similar to `pip`, `conda` is Anaconda's package
+manager, and [Anaconda.org] is its package repository.
+
+Although we are not going to the details now, Anaconda is popular in
+science, AI, and data science communities, so they are worth
+mentioning here.
+
+[Anaconda]: https://www.anaconda.com/
+[Anaconda.org]: https://anaconda.org/
+
 
 ## An example: the numpy package
 
