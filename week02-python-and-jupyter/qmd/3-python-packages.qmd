@@ -1,13 +1,12 @@
 # Python packages
 
-Python became very popular partly because of the thousands of packages
-available.  
+Python became very popular in recent years partly because of the
+thousands of packages available.
 
 A "package" is a collection of Python code that you can use to
-accomplish certain tasks.  Packages can contain application programs,
-or libraries, or both.  A Python library is a collection of code that
-people can reuse when writing new applications or even other
-libraries.
+accomplish certain tasks.  Packages can contain libraries, application
+programs, or both.  A Python library is a collection of code that
+people can use when writing new applications or new libraries.
 
 When you install Python, a set of libraries called the [Python
 standard library][stdlib] also gets installed.  Python is said to be a
@@ -15,8 +14,8 @@ standard library][stdlib] also gets installed.  Python is said to be a
 library is useful to accomplish many common tasks related to:
 
 - Working with text, math, time, dates, etc.;
-- Working with various data structures such as lists, sets, and
-  key-value pairs (also called dictionaries).
+- Working with various data structures (such as lists, dicts, sets,
+  and tuples);
 - Reading and writing files;
 - Reading and writing data from networked systems;
 - Working with processes and threads;
