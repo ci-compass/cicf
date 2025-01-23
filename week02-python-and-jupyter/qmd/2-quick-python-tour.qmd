@@ -175,10 +175,11 @@ Modules][numeric] if you are curious what else is available.
 [fractions]: https://docs.python.org/3/library/fractions.html
 [numeric]: https://docs.python.org/3/library/numeric.html
 
-We will discuss modules later.  For now, just bear in mind that these
-facilities are part of Python's standard library, which is a
-collection of useful and commonly used things.  You will use the
-standard library a lot if you use Python.
+We will discuss modules later.  For now, just bear in mind that: (1) a
+"module" is some code that you can use when writing your own code, and
+(2) Python has a standard library, which is a collection of useful and
+commonly used modules.  You will use the standard library a lot if you
+use Python.
 
 ### Strings
 
