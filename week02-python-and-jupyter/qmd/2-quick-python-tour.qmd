@@ -90,6 +90,17 @@ printing at the beginning of the next line.
 Variables are names for things. We've seen variables used as integers
 and as floating point numbers.  Variables can also refer to strings.
 
+Unlike Java or C++, the are not "strongly" typed.  A variable can be a
+number one moment and then can suddenly become a string.  You don't
+have to declare types of variables either.
+
+```{python}
+amount = 7
+print(amount)
+amount = "a whole lot!"
+print(amount)
+```
+
 Variables in Python work similarly to Javascript, if you're familiar
 with that language.
 
