@@ -68,12 +68,24 @@ After signing in you should see a desktop envrionment.
 The first time you sign in it is worthwhile to update the packages on your machine by doing this:
 
 1. Open a terminal window (the black box with a ">" on the bottom bar).
-1. Type `sudo apt update` and press return. It will ask for your password. Type it (`cicf`) and press return. Many lines of text will scroll by.
+1. Type `sudo apt update` and press return. It will ask for your password. Type it (`cicf`) and press return. Many lines of text will scroll by. (see [A Special Note](#a-special-note) below if there was an error)
 1. When the `$` prompt appears again type `sudo apt upgrade` and press return.
 1. Reboot the machine by typing `sudo reboot` and pressing return.
 
 If you ever mess up your VM image, say by running an ill-advised command, you can always download a copy of the original VM image
 and re-install it by following these steps again (minus needing to download install UTM or VirtualBox).
+
+### A Special Note
+
+If you have a Windows host machine, you may get an error running `sudo apt update`.
+Because of a mistake, the cicf user does not have "sudo privileges".
+To fix this run the following commands in your shell window:
+
+    su
+    # (password is cicf)
+    usermod -aG sudo username
+    exit
+
 
 ## Creating a VM Image
 
@@ -115,5 +127,5 @@ For Windows, we use VirtualBox to create the VM.
 ```
 1. Of the optional packages, install the XFCE envrionment.
 1. After installation is complete, eject the CD image and reboot.
-1. Verify machine boots correctly. Then turn off the VM.
-
+1. Verify machine boots correctly.
+1. Verify cicf user is in the sudousers group (e.g. `sudo pwd`)
