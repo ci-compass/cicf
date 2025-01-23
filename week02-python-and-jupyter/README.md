@@ -14,11 +14,17 @@ commands in that terminal.
 
 You should have done a `git clone` of the CICF repository in the home
 directory of your VM in the first week itself.  In case you have not
-done that yet, run this command:
+done that yet, go back to the [previous week's instructions][week1],
+and follow the instructions under the section titled "Git" there.
+
+You should basically have run the below command from your home
+directory (which would be `/home/cicf`):
 
 ```console
-git clone https://github.com/ci-compass/cicf ~/cicf
+git clone https://github.com/ci-compass/cicf
 ```
+
+[week1]: ../week01-commandline/README.md#Git
 
 Since we will keep updating the repository throughout the course, you
 will have to make sure you have the latest changes in your local copy.
@@ -26,8 +32,10 @@ Change to `~/cicf` directory and then do a `git pull`:
 
 ```console
 cd ~/cicf
-git pull --autostash
+git pull --autostash origin main
 ```
+
+(We will discuss what this means in week 4.)
 
 ## Install some software
 
