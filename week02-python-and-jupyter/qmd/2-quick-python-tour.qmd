@@ -8,6 +8,12 @@ In the [previous notebook](./1-introduction.ipynb), we ran a print
 statement and did some basic arithmetic, and that was our first steps
 with running some Python code in Jupyter.
 
+## A note about the REPL
+
+<!-- TODO -->
+
+## A few examples
+
 Click in the next cell with the example code and press Shift+Enter to
 run it.
 
@@ -104,6 +110,14 @@ print(amount)
 Variables in Python work similarly to Javascript, if you're familiar
 with that language.
 
+## Basic data types
+
+<!-- TODO -->
+
+## Built-in data structures
+
+<!-- TODO -->
+
 
 ## Operator overloading
 
@@ -166,6 +180,8 @@ be indented the same amount. In Python, indentation has meaning. The
 "visual" level that things are indented to indicates the "lexical"
 level of the code block.
 
+### Loops
+
 Python has loops, as expected:
 
 ```{python}
@@ -191,7 +207,6 @@ if i == 5:
     print("we got to 5, like we expected!! Surprise!!")
 else:
     print("hmmm...")
-    
 ```
 
 Notice something above: when testing for equality, Python uses `==`
@@ -220,6 +235,10 @@ print(weight)
 ```
 
 Along with the `+=` operator, there is also `-=`, `*=`, and `/=`.
+
+## Functions
+
+<!-- TODO -->
 
 ## Inline code comments
 
@@ -275,6 +294,18 @@ print(funny_stuff[4])
 Like basically every language (except Fortran), Python lists store
 their first value at index zero, not one! This trips up people
 sometimes. Sometimes every once in a while.
+
+## Classes
+
+<!-- TODO -->
+
+## Error handling with exceptions
+
+<!-- TODO -->
+
+## Modules
+
+<!-- TODO -->
 
 ## Next steps
 
