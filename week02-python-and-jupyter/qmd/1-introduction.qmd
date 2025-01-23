@@ -210,15 +210,6 @@ When you have that typed in, hit Shift+Enter to execute it.
 
 Running that code will cause it to print "14".
 
-A note to the scientists and the mathematicians: LaTeX is another
-markup language. Markdown is a much, much simpler one.  If you need
-to, you can convert your notebooks into LaTeX using `jupyter
-nbconvert` command. For example:
-
-```
-jupyter nbconvert 1-introduction.ipynb --to latex
-```
-
 ## Next Steps
 
 You have learned how to open Jupyter notebooks, how to run code that's
