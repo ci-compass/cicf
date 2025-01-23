@@ -550,38 +550,6 @@ documentation from docstrings.
 
 [numpy-reference]: https://numpy.org/doc/stable/reference/index.html
 
-## The `list` data structure
-
-That list of colors is interesting, isn't it? 
-
-Besides integers, real numbers, and strings, Python has some other
-built-in data types. One of these is the `list`.
-
-When writing out a list, surround it with square brackets, as
-above. Separate the individual list items with commas. 
-
-Notice something cool (or dangerous, depending on your point of view):
-lists don't have to contain just all one type of data. You can mix
-them in the same list:
-
-```{python}
-funny_stuff = [13, 19, 44, "Bob Hope", 16]
-```
-
-That is a list of 5 things: three numbers, a string, and one more
-number.  We can access individual elements with "array indexing":
-
-```{python}
-print(funny_stuff[0])
-print(funny_stuff[1])
-print(funny_stuff[2])
-print(funny_stuff[3])
-print(funny_stuff[4])
-```
-
-Like basically every language (except Fortran), Python lists store
-their first value at index zero, not one! This trips up people
-sometimes. Sometimes every once in a while.
 
 ## Classes
 
