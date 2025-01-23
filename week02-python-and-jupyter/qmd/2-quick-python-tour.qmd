@@ -129,22 +129,26 @@ not_as_cool = first_part + " " + other_part
 print(not_as_cool)
 ```
 
-A couple of things to notice... First, there are three things being
-concatenated: a variable, a string "literal" with only a single space
-in it, and another variable. Second, when we evaluate a cell and
-create a variable in it, those variables become available to every
-cell further down the line. (If you're curious, there is one instance
-of Python running behind the scenes. Jupyter just crams code into when
-you execute a cell. When Python is done running that, any output is
-put into the notebook right below that block. Running another command
-later, in another cell, sends that code to the one and only Python
-instance associated with the entire notebook. There is no need to
-write insanely long cells, and in fact you should keep them 30-50
-lines at most if you can. Shorter cells are easier to understand and
-debug.
-    
-Python has the same control structures you're used to, it's just that
-syntax is a little different now.
+### A couple of things to notice
+
+First, there are three things being concatenated: a variable, a string
+"literal" with only a single space in it, and another
+variable. Second, when we evaluate a cell and create a variable in it,
+those variables become available to every cell further down the line.
+
+(If you're curious, there is one instance of Python running behind the
+scenes. Jupyter just crams code into when you execute a cell. When
+Python is done running that, any output is put into the notebook right
+below that block. Running another command later, in another cell,
+sends that code to the one and only Python instance associated with
+the entire notebook. There is no need to write insanely long cells,
+and in fact you should keep them 30-50 lines at most if you
+can. Shorter cells are easier to understand and debug.
+
+## Control flow
+
+Python has the same control structures you're used to, such as `if`
+and `if`/`else`.  It's just that syntax may be a little different now.
 
 ```{python}
 if 5 > 4 :
@@ -155,12 +159,12 @@ else:
     print("I have a feeling this will be bad.")
 ```
 
-Notice that there is no "then". Notice that there **is** a colon at
-the end of the "if" line. A colon indicates that a "code block" is
-coming up. In our case, these blocks are two lines long. They have to
-be indented, and they have to be indented the same amount. In Python,
-indentation has meaning. The "visual" level that things are indented
-to indicates the "lexical" level of the code block.
+Notice that there **is** a `:` (colon) at the end of the `if` line. A
+colon indicates that a "code block" is coming up. In our case, these
+blocks are two lines long. They have to be indented, and they have to
+be indented the same amount. In Python, indentation has meaning. The
+"visual" level that things are indented to indicates the "lexical"
+level of the code block.
 
 Python has loops, as expected:
 
@@ -174,7 +178,7 @@ while weight < 11.2:
 print("done with the loop now.")
 ```
 
-While loops are very versatile (you can test anything to see if you
+`while` loops are very versatile (you can test anything to see if you
 should continue) but sometimes you know how many times you want to do
 something and you want a "cleaner" way to express that.
 
@@ -189,21 +193,19 @@ else:
     
 ```
 
-Notice something funny above: when testing for equality, Phython uses
-two equals signs stuck together with no space between them. This is
-just like Java, Javascript, C, C++...
+Notice something above: when testing for equality, Python uses `==`
+operator.  This is just like Java, C, C++, etc.
 
-Notice something else: we specified the range to be from one
-to... well, we said six, but it stopped after five. That's how range
-works: you specify the number to start at and the number that is the
-first one you want it to stop at **and not run the associated code
-block**. I guarantee you either you'll mess this up or you'll have to
-read code written by someone else that has that mistake. I do it all
-the time.
+Notice something else: in `range(1,6)` we specified the range to be
+from 1 to 6, but it stopped after 5. That's how `range()` works: you
+specify the number to start at and the number that is the first one
+you want it to stop at. Forgetting this will result in some
+easy-to-make mistakes.
 
-While we're on the subject of "equals sign strangeness", Python has a
-shortcut for using the value of variable, changing it, and storing it
-back in the same variable.
+## Some shortcut operators
+
+Python has a shortcut for using the value of variable, changing it,
+and storing it back in the same variable.
 
 ```{python}
 # you could do this
@@ -216,7 +218,7 @@ weight += 4
 print(weight)
 ```
 
-Along with the "+=" operator, there is also ``-=``, ``*=``, and ``/=``
+Along with the `+=` operator, there is also `-=`, `*=`, and `/=`.
 
 Hey, look at that line above... notice that little quoted parts of the
 code are in gray boxes?  Any part of your Markdown that occurs between
