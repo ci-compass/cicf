@@ -146,9 +146,13 @@ Markup Language, aka "HTML". This is a language that expresses how web
 pages are laid out.
 
 Jupyter uses another markup language, and this one is called
-Markdown. Other things use Markdown, also. Reddit supports Markdown
+[Markdown]. Other things use Markdown, also. Reddit supports Markdown
 (alongside what they call the "Fancy Pants Editor") and GitHub uses
-"GitHub flavored Markdown".
+[GitHub Flavored Markdown][gfm].
+
+[Markdown]: https://en.wikipedia.org/wiki/Markdown
+[gfm]: https://github.github.com/gfm/
+
 
 Did you notice how this cell has a heading that says "Kinds of Cells"
 and that it's in a larger font than the rest of it?  When I typed that
@@ -183,22 +187,17 @@ This sentence has a **bold** word and an _italicized_ one.
 ```
 
 It's important to have a space between the "#" symbols and the first
-                                            #word of your heading.
+word of your heading.
 
 As you enter text and Markdown commands, Jupyter will give you sort of
 a "preview" of what to expect. Once you're done entering the text, hit
 Shift+Enter.  Presto!  That Markdown text has been neatly formatted
 and looks rather nice.
 
-And a note to scientists and mathematicians: LaTeX is another markup
-language. Markdown is a much, much simpler one. If you need to, there
-are converters to take Markdown and turn it into LaTeX. You can copy
-Markdown right out of your Jupyter notebook, convert it, and paste it
-into your journal articles.
-
 Writing code in a cell is just as easy as Markdown text. Make this the
-current cell (click on it) and add another cell below this one. It
-will default to being a code cell. Add the following code:
+current cell (click on it) and add another cell below this one (using
+the `+` on the tool bar, or by pressing `B` key.  The new cell will
+default to being a code cell. Add the following code in the new cell:
 
 ```
 x = 4
@@ -210,6 +209,15 @@ print(z)
 When you have that typed in, hit Shift+Enter to execute it.
 
 Running that code will cause it to print "14".
+
+A note to the scientists and the mathematicians: LaTeX is another
+markup language. Markdown is a much, much simpler one.  If you need
+to, you can convert your notebooks into LaTeX using `jupyter
+nbconvert` command. For example:
+
+```
+jupyter nbconvert 1-introduction.ipynb --to latex
+```
 
 ## Next Steps
 
