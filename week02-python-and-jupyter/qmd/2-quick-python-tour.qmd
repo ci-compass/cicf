@@ -178,9 +178,10 @@ while weight < 11.2:
 print("done with the loop now.")
 ```
 
-`while` loops are very versatile (you can test anything to see if you
-should continue) but sometimes you know how many times you want to do
-something and you want a "cleaner" way to express that.
+`while` loops are very versatile: you can test anything to see if you
+should continue.  Sometimes you know how many times you want to do
+something and you want a cleaner way to express that.  You would use a
+`for` loop in such instances.
 
 ```{python}
 for i in range(1,6):
