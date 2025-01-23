@@ -553,7 +553,43 @@ documentation from docstrings.
 
 ## Classes
 
-<!-- TODO -->
+Python classes can't be too strange to those familiar with C++ or
+Java.  You would use the `class` keyword to define classes, and an
+(optional) `__init__()` method (or member function) to create the
+class constructor.  Note that the first parameter to member functions
+is the `self` keyword.
+
+```{python}
+class Customer:
+    """ An example class. """
+    def __init__(self, name, address):
+        """
+        Constructor.
+
+        :param name: name of the customer.
+        :param address: address of the customer.
+        """
+        self.name = name
+        self.address = address
+
+    def show(self):
+        """ Print the customer's details. """
+        print(self.name + " lives at " + self.address)
+```
+
+Now you can create objects of the class, and invoke member functions
+of these object:
+
+```{python}
+c = Customer("Bob", "1234 Wooded Way")
+c.show()
+```
+
+We can't go into all the details here, but some basic familiarity with
+the idea of classes and objects would be helpful when programming with
+Python. Important data structures `list`, `dict`, `set`, and `tuple`
+are implemented as classes.
+
 
 ## Error handling with exceptions
 
