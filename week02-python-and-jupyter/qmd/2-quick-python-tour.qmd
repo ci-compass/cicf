@@ -276,11 +276,17 @@ Like basically every language (except Fortran), Python lists store
 their first value at index zero, not one! This trips up people
 sometimes. Sometimes every once in a while.
 
-Now you know just enough Python to be dangerous. An excellent tutorial
-on the language is available at
-https://docs.python.org/3/tutorial/index.html and I recommend you
-bookmark that for handy reference.
+## Next steps
+
+Now you know just enough Python to be dangerous. 
+
+An excellent [Python tutorial][tutorial] is available at
+https://docs.python.org/.  I recommend you bookmark that for handy
+reference.
+
+[tutorial]: https://docs.python.org/3/tutorial/index.html
 
 Now that we're at least a threat to ourselves, if not others, let's go
-to the "Modules" notebook and see why Python has taken over the world.
+to the [next notebook](./3-python-packages.ipynb) and look at Python
+packages.
 
