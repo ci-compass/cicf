@@ -220,15 +220,13 @@ print(weight)
 
 Along with the `+=` operator, there is also `-=`, `*=`, and `/=`.
 
-Hey, look at that line above... notice that little quoted parts of the
-code are in gray boxes?  Any part of your Markdown that occurs between
-two "backquotes" is shown specially.
+## Inline code comments
 
-Also, did you notice the lines in the cell above that started with a
-"#"?  That character means "everything on tghe rest of the line is
-just a note to myself and should not be run". These "comments" are
-very valuable for reminding yourself what's going on when you come
-back to your code three months later and you can't remember anything.
+Did you notice the lines in the cell above that started with a `#`?
+That character means "everything on the rest of the line is just a
+note to myself and should not be run". These "comments" are very
+valuable for reminding yourself what's going on when you come back to
+your code three months later and you can't remember anything.
 
 Back to "for" loops for a minute. These loops can also iterate over a
 list:
