@@ -524,6 +524,11 @@ You can call the function like so:
 area_of_circle(10)
 ```
 
+There are two new things here: `import` statements, and code comments.
+Let us talk about code comments in the next section.  We will talk
+about `import` statements and importing modules in a later section.
+
+
 ## Code comments
 
 Did you notice the lines in the cell above that started with a `#`?
@@ -624,7 +629,56 @@ except:
 
 ## Modules
 
-<!-- TODO -->
+We already saw how to use an external definition like `math.pi` when
+we talked about functions: you do an `import math`, and then use the
+code in `math` module with `math.pi`.
+
+But what are modules?
+
+Modules are the _organizational units_ of a Python program.  When you
+create a Python project, you would split your code into logical units,
+called _modules_.  You can create and use modules within your own
+programs, and you can use modules from external libraries.
+
+In concrete terms, modules correspond to files.  You would put code
+that does related things in separate files, somewhat like so:
+
+```
+mypackage/
+    __init__.py
+    module1.py
+    module2.py
+    subpackage/
+        __init__.py
+        submodule1.py
+```
+
+And then you will be able to use these modules elsewhere by importing
+them.  You would use `import` statements to do this, like so:
+
+```python
+from mypackage import module1
+from mypackage.subpackage import submodule2 as sm2
+
+module1.some_function()
+sm2.some_other_function()
+```
+
+As shown above, the `as` keyword lets you import modules under a more
+convenient (perhaps shorter) name.
+
+An alternative, but more verbose syntax for importing modules would be
+this:
+
+```python
+import mypackage
+
+mypackage.module1.some_function()
+mypackage.subpackage.submodule1.some_other_function()
+```
+
+The first way is a little more convenient.
+
 
 ## Next steps
 
