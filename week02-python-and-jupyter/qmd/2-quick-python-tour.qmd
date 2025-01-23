@@ -101,12 +101,37 @@ test_average = (test_1 + test_2) / 2
 print(test_average)
 ```
 
+## Some shortcut operators
+
+Python has a shortcut for using the value of variable, changing it,
+and storing it back in the same variable.  So the code in both the
+below cells do the same thing:
+
+```{python}
+weight = 6
+weight = weight + 4
+print(weight)
+
+```
+
+```{python}
+weight = 6
+weight += 4
+print(weight)
+```
+
+Along with the `+=` operator, there is also `-=`, `*=`, and `/=`.
+
+## The `print()` function
+
 We've been throwing those `print()` function calls around without
-talking about them. The `print()` function will take any number of
-arguments, separated by commas, and print them out with one space
-between them. After the last item is printed, Python will put out a
-"newline" character, go to the next line, and get ready to start
-printing at the beginning of the next line.
+talking about them. 
+
+The `print()` function will take any number of arguments, separated by
+commas, and print them out with one space between them. After the last
+item is printed, Python will put out a "newline" character, go to the
+next line, and get ready to start printing at the beginning of the
+next line.
 
 ## Variables
 
@@ -273,24 +298,6 @@ from 1 to 6, but it stopped after 5. That's how `range()` works: you
 specify the number to start at and the number that is the first one
 you want it to stop at. Forgetting this will result in some
 easy-to-make mistakes.
-
-## Some shortcut operators
-
-Python has a shortcut for using the value of variable, changing it,
-and storing it back in the same variable.
-
-```{python}
-# you could do this
-weight = 6
-weight = weight + 4
-print(weight)
-# or you could do this
-weight = 6
-weight += 4
-print(weight)
-```
-
-Along with the `+=` operator, there is also `-=`, `*=`, and `/=`.
 
 ## Functions
 
