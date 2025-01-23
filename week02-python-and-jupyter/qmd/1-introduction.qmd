@@ -196,7 +196,7 @@ and looks rather nice.
 
 Writing code in a cell is just as easy as Markdown text. Make this the
 current cell (click on it) and add another cell below this one (using
-the `+` on the tool bar, or by pressing `B` key.  The new cell will
+the `+` on the tool bar, or by pressing `B` key).  The new cell will
 default to being a code cell. Add the following code in the new cell:
 
 ```
