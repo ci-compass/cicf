@@ -135,23 +135,33 @@ mentioning here.
 [Anaconda.org]: https://anaconda.org/
 
 
-## An example: the numpy package
+## Yet another example: the NumPy package
 
 The `math` module is part of the Python standard library.  It
 implements a routines to calculate few standard functions and some
-basic probability distributions.
+basic probability distributions.  
 
-There are other packages that you would have to download to use. Let's
-look at an example very useful for scientific computing: numpy. 
+However, since Python's built-in support for numerical calculations is
+limited in efficiency and performance, people often reach for the
+famous [NumPy] package. 
 
-Numpy is a package for making numerically-intensive programming easier
-and for making it run faster. It brings it's own datatype to the game:
-an actual array!  Numpy's arrays are quite fast -- substantially
-faster than Python's regular way of representing arrays as "lists of
-lists" (or in three dimensions, "lists of lists of lists" and so
-forth.
+[NumPy]: https://numpy.org/
 
-First, let's tell Python we want to use numpy:
+NumPy makes numerically-intensive programming easier and makes code
+run faster. It brings it's own datatype to the game: an actual array!
+Numpy's arrays are quite fast -- substantially faster than Python's
+regular way of representing arrays as "lists of lists" (or in three
+dimensions, "lists of lists of lists" and so forth.
+
+The critical NumPy data type is the array.  NumPy arrays are faster
+and more compact than Python lists. A NumPy array consumes less memory
+and is convenient to use.  You can find an excellent
+[introduction][numpy-intro] to NumPy in the project's website.
+
+[numpy-intro]: https://numpy.org/doc/stable/user/absolute_beginners.html
+
+In this notebook, let us work through some NumPy examples.  First,
+let's tell Python we want to use numpy:
 
 ```{python}
 import numpy as np
@@ -160,11 +170,7 @@ import numpy as np
 The "as np" part lets us specify a *namespace*, in this case a nice,
 short name so we don't have to type out "numpy" *every single time*.
 
-The critical NumPy data type is the array.
 
-"NumPy arrays are faster and more compact than Python lists. An array
-consumes less memory and is convenient to use."
-([source](https://numpy.org/doc/stable/user/absolute_beginners.html))
 The one caveat with NumPy arrays is that all the elements inside an
 array need to have the same data type (e.g. integer, float, double).
 
