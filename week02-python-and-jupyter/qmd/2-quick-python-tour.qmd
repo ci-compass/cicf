@@ -31,8 +31,8 @@ Now let us look at some Python code examples.
 
 ## A few examples
 
-Click in the next cell with the example code and press Shift+Enter to
-run it.
+Click in the next cell with the example code and press `Shift+Enter`
+keys to run it.
 
 ```{python}
 prius_weight = 4000
