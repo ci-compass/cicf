@@ -1,4 +1,4 @@
-# A Very Quick Tour of Python
+# A Quick Tour of Python
 
 In this notebook, we'll look at some of the language features of
 python and how to use them.  Some prior programming experience might
