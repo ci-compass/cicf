@@ -1,4 +1,4 @@
-# A Very Quick Tour of Python
+# A Quick Tour of Python
 
 In this notebook, we'll look at some of the language features of
 python and how to use them.  Some prior programming experience might
@@ -8,8 +8,31 @@ In the [previous notebook](./1-introduction.ipynb), we ran a print
 statement and did some basic arithmetic, and that was our first steps
 with running some Python code in Jupyter.
 
-Click in the next cell with the example code and press Shift+Enter to
-run it.
+## A note about the REPL
+
+You would be able to run the code examples in this notebook right here
+in the notebook itself.  There's another way to quickly try out code,
+even if you are not running a notebook: you can use Python's shell, or
+REPL (or "Read-Eval-Print Loop").
+
+In your virtual machine's terminal, you can run the command `python3`,
+and you can enter code in the resulting prompt.
+
+![](./slides/img/repl-hello.png)
+
+You can also launch a terminal from Jupyter's menu (File -> New ->
+Terminal), and run `python3` command there.
+
+You do not have to use the REPL right now, but its existence and use
+is a basic thing that would be useful to know.  It should be part of
+any tour of Python.
+
+Now let us look at some Python code examples.
+
+## A few examples
+
+Click in the next cell with the example code and press `Shift+Enter`
+keys to run it.
 
 ```{python}
 prius_weight = 4000
@@ -41,10 +64,10 @@ big_number  = 9 ** 25
 print(integer_division, remainder, big_number)
 ```
 
-The two slashes next to each other mean "divide this and ignore the
-remainder". The percent sign says "divide this and **only** give us
-the remainder.  Finally, two asterices mean "evaluate the left side
-raised to the right side's power".
+The `//` operator (two slashes next to each other) mean "divide this
+and ignore the remainder". The `%` operator means "divide this and
+**only** give us the remainder.  Finally, two asterices mean "evaluate
+the left side raised to the right side's power".
 
 The standard order of operations that we learned in school still
 applies here. Exponentiation is done first, then the multiplications
@@ -56,7 +79,7 @@ Within the same level, operators are evaluated left-to-right:
 print(8 - 5 + 3)
 ```
 
-There is an exception, though. Exponentiation is done right-to-left
+There is an exception, though. Exponentiation is done right-to-left:
 
 ```{python}
 print(2 ** 3 ** 4)
@@ -78,52 +101,322 @@ test_average = (test_1 + test_2) / 2
 print(test_average)
 ```
 
-We've been throwing those "print" function calls around without
-talking about them. Print will take any number of arguments, separated
-by commas, and print them out with one space between them. After the
-last item is printed, Python will put out a "newline" character, jump
-down, and get ready to start printing next time at the beginning of
-the next line.
+## Some shortcut operators
 
-Variables are named "containers" that hold data. We've seen variables
-used as integers and as real numbers (with a decimal point and some
-digits afterwards). Variables can also hold strings:
+Python has a shortcut for using the value of variable, changing it,
+and storing it back in the same variable.  So the code in both the
+below cells do the same thing:
+
+```{python}
+weight = 6
+weight = weight + 4
+print(weight)
+
+```
+
+```{python}
+weight = 6
+weight += 4
+print(weight)
+```
+
+Along with the `+=` operator, there is also `-=`, `*=`, and `/=`.
+
+## The `print()` function
+
+We've been throwing those `print()` function calls around without
+talking about them. 
+
+The `print()` function will take any number of arguments, separated by
+commas, and print them out with one space between them. After the last
+item is printed, Python will put out a "newline" character, go to the
+next line, and get ready to start printing at the beginning of the
+next line.
+
+## Variables
+
+Variables give names to things. We've seen variables used as integers
+and as floating point numbers.  Variables can also refer to strings.
+
+Unlike Java or C++, the are not "strongly" typed.  A variable can be a
+number one moment and then can suddenly become a string.  You don't
+have to declare types of variables either.
+
+```{python}
+amount = 7
+print(amount)
+amount = "a whole lot!"
+print(amount)
+```
 
 Variables in Python work similarly to Javascript, if you're familiar
 with that language.
 
+## Basic data types
+
+Python has these basic data types:
+
+- Booleans, which are `True` or `False` values.
+- Numbers, which can be:
+  - Integers (example: `-1`, `0`, `1`, `2`, …)
+  - Floating point numbers (example: `3.14`)
+  - Complex numbers (example: `3+4j`)
+- Strings (example: `"hello world!"`)
+- `None`, which is a special constant that indicates the absence of a
+  value. `None` is the equivalent of `null` in some other
+  languages. When you call a function and it returns nothing, you will
+  get a `None`, for example.
+
+There also [decimal] numbers and [fractions], should you ever need
+them.  You can take a look at Python's [Numeric and Mathematical
+Modules][numeric] if you are curious what else is available.
+
+[decimal]: https://docs.python.org/3/library/decimal.html
+[fractions]: https://docs.python.org/3/library/fractions.html
+[numeric]: https://docs.python.org/3/library/numeric.html
+
+We will discuss modules later.  For now, just bear in mind that: (1) a
+"module" is some code that you can use when writing your own code, and
+(2) Python has a standard library, which is a collection of useful and
+commonly used modules.  You will use the standard library a lot if you
+use Python.
+
+### Strings
+
+Strings can be surrounded by single quotes (`'`) or double quotes
+(`"`). Whichever one you start a string with, you have to end with
+that same kind, and it does not matter which kind of quote you use:
+`'hello'` and `"hello"` are the same.
+
+```{python}
+'hello' == "hello"
+```
+
+Note that you can't mix the types of quotes when declaring a string.
+Running the below code cell will result in an error:
+
+```{python}
+'hello"
+```
+
+Regardless of the type of quote you use, it would be a good idea to
+use one type of quotes consistently across a program or project.
+
+## Built-in data structures
+
+Some data structures are immediately available to you in the core
+language:
+
+- Lists 
+- Dictionaries
+- Tuples
+- Sets
+
+### Lists
+
+Here is an example of a list:
+
+```{python}
+temperatures = [44.2, 43.6, 107.9, "awfully hot!"]
+```
+
+You write the elements of the list inside square brackets (`[` and
+`]`), with commas to separate them.
+
+Python lists are like arrays in C++ and Java, except:
+
+- Python lists can grow (and shrink) as needed.
+- The different elements of an array do not all have to be the same
+  type.
+  
+Here's another example:
+
+```{python}
+grades = ["A", "B", "C", "D", "F"]
+print(len(grades))
+
+print(grades[0])
+print(grades[1])
+print(grades[2])
+print(grades[3])
+print(grades[4])
+```
+
+Notice the first element in a list is numbered 0 (zero).  Any time you
+index into a list, Python always counts starting at 0,
+not 1. Forgetting this fact will likely be a big source of mistakes.
+
+You can also loop over lists using a `for` statement (we will discuss
+`for` statements later in this notebook):
+
+```{python}
+for grade in grades:
+    print(grade)
+```
+
+If you try to read past a list, that would result in an error. Try
+running the below cell:
+
+```{python}
+grades[5]
+```
+
+Lists are one-dimensional. If you would normally use a 2D array for
+something, you would want to use a list of lists:
+
+```{python}
+list_of_lists = [
+    [1, 2, 3],
+    [],
+    [4, 5, 6]
+]
+print(list_of_lists[1])
+```
+
+`[]` is an empty list, obviously.
+
+
+### Dictionaries
+
+Dictionaries (or `dict` objects in Python parlance) contain pairs of
+keys and values.  You will use them when you want to look up items by
+a key whose value you already know.
+
+```{python}
+drugs = { 
+   "asprin": 325, 
+   "acetaminophen": 500 
+}
+print(drugs["asprin"])
+print(drugs["acetaminophen"])
+```
+
+If you try to look up by a key that does not exist, that would result
+in an error:
+
+```{python}
+drugs["ibuprofen"]
+```
+
+In order to avoid the error, you can do something like this:
+
+```{python}
+value = drugs.get("ibuprofen")
+if value != None:
+    print("Found ibuprofen:", value)
+else:
+    print("Could not find ibuprofen")
+```
+
+You can add new keys and values to an existing dictionary:
+
+```{python}
+drugs["methotrexate"] = 2.5
+print(drugs)
+```
+
+Keys in a dictionary are immutable: you can't change them once they
+are inserted.  But you can change the values associated with them:
+
+```{python}
+drugs["methotrexate"] = 3.5
+print(drugs)
+```
+
+
+### Tuples
+
+Tuples (or `tuple` objects) construct groups of objects.  These are
+all tuples:
+
+```{python}
+()               # An empty tuple.
+(1,)             # A one-item tuple.
+(0, 'Ni', 3.14)  # A four item tuple.
+```
+
+Unlike lists, tuples are immutable: you can't change a tuple's
+elements once the tuple is constructed.  You can use tuples when you
+need to:
+
+- Use a collection of things that remains constant.
+- Return multiple values from a function. (We'll discuss functions
+  later.)
+
+Tuples can be dictionary keys because they are immutable.
+
+```{python}
+locations = {
+    (40.7128, -74.0060): "New York",
+    (51.5074, -0.1278): "London"
+}
+```
+
+The strings that start with `#` are comments.  We will discuss
+comments later in this notebook.
+
+### Sets
+
+Sets (or `set` objects) are structures whose elements are unique.
+
+```{python}
+{1,2,3}
+{0, 'Ni', 3.14}
+```
+
+If you want to get just the unique elements of a list, you can insert
+the list to a set!
+
+```{python}
+numbers = [10,1,1,1,1,2,20]
+unique_numbers = set(numbers)
+print(unique_numbers)
+```
+
+## Operator overloading
+
+Operators can have different meaning depending on the types of data
+they operate on.
+
+For example, the `+` operator applied to numbers will result in an
+addition.  When applied to strings, the `+` operator will concatenate
+("jam together") them.
+
 ```{python}
 first_part = "super"
 other_part = "conducting"
-sumpreme_coolness = first_part + other_part
-print(sumpreme_coolness)
+supreme_coolness = first_part + other_part
+print(supreme_coolness)
 ```
 
-The "+" operator will concatenate ("jam together") two strings. Notice
-that it did not insert a space. If you need a space, you have to do it
-yourself.
+Notice that it did not insert a space. If you need a space, you have
+to do it yourself.
 
 ```{python}
 not_as_cool = first_part + " " + other_part
 print(not_as_cool)
 ```
 
-A couple of things to notice... First, there are three things being
-concatenated: a variable, a string "literal" with only a single space
-in it, and another variable. Second, when we evaluate a cell and
-create a variable in it, those variables become available to every
-cell further down the line. (If you're curious, there is one instance
-of Python running behind the scenes. Jupyter just crams code into when
-you execute a cell. When Python is done running that, any output is
-put into the notebook right below that block. Running another command
-later, in another cell, sends that code to the one and only Python
-instance associated with the entire notebook. There is no need to
-write insanely long cells, and in fact you should keep them 30-50
-lines at most if you can. Shorter cells are easier to understand and
-debug.
-    
-Python has the same control structures you're used to, it's just that
-syntax is a little different now.
+### A couple of things to notice
+
+First, there are three things being concatenated: a variable, a string
+"literal" with only a single space in it, and another
+variable. Second, when we evaluate a cell and create a variable in it,
+those variables become available to every cell further down the line.
+
+(If you're curious, there is one instance of Python running behind the
+scenes. Jupyter just crams code into when you execute a cell. When
+Python is done running that, any output is put into the notebook right
+below that block. Running another command later, in another cell,
+sends that code to the one and only Python instance associated with
+the entire notebook. There is no need to write insanely long cells,
+and in fact you should keep them 30-50 lines at most if you
+can. Shorter cells are easier to understand and debug.
+
+## Control flow
+
+Python has the same control structures you're used to, such as `if`
+and `if`/`else`.  It's just that syntax may be a little different now.
 
 ```{python}
 if 5 > 4 :
@@ -134,12 +427,14 @@ else:
     print("I have a feeling this will be bad.")
 ```
 
-Notice that there is no "then". Notice that there **is** a colon at
-the end of the "if" line. A colon indicates that a "code block" is
-coming up. In our case, these blocks are two lines long. They have to
-be indented, and they have to be indented the same amount. In Python,
-indentation has meaning. The "visual" level that things are indented
-to indicates the "lexical" level of the code block.
+Notice that there **is** a `:` (colon) at the end of the `if` line. A
+colon indicates that a "code block" is coming up. In our case, these
+blocks are two lines long. They have to be indented, and they have to
+be indented the same amount. In Python, indentation has meaning. The
+"visual" level that things are indented to indicates the "lexical"
+level of the code block.
+
+### Loops
 
 Python has loops, as expected:
 
@@ -153,9 +448,10 @@ while weight < 11.2:
 print("done with the loop now.")
 ```
 
-While loops are very versatile (you can test anything to see if you
-should continue) but sometimes you know how many times you want to do
-something and you want a "cleaner" way to express that.
+`while` loops are very versatile: you can test anything to see if you
+should continue.  Sometimes you know how many times you want to do
+something and you want a cleaner way to express that.  You would use a
+`for` loop in such instances.
 
 ```{python}
 for i in range(1,6):
@@ -165,97 +461,236 @@ if i == 5:
     print("we got to 5, like we expected!! Surprise!!")
 else:
     print("hmmm...")
-    
 ```
 
-Notice something funny above: when testing for equality, Phython uses
-two equals signs stuck together with no space between them. This is
-just like Java, Javascript, C, C++...
+Notice something above: when testing for equality, Python uses `==`
+operator.  This is just like Java, C, C++, etc.
 
-Notice something else: we specified the range to be from one
-to... well, we said six, but it stopped after five. That's how range
-works: you specify the number to start at and the number that is the
-first one you want it to stop at **and not run the associated code
-block**. I guarantee you either you'll mess this up or you'll have to
-read code written by someone else that has that mistake. I do it all
-the time.
+Notice something else: in `range(1,6)` we specified the range to be
+from 1 to 6, but it stopped after 5. That's how `range()` works: you
+specify the number to start at and the number that is the first one
+you want it to stop at. Forgetting this will result in some
+easy-to-make mistakes.
 
-While we're on the subject of "equals sign strangeness", Python has a
-shortcut for using the value of variable, changing it, and storing it
-back in the same variable.
+## `for` loops over lists
 
-```{python}
-# you could do this
-weight = 6
-weight = weight + 4
-print(weight)
-# or you could do this
-weight = 6
-weight += 4
-print(weight)
-```
-
-Along with the "+=" operator, there is also ``-=``, ``*=``, and ``/=``
-
-Hey, look at that line above... notice that little quoted parts of the
-code are in gray boxes?  Any part of your Markdown that occurs between
-two "backquotes" is shown specially.
-
-Also, did you notice the lines in the cell above that started with a
-"#"?  That character means "everything on tghe rest of the line is
-just a note to myself and should not be run". These "comments" are
-very valuable for reminding yourself what's going on when you come
-back to your code three months later and you can't remember anything.
-
-Back to "for" loops for a minute. These loops can also iterate over a
+Back to `for` loops for a minute. These loops can also iterate over a
 list:
 
 ```{python}
-for color in [ "red", "green", "blue"] :
-              print(color)
+for color in ["red", "green", "blue"] :
+    print(color)
 ```
 
-In fact, the "range" function is used to build a list of values and
-then the ``for`` loop steps over it.
+In fact, the `range()` function is used to build a list of values and
+then the `for` loop steps over it.
 
-(Don't worry - I lied. But conceptually that's what happens. Behind
-the scenes, Python detects when a for loop is stepping through a range
-function and it behaves like Java or C - nice and efficiently.)
 
-That list of colors is interesting, isn't it? Besides integers, real
-numbers, and strings, Python has some other built-in data types. One
-of these is the list.
+## Functions
 
-When writing out a list, surround it with square brackets (as
-above). Separate the individual list items with commas. Notice
-something cool (or dangerous, depending on your point of view: lists
-don't have to contain just all one type of data. You can mix them in
-the same list:
+A function is a reusable piece of code that performs a certain task.
+When you find yourself writing the same pieces of code over and over,
+you would "refactor" the pieces of repeating code, and put them in a
+function.  Now you can call the function over and over.
+
+Here's how you would create (or "define") a function: use the `def`
+keyword, followed by a space and then the name of the function,
+followed by the function parameters (or arguments), followed by a `:`,
+and then the block of code that should perform the thing that you want
+the function to perform.  If you want to return some value from the
+function, you would use the `return` keyword.
+
+When you want to pass more than one parameter to the function, you
+would separate them by commas.
+
+Here's an example of a function:
 
 ```{python}
-funny_stuff = [13, 19, 44, "Bob Hope", 16]
+import math  # use Python's math module.
+
+def area_of_circle(radius):
+    """
+    Compute area of a circle.
+
+    :param radius: radius of the circle.
+    """
+    result = math.pi * radius ** 2
+    return result
 ```
 
-That is a list of 5 things: three numbers, a string, and one more
-number.  We can access individual elements with "array indexing":
+You can call the function like so:
 
 ```{python}
-print(funny_stuff[0])
-print(funny_stuff[1])
-print(funny_stuff[2])
-print(funny_stuff[3])
-print(funny_stuff[4])
+area_of_circle(10)
 ```
 
-Like basically every language except Fortran, Python lists store their
-first value at index zero, not one! This trips up everyone sooner or
-later. Sometimes miore than once. Sometimes more than once a minute.
+There are two new things here: `import` statements, and code comments.
+Let us talk about code comments in the next section.  We will talk
+about `import` statements and importing modules in a later section.
 
-Now you know just enough Python to be dangerous. An excellent tutorial
-on the language is available at
-https://docs.python.org/3/tutorial/index.html and I recommend you
-bookmark that for handy reference.
+
+## Code comments
+
+Did you notice the lines in the cell above that started with a `#`?
+
+That `#` character means "everything on the rest of the line is just a
+note to myself and should not be run". These comments are very
+valuable for reminding yourself (or other readers of your code) about
+what's going on when you come back to your code three months later and
+you can't remember anything.  You would use `#` when your comment can
+be written in one line.
+
+You can also write comments that span multiple lines: you would start
+the comment with a `"""`, write the comments, and then use another
+`"""` to end the comment.
+
+Note the comment surrounded by `"""` that describe the function in
+(somewhat) detail.  They are called docstrings, and this is a common
+way to document Python code.
+
+When you read the documentation of some libraries (such as NumPy
+[numpy-reference]), you might be looking at pages generated by
+processing docstrings that are written along with the code. Python has
+conventions for writing docstrings, and tools for generating such
+documentation from docstrings.
+
+[numpy-reference]: https://numpy.org/doc/stable/reference/index.html
+
+
+## Classes
+
+Python classes can't be too strange to those familiar with C++ or
+Java.  You would use the `class` keyword to define classes, and an
+(optional) `__init__()` method (or member function) to create the
+class constructor.  Note that the first parameter to member functions
+is the `self` keyword.
+
+```{python}
+class Customer:
+    """ An example class. """
+    def __init__(self, name, address):
+        """
+        Constructor.
+
+        :param name: name of the customer.
+        :param address: address of the customer.
+        """
+        self.name = name
+        self.address = address
+
+    def show(self):
+        """ Print the customer's details. """
+        print(self.name + " lives at " + self.address)
+```
+
+Now you can create objects of the class, and invoke member functions
+of these object:
+
+```{python}
+c = Customer("Bob", "1234 Wooded Way")
+c.show()
+```
+
+We can't go into all the details here, but some basic familiarity with
+the idea of classes and objects would be helpful when programming with
+Python. Important data structures `list`, `dict`, `set`, and `tuple`
+are implemented as classes.
+
+
+## Error handling with exceptions
+
+Consider the code below:
+
+```{python}
+total_grams = 100
+number_of_people = 0
+individual_portion = total_grams / number_of_people
+```
+
+If you run the above cell, it would result in an error, since division
+by zero is undefined.
+
+When an unrecoverable error such as the above occurs, the Python
+runtime "raises" (or "throws") an exception.  In the above instance,
+you would see an exception called `ZeroDivisionError`.  There are
+other kinds of exceptions too. You also can create your own exception
+classes because doing so is sometimes useful.
+
+Unless exceptions are "caught" by an exception handler, your program
+would exit or behave in ways that you do not want.  In order to do
+that, you would use a `try`/`except` block, like so:
+
+```{python}
+try:
+  individual_portion = total_grams / number_of_people
+except:
+  print("Number of people was zero, no valid answer!")
+```
+
+## Modules
+
+We already saw how to use an external definition like `math.pi` when
+we talked about functions: you do an `import math`, and then use the
+code in `math` module with `math.pi`.
+
+But what are modules?
+
+Modules are the _organizational units_ of a Python program.  When you
+create a Python project, you would split your code into logical units,
+called _modules_.  You can create and use modules within your own
+programs, and you can use modules from external libraries.
+
+In concrete terms, modules correspond to files.  You would put code
+that does related things in separate files, somewhat like so:
+
+```
+mypackage/
+    __init__.py
+    module1.py
+    module2.py
+    subpackage/
+        __init__.py
+        submodule1.py
+```
+
+And then you will be able to use these modules elsewhere by importing
+them.  You would use `import` statements to do this, like so:
+
+```python
+from mypackage import module1
+from mypackage.subpackage import submodule2 as sm2
+
+module1.some_function()
+sm2.some_other_function()
+```
+
+As shown above, the `as` keyword lets you import modules under a more
+convenient (perhaps shorter) name.
+
+An alternative, but more verbose syntax for importing modules would be
+this:
+
+```python
+import mypackage
+
+mypackage.module1.some_function()
+mypackage.subpackage.submodule1.some_other_function()
+```
+
+The first way is a little more convenient.
+
+
+## Next steps
+
+Now you know just enough Python to be dangerous. 
+
+An excellent [Python tutorial][tutorial] is available at
+https://docs.python.org/.  I recommend you bookmark that for handy
+reference.
+
+[tutorial]: https://docs.python.org/3/tutorial/index.html
 
 Now that we're at least a threat to ourselves, if not others, let's go
-to the "Modules" notebook and see why Python has taken over the world.
+to the [next notebook](./3-python-packages.ipynb) and look at Python
+packages.
 

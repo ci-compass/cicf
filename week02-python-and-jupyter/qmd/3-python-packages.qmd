@@ -1,13 +1,12 @@
 # Python packages
 
-Python became very popular partly because of the thousands of packages
-available.  
+Python became very popular in recent years partly because of the
+thousands of packages available.
 
 A "package" is a collection of Python code that you can use to
-accomplish certain tasks.  Packages can contain application programs,
-or libraries, or both.  A Python library is a collection of code that
-people can reuse when writing new applications or even other
-libraries.
+accomplish certain tasks.  Packages can contain libraries, application
+programs, or both.  A Python library is a collection of code that
+people can use when writing new applications or new libraries.
 
 When you install Python, a set of libraries called the [Python
 standard library][stdlib] also gets installed.  Python is said to be a
@@ -15,8 +14,8 @@ standard library][stdlib] also gets installed.  Python is said to be a
 library is useful to accomplish many common tasks related to:
 
 - Working with text, math, time, dates, etc.;
-- Working with various data structures such as lists, sets, and
-  key-value pairs (also called dictionaries).
+- Working with various data structures (such as lists, dicts, sets,
+  and tuples);
 - Reading and writing files;
 - Reading and writing data from networked systems;
 - Working with processes and threads;
@@ -26,46 +25,57 @@ library is useful to accomplish many common tasks related to:
 
 [stdlib]: https://docs.python.org/3/library/index.html
 
-## Python modules
+## Python modules and packages
 
-When you write small programs, usually a single file can contain all
-the code you need to write.  But as the program grows or when you work
-on bigger projects, you will need to break down related components
-into separate files and organize them in a manner that makes sense to
-yourself and other people.
+We talked a bit about modules in the previous notebook.  Basically:
+python packages are organized as _modules_, which is essentially a
+collection of files and directories.  The files mostly contain Python
+code. Sometimes they can be other kinds of supporting files too.
 
-Python libraries and programs are organized as _modules_, which is
-essentially a collection of files and directories.  An example package
-named `mypackage` (which is totally made-up, of course) could be
-organized like so:
+An example package would be the popular [requests] library, which you
+can use to interact with web sites.  In order to use `requests` in
+your code, you would install it (with `pip install requests`), and
+then use an `import requests` statement in your program to use modules
+from the requests library, and then call functions from the module:
 
+```{python}
+import requests
+
+response = requests.get("https://google.com")
+
+print("Respnse status code: ", response.status_code)
+print("Response headers: ", response.headers)
+print("Response text: ", response.text)
 ```
-mypackage/
-    __init__.py
-    module1.py
-    module2.py
-```
 
-<!-- real example: requests library, maybe? -->
+Running the above code cell should work without having to install
+`requests` library.  It was already installed when you installed
+`jupyter`, because `jupyter` uses `requests`.
+
+To learn details about how to use a library, you will need to read
+its documentation.  You can find [documentation][requests-docs] for
+requests library from its [PyPI][pypi] (or "Python Package Index")
+project page, for example.
+
+[requests]: https://pypi.org/project/requests/
+[requests-docs]: https://requests.readthedocs.io/en/latest/
+[pypi]: https://pypi.org/
 
 
-## Example: generating random numbers using `random` module
+## Another example: using `random` module
 
-Let us consider an example of generating random numbers using Python
-standard library.
+As noted earlier, you do not have to install packages for everything:
+when you install Python, you get the Python standard library also,
+which has a collection of useful modules.  Let us consider an example
+of generating random numbers using Python standard library.
 
 The first thing you have to do is tell Python you want to use a module
-called `random`:
+called `random`, using `import random`.  In order to generate random
+numbers, we can use the `random()` function from the `random` module:
 
 ```{python}
 import random
-```
 
-Now `random` is an example of a built-in module. Python comes with it
-when it's installed.  In order to generate random numbers, we can use
-the `random()` method from the `random` module:
-
-```{python}
 print(random.random())
 print(random.random())
 print(random.random())
@@ -76,35 +86,82 @@ of other functions in the random package to do things like generate
 random integers between two values or to randomly shuffle the items in
 a list.
 
-## Installing new packages
+You already know how to find documentation for standard library
+modules: we have linked to it in the beginning of this notebook.
+Those documents might be a little confusing in the beginning, so it is
+perfectly reasonable to look for friendlier resources.
 
-<!-- TODO: WRITEME -->
+## The Python Package Index (PyPI)
 
-### Python package index
+In the beginning, we used [pip] to install some Python packages. 
+What happens when you run `pip install` something though?  How does
+`pip` find the packages it need to install?
 
-<!-- TODO: WRITEME -->
+By default, `pip` would search the [Python Package Index][pypi] (also
+known as "PyPI") for the package by name, download the appropriate
+version of the package, and install it in your machine.  If the
+package depends on other packages, pip would install those other
+packages also, if they are not already installed.
 
-### Conda
+PyPI is a large repository of Python packages maintained by the
+[Python Software Foundation][psf], a non-profit organization that is
+responsible for development and maintenance of the Python programming
+language and its infrastructure.
 
-<!-- TODO: WRITEME -->
+[pip]: https://pip.pypa.io/en/stable/
+[psf]: https://www.python.org/psf-landing/
 
-## An example: the numpy package
+PyPI happens to be Python's official package repository, and the most
+popular one.  There are other repositories also (such as [TestPyPI]),
+and you can install packages from those other repositories, should you
+ever need to do so.
+
+[TestPyPI]: https://test.pypi.org/
+
+## Anaconda and Conda
+
+[Anaconda] is a commercially supported "Python distribution".
+Anaconda provides a curated collection of software that uses a
+different packaging format, and it is not necessarily tied to just
+Python.  There are Anaconda packages written in other programming
+languages also.  Similar to `pip`, `conda` is Anaconda's package
+manager, and [Anaconda.org] is its package repository.
+
+Although we are not going to the details now, Anaconda is popular in
+science, AI, and data science communities, so they are worth
+mentioning here.
+
+[Anaconda]: https://www.anaconda.com/
+[Anaconda.org]: https://anaconda.org/
+
+
+## Yet another example: the NumPy package
 
 The `math` module is part of the Python standard library.  It
 implements a routines to calculate few standard functions and some
-basic probability distributions.
+basic probability distributions.  
 
-There are other packages that you would have to download to use. Let's
-look at an example very useful for scientific computing: numpy. 
+However, since Python's built-in support for numerical calculations is
+limited in efficiency and performance, people often reach for the
+famous [NumPy] package. 
 
-Numpy is a package for making numerically-intensive programming easier
-and for making it run faster. It brings it's own datatype to the game:
-an actual array!  Numpy's arrays are quite fast -- substantially
-faster than Python's regular way of representing arrays as "lists of
-lists" (or in three dimensions, "lists of lists of lists" and so
-forth.
+[NumPy]: https://numpy.org/
 
-First, let's tell Python we want to use numpy:
+NumPy makes numerically-intensive programming easier and makes code
+run faster. It brings it's own datatype to the game: an actual array!
+Numpy's arrays are quite fast -- substantially faster than Python's
+regular way of representing arrays as "lists of lists" (or in three
+dimensions, "lists of lists of lists" and so forth.
+
+The critical NumPy data type is the array.  NumPy arrays are faster
+and more compact than Python lists. A NumPy array consumes less memory
+and is convenient to use.  You can find an excellent
+[introduction][numpy-intro] to NumPy in the project's website.
+
+[numpy-intro]: https://numpy.org/doc/stable/user/absolute_beginners.html
+
+In this notebook, let us work through some NumPy examples.  First,
+let's tell Python we want to use numpy:
 
 ```{python}
 import numpy as np
@@ -113,11 +170,7 @@ import numpy as np
 The "as np" part lets us specify a *namespace*, in this case a nice,
 short name so we don't have to type out "numpy" *every single time*.
 
-The critical NumPy data type is the array.
 
-"NumPy arrays are faster and more compact than Python lists. An array
-consumes less memory and is convenient to use."
-([source](https://numpy.org/doc/stable/user/absolute_beginners.html))
 The one caveat with NumPy arrays is that all the elements inside an
 array need to have the same data type (e.g. integer, float, double).
 

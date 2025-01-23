@@ -1,7 +1,7 @@
-# A Very Quick Tour of Jupyter
+# A Quick Tour of Jupyter
 
 First, congratulations!  You've successfully navigated to a Jupyter
-Notebook and opened it. 
+notebook and opened it.
 
 Jupyter is a convenient and productive way to **keep notes and code
 together**. Think of it as being like a regular old paper Lab
@@ -52,24 +52,28 @@ print("Hello, World")
 ```
 
 Look at the line above. That's our print statement and its one
-argument. Over a little bit to the left of it we see, in dark blue,
-the word "In" and a pair of brackets. "In" tells us that we're looking
-at the input part of a cell - the place where we can type stuff. The
-brackets don't have anything in them, but that will change soon.
+argument. Over a little bit to the left of it we see a pair of square
+brackets. The brackets don't have anything in them, but that will
+change soon.
 
 Let us run that line of code. Looking at the cell, we see the print
 statement. Click on that print statement so the blinking cursor is in
-that cell. Now go to the "Cell" menu and select "Run Cells". We only
-selected the one cell, so it'll only run that one.
+that cell. Now go to the "Run" menu and select "Run Selected Cell".
+You can also use the keys Shift+Enter to run the current cell.  We
+only selected the one cell, so it'll only run that one.
+
+![](./img/hello-world.png)
 
 Did you see that?  Our Jupyter Notebook just ran that line of Python!
 The output from the print function appears right below the input part
-of the cell. The words "Hello World" appeared.
+of the cell. The words "Hello World" appeared.  
 
-Granted, Hello World is a pretty unspectacular piece of code, but at
-least the Computer Programming Introduction Cops won't arrest me
-now. Let's do something slightly more interesting now. Take a look at
-the next cell. Then scroll down to the cell after that, where it says
+Also, the square brackets now contain the number 1.  This is the
+cell's execution count.  The execution count will increase every time
+you run the cell.
+
+Let's do something slightly more interesting now. Take a look at the
+next cell. Then scroll down to the cell after that, where it says
 "Basics of running a cell".
 
 ```{python}
@@ -90,10 +94,10 @@ set equal to 12, then it was multiplied by 29.5735 to convert those
 ounces to milliliters. Finally, the last line prints out the results
 of that conversion.
 
-The second thing that happened was more subtle. Look at the dark blue
-text to the left of it, where it says "In" and has the
-brackets. Inside those brackets there is now a number (probably a "2",
-but the important part is that there's a number).
+The second thing that happened was more subtle. Look at the text in
+the square brackets to the left of it. Inside those brackets there is
+now a number -- probably a "2", but the important part is that there's
+a number.
 
 Make a mental note what that number is.
 
@@ -114,11 +118,10 @@ in. This can be handy when you're jumping around.
 ## Kinds of Cells
 
 By now you may have noticed two distinct kinds of cells in a
-notebook. Cells like this one with text in them are called "Markdown"
-cells. Cells with code in them are called "Code" cells. There are
-other kinds of cells (we added an extension that lets us put video in
-a cell, for instance) but Code and Markdown are the two you'll
-practically always use.
+notebook. Cells like this one with text in them are "Markdown"
+cells. Cells with code in them are "Code" cells. There are other kinds
+of cells (there is an extension that lets us put video in a cell, for
+instance) but Code and Markdown are the most important ones for now.
 
 In the Ancient Times, when the earth's crust was still cooling and
 publications were printed on paper, an editor would go through a
@@ -143,9 +146,13 @@ Markup Language, aka "HTML". This is a language that expresses how web
 pages are laid out.
 
 Jupyter uses another markup language, and this one is called
-Markdown. Other things use Markdown, also. Reddit supports Markdown
-(alongside what they call the "Fancy Pants Editor") and github uses
-"github flavored Markdown".
+[Markdown]. Other things use Markdown, also. Reddit supports Markdown
+(alongside what they call the "Fancy Pants Editor") and GitHub uses
+[GitHub Flavored Markdown][gfm].
+
+[Markdown]: https://en.wikipedia.org/wiki/Markdown
+[gfm]: https://github.github.com/gfm/
+
 
 Did you notice how this cell has a heading that says "Kinds of Cells"
 and that it's in a larger font than the rest of it?  When I typed that
@@ -180,22 +187,17 @@ This sentence has a **bold** word and an _italicized_ one.
 ```
 
 It's important to have a space between the "#" symbols and the first
-                                            #word of your heading.
+word of your heading.
 
 As you enter text and Markdown commands, Jupyter will give you sort of
 a "preview" of what to expect. Once you're done entering the text, hit
 Shift+Enter.  Presto!  That Markdown text has been neatly formatted
 and looks rather nice.
 
-And a note to scientists and mathematicians: LaTeX is another markup
-language. Markdown is a much, much simpler one. If you need to, there
-are converters to take Markdown and turn it into LaTeX. You can copy
-Markdown right out of your Jupyter notebook, convert it, and paste it
-into your journal articles.
-
 Writing code in a cell is just as easy as Markdown text. Make this the
-current cell (click on it) and add another cell below this one. It
-will default to being a code cell. Add the following code:
+current cell (click on it) and add another cell below this one (using
+the `+` on the tool bar, or by pressing `B` key).  The new cell will
+default to being a code cell. Add the following code in the new cell:
 
 ```
 x = 4
@@ -206,13 +208,11 @@ print(z)
 
 When you have that typed in, hit Shift+Enter to execute it.
 
-Running that code will cause it to print "14".
+Running that code will cause it to print `14`.
 
 ## Next Steps
 
-Good job! You've learned how to open Jupyter notebooks, how to run
-code that's contained in them, and how to add your own Code and
-Markdown cells. You're well on your way to being a proficient and
-productive Jupyter user.  Coming up, we'll look at some more Jupyter
-features that you'll need to do your daily work with it.
+You have learned how to open Jupyter notebooks, how to run code that's
+contained in them, and how to add your own Code and Markdown cells.
 
+In the next notebook, we will look at the Python programming language.

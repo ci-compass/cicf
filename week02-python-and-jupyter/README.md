@@ -14,11 +14,17 @@ commands in that terminal.
 
 You should have done a `git clone` of the CICF repository in the home
 directory of your VM in the first week itself.  In case you have not
-done that yet, run this command:
+done that yet, go back to the [previous week's instructions][week1],
+and follow the instructions under the section titled "Git" there.
+
+You should basically have run the below command from your home
+directory (which would be `/home/cicf`):
 
 ```console
-git clone https://github.com/ci-compass/cicf ~/cicf
+git clone https://github.com/ci-compass/cicf
 ```
+
+[week1]: ../week01-commandline/README.md#Git
 
 Since we will keep updating the repository throughout the course, you
 will have to make sure you have the latest changes in your local copy.
@@ -26,8 +32,10 @@ Change to `~/cicf` directory and then do a `git pull`:
 
 ```console
 cd ~/cicf
-git pull --autostash
+git pull --autostash origin main
 ```
+
+(We will discuss what this means in week 4.)
 
 ## Install some software
 
@@ -137,6 +145,8 @@ A browser window will open, listing the contents of
 with `.ipynb` extension.  They are the Jupyter notebooks that we will
 use this week.
 
+<!-- TODO: update this screenshot -->
+
 ![Jupyter](./img/jupyter.png)
 
 Working through these notebooks is your task this week:
@@ -154,6 +164,48 @@ Working through these notebooks is your task this week:
 You can open each these notebooks by double clicking them, or by
 clicking on the "open" button that will appear when you select a
 notebook.
+
+### JupyterLab
+
+JupyterLab is a newer, fancier, and perhaps nicer way to interact with
+Jupyter notebooks.  You can launch a JupyterLab instance instead of
+old notebook interface, with the command:
+
+```console
+jupyter lab
+```
+
+<!-- TODO: add JupyterLab screenshot -->
+
+Perhaps you might prefer JupyterLab.  You are likely to come across
+JupyterLab instances hosted by various organizations and projects.
+Some examples:
+
+- [Microsoft Planetary Computer](https://planetarycomputer.microsoft.com/)
+- [FABRIC project's JupyterLab instance](https://jupyter.fabric-testbed.net/)
+- [Chameleon project's JupyterLab instance](https://jupyter.chameleoncloud.org/)
+
+Google [Colab] also supports Jupyter notebooks.
+
+[Colab]: https://colab.research.google.com/
+
+In fact, you can open this week's notebooks straight in Colab.  Try
+these links:
+
+- https://colab.research.google.com/github/ci-compass/cicf/blob/main/week02-python-and-jupyter/1-introduction.ipynb
+- https://colab.research.google.com/github/ci-compass/cicf/blob/main/week02-python-and-jupyter/2-quick-python-tour.ipynb
+- https://colab.research.google.com/github/ci-compass/cicf/blob/main/week02-python-and-jupyter/3-python-packages.ipynb
+- https://colab.research.google.com/github/ci-compass/cicf/blob/main/week02-python-and-jupyter/4-plot-ligo-data.ipynb
+
+To run the cells, you will have to sign using a Google account.  
+
+However, note that you won't be able to run commands such as `pip` and
+`wget` in a Colab terminal as we discuss here: in order to be able to
+use a terminal, Colab requires a paid plan.  So you probably won't be
+able to run all the cells in the third and fourth notebooks.
+
+But that is just an irrelevant detail for now.  You already have a
+virtual machine set up to do what you need to do!
 
 ## Resources
 
