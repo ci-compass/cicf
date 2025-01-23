@@ -110,7 +110,7 @@ printing at the beginning of the next line.
 
 ## Variables
 
-Variables are names for things. We've seen variables used as integers
+Variables give names to things. We've seen variables used as integers
 and as floating point numbers.  Variables can also refer to strings.
 
 Unlike Java or C++, the are not "strongly" typed.  A variable can be a
@@ -129,11 +129,50 @@ with that language.
 
 ## Basic data types
 
-<!-- TODO -->
+Python has these basic data types:
+
+- Booleans, which are `True` or `False` values.
+- Numbers, which can be:
+  - Integers (example: `-1`, `0`, `1`, `2`, …)
+  - Floating point numbers (example: `3.14`)
+  - Complex numbers (example: `3+4j`)
+- Strings (example: `"hello world!"`)
+- `None`, which is a special constant that indicates the absence of a
+  value. `None` is the equivalent of `null` in some other
+  languages. When you call a function and it returns nothing, you will
+  get a `None`, for example.
+
+
+### Strings
+
+Strings can be surrounded by single quotes (`'`) or double quotes
+(`"`). Whichever one you start a string with, you have to end with
+that same kind, and it does not matter which kind of quote you use:
+`'hello'` and `"hello"` are the same.
+
+```{python}
+'hello' == "hello"
+```
+
+Note that you can't mix the types of quotes when declaring a string.
+Running the below code cell will result in an error:
+
+```{python}
+'hello"
+```
+
+Regardless of the type of quote you use, it would be a good idea to
+use one type of quotes consistently across a program or project.
 
 ## Built-in data structures
 
-<!-- TODO -->
+Some data structures are immediately available to you in the core
+language:
+
+- Lists 
+- Dictionaries
+- Tuples
+- Sets
 
 
 ## Operator overloading
