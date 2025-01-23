@@ -1,4 +1,4 @@
-# A Very Quick Tour of Jupyter
+# A Quick Tour of Jupyter
 
 First, congratulations!  You've successfully navigated to a Jupyter
 notebook and opened it.
