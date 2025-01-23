@@ -594,7 +594,33 @@ are implemented as classes.
 
 ## Error handling with exceptions
 
-<!-- TODO -->
+Consider the code below:
+
+```{python}
+total_grams = 100
+number_of_people = 0
+individual_portion = total_grams / number_of_people
+```
+
+If you run the above cell, it would result in an error, since division
+by zero is undefined.
+
+When an unrecoverable error such as the above occurs, the Python
+runtime "raises" (or "throws") an exception.  In the above instance,
+you would see an exception called `ZeroDivisionError`.  There are
+other kinds of exceptions too. You also can create your own exception
+classes because doing so is sometimes useful.
+
+Unless exceptions are "caught" by an exception handler, your program
+would exit or behave in ways that you do not want.  In order to do
+that, you would use a `try`/`except` block, like so:
+
+```{python}
+try:
+  individual_portion = total_grams / number_of_people
+except:
+  print("Number of people was zero, no valid answer!")
+```
 
 ## Modules
 
