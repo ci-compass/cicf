@@ -497,7 +497,8 @@ Here's how you would create (or "define") a function: use the `def`
 keyword, followed by a space and then the name of the function,
 followed by the function parameters (or arguments), followed by a `:`,
 and then the block of code that should perform the thing that you want
-the function to perform.
+the function to perform.  If you want to return some value from the
+function, you would use the `return` keyword.
 
 When you want to pass more than one parameter to the function, you
 would separate them by commas.
