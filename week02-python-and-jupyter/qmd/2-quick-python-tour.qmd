@@ -10,7 +10,24 @@ with running some Python code in Jupyter.
 
 ## A note about the REPL
 
-<!-- TODO -->
+You would be able to run the code examples in this notebook right here
+in the notebook itself.  There's another way to quickly try out code,
+even if you are not running a notebook: you can use Python's shell, or
+REPL (or "Read-Eval-Print Loop").
+
+In your virtual machine's terminal, you can run the command `python3`,
+and you can enter code in the resulting prompt.
+
+![](./slides/img/repl-hello.png)
+
+You can also launch a terminal from Jupyter's menu (File -> New ->
+Terminal), and run `python3` command there.
+
+You do not have to use the REPL right now, but its existence and use
+is a basic thing that would be useful to know.  It should be part of
+any tour of Python.
+
+Now let us look at some Python code examples.
 
 ## A few examples
 
