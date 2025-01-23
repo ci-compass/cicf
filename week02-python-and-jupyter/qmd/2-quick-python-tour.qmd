@@ -167,6 +167,18 @@ Python has these basic data types:
   languages. When you call a function and it returns nothing, you will
   get a `None`, for example.
 
+There also [decimal] numbers and [fractions], should you ever need
+them.  You can take a look at Python's [Numeric and Mathematical
+Modules][numeric] if you are curious what else is available.
+
+[decimal]: https://docs.python.org/3/library/decimal.html
+[fractions]: https://docs.python.org/3/library/fractions.html
+[numeric]: https://docs.python.org/3/library/numeric.html
+
+We will discuss modules later.  For now, just bear in mind that these
+facilities are part of Python's standard library, which is a
+collection of useful and commonly used things.  You will use the
+standard library a lot if you use Python.
 
 ### Strings
 
