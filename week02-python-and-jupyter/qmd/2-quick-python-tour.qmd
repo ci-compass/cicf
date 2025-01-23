@@ -41,10 +41,10 @@ big_number  = 9 ** 25
 print(integer_division, remainder, big_number)
 ```
 
-The two slashes next to each other mean "divide this and ignore the
-remainder". The percent sign says "divide this and **only** give us
-the remainder.  Finally, two asterices mean "evaluate the left side
-raised to the right side's power".
+The `//` operator (two slashes next to each other) mean "divide this
+and ignore the remainder". The `%` operator means "divide this and
+**only** give us the remainder.  Finally, two asterices mean "evaluate
+the left side raised to the right side's power".
 
 The standard order of operations that we learned in school still
 applies here. Exponentiation is done first, then the multiplications
