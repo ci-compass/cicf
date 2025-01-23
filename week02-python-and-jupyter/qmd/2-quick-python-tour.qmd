@@ -56,7 +56,7 @@ Within the same level, operators are evaluated left-to-right:
 print(8 - 5 + 3)
 ```
 
-There is an exception, though. Exponentiation is done right-to-left
+There is an exception, though. Exponentiation is done right-to-left:
 
 ```{python}
 print(2 ** 3 ** 4)
@@ -78,30 +78,40 @@ test_average = (test_1 + test_2) / 2
 print(test_average)
 ```
 
-We've been throwing those "print" function calls around without
-talking about them. Print will take any number of arguments, separated
-by commas, and print them out with one space between them. After the
-last item is printed, Python will put out a "newline" character, jump
-down, and get ready to start printing next time at the beginning of
-the next line.
+We've been throwing those `print()` function calls around without
+talking about them. The `print()` function will take any number of
+arguments, separated by commas, and print them out with one space
+between them. After the last item is printed, Python will put out a
+"newline" character, go to the next line, and get ready to start
+printing at the beginning of the next line.
 
-Variables are named "containers" that hold data. We've seen variables
-used as integers and as real numbers (with a decimal point and some
-digits afterwards). Variables can also hold strings:
+## Variables
+
+Variables are names for things. We've seen variables used as integers
+and as floating point numbers.  Variables can also refer to strings.
 
 Variables in Python work similarly to Javascript, if you're familiar
 with that language.
 
+
+## Operator overloading
+
+Operators can have different meaning depending on the types of data
+they operate on.
+
+For example, the `+` operator applied to numbers will result in an
+addition.  When applied to strings, the `+` operator will concatenate
+("jam together") them.
+
 ```{python}
 first_part = "super"
 other_part = "conducting"
-sumpreme_coolness = first_part + other_part
-print(sumpreme_coolness)
+supreme_coolness = first_part + other_part
+print(supreme_coolness)
 ```
 
-The "+" operator will concatenate ("jam together") two strings. Notice
-that it did not insert a space. If you need a space, you have to do it
-yourself.
+Notice that it did not insert a space. If you need a space, you have
+to do it yourself.
 
 ```{python}
 not_as_cool = first_part + " " + other_part
