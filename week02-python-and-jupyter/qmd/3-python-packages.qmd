@@ -269,7 +269,11 @@ Functions][op-table].
 
 [op-table]: http://docs.python.org/library/operator.html#mapping-operators-to-functions
 
-Matrix visualization:
+## Matrix visualization
+
+We can use [matplotlib] to visualize matrices:
+
+[matplotlib]: https://matplotlib.org/
 
 ```{python}
 import matplotlib.pyplot as plt
