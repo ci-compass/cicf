@@ -104,6 +104,8 @@ some Python packages.  What happens when you run `pip install`
 something though?  How does `pip` find the packages it need to
 install?
 
+[pip]: https://pip.pypa.io/en/stable/
+
 By default, `pip` will search the [Python Package Index][pypi] (also
 known as "PyPI") for the package by name, download the appropriate
 version of the package, and install it in your machine.  If the
@@ -117,7 +119,6 @@ PyPI is a large repository of Python packages maintained by the
 responsible for development and maintenance of the Python programming
 language and its infrastructure.
 
-[pip]: https://pip.pypa.io/en/stable/
 [psf]: https://www.python.org/psf-landing/
 
 PyPI happens to be Python's official package repository, and the most
