@@ -245,8 +245,11 @@ Let's do a little bit of linear algebra. NumPy has routines to do
 basic linear algebra, such as finding a matrix inverse, or solving a
 linear system.
 
-We will need to bring in the `linalg` part of numpy and we will use
-the name `nl` as a shorthand.
+We will need to bring in the [linalg] ("linear algebra") part of
+NumPy, which would be the `numpy.linalg` module.  We will use the name
+`nl` as a shorthand for `numpy.linalg`.
+
+[linalg]: https://numpy.org/doc/stable/reference/routines.linalg.html
 
 ```{python}
 import numpy.linalg as nl
