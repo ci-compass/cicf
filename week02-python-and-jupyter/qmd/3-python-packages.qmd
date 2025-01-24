@@ -200,7 +200,7 @@ print(z)
 
 or ones:
 
-```python
+```{python}
 m = np.ones((3,3))
 ```
 
@@ -208,25 +208,25 @@ m = np.ones((3,3))
 
 You can also element-wise add, subtract, or multiply:
 
-```python
+```{python}
 z + 3
 ```
 
 Or
 
-```python
+```{python}
 a % 2
 ```
 
 Comparisons are element wise
 
-```python
+```{python}
 a > 5
 ```
 
 You can get the dimensions of an array with the `.shape()` method:
 
-```python
+```{python}
 m.shape()
 z.shape()
 ```
@@ -274,14 +274,14 @@ http://docs.python.org/library/operator.html#mapping-operators-to-functions
 NumPy has routines to do basic linear algebra, such as finding a
 matrix inverse, or solving a linear system.
 
-```python
+```{python}
 k = np.array([1,1,1], [1,1,0], [1,0,0])
 k
 ```
 
 Inverses
 
-```python
+```{python}
 from numpy.linalg import nl
 kinv = nl.inv(k)
 kinv
@@ -289,13 +289,13 @@ kinv
 
 And matrix multiplication
 
-```python
+```{python}
 k @ kinv
 ```
 
 Matrix visualization:
 
-```python
+```{python}
 import matplotlib.pyplot as plt
 plt.matshow(a)
 ```
