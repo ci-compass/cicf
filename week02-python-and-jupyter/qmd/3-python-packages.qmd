@@ -34,14 +34,14 @@ code. Sometimes they can be other kinds of supporting files too.
 
 ## An example: using `random` module
 
-As noted earlier, you do not have to install packages for everything:
-when you install Python, you get the Python standard library also,
-which has a collection of useful modules.  Let us consider an example
-of generating random numbers using Python standard library.
+As noted above, when you install Python, you get the Python standard
+library also, which is a collection of useful modules.  Let us look at
+an example of generating random numbers using Python standard library.
 
 The first thing you have to do is tell Python you want to use a module
 called `random`, using `import random`.  In order to generate random
-numbers, we can use the `random()` function from the `random` module:
+numbers, we can use the `random()` function from the `random`
+module. Try running the below code cell:
 
 ```{python}
 import random
@@ -56,20 +56,25 @@ of other functions in the random package to do things like generate
 random integers between two values or to randomly shuffle the items in
 a list.
 
-You already know how to find documentation for standard library
-modules: we have linked to it in the beginning of this notebook.
-Those documents might be a little confusing in the beginning, so it is
-perfectly reasonable to look for friendlier resources.
+To learn details about how to use a library, you will need to read its
+documentation.  You already know how to find documentation for
+standard library modules: we have linked to it in the beginning of
+this notebook.  Those documents might be a little confusing in the
+beginning, so it is perfectly reasonable to look for friendlier
+resources.
 
 ## Another example: using the `requests` library
 
-An example package would be the popular [requests] library, which you
-can use to interact with web sites.  In order to use `requests` in
-your code, you would install it (with `pip install requests`), and
-then use an `import requests` statement in your program to use modules
-from the requests library, and then call functions from the module:
+Sometimes using an external package might make things easier.
+Sometimes when people work on Python code that other people might find
+useful, they package and publish their work in an installable form.
 
-[requests]: https://pypi.org/project/requests/
+An example package would be the popular `requests` library, which
+makes interacting with web sites easier.  In order to use `requests`
+in your code, you would install it (with `pip install requests`
+perhaps), and then use an `import requests` statement in your program
+to use modules from the requests library, and then call functions from
+the module:
 
 ```{python}
 import requests
@@ -81,30 +86,31 @@ print("Response headers: ", response.headers)
 print("Response text: ", response.text)
 ```
 
-Running the above code cell should work without having to install
-`requests` library.  It was already installed when you installed
-`jupyter`, because `jupyter` uses `requests`.
+Note that running the above code cell should work without having to
+install `requests` library.  This is because `requests` was already
+installed when you installed `jupyter`, because the authors of
+`jupyter` decided to use `requests` in their code.
 
-To learn details about how to use a library, you will need to read
-its documentation.  You can find [documentation][requests-docs] for
-requests library from its [PyPI][pypi] (or "Python Package Index")
-project page, for example.
+You can find [requests library documentation][requests-docs] from its
+[PyPI][pypi] Python Package Index [project page][requests].
 
+[requests]: https://pypi.org/project/requests/
 [requests-docs]: https://requests.readthedocs.io/en/latest/
-[pypi]: https://pypi.org/
-
 
 ## The Python Package Index (PyPI)
 
-In the beginning, we used [pip] to install some Python packages. 
-What happens when you run `pip install` something though?  How does
-`pip` find the packages it need to install?
+In the beginning of this week's tutorial, we used [pip] to install
+some Python packages.  What happens when you run `pip install`
+something though?  How does `pip` find the packages it need to
+install?
 
-By default, `pip` would search the [Python Package Index][pypi] (also
+By default, `pip` will search the [Python Package Index][pypi] (also
 known as "PyPI") for the package by name, download the appropriate
 version of the package, and install it in your machine.  If the
 package depends on other packages, pip would install those other
 packages also, if they are not already installed.
+
+[pypi]: https://pypi.org/
 
 PyPI is a large repository of Python packages maintained by the
 [Python Software Foundation][psf], a non-profit organization that is
