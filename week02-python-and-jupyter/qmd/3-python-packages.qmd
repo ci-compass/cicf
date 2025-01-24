@@ -296,3 +296,6 @@ differentiation, linear algebra, signal processing, image processing
 packages then build on top of SciPy.
 
 [SciPy]: https://scipy.org/
+
+In the [next notebook](./4-plot-ligo-data.ipynb), we will download
+some LIGO data and write some code to explore the data.
