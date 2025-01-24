@@ -257,8 +257,10 @@ that:
 k @ kinv
 ```
 
-For a complete list of operators, see:
-http://docs.python.org/library/operator.html#mapping-operators-to-functions
+For a complete list of operators, see: [Mapping Operators to
+Functions][op-table].
+
+[op-table]: http://docs.python.org/library/operator.html#mapping-operators-to-functions
 
 ### NumPy Linear Algebra
 
