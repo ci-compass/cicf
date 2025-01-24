@@ -249,9 +249,10 @@ We will need to bring in the `linalg` part of numpy and we will use
 the name `nl` as a shorthand.
 
 ```{python}
+import numpy.linalg as nl
+
 k = np.array([[1,1,1], [1,1,0], [1,0,0]])
 
-import np.linalg as nl
 kinv = nl.inv(k)
 kinv
 ```
