@@ -123,7 +123,8 @@ language and its infrastructure.
 PyPI happens to be Python's official package repository, and the most
 popular one.  There are other repositories also (such as [TestPyPI]),
 and you can install packages from those other repositories, should you
-ever need to do so.
+ever need to do so.  You can even install packages from certain other
+sources such as their git repositories.
 
 [TestPyPI]: https://test.pypi.org/
 
