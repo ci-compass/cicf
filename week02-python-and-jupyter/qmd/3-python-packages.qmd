@@ -255,7 +255,7 @@ Let's do a little bit of linear algebra. We'll need to bring in the
 "linalg" part of numpy and we'll use the name "nl" as a shorthand.
 
 ```{python}
-k = np.array( [ [1,1,1], [1,1,0], [1,0,0] ] )
+k = np.array([[1,1,1], [1,1,0], [1,0,0]])
 
 import numpy.linalg as nl
 kinv = nl.inv(k)
