@@ -178,9 +178,8 @@ let's tell Python we want to use numpy:
 import numpy as np
 ```
 
-The `as np` part lets us specify a *namespace*, in this case a nice,
-short name so we don't have to type out "numpy" *every single time*.
-
+The `as np` part lets us specify a _namespace_, in this case a nice,
+short name so we don't have to type out `numpy` _every single time_.
 
 The one caveat with NumPy arrays is that all the elements inside an
 array need to have the same data type (e.g. integer, float, double).
@@ -242,9 +241,12 @@ print(a.shape)
 print(z.shape)
 ```
 
-The "shape" property tells us how many elements there are in each dimension, and the number of values separated by commas tell use how many dimensions the array has.
+The "shape" property tells us how many elements there are in each
+dimension, and the number of values separated by commas tell use how
+many dimensions the array has.
 
-(OK, I lied. Shape returns a "tuple" that describes the array and we're printing that out. A tuple is like a list.)
+(OK, I lied. Shape returns a "tuple" that describes the array and
+we're printing that out. A tuple is like a list.)
 
 Let's do a little bit of linear algebra. We'll need to bring in the
 "linalg" part of numpy and we'll use the name "nl" as a shorthand.
