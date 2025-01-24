@@ -230,17 +230,8 @@ You can get the dimensions of an array by querying its `.shape`
 property:
 
 ```{python}
-print(m.shape)
-print(z.shape)
-```
-
-There are convenience functions to get information about the array:
-
-```{python}
 print(a.shape)
-```
-
-```{python}
+print(m.shape)
 print(z.shape)
 ```
 
