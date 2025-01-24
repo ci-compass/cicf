@@ -239,8 +239,14 @@ The `shape` property returns us a _tuple_ that tells us how many
 elements there are in each dimension.  The number of elements in the
 tuple tells us how many dimensions the array has.
 
-Let's do a little bit of linear algebra. We'll need to bring in the
-`linalg` part of numpy and we'll use the name `nl` as a shorthand.
+### NumPy Linear Algebra
+
+Let's do a little bit of linear algebra. NumPy has routines to do
+basic linear algebra, such as finding a matrix inverse, or solving a
+linear system.
+
+We will need to bring in the `linalg` part of numpy and we will use
+the name `nl` as a shorthand.
 
 ```{python}
 k = np.array([[1,1,1], [1,1,0], [1,0,0]])
@@ -261,30 +267,6 @@ For a complete list of operators, see: [Mapping Operators to
 Functions][op-table].
 
 [op-table]: http://docs.python.org/library/operator.html#mapping-operators-to-functions
-
-### NumPy Linear Algebra
-
-NumPy has routines to do basic linear algebra, such as finding a
-matrix inverse, or solving a linear system.
-
-```{python}
-k = np.array([1,1,1], [1,1,0], [1,0,0])
-k
-```
-
-Inverses
-
-```{python}
-from np.linalg import nl
-kinv = nl.inv(k)
-kinv
-```
-
-And matrix multiplication
-
-```{python}
-k @ kinv
-```
 
 Matrix visualization:
 
