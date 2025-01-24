@@ -25,12 +25,43 @@ library is useful to accomplish many common tasks related to:
 
 [stdlib]: https://docs.python.org/3/library/index.html
 
-## Python modules and packages
+### Python modules and packages
 
 We talked a bit about modules in the previous notebook.  Basically:
 python packages are organized as _modules_, which is essentially a
 collection of files and directories.  The files mostly contain Python
 code. Sometimes they can be other kinds of supporting files too.
+
+## An example: using `random` module
+
+As noted earlier, you do not have to install packages for everything:
+when you install Python, you get the Python standard library also,
+which has a collection of useful modules.  Let us consider an example
+of generating random numbers using Python standard library.
+
+The first thing you have to do is tell Python you want to use a module
+called `random`, using `import random`.  In order to generate random
+numbers, we can use the `random()` function from the `random` module:
+
+```{python}
+import random
+
+print(random.random())
+print(random.random())
+print(random.random())
+```
+
+That generates random numbers between zero and one. There are plenty
+of other functions in the random package to do things like generate
+random integers between two values or to randomly shuffle the items in
+a list.
+
+You already know how to find documentation for standard library
+modules: we have linked to it in the beginning of this notebook.
+Those documents might be a little confusing in the beginning, so it is
+perfectly reasonable to look for friendlier resources.
+
+## Another example: using the `requests` library
 
 An example package would be the popular [requests] library, which you
 can use to interact with web sites.  In order to use `requests` in
@@ -59,39 +90,9 @@ its documentation.  You can find [documentation][requests-docs] for
 requests library from its [PyPI][pypi] (or "Python Package Index")
 project page, for example.
 
-[requests]: https://pypi.org/project/requests/
 [requests-docs]: https://requests.readthedocs.io/en/latest/
 [pypi]: https://pypi.org/
 
-
-## Another example: using `random` module
-
-As noted earlier, you do not have to install packages for everything:
-when you install Python, you get the Python standard library also,
-which has a collection of useful modules.  Let us consider an example
-of generating random numbers using Python standard library.
-
-The first thing you have to do is tell Python you want to use a module
-called `random`, using `import random`.  In order to generate random
-numbers, we can use the `random()` function from the `random` module:
-
-```{python}
-import random
-
-print(random.random())
-print(random.random())
-print(random.random())
-```
-
-That generates random numbers between zero and one. There are plenty
-of other functions in the random package to do things like generate
-random integers between two values or to randomly shuffle the items in
-a list.
-
-You already know how to find documentation for standard library
-modules: we have linked to it in the beginning of this notebook.
-Those documents might be a little confusing in the beginning, so it is
-perfectly reasonable to look for friendlier resources.
 
 ## The Python Package Index (PyPI)
 
@@ -169,7 +170,7 @@ let's tell Python we want to use numpy:
 import numpy as np
 ```
 
-The "as np" part lets us specify a *namespace*, in this case a nice,
+The `as np` part lets us specify a *namespace*, in this case a nice,
 short name so we don't have to type out "numpy" *every single time*.
 
 
