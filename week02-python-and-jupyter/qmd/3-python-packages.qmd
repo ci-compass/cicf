@@ -245,7 +245,7 @@ Let's do a little bit of linear algebra. We'll need to bring in the
 ```{python}
 k = np.array([[1,1,1], [1,1,0], [1,0,0]])
 
-import numpy.linalg as nl
+import np.linalg as nl
 kinv = nl.inv(k)
 kinv
 ```
@@ -275,7 +275,7 @@ k
 Inverses
 
 ```{python}
-from numpy.linalg import nl
+from np.linalg import nl
 kinv = nl.inv(k)
 kinv
 ```
