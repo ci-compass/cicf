@@ -226,11 +226,12 @@ Comparisons are element wise
 a > 5
 ```
 
-You can get the dimensions of an array with the `.shape()` method:
+You can get the dimensions of an array by querying its `.shape`
+property:
 
 ```{python}
-m.shape()
-z.shape()
+print(m.shape)
+print(z.shape)
 ```
 
 There are convenience functions to get information about the array:
