@@ -25,53 +25,23 @@ library is useful to accomplish many common tasks related to:
 
 [stdlib]: https://docs.python.org/3/library/index.html
 
-## Python modules and packages
+### Python modules and packages
 
 We talked a bit about modules in the previous notebook.  Basically:
 python packages are organized as _modules_, which is essentially a
 collection of files and directories.  The files mostly contain Python
 code. Sometimes they can be other kinds of supporting files too.
 
-An example package would be the popular [requests] library, which you
-can use to interact with web sites.  In order to use `requests` in
-your code, you would install it (with `pip install requests`), and
-then use an `import requests` statement in your program to use modules
-from the requests library, and then call functions from the module:
+## An example: using `random` module
 
-```{python}
-import requests
-
-response = requests.get("https://google.com")
-
-print("Respnse status code: ", response.status_code)
-print("Response headers: ", response.headers)
-print("Response text: ", response.text)
-```
-
-Running the above code cell should work without having to install
-`requests` library.  It was already installed when you installed
-`jupyter`, because `jupyter` uses `requests`.
-
-To learn details about how to use a library, you will need to read
-its documentation.  You can find [documentation][requests-docs] for
-requests library from its [PyPI][pypi] (or "Python Package Index")
-project page, for example.
-
-[requests]: https://pypi.org/project/requests/
-[requests-docs]: https://requests.readthedocs.io/en/latest/
-[pypi]: https://pypi.org/
-
-
-## Another example: using `random` module
-
-As noted earlier, you do not have to install packages for everything:
-when you install Python, you get the Python standard library also,
-which has a collection of useful modules.  Let us consider an example
-of generating random numbers using Python standard library.
+As noted above, when you install Python, you get the Python standard
+library also, which is a collection of useful modules.  Let us look at
+an example of generating random numbers using Python standard library.
 
 The first thing you have to do is tell Python you want to use a module
 called `random`, using `import random`.  In order to generate random
-numbers, we can use the `random()` function from the `random` module:
+numbers, we can use the `random()` function from the `random`
+module. Try running the below code cell:
 
 ```{python}
 import random
@@ -86,35 +56,76 @@ of other functions in the random package to do things like generate
 random integers between two values or to randomly shuffle the items in
 a list.
 
-You already know how to find documentation for standard library
-modules: we have linked to it in the beginning of this notebook.
-Those documents might be a little confusing in the beginning, so it is
-perfectly reasonable to look for friendlier resources.
+To learn details about how to use a library, you will need to read its
+documentation.  You already know how to find documentation for
+standard library modules: we have linked to it in the beginning of
+this notebook.  Those documents might be a little confusing in the
+beginning, so it is perfectly reasonable to look for friendlier
+resources.
+
+## Another example: using the `requests` library
+
+Sometimes using an external package might make things easier.
+Sometimes when people work on Python code that other people might find
+useful, they package and publish their work in an installable form.
+
+An example package would be the popular `requests` library, which
+makes interacting with web sites easier.  In order to use `requests`
+in your code, you would install it (with `pip install requests`
+perhaps), and then use an `import requests` statement in your program
+to use modules from the requests library, and then call functions from
+the module:
+
+```{python}
+import requests
+
+response = requests.get("https://google.com")
+
+print("Respnse status code: ", response.status_code)
+print("Response headers: ", response.headers)
+print("Response text: ", response.text)
+```
+
+Note that running the above code cell should work without having to
+install `requests` library.  This is because `requests` was already
+installed when you installed `jupyter`, because the authors of
+`jupyter` decided to use `requests` in their code.
+
+You can find [requests library documentation][requests-docs] from its
+[PyPI][pypi] Python Package Index [project page][requests].
+
+[requests]: https://pypi.org/project/requests/
+[requests-docs]: https://requests.readthedocs.io/en/latest/
 
 ## The Python Package Index (PyPI)
 
-In the beginning, we used [pip] to install some Python packages. 
-What happens when you run `pip install` something though?  How does
-`pip` find the packages it need to install?
+In the beginning of this week's tutorial, we used [pip] to install
+some Python packages.  What happens when you run `pip install`
+something though?  How does `pip` find the packages it need to
+install?
 
-By default, `pip` would search the [Python Package Index][pypi] (also
+[pip]: https://pip.pypa.io/en/stable/
+
+By default, `pip` will search the [Python Package Index][pypi] (also
 known as "PyPI") for the package by name, download the appropriate
 version of the package, and install it in your machine.  If the
 package depends on other packages, pip would install those other
 packages also, if they are not already installed.
+
+[pypi]: https://pypi.org/
 
 PyPI is a large repository of Python packages maintained by the
 [Python Software Foundation][psf], a non-profit organization that is
 responsible for development and maintenance of the Python programming
 language and its infrastructure.
 
-[pip]: https://pip.pypa.io/en/stable/
 [psf]: https://www.python.org/psf-landing/
 
 PyPI happens to be Python's official package repository, and the most
 popular one.  There are other repositories also (such as [TestPyPI]),
 and you can install packages from those other repositories, should you
-ever need to do so.
+ever need to do so.  You can even install packages from certain other
+sources such as their git repositories.
 
 [TestPyPI]: https://test.pypi.org/
 
@@ -167,9 +178,8 @@ let's tell Python we want to use numpy:
 import numpy as np
 ```
 
-The "as np" part lets us specify a *namespace*, in this case a nice,
-short name so we don't have to type out "numpy" *every single time*.
-
+The `as np` part lets us specify a _namespace_, in this case a nice,
+short name so we don't have to type out `numpy` _every single time_.
 
 The one caveat with NumPy arrays is that all the elements inside an
 array need to have the same data type (e.g. integer, float, double).
@@ -178,6 +188,7 @@ Now we can create an array or two:
 
 ```{python}
 a = np.array([[1,2,3,4], [5,6,7,8], [9,10,11,12]])
+print(a)
 ```
 
 The `array()` function will turn nested lists into an array.
@@ -190,99 +201,84 @@ print(z)
 
 or ones:
 
-```python
+```{python}
 m = np.ones((3,3))
+print(m)
 ```
 
 (note that the dimensions are given as a _tuple_).
 
 You can also element-wise add, subtract, or multiply:
 
-```python
+```{python}
 z + 3
 ```
 
 Or
 
-```python
+```{python}
 a % 2
 ```
 
 Comparisons are element wise
 
-```python
+```{python}
 a > 5
 ```
 
-You can get the dimensions of an array with the `.shape()` method:
-
-```python
-m.shape()
-z.shape()
-```
-
-There are convenience functions to get information about the array:
+You can get the dimensions of an array by querying its `.shape`
+property:
 
 ```{python}
 print(a.shape)
-```
-
-```{python}
+print(m.shape)
 print(z.shape)
 ```
 
-The "shape" property tells us how many elements there are in each dimension, and the number of values separated by commas tell use how many dimensions the array has.
+The `shape` property returns us a _tuple_ that tells us how many
+elements there are in each dimension.  The number of elements in the
+tuple tells us how many dimensions the array has.
 
-(OK, I lied. Shape returns a "tuple" that describes the array and we're printing that out. A tuple is like a list.)
+### NumPy Linear Algebra
 
-Let's do a little bit of linear algebra. We'll need to bring in the
-"linalg" part of numpy and we'll use the name "nl" as a shorthand.
+Let's do a little bit of linear algebra. NumPy has routines to do
+basic linear algebra, such as finding a matrix inverse, or solving a
+linear system.
+
+We will need to bring in the [linalg] ("linear algebra") part of
+NumPy, which would be the `numpy.linalg` module.  We will use the name
+`nl` as a shorthand for `numpy.linalg`.
+
+[linalg]: https://numpy.org/doc/stable/reference/routines.linalg.html
 
 ```{python}
-k = np.array( [ [1,1,1], [1,1,0], [1,0,0] ] )
-
 import numpy.linalg as nl
+
+k = np.array([[1,1,1], [1,1,0], [1,0,0]])
+
 kinv = nl.inv(k)
 kinv
 ```
 
-Matrix multiplication, anyone? Python has the "@" operator for exactly
+Matrix multiplication, anyone? Python has the `@` operator for exactly
 that:
 
 ```{python}
 k @ kinv
 ```
 
-For a complete list of operators, see:
-http://docs.python.org/library/operator.html#mapping-operators-to-functions
+For a complete list of operators, see: [Mapping Operators to
+Functions][op-table].
 
-### NumPy Linear Algebra
+[op-table]: http://docs.python.org/library/operator.html#mapping-operators-to-functions
 
-NumPy has routines to do basic linear algebra, such as finding a
-matrix inverse, or solving a linear system.
+## Matrix visualization
 
-```python
-k = np.array([1,1,1], [1,1,0], [1,0,0])
-k
-```
+We can use [matplotlib] to visualize matrices:
 
-Inverses
+[matplotlib]: https://matplotlib.org/
 
-```python
-from numpy.linalg import nl
-kinv = nl.inv(k)
-kinv
-```
-
-And matrix multiplication
-
-```python
-k @ kinv
-```
-
-Matrix visualization:
-
-```python
+```{python}
 import matplotlib.pyplot as plt
 plt.matshow(a)
 ```
@@ -300,3 +296,6 @@ differentiation, linear algebra, signal processing, image processing
 packages then build on top of SciPy.
 
 [SciPy]: https://scipy.org/
+
+In the [next notebook](./4-plot-ligo-data.ipynb), we will download
+some LIGO data and write some code to explore the data.
