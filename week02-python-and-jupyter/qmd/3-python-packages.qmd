@@ -38,6 +38,8 @@ your code, you would install it (with `pip install requests`), and
 then use an `import requests` statement in your program to use modules
 from the requests library, and then call functions from the module:
 
+[requests]: https://pypi.org/project/requests/
+
 ```{python}
 import requests
 
