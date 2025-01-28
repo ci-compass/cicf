@@ -86,6 +86,9 @@ To fix this run the following commands in your shell window:
     /sbin/usermod -aG sudo cicf
     exit
 
+And now restart your VM image for these changes to take effect.
+(Choose the menu in the top-left corner, then "Log Out..." and then "Restart".
+
 
 ## Creating a VM Image
 
