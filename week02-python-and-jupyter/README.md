@@ -17,31 +17,22 @@ directory of your VM in the first week itself.  In case you have not
 done that yet, go back to the [previous week's instructions][week1],
 and follow the instructions under the section titled "Git" there.
 
-You should basically have run the below command from your home
-directory (which would be `/home/cicf`):
-
-```console
-git clone https://github.com/ci-compass/cicf
-```
-
 [week1]: ../week01-commandline/README.md#Git
 
-Since we will keep updating the repository throughout the course, you
+Since we will be updating the repository throughout the course, you
 will have to make sure you have the latest changes in your local copy.
 Change to `~/cicf` directory and then do a `git pull`:
 
 ```console
 cd ~/cicf
-git pull --autostash origin main
+git pull
 ```
-
-(We will discuss what this means in week 4.)
 
 ## Install some software
 
 We need to install some Debian packages on our VM using the [apt]
-package manager.  But first, we needto run an `apt update` to update
-package information from Debian's software repositories.  
+package manager.  But first, we need to run an `apt update` to update
+package information from Debian's software repositories.
 
 ```console
 sudo apt update
@@ -62,7 +53,7 @@ install using [pip], inside what is called a "virtual environment".
 Create a virtual environment and activate it with these commands:
 
 ```console
-python -m venv ~/venv
+python3 -m venv ~/venv
 source ~/venv/bin/activate
 ```
 
@@ -81,8 +72,7 @@ pip install jupyter numpy scipy matplotlib h5py
 [apt]: https://wiki.debian.org/AptCLI
 [pip]: https://pip.pypa.io/en/stable/
 
-If you are confused about the software we just installed, the below
-table might help:
+The table below lists the software packages we just installed.
 
 | package            | description                                                                  |
 |:-------------------|:-----------------------------------------------------------------------------|
@@ -122,9 +112,9 @@ for us, for now.)
 
 You can figure out details eventually.  For now just bear in mind that
 virtual environments are a solution to a problem that you are very
-likely to encounter in the future. You can find a friendly explanation
-[here](venv-realpython), and official documentation
-[here](venv-pythonorg).
+likely to encounter in the future. Here are both a
+[friendly explanation][venv-realpython], and
+[official documentation][venv-pythonorg].
 
 [venv-pythonorg]: https://docs.python.org/3/library/venv.html
 [venv-realpython]: https://realpython.com/python-virtual-environments-a-primer/
@@ -133,7 +123,8 @@ likely to encounter in the future. You can find a friendly explanation
 ## Run Jupyter
 
 Go to `week02-python-and-jupyter` directory in your CICF repository
-clone using `cd` command, and then start Jupyter:
+clone using `cd` command, and then start Jupyter.
+(This is a good time to try using the tab completion).
 
 ```console
 cd ~/cicf/week02-python-and-jupyter
@@ -197,7 +188,7 @@ these links:
 - https://colab.research.google.com/github/ci-compass/cicf/blob/main/week02-python-and-jupyter/3-python-packages.ipynb
 - https://colab.research.google.com/github/ci-compass/cicf/blob/main/week02-python-and-jupyter/4-plot-ligo-data.ipynb
 
-To run the cells, you will have to sign using a Google account.  
+To run the cells, you will have to sign using a Google account.
 
 However, note that you won't be able to run commands such as `pip` and
 `wget` in a Colab terminal as we discuss here: in order to be able to
