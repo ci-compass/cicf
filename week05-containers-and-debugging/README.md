@@ -105,9 +105,9 @@ Also by default containers have no network access.
 
 We are going to run a service using docker.
 
-This is something called a object store, which we will cover next week
-with cloud computing.  For now the important thing is that we will run
-it inside a container.
+This is something called a object store, which we will visit when we
+talk about cloud computing.  For now the important thing is that we
+will run it inside a container.
 
 First, get the container image:
 
