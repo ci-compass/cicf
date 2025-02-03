@@ -180,10 +180,20 @@ save it.
 
 Now upload some files.  We want `hello.py`.
 
-Install the Python Minio library
+We will install the Python [minio] library.  We created a virtual
+environment in the home directory for installing Python packages
+earlier in week 2.  We will reuse that environment here:
+
+[minio]: https://pypi.org/project/minio/
 
 ```
-sudo apt install python3-pip
+source ~/venv/bin/activate
+```
+
+Now we can install `minio` Python package inside that virtual
+environment:
+
+```
 pip3 install minio
 ```
 
