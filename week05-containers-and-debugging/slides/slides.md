@@ -32,9 +32,55 @@ things that really interest you.
 
 # Containers
 
-## The packaging problem
+## What are containers?
+
+
+
+## Why would you use containers?
+
+- Building software can be a brittle process.
+- So can be deploying software.
+
+Problem is having the correct versions of all the dependencies.
+
+So we _package_ software and dependencies into _containers_.
+
+::: {.notes}
+
+Building and deploying software can be a brittle process.
+
+You have some software x that is at version 1, and it needs version 1
+of library y.  But your computer has only version 0.9.8 of library y.
+If you try to upgrade library y, another application z which depends
+on y 0.9.8 might break.
+
+This gets even more complicated when you are deploying software on a
+fleet of computers.  Sometimes multiple people or teams ("developers"
+who write the software on their machines and "operations" who run the
+software on "production" machines) are involved, and there may be a
+mismatch between developer environment and production environment.
+
+When operations team complain to the developer when something does not
+work, the developer would say: "it works on my machine!"
+
+We solve this problem by "containerizing" x and its dependencies.
+
+Containers allow us to package our applications, the runtime required
+to run the application, configuration files, and any dependencies the
+application needs into one artifact.
+
+As long as there is a container runtime in the target machine, the
+application works.
+
+The host OS on the target machine could be Ubuntu 25.04, and the
+container could be made using some old version of Debian stable.
+Since we have "containerized the application", it will seamlessly
+work.
+
+:::
 
 ## A word about versioning
+
 
 ## Containers and virtual machines
 
