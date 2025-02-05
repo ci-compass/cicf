@@ -38,11 +38,13 @@ Containers are lightweight and portable environments that package an
 application and its dependencies. Containers enable consistent
 deployment across different computing platforms. 
 
-- docker is the most popular implementation.
-- podman and apptainer (formerly singularity) are others.
+- Docker is the most popular implementation.
+- Podman and Apptainer (formerly Singularity) are others.
 
 
 ::: {.notes}
+
+We will look at docker here, but the fundamentals are the same.
 
 :::
 
