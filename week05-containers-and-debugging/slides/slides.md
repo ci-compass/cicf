@@ -35,14 +35,19 @@ things that really interest you.
 ## What are containers?
 
 Containers are lightweight and portable environments that package an
-application and its dependencies. Containers enable consistent
-deployment across different computing platforms. 
+application and its dependencies.
 
 - Docker is the most popular implementation.
 - Podman and Apptainer (formerly Singularity) are others.
 
 
 ::: {.notes}
+
+Containers enable consistent deployment across different computing
+platforms.  If your application was built and tested on some old
+Debian stable version, you would be able to "containerize" it, and run
+it on a new Ubuntu machine, or even macOS or Windows hosts -- as long
+as you have a working container runtime on the target machine.
 
 We will look at docker here, but the fundamentals are the same.
 
