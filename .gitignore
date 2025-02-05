@@ -19,3 +19,9 @@ venv/
 /week02-python-and-jupyter/slides/.gitignore
 /week02-python-and-jupyter/slides/index_files/
 /week02-python-and-jupyter/slides/slides.pdf
+
+/week05-containers-and-debugging/slides/index.html
+/week05-containers-and-debugging/slides/index_files/
+/week05-containers-and-debugging/slides/slides.html
+/week05-containers-and-debugging/slides/slides.pptx
+/week05-containers-and-debugging/slides/slides_files/
