@@ -79,15 +79,31 @@ work.
 
 :::
 
-### Container images
+## Container images
 
-app code 
 
-Python interpreter, Python libraries
+```
++------------------------------------+
+| app code                           |
++------------------------------------+
+| Python libraries                   |
++------------------------------------+
+| Python interpreter                 |
++------------------------------------+
+| libc and other system libraries    |
++------------------------------------+
+| base OS                            |     
++------------------------------------+
+```
 
-libc and other system libraries
+::: {.notes}
 
-Base OS
+Container images are "tarballs", or compressed archives of a
+filesystem tree.
+
+Look around `/var/lib/docker` maybe.
+
+:::
 
 
 ## A word about versioning
