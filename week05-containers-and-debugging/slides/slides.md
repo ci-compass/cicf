@@ -1,9 +1,9 @@
 ---
 title: "CICF Week 5: Containers and Debugging"
 format:
-  pptx:
-    reference-doc: cicf-template.pptx
-    fig-width: 300
+  # pptx:
+  #   reference-doc: cicf-template.pptx
+  #   fig-width: 300
   revealjs:
     theme: default
 #  beamer:
@@ -78,6 +78,17 @@ Since we have "containerized the application", it will seamlessly
 work.
 
 :::
+
+### Container images
+
+app code 
+
+Python interpreter, Python libraries
+
+libc and other system libraries
+
+Base OS
+
 
 ## A word about versioning
 
