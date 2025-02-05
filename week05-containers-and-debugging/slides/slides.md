@@ -163,6 +163,32 @@ Together let us try to demystify this.
 
 :::
 
+## What is a `Dockerfile`?
+
+```Dockerfile
+# Base image with Python 3.12
+FROM python:3.12
+
+# Set working directory in container
+WORKDIR /app
+
+# Copy and install dependencies
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+# Copy all project files to container
+COPY . .
+
+# Container listens on port 5000
+EXPOSE 5000
+
+# Command to run the application
+CMD ["python", "app.py"]
+```
+
+::: {.notes}
+
+:::
 
 ## A word about versioning
 
