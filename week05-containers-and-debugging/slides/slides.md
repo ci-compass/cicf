@@ -34,6 +34,17 @@ things that really interest you.
 
 ## What are containers?
 
+Containers are lightweight and portable environments that package an
+application and its dependencies. Containers enable consistent
+deployment across different computing platforms. 
+
+- docker is the most popular implementation.
+- podman and apptainer (formerly singularity) are others.
+
+
+::: {.notes}
+
+:::
 
 
 ## Why would you use containers?
