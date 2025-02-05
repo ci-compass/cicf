@@ -119,6 +119,46 @@ Look around `/var/lib/docker` maybe.
 :::
 
 
+## A quick look at `docker` commands
+
+```
+$ docker help
+
+Usage:  docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Common Commands:
+  run         Create and run a new container from an image
+  exec        Execute a command in a running container
+  ps          List containers
+  build       Build an image from a Dockerfile
+  pull        Download an image from a registry
+  push        Upload an image to a registry
+  images      List images
+  login       Authenticate to a registry
+  logout      Log out from a registry
+  search      Search Docker Hub for images
+  version     Show the Docker version information
+  info        Display system-wide information
+
+[...]
+```
+
+::: {.notes}
+
+If you run `docker help`, it will print a longish message, with some
+hints about subcommands.  We will look at some of the commonly used
+subcommands.
+
+This might look confusing at first.  It was confusing to me at first
+when I was trying to figure out containers!  
+
+Together let us try to demystify this.
+
+:::
+
+
 ## A word about versioning
 
 
