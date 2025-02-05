@@ -233,11 +233,18 @@ virtual machine inside a container?
 
 <!-- TODO: Grace hopper and the bug -->
 
-## pdb
+## Debugging strategies
 
-## trace
+## Using print statements
 
-## etc.
+## Using logging
 
+## Using Python `pdb` module
+
+## Using Python `trace` module
+
+## Using unit tests
+
+## Talking to a friend
 
 # FIN
