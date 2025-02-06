@@ -277,14 +277,43 @@ virtual machine inside a container?
 
 ## Using print statements
 
-## Using logging
+Add `print()` statements at various points in your code, to understand
+the flow of execution.
 
-## Using Python `pdb` module
+## Read the logs
 
-## Using Python `trace` module
+- Programs (sometimes) write logs. 
+  - Python has a `logging` module.
+- The OS keeps many logs.
+  - Take a look at `/var/log`.
+
+## Using a debugger
+
+- Python has a `pdb` module.
+- Your IDE (VS Code, PyCharm) may have a debugger built-in.
+- JupyterLab has a debugger.
+
+
+## Using a trace facility
+
+Python has a `trace` module.
+
+```
+python3 -m trace --trace hello.py
+```
 
 ## Using unit tests
 
+- Writing a test is sometimes a good idea.  
+- It is much easier to debug code when you have tests.
+
+
 ## Talking to a friend
+
+- Get a friend or colleague to review your code.
+- Explain your code to the said friend or colleague.
+- If no one is available, talk to a rubber duck!
+  - This technique is called "rubber duck debugging", or simply
+    "rubberducking".
 
 # FIN
