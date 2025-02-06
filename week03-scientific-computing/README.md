@@ -9,6 +9,7 @@ This week is a hands-on guide working in a supercomputing envrionment at the [Te
 * News article on design of new HPC system at TACC: [With Vista, TACC now has three paths to its future horizon superomputer (2024)](https://www.nextplatform.com/2024/01/29/with-vista-tacc-now-has-three-paths-to-its-future-horizon-supercomputer/)
 * [BOINC](https://boinc.berkeley.edu/) distributed science computing
 * [SETI@Home](https://setiathome.berkeley.edu/) is the original distributed computing project. No longer distributing tasks, though.
+* TACC's [Frontera User Guide](https://docs.tacc.utexas.edu/hpc/frontera/)
 
 **Networking Performance Links**
 
