@@ -190,6 +190,22 @@ CMD ["python", "app.py"]
 
 :::
 
+
+## What do you do with a `Dockerfile`?
+
+You can build container images! You can run them!
+
+```
+docker build --tag "app:latest" .
+docker images
+docker run app:latest
+```
+
+In the tutorial we will use a simpler `Dockerfile` and slightly
+different options with `docker build`, but you get the idea.
+
+
+
 ## A word about versioning
 
 You could use:
