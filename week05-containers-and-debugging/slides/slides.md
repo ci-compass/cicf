@@ -125,6 +125,8 @@ work.
 Container images are "tarballs", or compressed archives of a
 filesystem tree.
 
+TODO: add notes about layers and overlayfs.
+
 Look around `/var/lib/docker` maybe.
 
 :::
