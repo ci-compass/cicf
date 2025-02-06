@@ -205,6 +205,22 @@ In the tutorial we will use a simpler `Dockerfile` and slightly
 different options with `docker build`, but you get the idea.
 
 
+## Containers under the hood
+
+They use some Linux specific techniques:
+
+- _cgroups_ (or "control groups") to set resource limits (such as
+  memory and CPU).
+- _pivot_root_ to change the root filesystem.
+- _namespaces_ to allow processes to have their own network, process
+  IDs, hostname, mounts, users, etc.
+- _capabilities_ to give specific permissions.
+- _seccomp-bpf_ to prevent dangerous system calls.
+- _overlay filesystems_ to make container image layers work.
+
+## Container registries
+
+What happens when you do a `docker pull`?
 
 ## A word about versioning
 
