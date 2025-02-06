@@ -275,7 +275,14 @@ virtual machine inside a container?
 
 ## Debugging strategies
 
-## Using print statements
+- Often the problem is the mismatch between our mental models (about
+how things are supposed to work) and reality (how things actually
+work).
+
+- When debugging, we're trying to correct our mental models.
+
+
+## Use print statements
 
 Add `print()` statements at various points in your code, to understand
 the flow of execution.
@@ -287,14 +294,14 @@ the flow of execution.
 - The OS keeps many logs.
   - Take a look at `/var/log`.
 
-## Using a debugger
+## Use a debugger
 
 - Python has a `pdb` module.
 - Your IDE (VS Code, PyCharm) may have a debugger built-in.
 - JupyterLab has a debugger.
 
 
-## Using a trace facility
+## Use a trace facility
 
 Python has a `trace` module.
 
@@ -302,18 +309,19 @@ Python has a `trace` module.
 python3 -m trace --trace hello.py
 ```
 
-## Using unit tests
+## Write some tests
 
-- Writing a test is sometimes a good idea.  
+- Writing a test is a good idea.  
 - It is much easier to debug code when you have tests.
 
 
-## Talking to a friend
+## Talk to a friend
 
 - Get a friend or colleague to review your code.
 - Explain your code to the said friend or colleague.
 - If no one is available, talk to a rubber duck!
   - This technique is called "rubber duck debugging", or simply
     "rubberducking".
+  - <https://en.wikipedia.org/wiki/Rubber_duck_debugging>
 
 # FIN
