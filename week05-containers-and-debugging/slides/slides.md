@@ -207,6 +207,19 @@ CMD ["python", "app.py"]
 
 ::: {.notes}
 
+A Dockerfile is a text file that contains instructions about how to
+build a docker image. When you run `docker build`, it will use the
+instructions from a Dockerfile.
+
+In the Dockerfile, you will specify:
+
+- a base image
+- environment setup
+- installation steps
+- network ports to expose
+- start-up commands to run when you run the container
+- and possibly other things.
+
 :::
 
 
