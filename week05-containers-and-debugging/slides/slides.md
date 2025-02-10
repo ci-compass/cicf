@@ -273,6 +273,34 @@ virtual machine inside a container?
 
 <!-- TODO: Grace hopper and the bug -->
 
+![](./First_Computer_Bug,_1945.jpg)
+
+::: {.notes}
+
+Grace Hopper was a computer scientist and a US navy rear
+admiral. 
+
+While working on a working on a Mark II Computer at Harvard University
+in 1947, Hopper's team found a moth that was stuck in a relay and that
+was causing the computer to malfunction.
+
+They attached the moth to the log sheet for that day with the note,
+"first actual case of bug being found".
+
+(Remember that transistores were invented in 1947. In the early days
+before transistors, computers were electro-mechanical devices.)
+
+Although they did not mention the exact phrase "debugging" in these
+logs, this is a a first known instance of "debugging" a computer.  For
+many decades, the term "bug" for a malfunction had been in use in
+several fields before being applied to computers.
+
+The log book with the moth can be found at the Smithsonian
+Institution's National Museum of American History in Washington, D.C.
+
+:::
+
+
 ## Debugging strategies
 
 - Often the problem is the mismatch between our mental models (about
