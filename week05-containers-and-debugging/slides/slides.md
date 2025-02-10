@@ -125,9 +125,23 @@ work.
 Container images are "tarballs", or compressed archives of a
 filesystem tree.
 
-TODO: add notes about layers and overlayfs.
+Container images are built "layer by layer".  Each block in the
+diagram can be thought of as a layer, although that is not strictly
+true.
 
-Look around `/var/lib/docker` maybe.
+A layer is basically a directory tree.  Each of the layers have an id.
+The id is a sha256 hash of the layer's contents.
+
+If a file is in two layers, you will see the version from the top
+later.
+
+By default, when you write in a container, they will go into a
+temporary layer.  They will be gone when the container exits.
+
+If you want to keep your changes, you will need to mount a directory
+that is outside of the container, and write to that mounted directory.
+
+(Look around `/var/lib/docker` maybe.)
 
 :::
 
