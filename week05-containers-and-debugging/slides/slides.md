@@ -194,12 +194,9 @@ FROM python:3.12
 # Set working directory in container
 WORKDIR /app
 
-# Copy and install dependencies
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-
 # Copy all project files to container
 COPY . .
+RUN pip install .
 
 # Container listens on port 5000
 EXPOSE 5000
