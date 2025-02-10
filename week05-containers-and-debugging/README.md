@@ -218,14 +218,28 @@ another breakpoint or until the program ends.
 ## Resources
 
 - [Python pdb debugger](https://docs.python.org/3/library/pdb.html)
-- [Reprozip](https://www.reprozip.org/) is a cool tool that will watch a program run (using the strace mechanism) and then save all the files opened and their contents into a zip file. It then has the ability to create a container from the zip file.
-- [Apptainer](https://apptainer.org/) ([docs](https://apptainer.org/docs/user/latest/)) is a container system, like Docker, that is more common in High Performance Computing envrionments.
-- [List of Docker images for the IceCube Neutrino Observatory](https://hub.docker.com/u/icecube) and their [instructions](https://docs.icecube.aq/icetray/main/index.html) for using the software.
-- [Minio docs](https://min.io/docs/minio/container/index.html) (The object store we used in the tutorial).
-- [jq](https://jqlang.github.io/jq/) is a great command line tool for working with JSON files. And there is a [playground](https://jqplay.org/) for messing around.
-- [misadventures in process containment](https://apenwarr.ca/log/?m=201901)
+- [Reprozip](https://www.reprozip.org/) is a cool tool that will watch
+  a program run (using the strace mechanism) and then save all the
+  files opened and their contents into a zip file. It then has the
+  ability to create a container from the zip file.
+- [Apptainer](https://apptainer.org/)
+  ([docs](https://apptainer.org/docs/user/latest/)) is a container
+  system, like Docker, that is more common in High Performance
+  Computing envrionments.
+- [List of Docker images for the IceCube Neutrino
+  Observatory](https://hub.docker.com/u/icecube) and their
+  [instructions](https://docs.icecube.aq/icetray/main/index.html) for
+  using the software.
+- [Minio docs](https://min.io/docs/minio/container/index.html) (The
+  object store we used in the tutorial).
+- [jq](https://jqlang.github.io/jq/) is a great command line tool for
+  working with JSON files. And there is a
+  [playground](https://jqplay.org/) for messing around.
+- [misadventures in process
+  containment](https://apenwarr.ca/log/?m=201901)
 - [Fibonacci Sequence](https://oeis.org/A000045) on the OEIS.
-- Minio Python client [reference documentation](https://min.io/docs/minio/linux/developers/python/API.html#put_object)
+- Minio Python client [reference
+  documentation](https://min.io/docs/minio/linux/developers/python/API.html#put_object)
 - A [tutorial on using GNSS reflection
   data](https://gnssrefl.readthedocs.io/en/latest/pages/docker_cl_instructions.html)
   to measure snow and water height that uses a docker image.
