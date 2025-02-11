@@ -252,6 +252,32 @@ They use some Linux specific techniques:
 
 What happens when you do a `docker pull`?
 
+::: {.notes}
+
+- Remember that we used the Python base image in the example.  It was
+  published by the Python Software Foundation in a container registry,
+  called Docker Hub.
+
+- Sharing container images is useful.  You help others to run your
+  software.  So you publish your images in a registry such as Docker
+  Hub.
+
+- Docker Hub is a public registry.  There are others too, like
+  GitHub's container registry.
+
+- Some organizations run private registries.  My organization,
+  Renaissance Computing Institute, runs a private registry.
+
+- In order to publish, you log in to the registry with `docker login`,
+  and publish your image with `docker push`.
+
+- The images have version numbers. When you pull an image, by default,
+  you will be pulling the latest version.  You can always specify a
+  version if you want a different version.
+
+:::
+
+
 ## A word about versioning
 
 You could use:
