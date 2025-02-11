@@ -216,7 +216,7 @@ a Dokerfile.
 
 ```Dockerfile
 # Base image with Python 3.12
-FROM python:3.12
+FROM python:3.12-slim
 
 # Set working directory in container
 WORKDIR /app
