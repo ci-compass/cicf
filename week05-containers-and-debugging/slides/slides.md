@@ -114,7 +114,7 @@ work.
 +------------------------------------+
 | libc and other system libraries    |
 +------------------------------------+
-| base OS                            |     
+| base OS                            |
 +------------------------------------+
 ```
 
@@ -177,7 +177,7 @@ hints about subcommands.  We will look at some of the commonly used
 subcommands.
 
 This might look confusing at first.  It was confusing to me at first
-when I was trying to figure out containers!  
+when I was trying to figure out containers!
 
 Together let us try to demystify this.
 
@@ -326,7 +326,7 @@ virtual machine inside a container?
 ::: {.notes}
 
 Grace Hopper was a computer scientist and a US navy rear
-admiral. 
+admiral.
 
 While working on a working on a Mark II Computer at Harvard University
 in 1947, Hopper's team found a moth that was stuck in a relay and that
@@ -365,7 +365,7 @@ the flow of execution.
 
 ## Read the logs
 
-- Programs (sometimes) write logs. 
+- Programs (sometimes) write logs.
   - Python has a `logging` module.
 - The OS keeps many logs.
   - Take a look at `/var/log`.
@@ -387,7 +387,7 @@ python3 -m trace --trace hello.py
 
 ## Write some tests
 
-- Writing a test is a good idea.  
+- Writing a test is a good idea.
 - It is much easier to debug code when you have tests.
 
 
