@@ -341,6 +341,50 @@ semantic versioning.
 :::
 
 
+## `docker compose`
+
+A way to run related services together:
+
+```yaml
+# compose.yml
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://myuser:password@db:5432/myapp
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=myuser
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=myapp
+```
+
+You will run `docker compose up` and `docker compose down`.
+
+::: {.notes}
+
+- Docker Compose is a tool for defining and running multi-container
+  Docker applications.  This is a nice way for setting up development
+  environments and for testing.
+  
+- We will write a `compose.yml` or `docker-compose.yml` file. In the
+  file, we will define the container images to run, and how to set
+  them up.  
+  
+- And then we will run `docker compose up` command.  That will set up
+  networking between the services, mount volumes, set up environment
+  variables, and then start all the services.
+  
+- In the example we have a web application and a database. We are
+  omitting some details here about how the web app
+
+:::
+
+
 ## Containers and virtual machines
 
 You can run a container inside a virtual machine but can you run a
