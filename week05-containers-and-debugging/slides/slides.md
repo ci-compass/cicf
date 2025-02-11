@@ -277,6 +277,18 @@ They use some Linux specific techniques:
 - _seccomp-bpf_ to prevent dangerous system calls.
 - _overlay filesystems_ to make container image layers work.
 
+::: {.notes}
+
+- The host operating system can see the processes in the containers.
+  From the container, you can't do much in the host operating system,
+  because of isolation.
+
+- The container processes are sort of restricted: you can have a
+  `root` account inside the container, but it can't do any damage to
+  the host operating system.
+
+:::
+
 ## Container registries
 
 What happens when you do a `docker pull`?
