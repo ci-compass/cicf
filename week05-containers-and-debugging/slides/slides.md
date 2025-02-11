@@ -18,19 +18,31 @@ We will go over two different topics: containers and debugging
 
 ::: {.notes}
 
-They are different topics. There could be some unifying thing there,
-such as debugging containers or debugging inside containers, but we
-are not there yet.  We are discussing them together only because we
-could not dedicate more time to each of them. They are both important
-topics.
+They are separate topics.  We are discussing containers and debugging
+together because we could not dedicate more time to each of them
+separately.  They are both important topics.
 
-By necessity, we will keep things short and simple, and gloss over
-some things.  You should explore things on your own, and go after
-things that really interest you.
+We could be debugging containers or debugging code running inside
+containers, but that is not the broad idea.  
+
+By necessity, we will keep things short and simple. We will gloss over
+some things.  But this should be enough to get you started -- you can
+figure out the details when you need to learn the details.
 
 :::
 
 # Containers
+
+::: {.notes}
+
+Let us look at:
+
+- What are containers?
+- What problems they solve?
+- How to use them? and
+- How do they work?
+
+:::
 
 ## What are containers?
 
@@ -49,11 +61,15 @@ Let us just stay with Docker here.
 
 Containers enable consistent deployment across different computing
 platforms.  If your application was built and tested on some old
-Debian stable version, you would be able to "containerize" it, and run
-it on a new Ubuntu machine, or even macOS or Windows hosts -- as long
-as you have a working container runtime on the target machine.
+Debian stable version, you would be able to "containerize" it, and
+then you can run it on a different machine running the latest Ubuntu,
+for example.
 
-We will look at docker here, but the fundamentals are the same.
+You can even run the same container on macOS or Windows hosts.  You
+just need to you have a working container runtime on the target
+machine.
+
+We will look at Docker here, but the fundamentals are the same.
 
 :::
 
@@ -71,15 +87,18 @@ So we _package_ software and dependencies into _containers_.
 
 Building and deploying software can be a brittle process.
 
-You have some software x that is at version 1, and it needs version 1
-of library y.  But your computer has only version 0.9.8 of library y.
-If you try to upgrade library y, another application z which depends
-on y 0.9.8 might break.
+You have some software x that is at version 1.0.2, and it needs
+version 1.0.0 of library y.  But your computer has only version 0.9.8
+of library y.  If you try to upgrade library y, another application z
+which depends on y 0.9.8 will break.
 
-This gets even more complicated when you are deploying software on a
-fleet of computers.  Sometimes multiple people or teams ("developers"
-who write the software on their machines and "operations" who run the
-software on "production" machines) are involved, and there may be a
+This gets more complicated when you are deploying software on a fleet
+of computers in production environments.
+
+Sometimes multiple people or teams are involved.  There are teams of
+developers who write the software on their development machines, and
+then there is an operations team who install the software on
+"production" machines and operate them.  Usually, there may be a
 mismatch between developer environment and production environment.
 
 When operations team complain to the developer when something does not
@@ -127,21 +146,20 @@ filesystem tree.
 
 Container images are built "layer by layer".  Each block in the
 diagram can be thought of as a layer, although that is not strictly
-true.
+true.  There can be more layers, depending on how the image was built.
 
 A layer is basically a directory tree.  Each of the layers have an id.
 The id is a sha256 hash of the layer's contents.
 
-If a file is in two layers, you will see the version from the top
-later.
+If the same file happens to be in two layers, you will see the version
+from the upper later.
 
 By default, when you write in a container, they will go into a
 temporary layer.  They will be gone when the container exits.
 
 If you want to keep your changes, you will need to mount a directory
 that is outside of the container, and write to that mounted directory.
-
-(Look around `/var/lib/docker` maybe.)
+Or you can use a docker feature called _volumes_.
 
 :::
 
@@ -181,10 +199,16 @@ If you run `docker help`, it will print a longish message, with some
 hints about subcommands.  We will look at some of the commonly used
 subcommands.
 
-This might look confusing at first.  It was confusing to me at first
-when I was trying to figure out containers!
+This might look confusing at first, but things will become more clear
+as you get some practice with docker.
 
-Together let us try to demystify this.
+- `docker build` is used to build images, using the steps specified in
+a Dokerfile.
+- `docker run` is used to run a containerized program.
+- `docker exec` is used to execute a command in a running container.
+- `docker images` will list the images present in your local setup.
+- `docker ps` will list the running containers.
+
 
 :::
 
@@ -212,9 +236,9 @@ CMD ["python", "app.py"]
 
 A Dockerfile is a text file that contains instructions about how to
 build a docker image. When you run `docker build`, it will use the
-instructions from a Dockerfile.
+instructions from the Dockerfile.
 
-In the Dockerfile, you will specify:
+In the Dockerfile, you will usually specify:
 
 - a base image
 - environment setup
