@@ -390,6 +390,25 @@ You will run `docker compose up` and `docker compose down`.
 You can run a container inside a virtual machine but can you run a
 virtual machine inside a container?
 
+::: {.notes}
+
+- Virtual machines run a complete operating system.
+- Containers share the host OS kernel, and use its features (such as
+  cgroups and namespaces) to run isolated processes.
+
+- Containers are lightweight.
+
+- VMs provide stronger isolation.  Since containers share resources,
+  they are much more light-weight than VMs.
+
+- VMs have some performance overhead, because of hardware
+  virtualization. Containers use the host OS, and run at "native"
+  speed.
+
+- VMs are better to run different operating systems on the same
+  machine. They will be isolated from each other.
+
+:::
 
 # Debugging
 
