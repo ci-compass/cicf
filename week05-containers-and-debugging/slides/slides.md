@@ -432,6 +432,11 @@ virtual machine inside a container?
 
 ::: {.notes}
 
+When something does not work the way we expect, we call it a bug.  The
+process of finding and fixing bugs is called debugging.
+
+There is some interesting history behind the name "bug".
+
 Grace Hopper was a computer scientist and a US navy rear
 admiral.
 
@@ -464,11 +469,13 @@ work).
 
 - When debugging, we're trying to correct our mental models.
 
+- You will create hypotheses, and test them.
+
 
 ## Use print statements
 
-Add `print()` statements at various points in your code, to understand
-the flow of execution.
+Add `print()` statements at various points in your code, to trace and
+understand the flow of execution.
 
 ## Read the logs
 
@@ -492,9 +499,14 @@ Python has a `trace` module.
 python3 -m trace --trace hello.py
 ```
 
+Other tools: `strace`, `ltrace`, `dtrace`, `tcpdump`, `lsof`,
+`perf`...
+
+
 ## Write some tests
 
-- Writing a test is a good idea.
+- Writing a unit test is a good idea.
+  - Or an integration test.
 - It is much easier to debug code when you have tests.
 
 
