@@ -1,9 +1,9 @@
 ---
 title: "CICF Week 5: Containers and Debugging"
 format:
-  # pptx:
-  #   reference-doc: cicf-template.pptx
-  #   fig-width: 300
+  pptx:
+    reference-doc: cicf-template.pptx
+    fig-width: 300
   revealjs:
     theme: default
 #  beamer:
