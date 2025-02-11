@@ -33,17 +33,6 @@ figure out the details when you need to learn the details.
 
 # Containers
 
-::: {.notes}
-
-Let us look at:
-
-- What are containers?
-- What problems they solve?
-- How to use them? and
-- How do they work?
-
-:::
-
 ## What are containers?
 
 Containers are lightweight and portable environments that package an
@@ -58,6 +47,13 @@ application and its dependencies.
 Let us just stay with Docker here.
 
 ::: {.notes}
+
+Let us look at:
+
+- What are containers?
+- What problems they solve?
+- How to use them? and
+- How do they work?
 
 Containers enable consistent deployment across different computing
 platforms.  If your application was built and tested on some old
