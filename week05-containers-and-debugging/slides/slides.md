@@ -321,10 +321,13 @@ specifiers](https://packaging.python.org/en/latest/specifications/version-specif
 
 ::: {.notes}
 
-You work and work and work on your software project. From time to
-time, you will release your project.  The releases will have some
-version number.  Versions indicate what features and bugs are present
-in a release.
+As you will keep working on your software project, you will make
+releases of your project.  You will want to share your work with
+others, get their feedback, add some features, fix some bugs, and
+release the next version.
+
+The releases will have some version number.  Versions indicate what
+features and bugs are present in a release.
 
 There are several ways of versioning software projects.
 
