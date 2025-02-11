@@ -39,11 +39,9 @@ application and its dependencies.
 
 - Docker is the most popular implementation.
 - Others exist too, such as:
-  - Podman
-  - Apptainer (formerly Singularity)
-  - LXC/LXD
-  - CoreOS rkt (or "Rocket")
-  - Kubernetes cri-o
+
+  - Podman, Apptainer (formerly Singularity), LXC/LXD, CoreOS rkt (or
+    "Rocket"), Kubernetes cri-o
 
 Let us just stay with Docker here.
 
