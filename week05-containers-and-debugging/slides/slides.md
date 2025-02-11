@@ -312,7 +312,7 @@ What happens when you do a `docker pull`?
 You could use:
 
 - a number
-- a date or a timestamp
+- a date or a time stamp
 - a commit hash
 - a version string like `major.minor.patch`
 
