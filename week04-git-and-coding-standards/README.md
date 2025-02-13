@@ -255,6 +255,21 @@ On your VM change your branch back to `main`
     $ git checkout main
     $ git pull upstream
 
+## Homework
+
+Everyone should make a pull request to the [cicf-2025] repository with
+the public key you generated on your VM.
+The process is outlined above in the [Working with GitHub](#working-with-github) section.
+In summary you should:
+
+1. Make a GitHub account if you haven't already
+2. Fork the [cicf-2025] repository to make your own copy
+3. Clone your copy to your VM
+4. Copy your **public key** (the file ending with a `.pub`) to the cloned repository and make a commit adding it
+5. Push your commit back to your copy of the repository
+6. Make a Pull Request to merge your commit into the main repository [cicf-2025]
+
+[cicf-2025]: https://github.com/dbrower/cicf-2025
 
 ## Major Facility Repositories
 
