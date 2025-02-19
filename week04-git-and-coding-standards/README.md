@@ -237,9 +237,13 @@ This is called "forking a repository" in the GitHub parlance.
 Use the browser to visit [the repo](https://github.com/dbrower/cicf-2025)
 on the GitHub service and choose "fork" to make your own copy of it.
 
-Copy the forked repository URL and add it to the checked out repository.
+When GitHub is done making your forked copy of the repository,
+get a copy of the repository location by chosing the green `<> Code` button and then
+choosing the SSH tab and you should see a path similar to `git@github.com:dbrower/cicf-2025`.
+Copy the path by clicking the clipboard icon next to it.
+At the command line add it to the checked out repository:
 
-    git remote add origin _your forked repo_
+    git remote add origin _your forked repo_ # <-- paste in the path here
 
 Push your changes to your copy:
 

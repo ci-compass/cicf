@@ -8,22 +8,24 @@ The goals for week 5 lab are:
 
 ## Tutorial
 
-install docker
+First, install docker
 
 ```
-./install-docker.sh
+$ sudo apt update
+$ ./install-docker.sh
 ```
 
 You will need to then enter your password for sudo. and press `Y` to
 agree to installing the packages.
 Then we need to add us to the docker group.
+(You can type `$USER`, the shell will expand the variable to be the current username).
 
 ```
 sudo usermod -aG docker $USER
 ```
 
-Now choose "Log Out..." from the menu in the upper right corner and
-then sign back in to get the group membership to be cached.
+Now **choose "Log Out..." from the menu in the upper right corner and
+then sign back in** to get the group membership to be cached.
 
 Log back in and docker should be set up.
 We can verify this by running
@@ -49,6 +51,7 @@ cat Dockerfile-hello
 We start with the official base python image, we copy in our script,
 and then we specificy the command to run when the container is
 started.
+(Don't forget the period at the end!)
 
 ```
 docker build -t hello -f Dockerfile-hello .
@@ -226,20 +229,17 @@ another breakpoint or until the program ends.
   ([docs](https://apptainer.org/docs/user/latest/)) is a container
   system, like Docker, that is more common in High Performance
   Computing envrionments.
-- [List of Docker images for the IceCube Neutrino
-  Observatory](https://hub.docker.com/u/icecube) and their
-  [instructions](https://docs.icecube.aq/icetray/main/index.html) for
-  using the software.
+- [List of Docker images for the IceCube Neutrino Observatory](https://hub.docker.com/u/icecube)
+  and their [instructions](https://docs.icecube.aq/icetray/main/index.html)
+  for using the software.
 - [Minio docs](https://min.io/docs/minio/container/index.html) (The
   object store we used in the tutorial).
 - [jq](https://jqlang.github.io/jq/) is a great command line tool for
   working with JSON files. And there is a
   [playground](https://jqplay.org/) for messing around.
-- [misadventures in process
-  containment](https://apenwarr.ca/log/?m=201901)
+- [misadventures in process containment](https://apenwarr.ca/log/?m=201901)
 - [Fibonacci Sequence](https://oeis.org/A000045) on the OEIS.
 - Minio Python client [reference
   documentation](https://min.io/docs/minio/linux/developers/python/API.html#put_object)
-- A [tutorial on using GNSS reflection
-  data](https://gnssrefl.readthedocs.io/en/latest/pages/docker_cl_instructions.html)
+- A [tutorial on using GNSS reflection data](https://gnssrefl.readthedocs.io/en/latest/pages/docker_cl_instructions.html)
   to measure snow and water height that uses a docker image.
