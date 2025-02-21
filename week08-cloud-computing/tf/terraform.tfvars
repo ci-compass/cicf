@@ -4,9 +4,9 @@
 domain_name = "example.com"
 
 # Optional: override defaults if needed
-username    = "debianuser"
 region      = "nyc3"
 droplet_size = "s-1vcpu-1gb"
+space_name  = "my-object-store"
 
 # Define 18 users with their subdomains and SSH public keys
 users = {
@@ -64,4 +64,10 @@ users = {
   "monitor3" = {
     ssh_public_key = "ssh-rsa AAAAB3NzaC1yc2E... key18@example.com"
   }
+}
+
+# Define SSH public keys for staff access as a map
+staff_ssh_keys = {
+  "alice"  = "ssh-rsa AAAAB3NzaC1yc2E... alice@example.com"
+  "bob"    = "ssh-rsa AAAAB3NzaC1yc2E... bob@example.com"
 }

@@ -12,12 +12,6 @@ variable "do_token" {
   sensitive   = true
 }
 
-variable "username" {
-  description = "Default username for SSH access"
-  type        = string
-  default     = "debianuser"
-}
-
 variable "region" {
   description = "Digital Ocean region"
   type        = string
@@ -43,6 +37,15 @@ variable "users" {
   validation {
     condition     = length(var.users) == 18
     error_message = "Exactly 18 users must be provided"
+  }
+}
+
+variable "staff_ssh_keys" {
+  description = "Map of staff members and their SSH public keys"
+  type        = map(string)
+  validation {
+    condition     = length(var.staff_ssh_keys) > 0
+    error_message = "At least one staff SSH public key must be provided"
   }
 }
 
@@ -76,21 +79,32 @@ resource "digitalocean_droplet" "debian_droplet" {
 
   user_data = <<-EOF
     #!/bin/bash
-    # Create user and set up SSH
-    useradd -m -s /bin/bash ${var.username}
-    mkdir -p /home/${var.username}/.ssh
-    echo "${each.value.ssh_public_key}" > /home/${var.username}/.ssh/authorized_keys
-    chown -R ${var.username}:${var.username} /home/${var.username}/.ssh
-    chmod 700 /home/${var.username}/.ssh
-    chmod 600 /home/${var.username}/.ssh/authorized_keys
-    usermod -aG sudo ${var.username}
+    # Create user with subdomain name and set up SSH
+    useradd -m -s /bin/bash ${each.key}
+    mkdir -p /home/${each.key}/.ssh
+    echo "${each.value.ssh_public_key}" > /home/${each.key}/.ssh/authorized_keys
+    chown -R ${each.key}:${each.key} /home/${each.key}/.ssh
+    chmod 700 /home/${each.key}/.ssh
+    chmod 600 /home/${each.key}/.ssh/authorized_keys
+    usermod -aG sudo ${each.key}
+
+    # Create staff user and set up SSH
+    useradd -m -s /bin/bash staff
+    mkdir -p /home/staff/.ssh
+    cat << 'STAFF_KEYS' > /home/staff/.ssh/authorized_keys
+    ${join("\n", values(var.staff_ssh_keys))}
+    STAFF_KEYS
+    chown -R staff:staff /home/staff/.ssh
+    chmod 700 /home/staff/.ssh
+    chmod 600 /home/staff/.ssh/authorized_keys
+    usermod -aG sudo staff
 
     # Disable password login in SSH configuration
     sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
     sed -i 's/#PubkeyAuthentication yes/PubkeyAuthentication yes/' /etc/ssh/sshd_config
     sed -i 's/#ChallengeResponseAuthentication yes/ChallengeResponseAuthentication no/' /etc/ssh/sshd_config
 
-    # Ensure these settings are explicitly set (in case they're not in the default config)
+    # Ensure these settings are explicitly set
     echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
     echo "PubkeyAuthentication yes" >> /etc/ssh/sshd_config
     echo "ChallengeResponseAuthentication no" >> /etc/ssh/sshd_config
@@ -129,10 +143,18 @@ output "droplet_info" {
       ip        = digitalocean_droplet.debian_droplet[subdomain].ipv4_address
       subdomain = "${subdomain}.${var.domain_name}"
       ssh_key   = substr(user.ssh_public_key, 0, 20)
+      username  = subdomain
     }
   }
 }
 
+output "staff_info" {
+  value = {
+    username    = "staff"
+    ssh_keys    = { for staff_id, key in var.staff_ssh_keys : staff_id => substr(key, 0, 20) }
+    access_to   = "all droplets"
+  }
+}
 output "space_info" {
   value = {
     name        = digitalocean_spaces_bucket.object_store.name
