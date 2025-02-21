@@ -76,6 +76,7 @@ resource "digitalocean_droplet" "debian_droplet" {
 
   user_data = <<-EOF
     #!/bin/bash
+    # Create user and set up SSH
     useradd -m -s /bin/bash ${var.username}
     mkdir -p /home/${var.username}/.ssh
     echo "${each.value.ssh_public_key}" > /home/${var.username}/.ssh/authorized_keys
@@ -83,6 +84,19 @@ resource "digitalocean_droplet" "debian_droplet" {
     chmod 700 /home/${var.username}/.ssh
     chmod 600 /home/${var.username}/.ssh/authorized_keys
     usermod -aG sudo ${var.username}
+
+    # Disable password login in SSH configuration
+    sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
+    sed -i 's/#PubkeyAuthentication yes/PubkeyAuthentication yes/' /etc/ssh/sshd_config
+    sed -i 's/#ChallengeResponseAuthentication yes/ChallengeResponseAuthentication no/' /etc/ssh/sshd_config
+
+    # Ensure these settings are explicitly set (in case they're not in the default config)
+    echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
+    echo "PubkeyAuthentication yes" >> /etc/ssh/sshd_config
+    echo "ChallengeResponseAuthentication no" >> /etc/ssh/sshd_config
+
+    # Restart SSH service to apply changes
+    systemctl restart sshd
     EOF
 }
 
@@ -100,9 +114,8 @@ resource "digitalocean_record" "subdomain" {
 resource "digitalocean_spaces_bucket" "object_store" {
   name   = var.space_name
   region = var.region
-  acl    = "private"  # Default to private access
+  acl    = "private"
 
-  # Enable versioning (optional, but recommended for object storage)
   versioning {
     enabled = true
   }
