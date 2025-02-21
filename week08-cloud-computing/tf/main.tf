@@ -46,6 +46,12 @@ variable "users" {
   }
 }
 
+variable "space_name" {
+  description = "Name of the Digital Ocean Space"
+  type        = string
+  default     = "my-object-store"
+}
+
 # Resources
 # Create SSH keys in Digital Ocean
 resource "digitalocean_ssh_key" "droplet_key" {
@@ -90,6 +96,18 @@ resource "digitalocean_record" "subdomain" {
   ttl      = 300
 }
 
+# Create a Digital Ocean Space (Object Storage)
+resource "digitalocean_spaces_bucket" "object_store" {
+  name   = var.space_name
+  region = var.region
+  acl    = "private"  # Default to private access
+
+  # Enable versioning (optional, but recommended for object storage)
+  versioning {
+    enabled = true
+  }
+}
+
 # Outputs
 output "droplet_info" {
   value = {
@@ -97,7 +115,16 @@ output "droplet_info" {
     subdomain => {
       ip        = digitalocean_droplet.debian_droplet[subdomain].ipv4_address
       subdomain = "${subdomain}.${var.domain_name}"
-      ssh_key   = substr(user.ssh_public_key, 0, 20) # Partial key for reference
+      ssh_key   = substr(user.ssh_public_key, 0, 20)
     }
+  }
+}
+
+output "space_info" {
+  value = {
+    name        = digitalocean_spaces_bucket.object_store.name
+    region      = digitalocean_spaces_bucket.object_store.region
+    endpoint    = digitalocean_spaces_bucket.object_store.bucket_domain_name
+    urn         = digitalocean_spaces_bucket.object_store.urn
   }
 }
