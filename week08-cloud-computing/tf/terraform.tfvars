@@ -66,8 +66,8 @@ users = {
   }
 }
 
-# Define SSH public keys for staff access as a map
-staff_ssh_keys = {
+# Define SSH public keys for admin access as a map
+admin_ssh_keys = {
   "alice"  = "ssh-rsa AAAAB3NzaC1yc2E... alice@example.com"
   "bob"    = "ssh-rsa AAAAB3NzaC1yc2E... bob@example.com"
 }

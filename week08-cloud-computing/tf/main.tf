@@ -40,12 +40,12 @@ variable "users" {
   }
 }
 
-variable "staff_ssh_keys" {
-  description = "Map of staff members and their SSH public keys"
+variable "admin_ssh_keys" {
+  description = "Map of admin members and their SSH public keys"
   type        = map(string)
   validation {
-    condition     = length(var.staff_ssh_keys) > 0
-    error_message = "At least one staff SSH public key must be provided"
+    condition     = length(var.admin_ssh_keys) > 0
+    error_message = "At least one admin SSH public key must be provided"
   }
 }
 
@@ -88,16 +88,16 @@ resource "digitalocean_droplet" "debian_droplet" {
     chmod 600 /home/${each.key}/.ssh/authorized_keys
     usermod -aG sudo ${each.key}
 
-    # Create staff user and set up SSH
-    useradd -m -s /bin/bash staff
-    mkdir -p /home/staff/.ssh
-    cat << 'STAFF_KEYS' > /home/staff/.ssh/authorized_keys
-    ${join("\n", values(var.staff_ssh_keys))}
-    STAFF_KEYS
-    chown -R staff:staff /home/staff/.ssh
-    chmod 700 /home/staff/.ssh
-    chmod 600 /home/staff/.ssh/authorized_keys
-    usermod -aG sudo staff
+    # Create admin user and set up SSH
+    useradd -m -s /bin/bash admin
+    mkdir -p /home/admin/.ssh
+    cat << 'ADMIN_KEYS' > /home/admin/.ssh/authorized_keys
+    ${join("\n", values(var.admin_ssh_keys))}
+    ADMIN_KEYS
+    chown -R admin:admin /home/admin/.ssh
+    chmod 700 /home/admin/.ssh
+    chmod 600 /home/admin/.ssh/authorized_keys
+    usermod -aG sudo admin
 
     # Disable password login in SSH configuration
     sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
@@ -148,13 +148,14 @@ output "droplet_info" {
   }
 }
 
-output "staff_info" {
+output "admin_info" {
   value = {
-    username    = "staff"
-    ssh_keys    = { for staff_id, key in var.staff_ssh_keys : staff_id => substr(key, 0, 20) }
+    username    = "admin"
+    ssh_keys    = { for admin_id, key in var.admin_ssh_keys : admin_id => substr(key, 0, 20) }
     access_to   = "all droplets"
   }
 }
+
 output "space_info" {
   value = {
     name        = digitalocean_spaces_bucket.object_store.name
