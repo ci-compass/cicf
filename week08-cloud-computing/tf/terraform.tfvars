@@ -68,6 +68,6 @@ users = {
 
 # Define SSH public keys for admin access as a map
 admin_ssh_keys = {
-  "alice"  = "ssh-rsa AAAAB3NzaC1yc2E... alice@example.com"
-  "bob"    = "ssh-rsa AAAAB3NzaC1yc2E... bob@example.com"
+  "don"    = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICYya82oSp8XKDFnQAxB+C6CeoAf7BXMV7OveIGXATOa dbrower@nd.edu cicf"
+  "sajith" = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL5bFePtKg9/bTflbgT4Z+rXOS0X14PQgrs1ccqiBuFt sajith@hcoop.net"
 }
