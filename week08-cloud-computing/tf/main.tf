@@ -34,10 +34,10 @@ variable "users" {
   type = map(object({
     ssh_public_key = string
   }))
-  validation {
-    condition     = length(var.users) == 18
-    error_message = "Exactly 18 users must be provided"
-  }
+  # validation {
+  #   condition     = length(var.users) == 18
+  #   error_message = "Exactly 18 users must be provided"
+  # }
 }
 
 variable "admin_ssh_keys" {
