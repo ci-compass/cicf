@@ -2,8 +2,8 @@
 
 # Provider configuration
 provider "digitalocean" {
-  token = var.do_token
-  spaces_access_id = var.do_spaces_access_id
+  token             = var.do_token
+  spaces_access_id  = var.do_spaces_access_id
   spaces_secret_key = var.do_spaces_secret_key
 }
 
@@ -152,7 +152,7 @@ resource "digitalocean_spaces_bucket" "object_store" {
 # Outputs
 output "droplet_info" {
   value = {
-    for subdomain, user in var.users : 
+    for subdomain, user in var.users :
     subdomain => {
       ip        = digitalocean_droplet.debian_droplet[subdomain].ipv4_address
       subdomain = "${subdomain}.${var.domain_name}"
@@ -164,17 +164,17 @@ output "droplet_info" {
 
 output "admin_info" {
   value = {
-    username    = "admin"
-    ssh_keys    = { for admin_id, key in var.admin_ssh_keys : admin_id => substr(key, 0, 20) }
-    access_to   = "all droplets"
+    username  = "admin"
+    ssh_keys  = { for admin_id, key in var.admin_ssh_keys : admin_id => substr(key, 0, 20) }
+    access_to = "all droplets"
   }
 }
 
 output "space_info" {
   value = {
-    name        = digitalocean_spaces_bucket.object_store.name
-    region      = digitalocean_spaces_bucket.object_store.region
-    endpoint    = digitalocean_spaces_bucket.object_store.bucket_domain_name
-    urn         = digitalocean_spaces_bucket.object_store.urn
+    name     = digitalocean_spaces_bucket.object_store.name
+    region   = digitalocean_spaces_bucket.object_store.region
+    endpoint = digitalocean_spaces_bucket.object_store.bucket_domain_name
+    urn      = digitalocean_spaces_bucket.object_store.urn
   }
 }
