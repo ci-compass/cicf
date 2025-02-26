@@ -11,7 +11,7 @@ The goals for the week 6 lab are to:
 Lets start by looking at data catalogues.
 These are sites that index papers and data sets, but don't store the actual data themselves.
 So they are not repositories, but they do help us find data that is in repositories.
-This is very FAIR, and definitty a use case anticipated by the 2016 FAIR paper.
+This is very FAIR, and definitely a use case anticipated by the 2016 FAIR paper.
 
 ### DataCite Commons
 
@@ -32,17 +32,17 @@ We now see (at the time of this writing) 410 items.
 The 6th item or so is "[Sampling Effort Data][]" by Mosquito Alert.
 Clicking on the title takes us to the item page in Zenodo.
 
-**Zenodo** is a general purporse repository.
+**Zenodo** is a general purpose repository.
 And the interesting thing with this record is that it is an archived version of a GitHub repository.
 [Mosquito Alert][] is citizen science project to collect mosquito information from volunteers using a mobile app.
 (They also have a [data portal][]).
 
 Why would you want to archive a GitHub repository?
-Git repositories are great colloboration tools.
+Git repositories are great collaboration tools.
 But they have two drawbacks with respect to scholarship:
 1) it is hard to cite a particular version of a Git repository, and 2) GitHub (or any other hosting site) is not archival storage.
 For (1), while each version and commit in a git repository has a well-defined name—the commit hash—these names are not considered persistent identifiers since they do not fit into a global schema. In addition to the commit hash, you also need to know the repository name, and where to find the repository, and these things can change. Also, for a citation you need to provide information such as the release year, the creators, the license, and it is much easier to put everything into an archival repository and use that.
-This is not to say Git is not useful; it is still extremely useful for the day-to-day running and colloboration on a project.
+This is not to say Git is not useful; it is still extremely useful for the day-to-day running and collaboration on a project.
 
 Download the data file (from the command line!).
 
@@ -58,7 +58,7 @@ There is also a metadata file:
 
     $ nano sampling_effort_daily_cellres_05_metadata.json
 
-This file is in JSON-LD (how do we know? there is a field named `@context`).
+This file is in JSON-LD (how do we know? There is a field named `@context`).
 It describes the authors, and each variable in the file.
 
     $ gzip -d sampling_effort_daily_cellres_05.csv.gz
@@ -72,7 +72,7 @@ This file is quite big, and we need to use a tool to get some summary statistics
     $ pip install pandas
     $ python3
 
-Ok, in the Python interactive envrionment lets load the CSV file.
+OK, in the Python interactive environment lets load the CSV file.
 
 ```python
 >>> import pandas as pd
@@ -87,7 +87,7 @@ Ok, in the Python interactive envrionment lets load the CSV file.
 ```
 
 Type Control-D to exit the interactive prompt.
-We want to view a histogram, so start jupyter and open the notebook `mosquito-alery.ipynb`.
+We want to view a histogram, so start Jupyter and open the notebook `mosquito-alert.ipynb`.
 
     $ jupyter notebook
 
@@ -102,20 +102,20 @@ We want to view a histogram, so start jupyter and open the notebook `mosquito-al
 ### NEON
 
 Now lets look at data provided by NEON (National Ecological Observatory Network).
-They are an interesting Major Facility since in addition to recorded measurmenets,
+They are an interesting Major Facility since in addition to recorded measurements,
 they also have samples available for loan.
 
 https://data.neonscience.org/data-products/explore
 
-Search for "mosquito". Then select "Download data" from "Mosquitos sampled from CO2 Traps".
+Search for "mosquito". Then select "Download data" from "Mosquitoes sampled from CO2 Traps".
 There is a grid showing which months data is available from each site.
 Choose two sites: ABBY and UNDE, and two years: 2023 and 2024.
 And then download the data.
 
-The data is orgnized as many files.
-The the mosquito counts there is one CSV file per site location per month.
+The data is organized as many files.
+The mosquito counts there is one CSV file per site location per month.
 The files include a line for each mosquito collected.
-We want a count of mosquitos for each month for each site.
+We want a count of mosquitoes for each month for each site.
 
 
 
@@ -132,4 +132,11 @@ We want a count of mosquitos for each month for each site.
 * [Datacite Commons](http://commons.datacite.org)
 * [Science on schema.org](https://github.com/ESIPFed/science-on-schema.org)
 * [Schema.org](https://schema.org/)
+
+**Pandas Tutorials and Stuff**
+
+- [https://www.w3schools.com/python/pandas/default.asp][]
+- the [Official Pandas User Guide](https://pandas.pydata.org/docs/user_guide/index.html)
+- [Pandas cookbook](https://github.com/jvns/pandas-cookbook) (created by the great Julia Evans, and community maintained since)
+
 
