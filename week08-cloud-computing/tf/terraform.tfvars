@@ -1,7 +1,7 @@
 # terraform.tfvars
 
 # Add your domain name
-domain_name = "example.com"
+domain_name = "cicf.cloud"
 
 # Optional: override defaults if needed
 region      = "nyc3"
