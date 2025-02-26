@@ -3,11 +3,25 @@
 # Provider configuration
 provider "digitalocean" {
   token = var.do_token
+  spaces_access_id = var.do_spaces_access_id
+  spaces_secret_key = var.do_spaces_secret_key
 }
 
 # Variables
 variable "do_token" {
   description = "Digital Ocean API token"
+  type        = string
+  sensitive   = true
+}
+
+variable "do_spaces_access_id" {
+  description = "Digital Ocean SPaces access ID"
+  type        = string
+  sensitive   = true
+}
+
+variable "do_spaces_secret_key" {
+  description = "Digital Ocean Spaces secret key"
   type        = string
   sensitive   = true
 }
