@@ -1,6 +1,6 @@
 # terraform.tfvars
 
-# Add your domain name
+# A domain name for CICF cloud module.
 domain_name = "cicf.cloud"
 
 # Optional: override defaults if needed
