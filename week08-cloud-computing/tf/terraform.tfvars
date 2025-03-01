@@ -58,12 +58,12 @@ users = {
   # "spoorthi" = {
   #   ssh_public_key = "ssh-rsa AAAAB3NzaC1yc2E... key16@example.com"
   # }
-  # "tamara" = {
-  #   ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEQtQC+FvyHJ0W5Mf3kzobHl17e7H6KYQuF5yza8HEwe tamaracsegal@gmail.com cicf"
-  # }
-  # "xiuwen" = {
-  #   ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPPxybtj1B8c1d6W4Od2TFTp0wAo+AcRm3aukX41klSK zhuxiuwen6@gmail.com cicf"
-  # }
+  "tamara" = {
+    ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEQtQC+FvyHJ0W5Mf3kzobHl17e7H6KYQuF5yza8HEwe tamaracsegal@gmail.com cicf"
+  }
+  "xiuwen" = {
+    ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPPxybtj1B8c1d6W4Od2TFTp0wAo+AcRm3aukX41klSK zhuxiuwen6@gmail.com cicf"
+  }
 }
 
 # Define SSH public keys for admin access as a map
