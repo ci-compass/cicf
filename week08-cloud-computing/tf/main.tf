@@ -142,7 +142,7 @@ resource "digitalocean_record" "subdomain" {
 resource "digitalocean_spaces_bucket" "object_store" {
   name   = var.space_name
   region = var.region
-  acl    = "private"
+  acl    = "public-read"
 
   versioning {
     enabled = true
