@@ -13,8 +13,8 @@ terraform {
 # Provider configuration
 provider "digitalocean" {
   token             = var.do_token
-  spaces_access_id  = var.do_spaces_access_id
-  spaces_secret_key = var.do_spaces_secret_key
+  # spaces_access_id  = var.do_spaces_access_id
+  # spaces_secret_key = var.do_spaces_secret_key
 }
 
 # Variables
@@ -24,17 +24,17 @@ variable "do_token" {
   sensitive   = true
 }
 
-variable "do_spaces_access_id" {
-  description = "Digital Ocean Spaces access ID"
-  type        = string
-  sensitive   = true
-}
+# variable "do_spaces_access_id" {
+#   description = "Digital Ocean Spaces access ID"
+#   type        = string
+#   sensitive   = true
+# }
 
-variable "do_spaces_secret_key" {
-  description = "Digital Ocean Spaces secret key"
-  type        = string
-  sensitive   = true
-}
+# variable "do_spaces_secret_key" {
+#   description = "Digital Ocean Spaces secret key"
+#   type        = string
+#   sensitive   = true
+# }
 
 variable "region" {
   description = "Digital Ocean region"
@@ -148,16 +148,16 @@ resource "digitalocean_record" "subdomain" {
   ttl      = 300
 }
 
-# Create a Digital Ocean Space (Object Storage)
-resource "digitalocean_spaces_bucket" "object_store" {
-  name   = var.space_name
-  region = var.region
-  acl    = "public-read"
+# # Create a Digital Ocean Space (Object Storage)
+# resource "digitalocean_spaces_bucket" "object_store" {
+#   name   = var.space_name
+#   region = var.region
+#   acl    = "public-read"
 
-  versioning {
-    enabled = true
-  }
-}
+#   versioning {
+#     enabled = true
+#   }
+# }
 
 # Outputs
 output "droplet_info" {
@@ -180,11 +180,11 @@ output "admin_info" {
   }
 }
 
-output "space_info" {
-  value = {
-    name     = digitalocean_spaces_bucket.object_store.name
-    region   = digitalocean_spaces_bucket.object_store.region
-    endpoint = digitalocean_spaces_bucket.object_store.bucket_domain_name
-    urn      = digitalocean_spaces_bucket.object_store.urn
-  }
-}
+# output "space_info" {
+#   value = {
+#     name     = digitalocean_spaces_bucket.object_store.name
+#     region   = digitalocean_spaces_bucket.object_store.region
+#     endpoint = digitalocean_spaces_bucket.object_store.bucket_domain_name
+#     urn      = digitalocean_spaces_bucket.object_store.urn
+#   }
+# }
