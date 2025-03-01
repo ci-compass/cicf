@@ -35,7 +35,8 @@ why does it matter?"
 
 ## What is Cloud Computing?
 
-- **Definition**: On-demand delivery of compute, storage, and networking over the internet, managed by a provider.
+- **Definition**: On-demand delivery of compute, storage, and
+  networking over the internet, managed by a provider.
 
 - **Key Traits**:
   - On-demand access
