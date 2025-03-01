@@ -14,6 +14,14 @@ format:
 
 ## The plan this week
 
+We will look at:
+
+- Cloud computing
+  - service models
+  - deployment models
+  - components
+  - infrastructure as code
+
 # Cloud Computing
 
 ::: {.notes}
