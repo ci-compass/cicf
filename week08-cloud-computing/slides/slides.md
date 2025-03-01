@@ -6,7 +6,7 @@ format:
   #   fig-width: 300
   revealjs:
     slide-number: true
-    theme: simple
+    theme: default
     transition: slide
 ---
 
