@@ -199,6 +199,19 @@ and Google for the best of both."
 
 ---
 
+### Major cloud vendors
+
+- Amazon Web Services (AWS)
+- Microsoft Azure
+- Google Cloud Platform (GCP)
+- IBM Cloud
+- Oracle Cloud Infrastructure (OCI)
+- Alibaba Cloud
+- DigitalOcean
+- Hetzner Cloud
+
+---
+
 # Core Components
 
 ::: {.notes}
