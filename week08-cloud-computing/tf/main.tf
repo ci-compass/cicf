@@ -15,7 +15,7 @@ variable "do_token" {
 }
 
 variable "do_spaces_access_id" {
-  description = "Digital Ocean SPaces access ID"
+  description = "Digital Ocean Spaces access ID"
   type        = string
   sensitive   = true
 }
