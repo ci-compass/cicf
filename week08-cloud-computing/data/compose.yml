@@ -8,7 +8,7 @@ services:
     environment:
       - JUPYTER_ENABLE_LAB=yes  # Enable JupyterLab interface
     volumes:
-      - jupyter_data:/home/cicf/data  # Persistent storage for notebooks
+      - /home/cicf/data:/home/jovyan/work # Mount local directory from host
     ports:
       - "8888:8888"  # Exposed internally, proxied by Caddy
     command: "start.sh jupyter lab --ServerApp.ip=0.0.0.0 --ServerApp.allow_root=False --ServerApp.token='' --ServerApp.password=''"
@@ -30,6 +30,5 @@ services:
       - jupyter
 
 volumes:
-  jupyter_data:
   caddy_data:
   caddy_config:
