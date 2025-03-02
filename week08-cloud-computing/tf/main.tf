@@ -123,6 +123,12 @@ resource "digitalocean_droplet" "debian_droplet" {
   user_data = <<-EOF
     #!/bin/bash
 
+    # Set hostname and domain name
+    hostnamectl set-hostname ${each.key}
+    echo "${each.key}.${var.domain_name}" > /etc/hostname
+    echo "127.0.0.1 localhost" > /etc/hosts
+    echo "127.0.1.1 ${each.key}.${var.domain_name} ${each.key}" >> /etc/hosts
+
     # Create '${var.username}' user.
     useradd -m -s /bin/bash ${var.username}
     mkdir -p /home/${var.username}/.ssh
