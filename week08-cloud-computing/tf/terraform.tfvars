@@ -12,7 +12,7 @@ username     = "cicf"  # Common username set to "cicf"
 
 # Define 18 users with their subdomains and SSH public keys
 users = {
-  "test" = {
+  "sajith" = {
     ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL5bFePtKg9/bTflbgT4Z+rXOS0X14PQgrs1ccqiBuFt sajith@hcoop.net"
   }
   # # "aidan" = {
