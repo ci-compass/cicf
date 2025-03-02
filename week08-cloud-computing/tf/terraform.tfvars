@@ -7,6 +7,7 @@ domain_name = "cicf.cloud"
 region       = "nyc3"
 droplet_size = "s-1vcpu-1gb"
 space_name   = "cicf-object-store"
+data_dir     = "../data"
 username     = "cicf"  # Common username set to "cicf"
 
 # Define 18 users with their subdomains and SSH public keys

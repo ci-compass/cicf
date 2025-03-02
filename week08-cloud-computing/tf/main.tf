@@ -85,6 +85,12 @@ variable "space_name" {
   default     = "my-object-store"
 }
 
+variable "data_dir" {
+  description = "Path to local data directory to copy to users' home dirs"
+  type        = string
+  default     = "../data"
+}
+
 # Resources
 # Create SSH keys in Digital Ocean
 resource "digitalocean_ssh_key" "droplet_key" {
@@ -147,9 +153,31 @@ resource "digitalocean_droplet" "debian_droplet" {
     echo "PubkeyAuthentication yes" >> /etc/ssh/sshd_config
     echo "ChallengeResponseAuthentication no" >> /etc/ssh/sshd_config
 
+    # Move uploaded data directory to user home directories
+    if [ -d "/tmp/data" ]; then
+      cp -r /tmp/data /home/${var.username}/data
+      cp -r /tmp/data /home/admin/data
+      chown -R ${var.username}:${var.username} /home/${var.username}/data
+      chown -R admin:admin /home/admin/data
+      rm -rf /tmp/data
+    fi
+
     # Restart SSH service to apply changes
     systemctl restart sshd
     EOF
+
+  # Provisioner to upload the data directory
+  provisioner "file" {
+    source      = var.data_dir
+    destination = "/tmp/data"
+
+    connection {
+      type        = "ssh"
+      user        = var.username
+      private_key = file("~/.ssh/id_ed25519")
+      host        = self.ipv4_address  # Using IPv4 for initial connection
+    }
+  }
 }
 
 # Create DNS A records for each droplet
