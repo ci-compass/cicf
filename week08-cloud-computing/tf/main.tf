@@ -188,10 +188,11 @@ output "droplet_info" {
   value = {
     for subdomain, user in var.users :
     subdomain => {
-      ip        = digitalocean_droplet.debian_droplet[subdomain].ipv4_address
-      subdomain = "${subdomain}.${var.domain_name}"
-      ssh_key   = substr(user.ssh_public_key, 0, 20)
-      username  = subdomain
+      ipv4_address = digitalocean_droplet.debian_droplet[subdomain].ipv4_address
+      ipv6_address = digitalocean_droplet.debian_droplet[subdomain].ipv6_address      
+      subdomain    = "${subdomain}.${var.domain_name}"
+      ssh_key      = substr(user.ssh_public_key, 0, 20)
+      username     = var.username
     }
   }
 }
