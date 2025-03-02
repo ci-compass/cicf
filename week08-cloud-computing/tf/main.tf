@@ -116,7 +116,7 @@ resource "digitalocean_droplet" "debian_droplet" {
 
   # Add tags to each droplet
   tags = [
-    "environment:test",
+    "environment:cicf",
     "os:debian",
   ]
 
