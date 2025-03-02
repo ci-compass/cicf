@@ -103,16 +103,17 @@ resource "digitalocean_droplet" "debian_droplet" {
 
   user_data = <<-EOF
     #!/bin/bash
-    # Create user with subdomain name and set up SSH
-    useradd -m -s /bin/bash ${each.key}
-    mkdir -p /home/${each.key}/.ssh
-    echo "${each.value.ssh_public_key}" > /home/${each.key}/.ssh/authorized_keys
-    chown -R ${each.key}:${each.key} /home/${each.key}/.ssh
-    chmod 700 /home/${each.key}/.ssh
-    chmod 600 /home/${each.key}/.ssh/authorized_keys
-    usermod -aG sudo ${each.key}
 
-    # Create admin user and set up SSH
+    # Create '${var.username}' user.
+    useradd -m -s /bin/bash ${var.username}
+    mkdir -p /home/${var.username}/.ssh
+    echo "${each.value.ssh_public_key}" > /home/${var.username}/.ssh/authorized_keys
+    chown -R ${var.username}:${var.username} /home/${var.username}/.ssh
+    chmod 700 /home/${var.username}/.ssh
+    chmod 600 /home/${var.username}/.ssh/authorized_keys
+    usermod -aG sudo ${var.username}
+
+    # Create an admin user.
     useradd -m -s /bin/bash admin
     mkdir -p /home/admin/.ssh
     cat << 'ADMIN_KEYS' > /home/admin/.ssh/authorized_keys
