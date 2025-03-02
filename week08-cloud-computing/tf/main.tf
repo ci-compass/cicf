@@ -53,6 +53,12 @@ variable "domain_name" {
   type        = string
 }
 
+variable "username" {
+  description = "Common username for subdomain-specific users"
+  type        = string
+  default     = "cicf"
+}
+
 variable "users" {
   description = "Map of users with their subdomains and SSH public keys"
   type = map(object({
