@@ -106,6 +106,7 @@ resource "digitalocean_droplet" "debian_droplet" {
   size     = var.droplet_size
   image    = "debian-12-x64"
   ssh_keys = [digitalocean_ssh_key.droplet_key[each.key].id]
+  ipv6     = true  # Enable IPv6
 
   user_data = <<-EOF
     #!/bin/bash
@@ -158,6 +159,16 @@ resource "digitalocean_record" "subdomain" {
   type     = "A"
   name     = each.key
   value    = digitalocean_droplet.debian_droplet[each.key].ipv4_address
+  ttl      = 300
+}
+
+# Create AAAA records for IPv6
+resource "digitalocean_record" "subdomain_aaaa" {
+  for_each = var.users
+  domain   = digitalocean_domain.main_domain.name
+  type     = "AAAA"
+  name     = each.key
+  value    = digitalocean_droplet.debian_droplet[each.key].ipv6_address
   ttl      = 300
 }
 
