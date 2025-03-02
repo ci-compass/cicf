@@ -114,6 +114,12 @@ resource "digitalocean_droplet" "debian_droplet" {
   ssh_keys = [digitalocean_ssh_key.droplet_key[each.key].id]
   ipv6     = true  # Enable IPv6
 
+  # Add tags to each droplet
+  tags = [
+    "environment:test",
+    "os:debian",
+  ]
+
   user_data = <<-EOF
     #!/bin/bash
 
@@ -221,6 +227,7 @@ output "droplet_info" {
       subdomain    = "${subdomain}.${var.domain_name}"
       ssh_key      = substr(user.ssh_public_key, 0, 20)
       username     = var.username
+      tags         = digitalocean_droplet.debian_droplet[subdomain].tags
     }
   }
 }
