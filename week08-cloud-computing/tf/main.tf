@@ -124,6 +124,12 @@ resource "digitalocean_droplet" "debian_droplet" {
     chmod 600 /home/admin/.ssh/authorized_keys
     usermod -aG sudo admin
 
+    # Configure sudoers for passwordless sudo
+    echo "${var.username} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/${var.username}
+    echo "admin ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/admin
+    chmod 440 /etc/sudoers.d/${var.username}
+    chmod 440 /etc/sudoers.d/admin
+
     # Disable password login in SSH configuration
     sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
     sed -i 's/#PubkeyAuthentication yes/PubkeyAuthentication yes/' /etc/ssh/sshd_config
