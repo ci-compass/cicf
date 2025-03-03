@@ -304,7 +304,7 @@ We only want to expose the ports 22 (ssh), 80 (http), and (https).
 The way to do this is by using a firewall.  We will use [ufw] (aka
 "The Uncomplicated Firewall") to set up some firewall rules.
 
-[ufw]: https://launchpad.net/ufw
+[ufw]: https://wiki.ubuntu.com/UncomplicatedFirewall
 
 Install ufw:
 
