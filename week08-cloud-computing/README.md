@@ -113,11 +113,36 @@ We could save some typing since we have some configuration in
 destination when you invoke `scp`.
 
 
-### Install and run some software
+### Install Docker on the cloud VM
 
-<!-- TODO -->
+In the cloud VM, run
 
-<!-- - JupyterLab + Caddy using docker compose perhaps? -->
+```
+$ cd ~/data
+$ ./install-docker.sh
+```
+
+Press `y` when prompted.
+
+Once Docker has been installed, add yourself to `docker` group:
+
+```
+$ sudo usermod -a -G docker $USER
+```
+
+Log out of the VM using `Control-D`, `exit`, or `logout`, and log back
+in with `ssh`:
+
+```
+$ ssh YOUR-FIRST-NAME.cicf.cloud
+```
+
+Make sure that you are now indeed in `docker` group:
+
+```
+$ groups
+cicf sudo docker
+```
 
 ### References
 
