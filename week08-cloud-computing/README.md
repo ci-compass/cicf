@@ -323,7 +323,8 @@ $ sudo ufw default deny incoming
 $ sudo ufw default allow outgoing
 ```
 
-Now enable `ufw`:
+Now we need to "enable" `ufw`, so that the above rules take effect,
+and `ufw` will run when you reboot the VM:
 
 ```
 $ sudo ufw enable
