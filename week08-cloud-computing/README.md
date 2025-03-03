@@ -266,6 +266,77 @@ And follow the logs with
 $ docker compose logs --follow
 ```
 
+### Enable some firewall rules
+
+Bad actors will keep trying to take over computers on the internet, so
+that they can run botnets, bitcoin mining operations, spam networks,
+or some such.  Since the internet can be a hostile place, we should
+expose only the necessary network ports to the world.  
+
+We could use the program [nmap] to run a quick scan against our VM:
+
+[nmap]: https://nmap.org/
+
+```
+$ nmap sajith.cicf.cloud
+Starting Nmap 7.93 ( https://nmap.org ) at 2025-03-02 21:20 CST
+Nmap scan report for sajith.cicf.cloud (134.209.35.136)
+Host is up (0.066s latency).
+Other addresses for sajith.cicf.cloud (not scanned): 2604:a880:800:14::baf9:2000
+Not shown: 991 closed tcp ports (conn-refused)
+PORT     STATE    SERVICE
+22/tcp   open     ssh
+25/tcp   filtered smtp
+80/tcp   open     http
+111/tcp  filtered rpcbind
+135/tcp  filtered msrpc
+139/tcp  filtered netbios-ssn
+443/tcp  open     https
+445/tcp  filtered microsoft-ds
+8888/tcp open     sun-answerbook
+```
+
+Those is a lot more open ports than necessary.  Some of them are
+default services run by the operating system, but we do not want them
+exposed to the internet.
+
+We only want to expose the ports 22 (ssh), 80 (http), and (https).
+The way to do this is by using a firewall.  We will use [ufw] (aka
+"The Uncomplicated Firewall") to set up some firewall rules.
+
+[ufw]: https://launchpad.net/ufw
+
+Install ufw:
+
+```
+$ sudo apt update
+$ sudo apt install -y ufw
+```
+
+And now add some rules:
+
+```
+$ sudo ufw allow 22/tcp  # SSH
+$ sudo ufw allow 80/tcp  # HTTP
+$ sudo ufw allow 443/tcp # HTTPS
+$ sudo ufw default deny incoming
+$ sudo ufw default allow outgoing
+```
+
+Now enable `ufw`:
+
+```
+$ sudo ufw enable
+```
+
+Hit `y` when prompted.  If we run `nmap` scan again now, we should see
+the desired output.
+
+
+### Monitoring the VM
+
+<!-- TODO -->
+
 ### References
 
 <!-- TODO -->
