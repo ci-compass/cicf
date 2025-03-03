@@ -147,7 +147,7 @@ $ groups
 cicf sudo docker
 ```
 
-# Run JupyterLab and Caddy with Docker Compose
+### Run JupyterLab and Caddy with Docker Compose
 
 Docker Compse is a tool for running applications running in more than
 one container together.  You would run Docker Compose in the format
