@@ -20,7 +20,7 @@ Start a terminal in the CICF VM running on your desktop, and run these
 commands:
 
 ```
-$ cd ~/cicf
+$ cd ~/cicf/week08-cloud-computing
 $ git pull origin master
 ```
 
@@ -41,7 +41,7 @@ brute-force passwords.  Using public key cryptography is more secure.)
 [ssh]: https://www.openssh.com/
 
 ```
-$ ssh -o PasswordAuthentication=no -o PubkeyAuthentication=yes cicf@YOUR-FIRST-NAME.cicf.cloud
+$ ssh -o PasswordAuthentication=no -o PubkeyAuthentication=yes -i ~/.ssh/id_ed25519 cicf@YOUR-FIRST-NAME.cicf.cloud
 ```
 
 Replace `YOUR-FIRST-NAME` with, well, your first name.  For reference,
@@ -83,10 +83,35 @@ YOUR-FIRST-NAME.cicf.cloud`.
 
 ### Copy some files to your cloud VM
 
+We have three files in [`data`](./data) directory:
 
+- [`install-docker.sh`](./data/install-docker.sh), our old friend from
+  week 5. We will use this script to install Docker on the VM.
+- [`compose.yml`](./data/compose.yml), a Docker compose file that we
+  will use to deploy JupyterLab and [Caddy], a [reverse proxy] server.
+- [`Caddyfile`](./data/Caddyfile), which contains necessary
+  configuration for Caddy.
 
+ [Caddy]: https://caddyserver.com/
+ [reverse proxy]: https://en.wikipedia.org/wiki/Reverse_proxy
 
-<!-- Use ssh key -->
+ We will use [`scp`] to copy the `data` directory from your local VM
+ to the cloud VM:
+
+ ```
+  $ scp -r data YOUR-FIRST-NAME.cicf.cloud:
+ ```
+
+Note that the above is a short-cut for the longer command below:
+
+ ```
+ $ scp -o PasswordAuthentication=no -o PubkeyAuthentication=yes -i ~/.ssh/id_ed25519  -r data cicf@YOUR-FIRST-NAME.cicf.cloud:/home/cicf/
+ ```
+
+We could save some typing since we have some configuration in
+`~/.ssh/config`, and since the home directory is the default
+destination when you invoke `scp`.
+
 
 ### Install and run some software
 
