@@ -147,3 +147,7 @@ cicf sudo docker
 ### References
 
 <!-- TODO -->
+
+- [Docker Compose](https://docs.docker.com/compose/) documentation.
+- [Caddyfile](https://caddyserver.com/docs/caddyfile) reference.
+
