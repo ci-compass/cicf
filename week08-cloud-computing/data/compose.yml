@@ -2,7 +2,7 @@
 
 services:
   jupyter:
-    image: jupyter/minimal-notebook:latest
+    image: jupyter/base-notebook:latest
     container_name: jupyter_lab
     restart: unless-stopped
     environment:
