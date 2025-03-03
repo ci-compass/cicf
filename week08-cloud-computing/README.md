@@ -1,15 +1,15 @@
 # CICF Week 8
 
-The goals for week 5 lab are:
+The goal for this week's tutorial are:
 
 - Familiarize yourself with a virtual machine running in a cloud
   environment.
 
-This week we will:
+We will:
 
 - Log into a cloud virtual machine (VM) using `ssh`,
 - Copy some files to the VM using `scp`,
-- Run JupyterLab in the VM, and
+- Run JupyterLab in the VM, access it over the internet, and
 - Learn how to secure the VM.
 
 ## Tutorial
