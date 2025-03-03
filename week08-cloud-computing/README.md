@@ -91,6 +91,9 @@ We have three files in [`data`](./data) directory:
   will use to deploy JupyterLab and [Caddy], a [reverse proxy] server.
 - [`Caddyfile`](./data/Caddyfile), which contains necessary
   configuration for Caddy.
+- [`jupyter-caddy.service`](./data/jupyter-caddy.service), a "unit"
+  file that we will use to run Jupyter and Caddy using Docker Compose
+  as a background service.
 
  [Caddy]: https://caddyserver.com/
  [reverse proxy]: https://en.wikipedia.org/wiki/Reverse_proxy
@@ -227,6 +230,41 @@ cloud VM, we can install a [systemd] service.
 
 [systemd]: https://systemd.io/
 
+Copy `jupyter-caddy.service` to the correct location:
+
+```
+$ sudo cp jupyter-caddy.service /etc/systemd/system
+```
+
+Enable the service now:
+
+```
+$ sudo systemctl enable --now jupyter-caddy.service
+```
+
+We can check the status of the service using:
+
+```
+$ systemctl status jupyter-caddy.service
+```
+
+Or:
+
+```
+$ journalctl -xeu jupyter-caddy.service
+```
+
+We can make sure that things are running with:
+
+```
+$ docker compose ps
+```
+
+And follow the logs with
+
+```
+$ docker compose logs --follow
+```
 
 ### References
 
