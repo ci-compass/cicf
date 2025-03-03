@@ -52,7 +52,7 @@ these are the virtual machines:
 * `baydan.cicf.cloud`
 * `catherine.cicf.cloud`
 * `dylan.cicf.cloud`
-* `ejay17.cicf.cloud`
+* `ejay.cicf.cloud`
 * `elikem.cicf.cloud`
 * `emma.cicf.cloud`
 * `jasmine.cicf.cloud`
