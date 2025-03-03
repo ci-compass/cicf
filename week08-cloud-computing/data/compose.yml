@@ -25,7 +25,7 @@ services:
       - caddy_data:/data                  # Persistent Caddy data (certificates)
       - caddy_config:/config              # Persistent Caddy config
     environment:
-      - DOMAIN=sajith.cicf.cloud  # Replace with your actual domain
+      - DOMAIN=YOUR-FIRST-NAME.cicf.cloud # Replace with your actual domain
     depends_on:
       - jupyter
 
