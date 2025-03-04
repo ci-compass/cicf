@@ -300,9 +300,9 @@ Those is a lot more open ports than necessary.  Some of them are
 default services run by the operating system, but we do not want them
 exposed to the internet.
 
-We only want to expose the ports 22 (ssh), 80 (http), and (https).
-The way to do this is by using a firewall.  We will use [ufw] (aka
-"The Uncomplicated Firewall") to set up some firewall rules.
+We only want to expose the ports 22 (SSH), 80 (HTTP), and 443 (HTTPS).
+The way to do this is by using a firewall.  We will use [ufw] (short
+for "The Uncomplicated Firewall") to set up some firewall rules.
 
 [ufw]: https://wiki.ubuntu.com/UncomplicatedFirewall
 
@@ -313,12 +313,12 @@ $ sudo apt update
 $ sudo apt install -y ufw
 ```
 
-And now add some rules:
+And now add the rules:
 
 ```
-$ sudo ufw allow 22/tcp  # SSH
-$ sudo ufw allow 80/tcp  # HTTP
-$ sudo ufw allow 443/tcp # HTTPS
+$ sudo ufw allow 22/tcp
+$ sudo ufw allow 80/tcp
+$ sudo ufw allow 443/tcp
 $ sudo ufw default deny incoming
 $ sudo ufw default allow outgoing
 ```
@@ -332,6 +332,12 @@ $ sudo ufw enable
 
 Hit `y` when prompted.  If we run `nmap` scan again now, we should see
 the desired output.
+
+You can also check the status of the firewall with:
+
+```
+$ sudo ufw status verbose
+```
 
 
 ### Monitoring the VM
