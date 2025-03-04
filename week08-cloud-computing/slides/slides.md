@@ -6,8 +6,8 @@ format:
   #   fig-width: 300
   revealjs:
     slide-number: true
-    theme: default
-    transition: slide
+    theme: dark # or: default
+    # transition: slide
 ---
 
 # Welcome to week eight of CICF!
