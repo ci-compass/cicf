@@ -17,7 +17,7 @@ Open your VM, and then open the web browser and visit
     https://orcid.org/0000-0002-1825-0097
 
 This is (should be?) the only fictional person with an ORCID record.
-Notice how we see his name, and some information about him.
+THe page displays his name and some information about him.
 
 Lets look at this under the hood.
 Make a new browser tab and go to this website:
@@ -36,7 +36,7 @@ Then below we see the response headers.
 The first line has the response code, in this case "200 OK".
 We have some more headers describing the data:
 it is `text/html`.
-There are some other headers, some are important to the client, and some are more just for debugging.
+There are some other headers, some are important to the client, and some are for debugging.
 
 Below the response headers is the response body, and we have some HTML encoded text which is the displayed webpage.
 So this shows the distinction between HTTP—the transport protocol—and HTML—the text that forms the "web page".
@@ -44,26 +44,47 @@ So this shows the distinction between HTTP—the transport protocol—and HTML�
 We can add other headers to our request.
 Of course, if the server doesn't understand a header it can ignore it or return an error, its choice.
 
-Lets add the header `Accepts: application/json`.
-Type that into the box labeled "HTTP Request Headers"
+I would then look at this using the JSON response ORCID can provide, but
+the website now requires a sign-in before providing this.
+SO, lets look at OpenAlex.
+
+## Open Alex
+
+Surprisingly, there is no complete database of all academic scholarship.
+There are a few aggregators that try to index as much as they can.
+One is [Google Scholar](https://scholar.google.com/), others are [DataCite Commons](https://commons.datacite.org),
+and [OpenAlex](https://openalex.org).
+There are also more specilized databases, such as [PubMed](https://pubmed.ncbi.nlm.nih.gov/) for medical research.
+
+OpenAlex is a catalog of open science papers, people, datasets, instituions, and so on.
+In the browser visit the page:
+
+    https://openalex.org/works/w2764299839
+
+This, again, is a human readable page provided by the catalog.
+Lets try asking for a JSON representation.
+Add the header `Accepts: application/json` by typing that into the box labeled "HTTP Request Headers".
 This is asking the server that we don't want an HTML page, instead we want a JSON encoded response.
+In this case, we get a page that wants us to use javascript.
+This seems to be a newer techneque to prevent bots from scraping data off a page.
+But the information is all available at the API endpoint:
+
+    https://api.openalex.org/works/W2764299839
 
 Now we get an interesting response.
 The first line has a 302 response code.
 This is the server telling us that we need to retry at a different URL.
 The `Location:` header is telling us the new URL to use.
-
-So then we retry and we get another redirect.
-Do you see what is going on?
-
-Finally on the third try we get what we are looking for.
-And the response body is full of JSON.
+Why? It seems to want us to use a capital "W".
+The second request returns a JSON response body.
+It is all on one line.
+Sometimes servers do this, since the line breaks are not needed to decode the JSON.
 
 Thinking of this architecture, why do you think the servers used a redirect rather than just returning the JSON in the first place?
 
+
 ### Looking at the JSON
 
-We have mentioned JSON but I don't think we have really looked at it in much depth.
 Copy the JSON response and paste it into this web page:
 
     https://jqplay.org/
@@ -89,84 +110,74 @@ Inside the curly braces of an object there are a list of
 key-value pairs separated by commas.
 
 All of the information in HTML record should also appear in the JSON record.
-Albeit, it is easier for machines to find information in the JSON record.
 
-Try entering `.person.name` in the Filter box.
+Try entering `.title` in the Filter box.
 You should see the following JSON:
 
 ```json
+"Citizen science provides a reliable and scalable tool to track disease-carrying mosquitoes"
+```
+
+Now try `.mesh`.
+You should see a big list.
+Now do `.mesh[3]`:
+
+```json
 {
-  "created-date": {
-    "value": 1460757617078
-  },
-  "last-modified-date": {
-    "value": 1504850007188
-  },
-  "given-names": {
-    "value": "Josiah"
-  },
-  "family-name": {
-    "value": "Carberry"
-  },
-  "credit-name": null,
-  "source": null,
-  "visibility": "public",
-  "path": "0000-0002-1825-0097"
+  "descriptor_ui": "D009032",
+  "descriptor_name": "Mosquito Control",
+  "qualifier_ui": "Q000379",
+  "qualifier_name": "methods",
+  "is_major_topic": true
 }
 ```
 
 The filter box takes a pattern and returns the pieces of the input that match.
-In this case it is starting at the top, looking for the key `person`, and then looking for the key `name`, and returning whatever it found.
-The model of the name is probably more complicated than you expected.
-We have metadata on when it was created and updated, the name itself is split into given and family names.
-There is a credit and source fields, and a visibility level.
 
-The dates probably don't look like any date you've seen before.
-Any ideas what is going on?
+MeSH are subject headings curated by the National Library of Medicine.
+Lets look up this term:
 
-Sometimes web services use a string like "20240319T20:14:36.245Z" to represent times.
-Sometimes they use something called UNIX epoch time, which is the number of seconds since
-January 1, 1970.
-It is up to the service to decide how to handle time.
-In this case we can decode the time.
-There are a few ways of doing it.
-Easiest is to use a website reference:
+    https://www.ncbi.nlm.nih.gov/mesh/
 
-    https://www.unixtimestamp.com/
+Search for `D009032`.
+This lets us share topic headings with others and we can all agree on what they mean.
+We can also agree on the codes used to represent each topic.
 
-Another way is to use the command line:
+Vocabularies like MeSH are very useful, but each takes effort to develop and there all have a defined scope.
+Another useful place to define shared terms is WikiData.
 
-    (in linux): date --date='@1460757617078'
-    (on macos): date -r 1460757617078
+    https://www.wikidata.org
 
-This actually gives a wildly wrong number, since the server is actually using _milliseconds_ since the UNIX epoch.
-Lets adjust by removing the last three digits (i.e. dividing by 1000):
+And we can also find the Wikidata term for MeSH:
 
-    (in linux): date --date='@1460757617'
-    (on macos): date -r 1460757617
-
-(The difference in commands comes from MacOS actually descending via a BSD Unix. Architecture choices made 30 and 40 years ago are still showing up.)
+    https://www.wikidata.org/wiki/Q2003646
 
 
-Lets now look at this briefly on the command line:
+## Again on the command line
 
-    curl -s -v "https://orcid.org/0000-0002-1825-0097" 2>&1 | less
+Now lets do all this on the command line.
 
-This displays the original webpage.
+    curl -H 'Accepts: application/json' 'https://api.openalex.org/works/w2764299839'
+
+This just returns the redirect.
+We need to ask "curl" to follow the redirects:
+
+    curl -L -H 'Accepts: application/json' 'https://api.openalex.org/works/w2764299839'
+
+We can see more informatio being passed with the `-v` "verbose" option.
+
+    curl -v -H 'Accepts: application/json' 'https://api.openalex.org/works/w2764299839' 2>&1 | less
+
 Note that the request is on lines starting with a ">"
 and the response headers are on lines starting with "<".
 
-    curl -s -v -L -H "Accept: application/json" "https://orcid.org/0000-0002-1825-0097" 2>&1 | less
+Lets save the json response:
 
-We can change the accept header:
+    curl -L -H 'Accepts: application/json' 'https://api.openalex.org/works/w2764299839' > mosq.json
 
-    curl -s -v -L -H "Accept: application/xml" "https://orcid.org/0000-0002-1825-0097" 2>&1 | less
+The `jq` tool can work on the command line as well.
 
-We can change the method:
-
-    curl -s -v -L -X "POST" -H "Accept: application/xml" "https://orcid.org/0000-0002-1825-0097" 2>&1 | less
-
-In this case we get a response with status code 405, indicating an error.
+    jq .mesh[3] mosq.json
 
 
 
@@ -176,6 +187,8 @@ In this case we get a response with status code 405, indicating an error.
 * [Building and operating a pretty big storage system](https://www.allthingsdistributed.com/2023/07/building-and-operating-a-pretty-big-storage-system.html)
 
 Software Architecture
+* [Software Architects: Do We Need 'em](https://www.bredemeyer.com/who.htm) by Ruth Malan(by the way, this site has many other excellent articles on software architecture).
+* [Explaining Software Design](https://explaining.software/)
 * [5 essential patterns of software architecture](https://www.redhat.com/architect/5-essential-patterns-software-architecture)
 * [List of software architecture styles and patterns](https://en.wikipedia.org/wiki/List_of_software_architecture_styles_and_patterns)
 * [Design Patterns, Architectural Patterns](https://cs.nyu.edu/~jcf/classes/g22.2440-001_sp06/slides/session8/g22_2440_001_c82.pdf)
