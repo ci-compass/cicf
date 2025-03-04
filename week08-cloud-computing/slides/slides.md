@@ -22,7 +22,7 @@ We will look at:
   - components
   - infrastructure as code
 
-# Cloud Computing
+# The Basics
 
 ::: {.notes}
 
