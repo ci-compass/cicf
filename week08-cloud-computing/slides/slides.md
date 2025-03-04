@@ -125,6 +125,37 @@ Today I believe AWS is a more profitable business that Amazon.com.
 
 ---
 
+# Major (public) cloud vendors
+
+- Amazon Web Services (AWS)
+- Microsoft Azure
+- Google Cloud Platform (GCP)
+- IBM Cloud
+- Oracle Cloud Infrastructure (OCI)
+- Alibaba Cloud
+- DigitalOcean
+- Hetzner Cloud
+- ...
+
+::: {.notes}
+
+There are several very popular cloud vendors.  Some like AWS are
+older, bigger, and well-established.  Some like DigitalOcean sell on
+the simplicity of their products.  
+
+They all of them offer comparable products and services.  The
+important thing for us to understand the basics of cloud computing.
+The basics should translate well from one vendor to another.  Once you
+understand the basics, you can figure out any vendor-specific details
+on your own when you need it.
+
+Note that we do not want to learn AWS or GCP in particular.  We want
+to be able to use what we learn in any cloud vendor's environment.
+
+:::
+
+---
+
 # Service Models
 
 ::: {.notes}
@@ -249,19 +280,6 @@ redundancy so that when one thing goes down the other will continue to
 work.
 
 :::
-
----
-
-# Major cloud vendors
-
-- Amazon Web Services (AWS)
-- Microsoft Azure
-- Google Cloud Platform (GCP)
-- IBM Cloud
-- Oracle Cloud Infrastructure (OCI)
-- Alibaba Cloud
-- DigitalOcean
-- Hetzner Cloud
 
 ---
 
