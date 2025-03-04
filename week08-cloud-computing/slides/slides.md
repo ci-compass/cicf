@@ -11,7 +11,9 @@ format:
 
 # Welcome to week eight of CICF!
 
-## The plan this week
+---
+
+# The plan this week
 
 We will look at:
 
@@ -20,6 +22,8 @@ We will look at:
   - deployment models
   - components
   - infrastructure as code
+
+---
 
 # The Basics
 
@@ -32,7 +36,7 @@ why does it matter?"
 
 ---
 
-## What is Cloud Computing?
+# What is Cloud Computing?
 
 - **Definition**: On-demand delivery of compute, storage, and
   networking over the internet, managed by a provider.
@@ -62,7 +66,7 @@ You will also pay for only what you use.
 
 ---
 
-## Why Cloud?
+# Why Cloud?
 
 - **Benefits**:
   - Cost efficiency
@@ -93,7 +97,7 @@ They use AWS.
 
 ---
 
-## Evolution
+# Evolution
 
 - Physical servers → Virtualization → Cloud
 
@@ -132,7 +136,7 @@ models to know.
 
 ---
 
-## IaaS (Infrastructure as a Service)
+# IaaS (Infrastructure as a Service)
 
 - **Description**: Raw infrastructure (VMs, storage, networks)
 - **Example**: AWS EC2, Google Cloud Platform, Microsoft Azure
@@ -147,7 +151,7 @@ is great people who want more control over how they do things.
 
 ---
 
-## PaaS (Platform as a Service)
+# PaaS (Platform as a Service)
 
 - **Description**: Managed platforms for app development
 - **Example**: Google App Engine, Heroku
@@ -167,7 +171,7 @@ scale things up when necessary.
 
 ---
 
-## SaaS (Software as a Service)
+# SaaS (Software as a Service)
 
 - **Description**: Fully managed software
 - **Example**: Google Docs, Microsoft 365
@@ -193,7 +197,7 @@ There are three ways to deploy "the cloud".
 
 ---
 
-## Public Cloud
+# Public Cloud
 
 - **Description**: Shared resources from a provider
 - **Example**: AWS, Google Cloud Platform, Microsoft Azure
@@ -208,7 +212,7 @@ inexpensive and flexible, but you share the space with others.
 
 ---
 
-## Private Cloud
+# Private Cloud
 
 - **Description**: Dedicated resources for one organization
 - **Example**: On-premise or hosted (e.g., VMware, OpenStack)
@@ -226,7 +230,7 @@ If you use something like VMWare, you will pay recurring license fees.
 
 ---
 
-## Hybrid and Multi-Cloud
+# Hybrid and Multi-Cloud
 
 - **Hybrid**: Public + private mix
   - e.g., Sensitive data on-premise, rest on AWS
@@ -248,7 +252,7 @@ work.
 
 ---
 
-## Major cloud vendors
+# Major cloud vendors
 
 - Amazon Web Services (AWS)
 - Microsoft Azure
@@ -275,7 +279,7 @@ offerings.  Compute, storage, and networking are the essentials.
 
 ---
 
-## Compute
+# Compute
 
 - **Virtual Machines**: Rentable servers (e.g., AWS EC2)
 - **Containers**: Lightweight units (e.g., AWS ECS or Elastic
@@ -317,7 +321,7 @@ demand.  It is ideal for small, event-driven tasks or microservices.
 
 ---
 
-## Storage
+# Storage
 
 - **Object Storage**: Files as objects (e.g., AWS S3)
 - **Block Storage**: Hard drives for VMs (e.g., AWS EBS)
@@ -368,7 +372,7 @@ share documents and media.
 
 ---
 
-## Networking
+# Networking
 
 - **DNS**: Domain to IP resolution (e.g., Route 53)
 - **Load Balancers**: Traffic distribution (e.g., AWS ELB)
@@ -415,7 +419,7 @@ code.
 
 ---
 
-## What is IaC?
+# What is IaC?
 
 - **Definition**: Manage infrastructure with code
 - **Benefits**:
@@ -441,7 +445,7 @@ reference.  You can also check your code in Git repositories.
 
 ---
 
-## Tools
+# Tools
 
 - **Terraform**/**OpenTofu**: Multi-cloud IaC
 
@@ -471,7 +475,9 @@ reference.  You can also check your code in Git repositories.
 }
   ```
 
-## Other tools
+---
+
+# Other tools
 
 - Ansible
 - Chef
@@ -481,5 +487,8 @@ reference.  You can also check your code in Git repositories.
 - Azure Resource Manager (ARM) Templates
 - Google Cloud Deployment Manager
 
+---
 
 # FIN
+
+---
