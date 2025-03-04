@@ -1,13 +1,12 @@
 ---
 title: "CICF Week 8: Cloud Computing"
 format:
-  # pptx:
-  #   reference-doc: cicf-template.pptx
-  #   fig-width: 300
+  pptx:
+    reference-doc: cicf-template.pptx
+    fig-width: 300
   revealjs:
     slide-number: true
-    theme: dark # or: default
-    # transition: slide
+    theme: default
 ---
 
 # Welcome to week eight of CICF!
