@@ -180,6 +180,29 @@ The `jq` tool can work on the command line as well.
     jq .mesh[3] mosq.json
 
 
+## Flask
+
+Flask is a very simple python framework for making web applications.
+Here is a Flask app showing how a web server works.
+Lets set up the virtual envrionment and run Flask.
+
+    $ source ~/venv/bin/activate
+    $ pip install flask
+    $ flask --app app run
+
+You will see some text, including that the server is running on "http://127.0.0.1:5000".
+This is a special address, in that on any computer in the world, 127.0.0.1 refers to the current computer.
+This is also called the "localhost".
+The 5000 says the server is listening on port 5000 on the current computer.
+Open a web browser and type in the URL `localhost:5000`.
+You will see a page showing "Hello World".
+This is because in the file `app.py` we match that route and say to return that text.
+We also have a route to match any path that begins with `/topic/` so lets try that in the browser.
+Enter "localhost:5000/topic/2343453465" in the browser, you will see a page that has the text
+
+    You asked for 2343453465
+
+All webservers follower similar designs: they listen on a port for routes (or pages), and then depending on the page being asked for, run different pieces of code to return a response.
 
 ## Resources
 
