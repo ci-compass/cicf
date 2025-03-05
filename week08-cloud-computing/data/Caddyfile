@@ -1,0 +1,21 @@
+# Caddyfile
+
+{$DOMAIN} {
+  # Reverse proxy to Jupyter Lab
+  reverse_proxy jupyter:8888 {
+    header_up X-Real-IP {remote_host}
+    header_up X-Forwarded-For {remote_host}
+    header_up X-Forwarded-Proto {scheme}
+  }
+
+  # Enable compression
+  encode gzip
+
+  # Basic security headers
+  header {
+    Strict-Transport-Security "max-age=31536000;"
+    X-Content-Type-Options "nosniff"
+    X-Frame-Options "DENY"
+    X-XSS-Protection "1; mode=block"
+  }
+}

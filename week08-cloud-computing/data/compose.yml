@@ -1,0 +1,34 @@
+# docker-compose.yml
+
+services:
+  jupyter:
+    image: jupyter/base-notebook:latest
+    container_name: jupyter_lab
+    restart: unless-stopped
+    environment:
+      - JUPYTER_ENABLE_LAB=yes  # Enable JupyterLab interface
+    volumes:
+      - /home/cicf/data:/home/jovyan/work # Mount local directory from host
+    ports:
+      - "8888:8888"  # Exposed internally, proxied by Caddy
+    command: "start.sh jupyter lab --ServerApp.ip=0.0.0.0 --ServerApp.allow_root=False --ServerApp.token='' --ServerApp.password=''"
+
+  caddy:
+    image: caddy:latest
+    container_name: caddy_proxy
+    restart: unless-stopped
+    ports:
+      - "80:80"    # HTTP
+      - "443:443"  # HTTPS
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile  # Caddy configuration file
+      - caddy_data:/data                  # Persistent Caddy data (certificates)
+      - caddy_config:/config              # Persistent Caddy config
+    environment:
+      - DOMAIN=YOUR-FIRST-NAME.cicf.cloud # Replace with your actual domain
+    depends_on:
+      - jupyter
+
+volumes:
+  caddy_data:
+  caddy_config:
