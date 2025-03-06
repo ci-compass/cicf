@@ -21,7 +21,7 @@ commands:
 
 ```
 $ cd ~/cicf/week08-cloud-computing
-$ git pull origin master
+$ git pull origin main
 ```
 
 ### Connect to your cloud VM
