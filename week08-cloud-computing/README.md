@@ -342,7 +342,68 @@ $ sudo ufw status verbose
 
 ### Monitoring the VM
 
-<!-- TODO -->
+Once your VM is online, you most certainly want to keep an eye on
+it.  You want to know when something goes wrong, and you want to fix
+whatever it is that has gone wrong.  You would use monitoring tools
+for this.
+
+In the basic case, we can use the cloud vendor's console to check on
+some basic things such as network traffic, CPU usage, and disk I/O.
+Here is a screenshot of a VM's network traffic graph as reported by
+DigitalOcean console:
+
+![](./do-bandwidth-graph.png)
+
+As we get more serious, we will want to monitor more things. Here is a
+non-exhaustive list of things we could be monitoring:
+
+- **System resources**, such as CPU, memory, disk, and network usage.
+- **Server health and availability status**, such as
+  uptime/availability, status of critical processes, hardware health.
+- **Application and service performance status**, such as response
+  time/latency, error rates, and throughput.
+- **Storage and databases status**, such as database performance, and
+  file system events.
+- **Security status**, such as login attempts, firewall and network
+  security, and system logs.
+- **Network and connectivity status**, such as DNS resolution and
+  availability of external service dependencies.
+- **Application metrics**, such as app-specific performance metrics
+  (example: order processing rate in an e-commerce site), and status
+  of task queues.
+- **Environmental factors**, such as power and server room conditions
+  (temperature and humidity via sensors).
+
+Here is a list of some popular server monitoring tools:
+
+| Tool         | Type        | Best For                 |
+|--------------|-------------|--------------------------|
+| [Prometheus] | Open-source | Cloud-native, Kubernetes |
+| [Nagios]     | Open-source | Traditional IT           |
+| [Zabbix]     | Open-source | Enterprise networks      |
+| [Datadog]    | Commercial  | Hybrid cloud, APM        |
+| [New Relic]  | Commercial  | Full-stack observability |
+| [Grafana]    | Open-source | Visualization            |
+| [SolarWinds] | Commercial  | Enterprise apps          |
+| [Icinga]     | Open-source | Flexible IT monitoring   |
+| [Sensu]      | Open-source | Dynamic environments     |
+| [PRTG]       | Commercial  | SMBs, all-in-one         |
+
+[Prometheus]: https://prometheus.io/
+[Nagios]: https://www.nagios.org/
+[Zabbix]: https://www.zabbix.com
+[Datadog]: https://www.datadoghq.com/
+[New Relic]: https://newrelic.com/                                
+[Grafana]: https://grafana.com/
+[SolarWinds]: https://www.solarwinds.com/server-application-monitor
+[Icinga]: https://icinga.com/
+[Sensu]: https://sensu.io/
+[PRTG]: https://www.paessler.com/prtg
+ 
+We do have some pretty daunting lists!  When you need something more
+advanced than the cloud vendor's monitoring tool, you can look at
+these things.
+
 
 ### References
 
