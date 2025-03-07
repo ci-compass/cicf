@@ -60,9 +60,9 @@ users = {
   # # "rishi" = {
   # #   ssh_public_key = "ssh-rsa AAAAB3NzaC1yc2E... key15@example.com"
   # # }
-  # # "spoorthi" = {
-  # #   ssh_public_key = "ssh-rsa AAAAB3NzaC1yc2E... key16@example.com"
-  # # }
+  "spoorthi" = {
+    ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPccycWi/2vBeGJ8yyizla+Vhvb3Rh7UrddEPcEbX4QE hiriyurspoorthi@gmail.com cicf"
+  }
   # "tamara" = {
   #   ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEQtQC+FvyHJ0W5Mf3kzobHl17e7H6KYQuF5yza8HEwe tamaracsegal@gmail.com cicf"
   # }
