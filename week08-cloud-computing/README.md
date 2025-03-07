@@ -24,24 +24,49 @@ $ cd ~/cicf/week08-cloud-computing
 $ git pull origin main
 ```
 
-### Connect to your cloud VM
+### Use `ssh` to connect to your cloud VM
 
 Each of you will get your own VM. The virtual machines are deployed
-for you on Digital Ocean (DO), a cloud provider.  (DO calls VMs
-"droplets".)
+for you on Digital Ocean (DO), a cloud provider.
+
+(DO calls their VMs "droplets", but that should not really matter to
+us. Our goal is to make ourselves familiar with cloud computing in
+general, not any one vendor's tools and terminology.)
 
 You can access your VM using [`ssh`][ssh], the OpenSSH remote login
-client.  We will not use a password to log on to the VM, but rather,
-we would use public key authentication.  (In fact, password
-authentication with `ssh` is disabled on these VMs, because it is
-considered insecure.  Remember that our little VM is out there on the
-hostile territory of the public internet, and bad people can guess or
-brute-force passwords.  Using public key cryptography is more secure.)
+client.  The account name on the VM is `cicf`.  We will not use a
+password to log on to the VM, but rather, we would use public key
+authentication.  In fact, password authentication with `ssh` is
+disabled on these VMs, because it is considered insecure.  Remember
+that our little VM is out there on the hostile territory of the public
+internet, and bad people can guess or brute-force passwords.  Using
+public key cryptography is more secure.
 
 [ssh]: https://www.openssh.com/
 
+You would log on to your VM with:
+
 ```
 $ ssh -o PasswordAuthentication=no -o PubkeyAuthentication=yes -i ~/.ssh/id_ed25519 cicf@YOUR-FIRST-NAME.cicf.cloud
+```
+
+But wait! Since the above `ssh` command is long and annoying to type
+every time we need to use `ssh` (and its sibling `scp`, which we will
+use next), our first order of business should be saving those options
+in `~/.ssh/config`.  Copy these lines to your `~/.ssh/config`:
+
+```
+Host *.cicf.cloud
+    User cicf
+    PubkeyAuthentication yes
+    PasswordAuthentication no
+    IdentityFile ~/.ssh/id_ed25519     
+```
+
+With that configuration, you should be able to simply do:
+
+```
+ssh YOUR-FIRST-NAME.cicf.cloud`.
 ```
 
 Replace `YOUR-FIRST-NAME` with, well, your first name.  For reference,
@@ -66,20 +91,6 @@ these are the virtual machines:
 * `tamara.cicf.cloud`
 * `xiuweb.cicf.cloud`
 
-Since that `ssh` command is long and annoying to type every time we
-need to use `ssh` (and its sibling `scp`, which we will use next), we
-can save those `ssh` options in `~/.ssh/config`:
-
-```
-Host *.cicf.cloud
-    User cicf
-    PubkeyAuthentication yes
-    PasswordAuthentication no
-    IdentityFile ~/.ssh/id_ed25519     
-```
-
-With that configuration, you should be able to simply do `ssh
-YOUR-FIRST-NAME.cicf.cloud`.
 
 ### Copy some files to your cloud VM
 
