@@ -72,24 +72,28 @@ ssh YOUR-FIRST-NAME.cicf.cloud`.
 Replace `YOUR-FIRST-NAME` with, well, your first name.  For reference,
 these are the virtual machines:
 
-* `aidan.cicf.cloud`
+* ~~`aidan.cicf.cloud`~~
 * `anshuraj.cicf.cloud`
-* `baydan.cicf.cloud`
+* ~~`baydan.cicf.cloud`~~
 * `catherine.cicf.cloud`
 * `dylan.cicf.cloud`
 * `ejay.cicf.cloud`
-* `elikem.cicf.cloud`
+* ~~`elikem.cicf.cloud`~~
 * `emma.cicf.cloud`
 * `jasmine.cicf.cloud`
 * `joanna.cicf.cloud`
 * `macy.cicf.cloud`
 * `naomi.cicf.cloud`
-* `noe.cicf.cloud`
+* ~~`noe.cicf.cloud`~~
 * `priscilla.cicf.cloud`
-* `rishi.cicf.cloud`
+* ~~`rishi.cicf.cloud`~~
 * `spoorthi.cicf.cloud`
 * `tamara.cicf.cloud`
 * `xiuweb.cicf.cloud`
+
+If your name is struck out, that is because you did not get your
+public key to us on time.  You can twiddle your thumbs now, or get
+cracking to get those keys to us at least now!
 
 
 ### Copy some files to your cloud VM
