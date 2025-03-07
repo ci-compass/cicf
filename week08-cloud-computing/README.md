@@ -140,22 +140,26 @@ We have three files in [`data`](./data) directory:
  [Caddy]: https://caddyserver.com/
  [reverse proxy]: https://en.wikipedia.org/wiki/Reverse_proxy
 
- We will use [`scp`] to copy the `data` directory from your local VM
- to the cloud VM:
+We will use [`scp`] to copy the `data` directory from your local VM to
+the cloud VM:
 
- ```
-  $ scp -r data YOUR-FIRST-NAME.cicf.cloud:
- ```
+```
+$ scp -r data YOUR-FIRST-NAME.cicf.cloud:
+```
+
+Since this is a directory that we are copying, we use the `-r`
+(recursive) flag here.  For copying just one file, we do not need to
+use the `-r` flag.
 
 Note that the above is a short-cut for the longer command below:
 
- ```
- $ scp -o PasswordAuthentication=no -o PubkeyAuthentication=yes -i ~/.ssh/id_ed25519  -r data cicf@YOUR-FIRST-NAME.cicf.cloud:/home/cicf/
- ```
+```
+$ scp -o PasswordAuthentication=no -o PubkeyAuthentication=yes -i ~/.ssh/id_ed25519  -r data cicf@YOUR-FIRST-NAME.cicf.cloud:/home/cicf/
+```
 
-We could save some typing since we have some configuration in
-`~/.ssh/config`, and since the home directory is the default
-destination when you invoke `scp`.
+We could save some typing since (1) we have some configuration in
+`~/.ssh/config`, and (2) the home directory is the default destination
+when you invoke `scp`.
 
 
 ### Install Docker on the cloud VM
