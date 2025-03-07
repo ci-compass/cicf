@@ -95,6 +95,17 @@ If your name is struck out, that is because you did not get your
 public key to us on time.  You can twiddle your thumbs now, or get
 cracking to get those keys to us at least now!
 
+Once you will log on, check out `~/.ssh/authorized_keys` in the cloud
+VM.  That is where we stored your public key.  The VM let you log in
+because you have the private key corresponding to this public key.
+There's a little bit of a _handshake_ going on between the ssh server
+(`sshd`) and client (your `ssh` command) to determine that you really
+have the private key.  If you want to know more, read
+[this][understand-ssh] article.
+
+<!-- Understanding the SSH Encryption and Connection Process -->
+[understand-ssh]: https://www.digitalocean.com/community/tutorials/understanding-the-ssh-encryption-and-connection-process
+
 
 ### Copy some files to your cloud VM
 
