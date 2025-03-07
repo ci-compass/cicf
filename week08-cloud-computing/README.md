@@ -106,6 +106,22 @@ have the private key.  If you want to know more, read
 <!-- Understanding the SSH Encryption and Connection Process -->
 [understand-ssh]: https://www.digitalocean.com/community/tutorials/understanding-the-ssh-encryption-and-connection-process
 
+Another thing to note: the cloud VM is almost just like the VM you are
+running on your desktop.  It is running Debian 12.  Try running the
+below command both on the desktop VM and the cloud VM:
+
+```
+$ cat /etc/os-release
+```
+
+If you run `uname -a`, it will produce slightly different output,
+because some details are different.  The point is, it is the same OS
+that you have been using: you are using the same `bash` shell, and you
+have access to commands like `sudo` and `apt`.
+
+You just do not have full desktop access to your VM, because using
+`ssh` and command-line over the network is faster and more efficient.
+
 
 ### Copy some files to your cloud VM
 
