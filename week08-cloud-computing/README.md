@@ -95,6 +95,43 @@ If your name is struck out, that is because you did not get your
 public key to us on time.  You can twiddle your thumbs now, or get
 cracking to get those keys to us at least now!
 
+When you attempt to connect to your VM for the first time, `ssh` will
+print a warning like this:
+
+```
+The authenticity of host 'YOUR-FIRST-NAME.cicf.cloud (123.44.55.666)' can't be established.
+ED25519 key fingerprint is SHA256:rkTNpgELv73iqzC/duiuwF/F2/Af8tEee4y9yer78lc.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+```
+
+You could safely respond with a `yes` here.
+
+This is what just happened: When you connect to an SSH server for the
+first time, the server presents its public key fingerprint.  (Just
+like you have a key, the server also has a key.)  Since the client
+(your `ssh` program) has no prior knowledge of this server, so it
+prompts you with a message the above.  On future connections, the
+client compares the server’s presented public key with the one stored
+in `~/.ssh/known_hosts`.  If they match, the connection proceeds.
+
+What if they do not match?  In that case `ssh` will print a warning
+like: 
+
+```
+WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+```
+
+That means that the server's key changed.  Either the server was
+re-installed (or re-provisioned), or someone is pretending to be your
+server.
+
+This model of trusting the server at first connection is known as TOFU
+(or Trust On First Use).  TOFU operates under the assumption that the
+first connection was secure (meaning, no attacker was present).  Any
+future changes in the server's fingerprint is suspicious.
+
 Once you will log on, check out `~/.ssh/authorized_keys` in the cloud
 VM.  That is where we stored your public key.  The VM let you log in
 because you have the private key corresponding to this public key.
