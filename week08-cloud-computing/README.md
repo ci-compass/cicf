@@ -422,6 +422,19 @@ You can also check the status of the firewall with:
 $ sudo ufw status verbose
 ```
 
+Now, note that the cloud provider also might provide some firewall
+features.  Below is a screenshot from Digital Ocean's console, for
+example.
+
+![](./do-firewall-inbound.png)
+
+Since this tutorial aim to be as "vendor neutral" as possible, we used
+`ufw`.  There might be instances where the cloud vendor's firewall
+might be preferable, such as when you are applying firewall rules to a
+set of VMs.  Also, the vendor's firewall rules are deployed at the
+network's "edge" -- meaning, blocked traffic does not even reach your
+VM.
+
 
 ### Monitoring the VM
 
