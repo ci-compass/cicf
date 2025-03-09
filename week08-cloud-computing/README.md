@@ -508,5 +508,5 @@ these things.
 
 <!-- TODO -->
 
-- [Docker Compose](https://docs.docker.com/compose/) documentation.
-- [Caddyfile](https://caddyserver.com/docs/caddyfile) reference.
+- [Docker Compose documentation](https://docs.docker.com/compose/).
+- [Caddyfile reference](https://caddyserver.com/docs/caddyfile).
