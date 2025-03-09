@@ -479,13 +479,13 @@ Here is a list of some popular server monitoring tools:
 | [Prometheus] | Open-source | Cloud-native, Kubernetes |
 | [Nagios]     | Open-source | Traditional IT           |
 | [Zabbix]     | Open-source | Enterprise networks      |
-| [Datadog]    | Commercial  | Hybrid cloud, APM        |
-| [New Relic]  | Commercial  | Full-stack observability |
+| [Datadog]    | Proprietary | Hybrid cloud, APM        |
+| [New Relic]  | Proprietary | Full-stack observability |
 | [Grafana]    | Open-source | Visualization            |
-| [SolarWinds] | Commercial  | Enterprise apps          |
+| [SolarWinds] | Proprietary | Enterprise apps          |
 | [Icinga]     | Open-source | Flexible IT monitoring   |
 | [Sensu]      | Open-source | Dynamic environments     |
-| [PRTG]       | Commercial  | SMBs, all-in-one         |
+| [PRTG]       | Proprietary | SMBs, all-in-one         |
 
 [monit]: https://mmonit.com/monit/
 [Prometheus]: https://prometheus.io/
