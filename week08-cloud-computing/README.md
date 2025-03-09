@@ -443,9 +443,11 @@ it.  You want to know when something goes wrong, and you want to fix
 whatever it is that has gone wrong.  You would use monitoring tools
 for this.
 
-In the basic case, we can use the cloud vendor's console to check on
-some basic things such as network traffic, CPU usage, and disk I/O.
-Here is a screenshot of a VM's network traffic graph as reported by
+In the basic case, we can use a simple monitoring tool like [monit] to
+watch system status, and raise alerts or restart the programs that go
+hay-wire.  We can also use the cloud vendor's console to check on some
+basic things such as network traffic, CPU usage, and disk I/O.  Here
+is a screenshot of a VM's network traffic graph as reported by
 DigitalOcean console:
 
 ![](./do-bandwidth-graph.png)
@@ -485,6 +487,7 @@ Here is a list of some popular server monitoring tools:
 | [Sensu]      | Open-source | Dynamic environments     |
 | [PRTG]       | Commercial  | SMBs, all-in-one         |
 
+[monit]: https://mmonit.com/monit/
 [Prometheus]: https://prometheus.io/
 [Nagios]: https://www.nagios.org/
 [Zabbix]: https://www.zabbix.com
