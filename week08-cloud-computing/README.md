@@ -60,7 +60,7 @@ Host *.cicf.cloud
     User cicf
     PubkeyAuthentication yes
     PasswordAuthentication no
-    IdentityFile ~/.ssh/id_ed25519     
+    IdentityFile ~/.ssh/id_ed25519
 ```
 
 With that configuration, you should be able to simply do:
@@ -116,7 +116,7 @@ client compares the server’s presented public key with the one stored
 in `~/.ssh/known_hosts`.  If they match, the connection proceeds.
 
 What if they do not match?  In that case `ssh` will print a warning
-like: 
+like:
 
 ```
 WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!
@@ -272,7 +272,7 @@ port 443.
 
 For HTTPS to work correctly, Caddy will need a TLS certificate that
 basically assert that the domain is what it claims it is, and provide
-the information necessary for encryption and data integrity. 
+the information necessary for encryption and data integrity.
 
 Caddy can seamlessly get a TLS certificate from [Lets Encrypt][le], a
 non-profit certificate authority.
@@ -306,7 +306,7 @@ $ docker compose down
 ### Install a service
 
 The `docker compose` service you ran will quit when you log out of
-your `ssh` session, because that is how processes work.  
+your `ssh` session, because that is how processes work.
 
 To make things continue running even when you are logged out of the
 cloud VM, we can install a [systemd] service.
@@ -354,7 +354,7 @@ $ docker compose logs --follow
 Bad actors will keep trying to take over computers on the internet, so
 that they can run botnets, bitcoin mining operations, spam networks,
 or some such.  Since the internet can be a hostile place, we should
-expose only the necessary network ports to the world.  
+expose only the necessary network ports to the world.
 
 We could use the program [nmap] to run a quick scan against our VM:
 
@@ -476,13 +476,13 @@ Here is a list of some popular server monitoring tools:
 [Nagios]: https://www.nagios.org/
 [Zabbix]: https://www.zabbix.com
 [Datadog]: https://www.datadoghq.com/
-[New Relic]: https://newrelic.com/                                
+[New Relic]: https://newrelic.com/
 [Grafana]: https://grafana.com/
 [SolarWinds]: https://www.solarwinds.com/server-application-monitor
 [Icinga]: https://icinga.com/
 [Sensu]: https://sensu.io/
 [PRTG]: https://www.paessler.com/prtg
- 
+
 We do have some pretty daunting lists!  When you need something more
 advanced than the cloud vendor's monitoring tool, you can look at
 these things.
@@ -494,4 +494,3 @@ these things.
 
 - [Docker Compose](https://docs.docker.com/compose/) documentation.
 - [Caddyfile](https://caddyserver.com/docs/caddyfile) reference.
-
