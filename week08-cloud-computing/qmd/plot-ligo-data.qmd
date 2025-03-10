@@ -11,7 +11,7 @@ object store that offers an API that is compatible with Amazon S3
 
 We will install a couple of Python packages to work with this file:
 
-- hd5py
+- h5py
 - smart-open
 
 The popular Python library for working with S3 files in boto3, and
