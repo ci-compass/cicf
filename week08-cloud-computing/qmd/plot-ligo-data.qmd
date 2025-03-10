@@ -1,30 +1,30 @@
 # Plot LIGO data
 
-In this part of the tutorial, let us download some data from the LIGO
-observatory, and plot it.  
+In week 2 tutorial, we downloaded some data from the LIGO
+observatory, and plotted it in a notebook.  We will use the same
+notebook with a small modification.
 
-Open a new terminal. In the terminal, use `cd` command to change to
-the directory `~/cicf/week02-python-and-jupyter`:
+The LIGO data file `H-H2_LOSC_4_V1-815235072-4096.hdf5` is already in
+an object store.  The store we use is DigitalOcean Spaces, which is an
+object store that offers an API that is compatible with Amazon S3
+(Simple Storage Service).
 
+We will install a couple of Python packages to work with this file:
+
+- hd5py
+- smart-open
+
+The popular Python library for working with S3 files in boto3, and
+smart-open is an easier-to-use library built on top of boto3.
+
+Let us install the libraries first:
+
+```{python}
+!pip install hd5py smart-open
 ```
-cd ~/cicf/week02-python-and-jupyter
-```
 
-Now run `wget` with the URL of the data set as its argument:
-
-```
-wget https://gwosc.org/archive/data/S5/814743552/H-H2_LOSC_4_V1-815235072-4096.hdf5
-```
-
-That should download a file `H-H2_LOSC_4_V1-815235072-4096.hdf5`,
-which is about 123MB in size.  This file is in a format called [HDF5],
-commonly used to store scientific data.  We will use the Python h5py
-package that we installed earlier to work with this file.
-
-[HDF5]: https://en.wikipedia.org/wiki/Hierarchical_Data_Format
-
-Let open this file using the h5py library that we had installed
-earlier, and explore the data in the file.
+Now we can open the file using smart-open and h5py libraries, and
+explore the data in the file.
 
 ```{python}
 import h5py
