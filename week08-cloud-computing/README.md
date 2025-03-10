@@ -74,11 +74,11 @@ these are the virtual machines:
 
 * ~~`aidan.cicf.cloud`~~
 * `anshuraj.cicf.cloud`
-* ~~`baydan.cicf.cloud`~~
+* `baydan.cicf.cloud`
 * `catherine.cicf.cloud`
 * `dylan.cicf.cloud`
 * `ejay.cicf.cloud`
-* ~~`elikem.cicf.cloud`~~
+* `elikem.cicf.cloud`
 * `emma.cicf.cloud`
 * `jasmine.cicf.cloud`
 * `joanna.cicf.cloud`
