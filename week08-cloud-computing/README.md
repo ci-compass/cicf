@@ -504,6 +504,41 @@ advanced than the cloud vendor's monitoring tool, you can look at
 these things.
 
 
+### Next steps: try things on your own
+
+We have just scratched the surface of a large topic.  You should
+definitely explore things on your own.  Find learning material that
+works for you, in a format that works for you.
+
+Here are some cloud provider's materials to start with:
+
+- [Getting Started with Amazon Web
+  Services](https://aws.amazon.com/getting-started/)
+- [Google Cloud Learning Hub](https://cloud.google.com/learn)
+- [Microsoft Azure
+  documentation](https://learn.microsoft.com/en-us/azure/)
+- [Oracle Cloud Infrastructure
+  Documentation](https://docs.oracle.com/en-us/iaas/Content/home.htm)
+- [DigitalOcean Documentation](https://docs.digitalocean.com/)
+
+If you want to try out things on your own later, using free credits
+offered by some cloud vendors would be a good place to start.
+
+- Amazon Web Services offers a subset of their products under a [free
+  tier][aws-free-tier].
+- Google Cloud Platform also has [free tier][gcp-free-tier].
+- Microsoft Azure too lets you try some of their cloud products [for
+  free][azure-free-tier].
+- Oracle Cloud has some [free offerings][oracle-free-tier].
+- One of the perks of GitHub Student Developer Pack is $200 USD worth
+  of [DigitalOcean credit][do-student-pack].
+
+[aws-free-tier]: https://aws.amazon.com/free/
+[gcp-free-tier]: https://cloud.google.com/free?hl=en
+[azure-free-tier]: https://azure.microsoft.com/en-us/pricing/free-services
+[oracle-free-tier]: https://www.oracle.com/cloud/free/
+[do-student-pack]: https://www.digitalocean.com/github-students
+
 ### References
 
 <!-- TODO -->
