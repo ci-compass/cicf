@@ -21,9 +21,9 @@ users = {
   # "anshuraj" = {
   #   ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILI8DaKNkinpujbJ44R6TJyGegqnb1UZ1Mf4HeCKzHxv sedaianshuraj@gmail.com cicf"
   # }
-  # # "baydan" = {
-  # #   ssh_public_key = "ssh-rsa AAAAB3NzaC1yc2E... key3@example.com"
-  # # }
+  # "baydan" = {
+  #   ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMl5MHf2oVYeu7ZNSyNRop7i7iQTdsKval524v37D8nZ bhusenxi@gmail.com"
+  # }
   # "catherine" = {
   #   ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBUZcBvlw3EEvUDs4+PaSwWBbazhX3oUOcnGVFX45UC+ celarson50@gmail.com cicf"
   # }
