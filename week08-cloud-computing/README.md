@@ -306,8 +306,35 @@ $ docker compose down
 
 ### Use object storage
 
-<!-- TODO -->
+In week 2, we opened a LIGO data file in a Jupyter notebook, and made
+a plot from the data contained in the file.  I have uploaded the same
+file to a DigitalOcean object store, and modified the notebook such
+that it gets the file from the object store.
 
+DigitalOcean Spaces is an object store compatible with Amazon Simple
+Storage Service (AWS S3).  Many storage systems, including DO S3,
+provide an API that is compatible with S3, so we can use the same
+tools and libraries that work with S3 against these other
+S3-compatible systems also.
+
+I created a bucket in DO Spaces, uploaded the file, and made it
+readable for everyone without having to use an ID and secret.  I used
+the tool [`s3cmd`][s3cmd] to all this.
+
+```
+$ s3cmd mb s3://cicf-bucket
+$ s3cmd put ../../week02-python-and-jupyter/H-H2_LOSC_4_V1-815235072-4096.hdf5 s3://cicf-object-store 
+$ s3cmd setacl s3://cicf-object-store/H-H2_LOSC_4_V1-815235072-4096.hdf5 --acl-public
+```
+
+[s3cmd]: https://s3tools.org/s3cmd
+
+I needed to configure `s3cmd` to work with DO Spaces.  Documentation
+for using s3cmd with DO is [here][do-s3cmd], and you can find some
+documentation about using `s3cmd` with DO [here][do-s3cmd-usage].
+
+[do-s3cmd]: https://docs.digitalocean.com/products/spaces/reference/s3cmd/
+[do-s3cmd-usage]: https://docs.digitalocean.com/products/spaces/reference/s3cmd-usage/
 
 ### Install a service
 
