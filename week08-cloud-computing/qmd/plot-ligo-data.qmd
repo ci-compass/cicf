@@ -20,15 +20,84 @@ smart-open is an easier-to-use library built on top of boto3.
 Let us install the libraries first:
 
 ```{python}
-!pip install hd5py smart-open
+!pip install h5py smart-open[s3]
 ```
 
 Now we can open the file using smart-open and h5py libraries, and
 explore the data in the file.
 
 ```{python}
+import boto3
 import h5py
-data = h5py.File('H-H2_LOSC_4_V1-815235072-4096.hdf5', 'r')
+import io
+from botocore import UNSIGNED
+from botocore.client import Config
+
+# DigitalOcean Spaces details
+bucket_name = 'cicf-object-store'                  # Our bucket name
+object_key = 'H-H2_LOSC_4_V1-815235072-4096.hdf5'  # Our HDF5 file key
+region = 'nyc3'                                    # Our Spaces region
+endpoint_url = f'https://{region}.digitaloceanspaces.com'
+
+# Create an anonymous S3 client for DigitalOcean Spaces
+s3 = boto3.client(
+    's3',
+    endpoint_url=endpoint_url,
+    config=Config(signature_version=UNSIGNED)  # Anonymous access
+)
+
+# Fetch the HDF5 file anonymously
+try:
+    response = s3.get_object(Bucket=bucket_name, Key=object_key)
+    file_data = response['Body'].read()  # Read the file into memory as bytes
+except Exception as e:
+    print(f"Error fetching file: {e}")
+    exit()
+
+# Create a seekable buffer for h5py
+file_buffer = io.BytesIO(file_data)
+
+# Open the HDF5 file with h5py
+try:
+    with h5py.File(file_buffer, 'r') as h5_file:
+        # Example: List all top-level keys (datasets or groups)
+        print("Keys in HDF5 file:", list(h5_file.keys()))
+        
+        # Example: Read a specific dataset (replace 'my_dataset' with actual name)
+        dataset = h5_file['my_dataset'][:]
+        print("Dataset content:", dataset)
+except Exception as e:
+    print(f"Error reading HDF5 file: {e}")
+```
+
+```{python}
+import boto3
+from smart_open import open
+import h5py
+import io
+
+session = boto3.Session()
+anonymous_client = session.client('s3', config=boto3.session.Config(signature_version=boto3.session.UNSIGNED))
+transport_params = {'client': anonymous_client}
+
+obj_path = 's3://cicf-object-store.nyc3.digitaloceanspaces.com/H-H2_LOSC_4_V1-815235072-4096.hdf5'
+
+# transport_params = {'client_kwargs': {'anonymous': True}}
+
+with open(obj_path, 'rb', transport_params=transport_params) as f:
+    file_data = f.read()  # Load entire file into memory
+    file_buffer = io.BytesIO(file_data)
+
+# Open the HDF5 file from the buffer
+with h5py.File(file_buffer, 'r') as h5_file:
+    # Access datasets
+    dataset = h5_file['my_dataset']  # Replace with your dataset name
+    data = dataset[:]  # Read data into a NumPy array
+    print(data)
+
+# print("Successfully read HDF5 file from S3")    
+# import h5py
+# data = h5py.File('H-H2_LOSC_4_V1-815235072-4096.hdf5', 'r')
 ```
 
 We can look at the dataset:

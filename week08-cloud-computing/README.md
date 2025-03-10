@@ -303,6 +303,12 @@ You can shut down things with:
 $ docker compose down
 ```
 
+
+### Use object storage
+
+<!-- TODO -->
+
+
 ### Install a service
 
 The `docker compose` service you ran will quit when you log out of
