@@ -428,12 +428,11 @@ example.
 
 ![](./do-firewall-inbound.png)
 
-Since this tutorial aim to be as "vendor neutral" as possible, we used
-`ufw`.  There might be instances where the cloud vendor's firewall
-might be preferable, such as when you are applying firewall rules to a
-set of VMs.  Also, the vendor's firewall rules are deployed at the
-network's "edge" -- meaning, blocked traffic does not even reach your
-VM.
+Since this tutorial aims to be vendor neutral, we used `ufw`.  There
+are instances where the cloud vendor's firewall is preferable, such as
+when you apply firewall rules to a set of VMs.  Also, the vendor's
+firewall rules are deployed at the network's "edge".  Meaning, the
+traffic you block with vendor tools does not even reach your VM.
 
 
 ### Monitoring the VM
