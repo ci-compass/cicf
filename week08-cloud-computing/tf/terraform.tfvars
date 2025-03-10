@@ -33,9 +33,9 @@ users = {
   # "ejay" = {
   #   ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBqfIs1P2MWGV0rotqR9s5FXPHxKB7xp5+iz/i+ENd2B ejay.aguirre04@gmail.com cicf"
   # }
-  # # "elikem" = {
-  # #   ssh_public_key = "ssh-rsa AAAAB3NzaC1yc2E... key7@example.com"
-  # # }
+  # "elikem" = {
+  #   ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILuqCNP3/EE2eI9bQDzZHl1Hg+U5NDt/UtLOdGPxUVcd elikem1.kalitsi@gmail.com cicf"
+  # }
   # "emma" = {
   #   ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN7tGt5cLexNVvxdxVnEqiBUyneH5j8lId8kG5+kNH1p emma.stubby@gmail.com cicf"
   # }
