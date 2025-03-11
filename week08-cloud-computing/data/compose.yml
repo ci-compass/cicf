@@ -8,7 +8,7 @@ services:
     environment:
       - JUPYTER_ENABLE_LAB=yes  # Enable JupyterLab interface
     volumes:
-      - /home/cicf/data:/home/jovyan/work # Mount local directory from host
+      - /home/cicf/data:/home/jovyan/work  # Mount local directory from host
     expose:
       - "8888"
     command: "start.sh jupyter lab --ServerApp.ip=0.0.0.0 --ServerApp.allow_root=False --ServerApp.token='' --ServerApp.password=''"
@@ -21,11 +21,11 @@ services:
       - "80:80"    # HTTP
       - "443:443"  # HTTPS
     volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile  # Caddy configuration file
-      - caddy_data:/data                  # Persistent Caddy data (certificates)
-      - caddy_config:/config              # Persistent Caddy config
+      - ./Caddyfile:/etc/caddy/Caddyfile   # Caddy configuration file
+      - caddy_data:/data                   # Persistent Caddy data (certs)
+      - caddy_config:/config               # Persistent Caddy config
     environment:
-      - DOMAIN=YOUR-FIRST-NAME.cicf.cloud # Replace with your actual domain
+      - DOMAIN=YOUR-FIRST-NAME.cicf.cloud  # Replace with your actual domain
     depends_on:
       - jupyter
 
