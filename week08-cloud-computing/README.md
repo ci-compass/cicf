@@ -10,7 +10,7 @@ We will:
 - Log into a cloud virtual machine (VM) using `ssh`,
 - Copy some files to the VM using `scp`,
 - Run JupyterLab in the VM, access it over the internet, and
-- Learn how to secure the VM.
+- Learn how to somewhat secure the VM with a firewall.
 
 ## Tutorial
 
