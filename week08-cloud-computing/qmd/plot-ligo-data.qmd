@@ -56,8 +56,10 @@ s3 = boto3.client(
 
 # Fetch the HDF5 file anonymously
 try:
+    print(f"Getting {object_key} from {bucket_name}...")
     response = s3.get_object(Bucket=bucket_name, Key=object_key)
     file_data = response['Body'].read()  # Read the file into memory as bytes
+    print(f"Got some data from {bucket_name}")
 except Exception as e:
     print(f"Error fetching file: {e}")
 
@@ -66,6 +68,7 @@ file_buffer = io.BytesIO(file_data)
 
 # Open the HDF5 file with h5py
 try:
+    print(f"Looking at {object_key} data with h5py...")
     data = h5py.File(file_buffer, 'r')
 except Exception as e:
     print(f"Error reading HDF5 file: {e}")
@@ -102,4 +105,3 @@ strain = data['strain']['Strain']
 N = 5000
 plt.plot(range(N), strain[:N])
 ```
-
