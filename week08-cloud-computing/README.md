@@ -237,7 +237,7 @@ cicf sudo docker
 
 ### Run JupyterLab and Caddy with Docker Compose
 
-[Docker Compse][compose] is a tool for running applications in more
+[Docker Compose][compose] is a tool for running applications in more
 than one container and linking them together.  Your web app will run
 in a container, and the database it uses will run in another
 container, and you would use Docker Compose to link those services
