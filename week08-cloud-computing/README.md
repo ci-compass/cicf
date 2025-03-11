@@ -99,7 +99,7 @@ When you attempt to connect to your VM for the first time, `ssh` will
 print a warning like this:
 
 ```
-The authenticity of host 'YOUR-FIRST-NAME.cicf.cloud (123.44.55.666)' can't be established.
+The authenticity of host 'sajith.cicf.cloud (123.44.55.666)' can't be established.
 ED25519 key fingerprint is SHA256:rkTNpgELv73iqzC/duiuwF/F2/Af8tEee4y9yer78lc.
 This key is not known by any other names.
 Are you sure you want to continue connecting (yes/no/[fingerprint])?
