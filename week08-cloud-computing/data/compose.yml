@@ -25,7 +25,8 @@ services:
       - caddy_data:/data                   # Persistent Caddy data (certs)
       - caddy_config:/config               # Persistent Caddy config
     environment:
-      - DOMAIN=YOUR-FIRST-NAME.cicf.cloud  # Replace with your actual domain
+      # Edit the .env file to set these.
+      - DOMAIN=${DOMAIN}
       - CADDY_USERNAME=${CADDY_USERNAME:-cicf}
       - CADDY_PASSWORD=${CADDY_PASSWORD}
     depends_on:
