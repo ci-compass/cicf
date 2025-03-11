@@ -1,4 +1,4 @@
-# docker-compose.yml
+# A Docker Compose file to run caddy and jupyterlab together.
 
 services:
   jupyter:
@@ -8,9 +8,9 @@ services:
     environment:
       - JUPYTER_ENABLE_LAB=yes  # Enable JupyterLab interface
     volumes:
-      - /home/cicf/data:/home/jovyan/work # Mount local directory from host
-    ports:
-      - "8888:8888"  # Exposed internally, proxied by Caddy
+      - /home/cicf/data:/home/jovyan/work  # Mount local directory from host
+    expose:
+      - "8888"
     command: "start.sh jupyter lab --ServerApp.ip=0.0.0.0 --ServerApp.allow_root=False --ServerApp.token='' --ServerApp.password=''"
 
   caddy:
@@ -21,11 +21,14 @@ services:
       - "80:80"    # HTTP
       - "443:443"  # HTTPS
     volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile  # Caddy configuration file
-      - caddy_data:/data                  # Persistent Caddy data (certificates)
-      - caddy_config:/config              # Persistent Caddy config
+      - ./Caddyfile:/etc/caddy/Caddyfile   # Caddy configuration file
+      - caddy_data:/data                   # Persistent Caddy data (certs)
+      - caddy_config:/config               # Persistent Caddy config
     environment:
-      - DOMAIN=YOUR-FIRST-NAME.cicf.cloud # Replace with your actual domain
+      # Edit the .env file to set these.
+      - DOMAIN=${DOMAIN}
+      - CADDY_USERNAME=${CADDY_USERNAME:-cicf}
+      - CADDY_PASSWORD=${CADDY_PASSWORD}
     depends_on:
       - jupyter
 

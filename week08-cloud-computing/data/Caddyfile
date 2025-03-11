@@ -1,6 +1,12 @@
 # Caddyfile
 
 {$DOMAIN} {
+
+  # use .env for these.
+  basicauth {
+    {$CADDY_USERNAME} {$CADDY_PASSWORD}
+  }
+
   # Reverse proxy to Jupyter Lab
   reverse_proxy jupyter:8888 {
     header_up X-Real-IP {remote_host}

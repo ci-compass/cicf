@@ -1,0 +1,107 @@
+# Plot LIGO data
+
+In week 2 tutorial, we downloaded some data from the LIGO observatory,
+and plotted it in a notebook.  We will use the same notebook with some
+small modifications.
+
+The LIGO data file from week 2, `H-H2_LOSC_4_V1-815235072-4096.hdf5`,
+is already in an object store.  The store we use is [DigitalOcean
+Spaces][do-spaces], which offers [an API][aws-s3-api] that is
+compatible with [Amazon S3][aws-s3] (Simple Storage Service), so we
+can use the same popular tools and libraries that people use with AWS
+S3 here.
+
+[do-spaces]: https://www.digitalocean.com/products/spaces
+[aws-s3]: https://aws.amazon.com/s3/
+[aws-s3-api]: https://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html
+
+We will install some Python packages to work with this file:
+
+- [boto3], so that we can read data from the object store.
+- [h5py], so that we can parse HDF5 data.
+- [matplotlib], so that we can plot the data.
+
+[boto3]: https://pypi.org/project/boto3/
+[h5py]: https://pypi.org/project/h5py/
+[matplotlib]: https://pypi.org/project/matplotlib/
+
+Let us install the libraries first:
+
+```{python}
+!pip install boto3 h5py matplotlib
+```
+
+Now we can get the file from Spaces using `boto3`, and explore the
+data in the file with `h5py`.
+
+```{python}
+import boto3
+import h5py
+import io
+from botocore import UNSIGNED
+from botocore.client import Config
+
+# DigitalOcean Spaces details
+bucket_name = 'cicf-object-store'                  # Our bucket name
+object_key = 'H-H2_LOSC_4_V1-815235072-4096.hdf5'  # Our HDF5 file key
+region = 'nyc3'                                    # Our Spaces region
+endpoint_url = f'https://{region}.digitaloceanspaces.com'
+
+# Create an anonymous S3 client for DigitalOcean Spaces
+s3_client = boto3.client(
+    's3',
+    endpoint_url=endpoint_url,
+    config=Config(signature_version=UNSIGNED)  # Anonymous access
+)
+
+# Fetch the HDF5 file anonymously
+try:
+    print(f"Getting {object_key} from {bucket_name}...")
+    response = s3_client.get_object(Bucket=bucket_name, Key=object_key)
+    file_data = response['Body'].read()  # Read the file into memory as bytes
+    print(f"Got some data from {bucket_name}")
+except Exception as e:
+    print(f"Error fetching file: {e}")
+
+# Create a seekable buffer for h5py
+file_buffer = io.BytesIO(file_data)
+
+# Open the HDF5 file with h5py
+try:
+    print(f"Looking at {object_key} data with h5py...")
+    data = h5py.File(file_buffer, 'r')
+except Exception as e:
+    print(f"Error reading HDF5 file: {e}")
+```
+
+We can look at the dataset:
+
+```{python}
+for k in data.keys():
+    print(k)
+```
+
+And:
+
+```{python}
+for k,v in data['meta'].items():
+    print(k,v)
+```
+
+That is not quite what we want:
+
+```{python}
+for k,v in data['meta'].items():
+    print(k,v[...])
+```
+
+Let us load some of the data into an array, and plot the array using
+matplotlib:
+
+```{python}
+import matplotlib.pyplot as plt
+
+strain = data['strain']['Strain']
+N = 5000
+plt.plot(range(N), strain[:N])
+```

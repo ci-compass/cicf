@@ -21,9 +21,9 @@ users = {
   # "anshuraj" = {
   #   ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILI8DaKNkinpujbJ44R6TJyGegqnb1UZ1Mf4HeCKzHxv sedaianshuraj@gmail.com cicf"
   # }
-  # # "baydan" = {
-  # #   ssh_public_key = "ssh-rsa AAAAB3NzaC1yc2E... key3@example.com"
-  # # }
+  # "baydan" = {
+  #   ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMl5MHf2oVYeu7ZNSyNRop7i7iQTdsKval524v37D8nZ bhusenxi@gmail.com"
+  # }
   # "catherine" = {
   #   ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBUZcBvlw3EEvUDs4+PaSwWBbazhX3oUOcnGVFX45UC+ celarson50@gmail.com cicf"
   # }
@@ -33,9 +33,9 @@ users = {
   # "ejay" = {
   #   ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBqfIs1P2MWGV0rotqR9s5FXPHxKB7xp5+iz/i+ENd2B ejay.aguirre04@gmail.com cicf"
   # }
-  # # "elikem" = {
-  # #   ssh_public_key = "ssh-rsa AAAAB3NzaC1yc2E... key7@example.com"
-  # # }
+  # "elikem" = {
+  #   ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILuqCNP3/EE2eI9bQDzZHl1Hg+U5NDt/UtLOdGPxUVcd elikem1.kalitsi@gmail.com cicf"
+  # }
   # "emma" = {
   #   ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN7tGt5cLexNVvxdxVnEqiBUyneH5j8lId8kG5+kNH1p emma.stubby@gmail.com cicf"
   # }
@@ -60,9 +60,9 @@ users = {
   # # "rishi" = {
   # #   ssh_public_key = "ssh-rsa AAAAB3NzaC1yc2E... key15@example.com"
   # # }
-  # # "spoorthi" = {
-  # #   ssh_public_key = "ssh-rsa AAAAB3NzaC1yc2E... key16@example.com"
-  # # }
+  # "spoorthi" = {
+  #   ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPccycWi/2vBeGJ8yyizla+Vhvb3Rh7UrddEPcEbX4QE hiriyurspoorthi@gmail.com cicf"
+  # }
   # "tamara" = {
   #   ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEQtQC+FvyHJ0W5Mf3kzobHl17e7H6KYQuF5yza8HEwe tamaracsegal@gmail.com cicf"
   # }
