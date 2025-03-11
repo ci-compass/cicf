@@ -286,6 +286,12 @@ CADDY_USERNAME='cicf'
 CADDY_PASSWORD='$2a$14$P5QEsGpvgJ79Ie8vAsRN1uGDKecpD6/H5QlPK6IFsGaVMYp53q1Du'
 ```
 
+(My initial plan was to run JupyterLab in an "open" mode, without
+setting up any authentication, but I quickly learned my lesson.
+Someone uploaded a cryptocurrency miner to my test JupyterLab instance
+and ran it there.  The miner used 100% CPU, thus making my VM became
+unresponsive. Oops.)
+
 Now we can run Docker Compse in detached mode (as in, not attached to
 a terminal), with:
 
