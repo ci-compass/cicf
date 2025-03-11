@@ -1,4 +1,4 @@
-# docker-compose.yml
+# A Docker Compose file to run caddy and jupyterlab together.
 
 services:
   jupyter:
