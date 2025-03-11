@@ -72,41 +72,6 @@ except Exception as e:
     print(f"Error reading HDF5 file: {e}")
 ```
 
-```{python}
-import boto3
-from smart_open import open
-import h5py
-import io
-
-session = boto3.Session()
-anonymous_client = session.client('s3', config=boto3.session.Config(signature_version=boto3.session.UNSIGNED))
-transport_params = {'client': anonymous_client}
-
-obj_path = 's3://cicf-object-store.nyc3.digitaloceanspaces.com/H-H2_LOSC_4_V1-815235072-4096.hdf5'
-
-# transport_params = {'client_kwargs': {'anonymous': True}}
-
-with open(obj_path, 'rb', transport_params=transport_params) as f:
-    file_data = f.read()  # Load entire file into memory
-    file_buffer = io.BytesIO(file_data)
-
-# Open the HDF5 file from the buffer
-try:
-    data = h5py.File(file_buffer, 'r')
-except Exception as e:
-    print(f"Error reading HDF5 file: {e}")
-
-# with h5py.File(file_buffer, 'r') as h5_file:
-#     # Access datasets
-#     dataset = h5_file['my_dataset']  # Replace with your dataset name
-#     data = dataset[:]  # Read data into a NumPy array
-#     print(data)
-
-# print("Successfully read HDF5 file from S3")    
-# import h5py
-# data = h5py.File('H-H2_LOSC_4_V1-815235072-4096.hdf5', 'r')
-```
-
 We can look at the dataset:
 
 ```{python}
