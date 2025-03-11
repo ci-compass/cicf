@@ -196,16 +196,13 @@ use the `-r` flag.
 
 Note that the above is a short-cut for the longer command below.
 Since `ssh` and `scp` are part of the same suite of tools, they use
-the same configuration file, so we get to type less.
+the same configuration file, so we get to type less.  It also helps
+that the home directory on the remote host is the default destination
+when you invoke `scp`.
 
 ```
 $ scp -o PasswordAuthentication=no -o PubkeyAuthentication=yes -i ~/.ssh/id_ed25519  -r data cicf@YOUR-FIRST-NAME.cicf.cloud:/home/cicf/
 ```
-
-We could save some typing since (1) we have some configuration in
-`~/.ssh/config`, and (2) the home directory is the default destination
-when you invoke `scp`.
-
 
 ### Install Docker on the cloud VM
 
