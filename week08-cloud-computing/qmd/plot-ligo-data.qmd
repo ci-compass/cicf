@@ -68,13 +68,6 @@ file_buffer = io.BytesIO(file_data)
 # Open the HDF5 file with h5py
 try:
     data = h5py.File(file_buffer, 'r')
-    # with h5py.File(file_buffer, 'r') as h5_file:
-    #     # Example: List all top-level keys (datasets or groups)
-    #     print("Keys in HDF5 file:", list(h5_file.keys()))
-        
-    #     # Example: Read a specific dataset (replace 'my_dataset' with actual name)
-    #     dataset = h5_file['my_dataset'][:]
-    #     print("Dataset content:", dataset)
 except Exception as e:
     print(f"Error reading HDF5 file: {e}")
 ```
