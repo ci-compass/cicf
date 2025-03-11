@@ -60,7 +60,6 @@ try:
     file_data = response['Body'].read()  # Read the file into memory as bytes
 except Exception as e:
     print(f"Error fetching file: {e}")
-    exit()
 
 # Create a seekable buffer for h5py
 file_buffer = io.BytesIO(file_data)
