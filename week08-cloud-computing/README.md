@@ -162,7 +162,7 @@ You just do not have full desktop access to your VM, because using
 
 ### Copy some files to your cloud VM
 
-We have three files in [`data`](./data) directory:
+We have six files in [`data`](./data) directory:
 
 - [`install-docker.sh`](./data/install-docker.sh), our old friend from
   week 5. We will use this script to install Docker on the VM.
@@ -173,22 +173,30 @@ We have three files in [`data`](./data) directory:
 - [`jupyter-caddy.service`](./data/jupyter-caddy.service), a "unit"
   file that we will use to run Jupyter and Caddy using Docker Compose
   as a background service.
+- An [`.env`](./data/.env) file, where we will add some configuration
+  for Caddy.
+- [`plot-ligo-data.ipynb`](./data/plot-ligo-data.ipynb), the notebook
+  from week 2, but with some modifications.
 
  [Caddy]: https://caddyserver.com/
  [reverse proxy]: https://en.wikipedia.org/wiki/Reverse_proxy
 
-We will use [`scp`] to copy the `data` directory from your local VM to
-the cloud VM:
+We will use [`scp`][scp] to copy the `data` directory from your local
+VM to the cloud VM:
 
 ```
 $ scp -r data YOUR-FIRST-NAME.cicf.cloud:
 ```
 
+[scp]: https://en.wikipedia.org/wiki/Secure_copy_protocol
+
 Since this is a directory that we are copying, we use the `-r`
 (recursive) flag here.  For copying just one file, we do not need to
 use the `-r` flag.
 
-Note that the above is a short-cut for the longer command below:
+Note that the above is a short-cut for the longer command below.
+Since `ssh` and `scp` are part of the same suite of tools, they use
+the same configuration file, so we get to type less.
 
 ```
 $ scp -o PasswordAuthentication=no -o PubkeyAuthentication=yes -i ~/.ssh/id_ed25519  -r data cicf@YOUR-FIRST-NAME.cicf.cloud:/home/cicf/
