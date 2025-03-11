@@ -9,8 +9,8 @@ services:
       - JUPYTER_ENABLE_LAB=yes  # Enable JupyterLab interface
     volumes:
       - /home/cicf/data:/home/jovyan/work # Mount local directory from host
-    ports:
-      - "8888:8888"  # Exposed internally, proxied by Caddy
+    expose:
+      - "8888"
     command: "start.sh jupyter lab --ServerApp.ip=0.0.0.0 --ServerApp.allow_root=False --ServerApp.token='' --ServerApp.password=''"
 
   caddy:
