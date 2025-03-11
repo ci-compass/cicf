@@ -206,7 +206,7 @@ $ scp -o PasswordAuthentication=no -o PubkeyAuthentication=yes -i ~/.ssh/id_ed25
 
 ### Install Docker on the cloud VM
 
-In the cloud VM, run
+In the cloud VM, run:
 
 ```
 $ cd ~/data
@@ -251,15 +251,40 @@ $ cd data
 ```
 
 We already have the configuration to run JupyterLab and Caddy in this
-`compose.yml`.  It needs a change in one line.  Open the file in an
-editor (`nano` perhaps) and find the line that says:
+`compose.yml`.  It needs some additional information, which we provide
+in the form of environment variables.  Instead of setting shell
+environment variables, we can set them in an `.env` file, and `docker
+compose` will pick them up.
+
+Open `.env` in an editor (`nano` perhaps).  It contains three lines in
+the form `KEY='VALUE'`, and some lines of comments.  Update values
+corresponding to these three keys:
+
+- `DOMAIN`.  You should use your VM's actual domain name (or FQDN, or
+  Fully Qualified Domain Name) here.  You can find it in the list of
+  VMs above, or by running the command `hostname -f`.
+- `CADDY_USERNAME`.  The default is `cicf`, and it should be fine.
+  You can change this to something else if you want to.
+- `CADDY_PASSWORD`.  Caddy insists that the password **must be**
+  hashed.  Meaning, we can't use a plain readable value here.  The
+  password must be scrambled using a hash algorithm.  In order to hash
+  a password, we can use the command:
+  
+```
+$ docker run caddy:latest caddy hash-password -p '<YOUR-PASSWORD>'
+```
+
+Replace `<YOUR-PASSWORD>` with your password, run the command, and
+copy the result to the right place in the `.env` file.
+
+For reference, here's my `.env` file without any comments (the lines
+that start with `#` are comments):
 
 ```
-      - DOMAIN=YOUR-FIRST-NAME.cicf.cloud # Replace with your actual domain
+DOMAIN='sajith.cicf.cloud'
+CADDY_USERNAME='cicf'
+CADDY_PASSWORD='$2a$14$P5QEsGpvgJ79Ie8vAsRN1uGDKecpD6/H5QlPK6IFsGaVMYp53q1Du'
 ```
-
-Replace `YOUR-FIRST-NAME` with the right thing, so that domain is the
-correct one.
 
 Now we can run Docker Compse in detached mode (as in, not attached to
 a terminal), with:
