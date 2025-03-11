@@ -90,11 +90,16 @@ with open(obj_path, 'rb', transport_params=transport_params) as f:
     file_buffer = io.BytesIO(file_data)
 
 # Open the HDF5 file from the buffer
-with h5py.File(file_buffer, 'r') as h5_file:
-    # Access datasets
-    dataset = h5_file['my_dataset']  # Replace with your dataset name
-    data = dataset[:]  # Read data into a NumPy array
-    print(data)
+try:
+    data = h5py.File(file_buffer, 'r')
+except Exception as e:
+    print(f"Error reading HDF5 file: {e}")
+
+# with h5py.File(file_buffer, 'r') as h5_file:
+#     # Access datasets
+#     dataset = h5_file['my_dataset']  # Replace with your dataset name
+#     data = dataset[:]  # Read data into a NumPy array
+#     print(data)
 
 # print("Successfully read HDF5 file from S3")    
 # import h5py
