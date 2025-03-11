@@ -635,7 +635,7 @@ offered by some cloud vendors would be a good place to start.
 
 ### References
 
-<!-- TODO -->
-
+- [A General Introduction to Cloud Computing](https://www.digitalocean.com/community/tutorials/a-general-introduction-to-cloud-computing)
+- [What is cloud computing?](https://aws.amazon.com/what-is-cloud-computing/)
 - [Docker Compose documentation](https://docs.docker.com/compose/).
 - [Caddyfile reference](https://caddyserver.com/docs/caddyfile).
