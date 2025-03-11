@@ -29,9 +29,13 @@ $ git pull origin main
 Each of you will get your own VM. The virtual machines are deployed
 for you on Digital Ocean (DO), a cloud provider.
 
-(DO calls their VMs "droplets", but that should not really matter to
+DO calls their VMs "droplets", but that should not really matter to
 us. Our goal is to make ourselves familiar with cloud computing in
-general, not any one vendor's tools and terminology.)
+general, not any one vendor's tools and terminology.
+
+In order to keep costs down, we will destroy the VMs soon after the
+tutorial, so do not save anything that you really need there.  We
+might keep them up for a week or two, at most.  We will see.
 
 You can access your VM using [`ssh`][ssh], the OpenSSH remote login
 client.  The account name on the VM is `cicf`.  We will not use a
@@ -237,7 +241,7 @@ cicf sudo docker
 
 ### Run JupyterLab and Caddy with Docker Compose
 
-[Docker Compse][compose] is a tool for running applications in more
+[Docker Compose][compose] is a tool for running applications in more
 than one container and linking them together.  Your web app will run
 in a container, and the database it uses will run in another
 container, and you would use Docker Compose to link those services
