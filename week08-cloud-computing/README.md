@@ -306,18 +306,26 @@ ports 80 and 443 of Caddy to the internet.  Port 80 is for HTTP
 traffic).  All port 80 traffic will be re-routed to
 port 443.
 
-For HTTPS to work correctly, Caddy will need a TLS certificate that
-basically assert that the domain is what it claims it is, and provide
-the information necessary for encryption and data integrity.
+For HTTPS to work correctly, Caddy will need a [Transport Layer
+Security (TLS)][TLS] certificate.  This certificate will basically
+assert that the domain is what it claims it is, and provide the
+information necessary for encryption and data integrity.
 
-Caddy can seamlessly get a TLS certificate from [Lets Encrypt][le], a
-non-profit certificate authority.
+[TLS]: https://en.wikipedia.org/wiki/Transport_Layer_Security
+
+Most websites these days use TLS.  When you visit them with a web
+browser, you will see a padlock by the address bar, indicating that
+the connection is secure.  If we do not present a "good" certificate
+that the web browser honors, the browser will issue a warning message.
+
+Caddy can seamlessly get a valid TLS certificate from [Lets
+Encrypt][le], a non-profit certificate authority.
 
 [le]: https://letsencrypt.org/
 
-Getting a TLS certificate used to be quite an involved process. You
+Getting a TLS certificate used to be quite an involved process.  You
 had to pay for your certificates, and go through some manual processes
-to prove your identity.  Lets Encrypt is a wonderful project that
+to prove your identity.  Let's Encrypt is a wonderful project that
 removed this friction and made encrypted communication accessible to
 everyone.
 
