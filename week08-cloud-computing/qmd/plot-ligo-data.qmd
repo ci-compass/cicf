@@ -48,7 +48,7 @@ region = 'nyc3'                                    # Our Spaces region
 endpoint_url = f'https://{region}.digitaloceanspaces.com'
 
 # Create an anonymous S3 client for DigitalOcean Spaces
-s3 = boto3.client(
+s3_client = boto3.client(
     's3',
     endpoint_url=endpoint_url,
     config=Config(signature_version=UNSIGNED)  # Anonymous access
@@ -57,7 +57,7 @@ s3 = boto3.client(
 # Fetch the HDF5 file anonymously
 try:
     print(f"Getting {object_key} from {bucket_name}...")
-    response = s3.get_object(Bucket=bucket_name, Key=object_key)
+    response = s3_client.get_object(Bucket=bucket_name, Key=object_key)
     file_data = response['Body'].read()  # Read the file into memory as bytes
     print(f"Got some data from {bucket_name}")
 except Exception as e:
