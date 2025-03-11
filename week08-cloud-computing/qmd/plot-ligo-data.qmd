@@ -1,30 +1,38 @@
 # Plot LIGO data
 
-In week 2 tutorial, we downloaded some data from the LIGO
-observatory, and plotted it in a notebook.  We will use the same
-notebook with a small modification.
+In week 2 tutorial, we downloaded some data from the LIGO observatory,
+and plotted it in a notebook.  We will use the same notebook with some
+small modifications.
 
-The LIGO data file `H-H2_LOSC_4_V1-815235072-4096.hdf5` is already in
-an object store.  The store we use is DigitalOcean Spaces, which is an
-object store that offers an API that is compatible with Amazon S3
-(Simple Storage Service).
+The LIGO data file from week 2, `H-H2_LOSC_4_V1-815235072-4096.hdf5`,
+is already in an object store.  The store we use is [DigitalOcean
+Spaces][do-spaces], which offers [an API][aws-s3-api] that is
+compatible with [Amazon S3][aws-s3] (Simple Storage Service), so we
+can use the same popular tools and libraries that people use with AWS
+S3 here.
 
-We will install a couple of Python packages to work with this file:
+[do-spaces]: https://www.digitalocean.com/products/spaces
+[aws-s3]: https://aws.amazon.com/s3/
+[aws-s3-api]: https://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html
 
-- h5py
-- smart-open
+We will install some Python packages to work with this file:
 
-The popular Python library for working with S3 files in boto3, and
-smart-open is an easier-to-use library built on top of boto3.
+- [boto3], so that we can read data from the object store.
+- [h5py], so that we can parse HDF5 data.
+- [matplotlib], so that we can plot the data.
+
+[boto3]: https://pypi.org/project/boto3/
+[h5py]: https://pypi.org/project/h5py/
+[matplotlib]: https://pypi.org/project/matplotlib/
 
 Let us install the libraries first:
 
 ```{python}
-!pip install h5py smart-open[s3]
+!pip install boto3 h5py matplotlib
 ```
 
-Now we can open the file using smart-open and h5py libraries, and
-explore the data in the file.
+Now we can get the file from Spaces using `boto3`, and explore the
+data in the file with `h5py`.
 
 ```{python}
 import boto3
