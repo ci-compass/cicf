@@ -8,7 +8,7 @@ Videos and Slides are available to fellows on the shared CICF drive.
 
 # Spring 2025 Program
 
-| week                | content                                             |
+| Week                | Content                                             |
 |---------------------|-----------------------------------------------------|
 | [Week 0][vm]        | Setting up a virtual machine                        |
 | [Week 1][week01]    | Command line                                        |
@@ -23,9 +23,6 @@ Videos and Slides are available to fellows on the shared CICF drive.
 | [Week 10][week10]   | Data workflows                                      |
 | [Week 11][week11]   | Machine Learning                                    |
 | [Week 11b][week11b] | Neural Networks                                     |
-
-(Please note that things are getting re-arranged for 2025 Spring
-program.  Targets of the links above are not final at the moment.)
 
 # People and Contact
 
