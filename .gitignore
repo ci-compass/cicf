@@ -10,4 +10,4 @@ venv/
 Mosquito-Alert-sampling_effort_data-0b57d8f
 sampling_effort_data-v2025.02.25.zip
 NEON_count-mosquitoes/
-
+__pycache__
