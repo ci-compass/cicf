@@ -67,4 +67,5 @@ Once it installs, run it by typing
 - [Looking inside neural nets](https://ml4a.github.io/ml4a/looking_inside_neural_nets/) is a fun article discussing and showing how image decoding works.
 - [A Visual Guide to Vision Transformers](https://blog.mdturp.ch/posts/2024-04-05-visual_guide_to_vision_transformer.html)
 - [Deep Learning is Not So Mysterious or Different](https://arxiv.org/abs/2503.02113)
-
+- [Ollama](https://ollama.com/)
+- [The Matrix Calculus You Need For Deep Learning](https://explained.ai/matrix-calculus/)
