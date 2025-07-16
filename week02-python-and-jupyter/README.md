@@ -1,6 +1,6 @@
 # CICF Week 2
 
-The goals for week 2 lab are:
+The goals for the week 2 lab are:
 
 1. Install and use the Jupyter notebook application on your VM.
 2. Be able to create, edit, and run notebooks.
@@ -15,7 +15,7 @@ commands in that terminal.
 You should have done a `git clone` of the CICF repository in the home
 directory of your VM in the first week itself.  In case you have not
 done that yet, go back to the [previous week's instructions][week1],
-and follow the instructions under the section titled "Git" there.
+and follow the instructions under the section titled "Git".
 
 [week1]: ../week01-commandline/README.md#Git
 
@@ -49,7 +49,7 @@ sudo apt install python3-pip python3-venv wget
 Type `Y` to confirm installation.
 
 We will also need some additional Python packages. These we can
-install using [pip], inside what is called a "virtual environment".
+install using [pip], inside what is called a "virtual environment."
 Create a virtual environment and activate it with these commands:
 
 ```console
@@ -101,9 +101,9 @@ you install Debian packages written in Python using `apt`, they will
 not conflict with the packages you installed using `pip` for your
 projects.
 
-Typically, for each of your Python projects, you will create its own
+Typically, for each of your Python projects, you will create your own
 lightweight, isolated virtual environment, usually inside the project
-directory.  And then you will install the packages each project need
+directory.  And then you will install the packages each project needs
 in its own virtual environment.
 
 (Although in this tutorial, you will note that you just set up a
@@ -152,7 +152,7 @@ Working through these notebooks is your task this week:
   that will walk you through working with some science data in
   Jupyter.
 
-You can open each these notebooks by double clicking them, or by
+You can open each of these notebooks by double clicking them, or by
 clicking on the "open" button that will appear when you select a
 notebook.
 
@@ -160,7 +160,7 @@ notebook.
 
 JupyterLab is a newer, fancier, and perhaps nicer way to interact with
 Jupyter notebooks.  You can launch a JupyterLab instance instead of
-old notebook interface, with the command:
+the old notebook interface, with the command:
 
 ```console
 jupyter lab
@@ -188,10 +188,10 @@ these links:
 - https://colab.research.google.com/github/ci-compass/cicf/blob/main/week02-python-and-jupyter/3-python-packages.ipynb
 - https://colab.research.google.com/github/ci-compass/cicf/blob/main/week02-python-and-jupyter/4-plot-ligo-data.ipynb
 
-To run the cells, you will have to sign using a Google account.
+To run the cells, you will have to sign in using a Google account.
 
 However, note that you won't be able to run commands such as `pip` and
-`wget` in a Colab terminal as we discuss here: in order to be able to
+`wget` in a Colab terminal as we discuss here: In order to be able to
 use a terminal, Colab requires a paid plan.  So you probably won't be
 able to run all the cells in the third and fourth notebooks.
 
@@ -232,7 +232,7 @@ the steps involved. Quarto project calls `.qmd` files "computational
 markdown".  They are markdown but with some syntax enhancements.
 
 The first three were the original notebooks from CICF year 3 written
-by Erik Scott, and I (Sajith S) converted them to markdown to Quarto.
+by Erik Scott, and I (Sajith S) converted them from markdown to Quarto.
 
 I am doing things this way because I would rather be using a text
 editor than anything else.  Future maintainers of these lessons should
