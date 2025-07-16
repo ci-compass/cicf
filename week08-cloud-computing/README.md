@@ -1,6 +1,6 @@
 # CICF Week 8
 
-The goal for this week's tutorial are:
+The goal for this week's tutorial is:
 
 - Familiarize yourself with a virtual machine running in a cloud
   environment.
@@ -34,7 +34,7 @@ us. Our goal is to make ourselves familiar with cloud computing in
 general, not any one vendor's tools and terminology.
 
 In order to keep costs down, we will destroy the VMs soon after the
-tutorial, so do not save anything that you really need there.  We
+tutorial, so do not save anything that you really need there. We
 might keep them up for a week or two, at most.  We will see.
 
 You can access your VM using [`ssh`][ssh], the OpenSSH remote login
@@ -136,7 +136,7 @@ This model of trusting the server at first connection is known as TOFU
 first connection was secure (meaning, no attacker was present).  Any
 future changes in the server's fingerprint is suspicious.
 
-Once you will log on, check out `~/.ssh/authorized_keys` in the cloud
+Once you log on, check out `~/.ssh/authorized_keys` in the cloud
 VM.  That is where we stored your public key.  The VM let you log in
 because you have the private key corresponding to this public key.
 There's a little bit of a _handshake_ going on between the ssh server
@@ -198,7 +198,7 @@ Since this is a directory that we are copying, we use the `-r`
 (recursive) flag here.  For copying just one file, we do not need to
 use the `-r` flag.
 
-Note that the above is a short-cut for the longer command below.
+Note that the above is a shortcut for the longer command below.
 Since `ssh` and `scp` are part of the same suite of tools, they use
 the same configuration file, so we get to type less.  It also helps
 that the home directory on the remote host is the default destination
@@ -219,7 +219,7 @@ $ ./install-docker.sh
 
 Press `y` when prompted.
 
-Once Docker has been installed, add yourself to `docker` group:
+Once Docker has been installed, add yourself to the `docker` group:
 
 ```
 $ sudo usermod -a -G docker $USER
@@ -300,10 +300,9 @@ CADDY_PASSWORD='$2a$14$P5QEsGpvgJ79Ie8vAsRN1uGDKecpD6/H5QlPK6IFsGaVMYp53q1Du'
 (My initial plan was to run JupyterLab in an "open" mode, without
 setting up any authentication, but I quickly learned my lesson.
 Someone uploaded a cryptocurrency miner to my test JupyterLab instance
-and ran it there.  The miner used 100% CPU, thus making my VM became
-unresponsive. Oops.)
+and ran it there.  The miner used 100% CPU, thus making my VM unresponsive. Oops.)
 
-Now we can run Docker Compse in detached mode (as in, not attached to
+Now we can run Docker Compose in detached mode (as in, not attached to
 a terminal), with:
 
 ```
@@ -485,7 +484,7 @@ PORT     STATE    SERVICE
 8888/tcp open     sun-answerbook
 ```
 
-Those is a lot more open ports than necessary.  Some of them are
+That is a lot more open ports than necessary.  Some of them are
 default services run by the operating system, but we do not want them
 exposed to the internet.
 
