@@ -8,26 +8,26 @@ The goals for week 5 lab are:
 
 ## Tutorial
 
-First, install docker
+First, install Docker
 
 ```
 $ sudo apt update
 $ ./install-docker.sh
 ```
 
-You will need to then enter your password for sudo. and press `Y` to
+You will need to then enter your password for sudo and press `Y` to
 agree to installing the packages.
-Then we need to add us to the docker group.
+Then we need to add us to the Docker group.
 (You can type `$USER`, the shell will expand the variable to be the current username).
 
 ```
 sudo usermod -aG docker $USER
 ```
 
-Now **choose "Log Out..." from the menu in the upper right corner and
+Now, **choose "Log Out..." from the menu in the upper right corner and
 then sign back in** to get the group membership to be cached.
 
-Log back in and docker should be set up.
+Log back in, and docker should be set up.
 We can verify this by running
 
 ```
@@ -35,12 +35,12 @@ docker ps
 ```
 
 This lists all the containers that are currently running.
-There should be no containers are running, but the important thing is
+There should be no containers running, but the important thing is
 that there are no errors.
 
 ### Build an image
 
-Our first task is to make a container image.
+Our first task is to create a container image.
 The `Dockerfile-hello` contains the instructions on how to build the
 image.
 
@@ -49,7 +49,7 @@ cat Dockerfile-hello
 ```
 
 We start with the official base python image, we copy in our script,
-and then we specificy the command to run when the container is
+and then we specify the command to run when the container is
 started.
 (Don't forget the period at the end!)
 
@@ -80,14 +80,14 @@ docker history hello
 The most recent change is at the top and the oldest change is at the
 bottom.
 
-We can see the all the containers (whether running or not) with the
+We can see the all containers (whether running or not) with the
 `-a` option on the `ps` command:
 
 ```
 docker ps -a
 ```
 
-Okay, lets see if the execution envrionment is really restricted:
+Okay, let's see if the execution environment is really restricted:
 
 ```
 docker run -it hello bash
@@ -101,14 +101,14 @@ ping
 python3
 ```
 
-Also by default containers have no network access.
+Also, by default, containers have no network access.
 
 
 ### Object Store
 
 We are going to run a service using docker.
 
-This is something called a object store, which we will visit when we
+This is something called an object store, which we will visit when we
 talk about cloud computing.  For now the important thing is that we
 will run it inside a container.
 
@@ -127,7 +127,7 @@ docker images
 We will now run it.  This looks complicated since we need to pass some
 configuration on the command line.  By default containers don't have
 network access, so we first need to tell docker to allow us to access
-this container on the ports 9000 and 9001.
+this container on ports 9000 and 9001.
 
 We then need to configure where we want the service to store data.
 And we need to configure a root user and password.
@@ -139,7 +139,7 @@ docker run -d -p 9000:9000 -p 9001:9001 -v $(pwd)/data:/data -e "MINIO_ROOT_USER
 ```
 
 The container should have started and be running in the background.
-Docker printed the id for this container.  We will let `{id}` refer to
+Docker printed the ID for this container.  We will let `{id}` refer to
 the first few letters/digits of this id.
 
 ```
@@ -147,8 +147,8 @@ docker ps
 docker logs {id}
 ```
 
-Okay, lets set it up. In the webbrowser visit `http://localhost:9001`
-Sign in with our user and password `cicf` and `cicf1234` Create a new
+Okay, let's set it up. In the web browser, visit `http://localhost:9001`
+Sign in with our username and password `cicf` and `cicf1234` Create a new
 bucket named "cicf-data".
 
 Create a new access key named "test-account".  Download the secret
@@ -158,7 +158,7 @@ info and move it into our current directory:
 mv ~/Downloads/credentials.json .
 ```
 
-This is in JSON format.
+The file is in JSON format.
 
 ```
 cat credentials.json
@@ -171,14 +171,14 @@ sudo apt install jq
 jq . credentials.json
 ```
 
-Give the new key enough access privileges.  Copy the `minio-policy`
+Grant the new key sufficient access privileges.  Copy the `minio-policy`
 policy file:
 
 ```
 cat minio-policy
 ```
 
-Edit the key we just made by pasting in the file contents.  And then
+Edit the key we just created by pasting in the file contents.  And then
 save it.
 
 Now upload some files.  We want `hello.py`.
@@ -193,7 +193,7 @@ earlier in week 2.  We will reuse that environment here:
 source ~/venv/bin/activate
 ```
 
-Now we can install `minio` Python package inside that virtual
+Now we can install the `minio` Python package inside that virtual
 environment:
 
 ```
@@ -207,12 +207,12 @@ Now upload the `fib-first` file to the bucket and rerun `store.py`.
 Refresh the bucket, there should be a new object named `result-first`
 It should contain the 16th Fibonacci number, which is 987.
 
-The name is not quite right.  Lets put a breakpoint into the file
+The name is not quite right.  Let's put a breakpoint into the file
 Before line 25 insert the line `breakpoint()`.
 
 When we run the script, it will stop in the debugger.  We can see
 variables with `p` prefix.  There are three ways to advance execution:
-stepping, next, or continue. Step will take the smallest possible
+stepping, next, or continuing. Step will take the smallest possible
 increase, in that it will go into functions and stop.  Next will stop
 at the next line of the program.  Continue will keep running until
 another breakpoint or until the program ends.
