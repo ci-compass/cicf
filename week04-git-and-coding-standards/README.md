@@ -286,6 +286,39 @@ This list is not comprehensive. (And if one is missing, please submit a pull req
 * [OOI](https://github.com/oceanobservatories)
 * [EarthScope](https://github.com/EarthScope)
 
+
+
+<!-- copied from week 1... -->
+### Git
+
+Git is an extremely useful tool for programming and scientific computing.
+A git _repository_ is used to track and share changes to a set of files, such as
+source code project, analysis scripts, or documentation.
+We interact with a git repo by first making a copy to our computer.
+This is called "cloning" the repository.
+When we make changes to these files we can update our local repository (via a _commit_) and
+share the changes by moving these changes to other repositories (a _push_).
+
+Lets first install Git:
+
+    sudo apt install git
+
+Enter the password, and then press 'y' to agree to the installation. 
+Now that Git is installed, lets clone the CICF repository:
+
+    git clone https://github.com/ci-compass/cicf
+
+This tells Git to copy the repository at the given URL onto our VM.
+By default Git will make a directory named `cicf` and put everything inside there.
+
+    cd cicf
+    ls
+    cd week01-commandline
+    cat README.md
+
+<!-- END -->
+
+
 ## Resources
 
 It is hard to overstate the importance and usefulness of Git in modern software
