@@ -8,33 +8,33 @@ The goals for the week 6 lab are to:
 ## Tutorial
 
 
-Lets start by looking at data catalogues.
-These are sites that index papers and data sets, but don't store the actual data themselves.
+Let's start by looking at data catalogues.
+These are sites that index papers and datasets, but don't store the actual data themselves.
 So they are not repositories, but they do help us find data that is in repositories.
 This is very FAIR, and definitely a use case anticipated by the 2016 FAIR paper.
 
 ### DataCite Commons
 
-Running a data catalog is non-trivial.
+Running a data catalogue is non-trivial.
 There are _many_ records, and you need to have processes to collect the newer records from various places as well as having a way to update records.
 DataCite is one of the organizations that keep records for DOIs, so it is natural that they spend some effort to make a nice public search interface.
 
-In the browser go to the [DataCite Commons][] page.
+In the browser, go to the [DataCite Commons][] page.
 You can see a search box.
-Type in a search query. We will do "mosquito".
+Type in a search query, we will do "mosquito".
 We get 37,570 works.
 These are a combination of item types, years published, etc.
-The facets on the left hand side give an overview of the results.
+The facets on the left-hand side give an overview of the results.
 Each record shows a title, list of authors, description, item type, item language, and a DOI.
 
-Lets choose "2025" as a facet year.
+Let's choose "2025" as a facet year.
 We now see (at the time of this writing) 410 items.
 The 6th item or so is "[Sampling Effort Data][]" by Mosquito Alert.
 Clicking on the title takes us to the item page in Zenodo.
 
 **Zenodo** is a general purpose repository.
 And the interesting thing with this record is that it is an archived version of a GitHub repository.
-[Mosquito Alert][] is citizen science project to collect mosquito information from volunteers using a mobile app.
+[Mosquito Alert][] is a citizen science project to collect mosquito information from volunteers using a mobile app.
 (They also have a [data portal][]).
 
 Why would you want to archive a GitHub repository?
@@ -48,12 +48,12 @@ Download the data file (from the command line!).
 
     wget -i zenodo-links
 
-It is a zip file, so lets look at it.
+It is a zip file, so let's look at it.
 
     $ unzip sampling_effort_data-v2025.02.25.zip
     $ cd Mosquito-Alert-sampling_effort_data-0b57d8f
 
-There is a README file. A LICENSE file, and a CITATION file.
+There is a README file, A LICENSE file, and a CITATION file.
 There is also a metadata file:
 
     $ nano sampling_effort_daily_cellres_05_metadata.json
@@ -63,7 +63,7 @@ It describes the authors, and each variable in the file.
 
     $ gzip -d sampling_effort_daily_cellres_05.csv.gz
 
-This is a huge file in CSV format. This is a very common format to receive data values in.
+This is a huge file in CSV format, a very common format to receive data values in.
 Each row is an individual data point, and each column names an attribute for that data point.
 
 This file is quite big, and we need to use a tool to get some summary statistics.
@@ -72,7 +72,7 @@ This file is quite big, and we need to use a tool to get some summary statistics
     $ pip install pandas
     $ python3
 
-OK, in the Python interactive environment lets load the CSV file.
+OK, in the Python interactive environment let's load the CSV file.
 
 ```python
 >>> import pandas as pd
@@ -101,7 +101,7 @@ We want to view a histogram, so start Jupyter and open the notebook `mosquito-al
 
 ### NEON
 
-Now lets look at data provided by NEON (National Ecological Observatory Network).
+Now, let's look at data provided by NEON (National Ecological Observatory Network).
 They are an interesting Major Facility since in addition to recorded measurements,
 they also have samples available for loan.
 
@@ -113,9 +113,9 @@ Choose two sites: ABBY and UNDE, and two years: 2023 and 2024.
 And then download the data.
 
 The data is organized as many files.
-The mosquito counts there is one CSV file per site location per month.
-The files include a line for each mosquito collected.
-We want a count of mosquitoes for each month for each site.
+For the mosquito counts, there is one CSV file per site location per month.
+Each file includes a line for every mosquito collected.
+We want to count mosquitoes by month and by site.
 
 
 
