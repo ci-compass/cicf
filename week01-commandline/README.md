@@ -4,7 +4,6 @@ The goals for Week 1 are:
 
 1. Be able to run commands on the command line
 1. Navigate the filesystem, read, and create files using the command line
-1. Make command line pipelines
 1. Create simple shell scripts
 
 ## Tutorial
@@ -80,8 +79,8 @@ The first command did not display anything, so a program named `asdf` was not fo
 The second command displayed `/usr/bin/ls` which a path to the program "ls",
 i.e. it is telling is where the program is in the file system.
 
-Typing commands gets old, so the shell provides some features to help you.
-Some of these features are the **cursor control**, **tab compleation**, and **history**.
+Typing commands gets old, so the shell provides some features to help you,
+such as **cursor control**, **tab compleation**, and **history**.
 
 **Cursor Control** You can move the cursor around without using the mouse.
 Control-A (so pressing the Control key and the A key without pressing the shift key)
@@ -89,7 +88,7 @@ will move the cursor to the beginning of the line.
 Control-E will move the cursor to the end of the line.
 Control-W will delete the previous word (so everything back to the previous space).
 Control-K will delete everything from the cursor to the end of the line.
-These are the ones I use everyday, but there are [many more](https://www.linux.org/threads/popular-keyboard-shortcuts-for-the-gnu-bash-shell.44645/),
+These are the ones I use everyday, but there are [many, many more](https://www.linux.org/threads/popular-keyboard-shortcuts-for-the-gnu-bash-shell.44645/),
 and maybe others will be helpful to you.
 
 **Tab Completion** To make it easier to type long file names,
@@ -108,7 +107,7 @@ So to rerun a previous command, just press the up arrow and then press enter to 
 The fix, press up arrow and then you can navigate around the command line, adjust, and then press enter to run.
 
 **Wildcards** If you are working with a bunch of files and list all of their names on the command line,
-you can use a wildcard to match all file names matching a pattern. This is historically called "globbing".
+you can use a wildcard to match all file names matching a pattern.
 You type a wildcard pattern in the command line where you want a list of files to appear, and then before
 running the command, the shell will replace the pattern with all of the matching file names, with each name separated by a space.
 The most used wildcard is the astrisk `*`, which matches any number of non-slash characters.
@@ -123,20 +122,24 @@ The above will list only the files that end in `.txt`.
 
 This will make a new directory and copy all files that start with `e` and end with `.sh` into the new directory.
 
+This simple pattern matching with astriskes is historically called "globbing" and you will see it used is many other places
+besides the command line.
+
 ### Moving around the filesystem
 
+The command line prompt always has a "Current Directory", which is the location in the filesystem that commands will executed in.
 You can change the current directory with the `cd` (**c**hange **d**irectory) command.
-Type in the path to the directory you want to change to.
-(If you don't enter a directory you will go to your _home directory_).
+The `cd` command takes a single, optional argument, which is the path to the directory you want to change to.
+If you don't enter a directory you will go to your _home directory_.
 
 	cd week01-commandline/
 
-Go up a directory by using `..` as the path
+You can use the `.` and `..` relative paths to give locations.
+For example, go up a level by using `..` as the path
 
 	cd ..
 
 Sometimes it is tedious to type the entire directory path, this is a good oppertunity to use the tab compleation.
-
 You can see which directory you are in with the `pwd` command.
 
 	pwd
@@ -150,10 +153,13 @@ Another way is to `touch` it.
 	touch numbers.txt
 
 You can rename files by "moving" them.
+The first argument is the starting name and the second argument is the ending name.
+The following renames `numbers.txt` to `numbers-orig.txt`.
 
 	mv numbers.txt numbers-orig.txt
 
-You can delete files by removing them.
+You can delete files with the `rm` command.
+This will delete the file `numbers.txt`.
 
 	rm numbers.txt
 
@@ -249,6 +255,11 @@ The shell sets the variable `$?` to be equal to the exit status of the previous 
     $ echo $?
     1
 
+### CSV Files
+
+Lets use the shell to
+
+
 ## Resources
 
 The shell and the command line bring together many more topics that you can read about if interested:
@@ -273,5 +284,3 @@ For SSH
 Some lists of Unix commands.
 - [List of POSIX commands](https://en.wikipedia.org/wiki/List_of_POSIX_commands) (The standardization effort in the 1980s was called POSIX).
 - [List of GNU Core Utilities](https://en.wikipedia.org/wiki/List_of_GNU_Core_Utilities_commands)
-
-

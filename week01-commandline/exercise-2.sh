@@ -14,4 +14,5 @@ done > source.txt
 
 # now sort the file into `sorted.txt`
 
-#cp source.txt sorted.txt # replace this line
+# replace this line
+cp source.txt sorted.txt
