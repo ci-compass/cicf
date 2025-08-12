@@ -3,14 +3,14 @@
 The goals for the week 1 lab are to:
 
 1. Install and use the provided Linux virtual machine (VM)
-1. Use the terminal emulator and execute commands from the command line
-1. Use git to clone this repo to your VM
+2. Use the terminal emulator and execute commands from the commandline
+3. Use Git to clone this repo to your VM
 
 ## Tutorial
 
 Begin by downloading the appropriate VM software and VM image (see the [VM README](../vm/README.md#getting-started)).
 Start the VM if you haven't already.
-At the sign-in screen log in using the credentials:
+At the sign-in screen, log in using the credentials:
 
     username: cicf
     password: cicf
@@ -44,7 +44,7 @@ They appear after the command name, and are separated from the command name by a
 Each command can take different options, and will interpret the options differently.
 For the `ls` command, the option `-a` tells it to list _every_ file, including those
 whose names start with a period (aka "dot").
-These files whose names that start with a dot and are called "dotfiles",
+These are files whose names that start with a dot and are called "dotfiles",
 and `ls` does not display them by default.
 (This is for convenience, since these files are usually used for configuration files and directories.)
 
@@ -66,7 +66,7 @@ There is a command `which` that asks the shell to tell us where the program for 
 
 The first command did not display anything, so a program named `abcdef` was not found.
 The second command displayed `/usr/bin/cat` which a path to the program "cat",
-i.e. it is telling is where the program is in the file system.
+i.e., it is telling us where the program is in the file system.
 
 **History** To make typing easier, the shell keeps a history of commands you have typed.
 Use the up arrow to go backward in history to previous commands.
@@ -120,21 +120,21 @@ The shell sets the variable `$?` to be equal to the return code of the previous 
 ### Git
 
 Git is an extremely useful tool for programming and scientific computing.
-A git _repository_ is used to track and share changes to a set of files, such as
+A Git _repository_ is used to track and share changes to a set of files, such as
 source code project, analysis scripts, or documentation.
-We interact with a git repo by first making a copy to our computer.
+We interact with a Git repo by first making a copy to our computer.
 This is called "cloning" the repository.
 When we make changes to these files we can update our local repository (via a _commit_) and
 share the changes by moving these changes to other repositories (a _push_).
 
-Lets first install Git:
+Let's first install Git:
 
-    sudo apt install git
+    sudo apt install Git
 
 Enter the password, and then press 'y' to agree to the installation. 
-Now that Git is installed, lets clone the CICF repository:
+Now that Git is installed, let's clone the CICF repository:
 
-    git clone https://github.com/ci-compass/cicf
+    Git clone https://Github.com/ci-compass/cicf
 
 This tells Git to copy the repository at the given URL onto our VM.
 By default Git will make a directory named `cicf` and put everything inside there.
@@ -185,15 +185,15 @@ The shell and the command line bring together many more topics that you can read
 
 There are a lot of other tutorials on the command line.
 Especially recommended is The Software Carpentry course.
-- Software Carpentry [course on the Unix shell](https://swcarpentry.github.io/shell-novice/).
+- Software Carpentry [course on the Unix shell](https://swcarpentry.Github.io/shell-novice/).
 - [The Shell Scripting Tutorial](https://www.shellscript.sh/)
-- [Introduction to the Unix Command Line](https://codethechange.stanford.edu/guides/guide_unix_commands.html#)
-- [The Command Line: a comprehensive Guide](https://hackernoon.com/the-command-line-a-comprehensive-guide)
+- [Introduction to the Unix command line](https://codethechange.stanford.edu/guides/guide_unix_commands.html#)
+- [The command line: a comprehensive Guide](https://hackernoon.com/the-command-line-a-comprehensive-guide)
 - [Bash Reference Manual](https://www.gnu.org/software/bash/manual/html_node/index.html) exhaustive reference manual. Extremely detailed list of everything the Bash shell can do.
 
 For SSH
 
-- GitHub [How to make an SSH keypair](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+- GitHub [How to make an SSH keypair](https://docs.Github.com/en/authentication/connecting-to-Github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
 Some lists of Unix commands.
 - [List of POSIX commands](https://en.wikipedia.org/wiki/List_of_POSIX_commands) (The standardization effort in the 1980s was called POSIX).

@@ -17,9 +17,9 @@ Open your VM, and then open the web browser and visit
     https://orcid.org/0000-0002-1825-0097
 
 This is (should be?) the only fictional person with an ORCID record.
-THe page displays his name and some information about him.
+The page displays his name and some information about him.
 
-Lets look at this under the hood.
+Let's look at this under the hood.
 Make a new browser tab and go to this website:
 
     https://base64.guru/tools/http-request-online
@@ -46,7 +46,7 @@ Of course, if the server doesn't understand a header it can ignore it or return 
 
 I would then look at this using the JSON response ORCID can provide, but
 the website now requires a sign-in before providing this.
-SO, lets look at OpenAlex.
+So, let's look at OpenAlex.
 
 ## Open Alex
 
@@ -54,19 +54,19 @@ Surprisingly, there is no complete database of all academic scholarship.
 There are a few aggregators that try to index as much as they can.
 One is [Google Scholar](https://scholar.google.com/), others are [DataCite Commons](https://commons.datacite.org),
 and [OpenAlex](https://openalex.org).
-There are also more specilized databases, such as [PubMed](https://pubmed.ncbi.nlm.nih.gov/) for medical research.
+There are also more specialized databases, such as [PubMed](https://pubmed.ncbi.nlm.nih.gov/) for medical research.
 
-OpenAlex is a catalog of open science papers, people, datasets, instituions, and so on.
+OpenAlex is a catalog of open science papers, people, datasets, institutions, and so on.
 In the browser visit the page:
 
     https://openalex.org/works/w2764299839
 
 This, again, is a human readable page provided by the catalog.
-Lets try asking for a JSON representation.
+Let's try asking for a JSON representation.
 Add the header `Accepts: application/json` by typing that into the box labeled "HTTP Request Headers".
 This is asking the server that we don't want an HTML page, instead we want a JSON encoded response.
 In this case, we get a page that wants us to use javascript.
-This seems to be a newer techneque to prevent bots from scraping data off a page.
+This seems to be a newer technique to prevent bots from scraping data off a page.
 But the information is all available at the API endpoint:
 
     https://api.openalex.org/works/W2764299839
@@ -135,12 +135,12 @@ Now do `.mesh[3]`:
 The filter box takes a pattern and returns the pieces of the input that match.
 
 MeSH are subject headings curated by the National Library of Medicine.
-Lets look up this term:
+Let's look up this term:
 
     https://www.ncbi.nlm.nih.gov/mesh/
 
 Search for `D009032`.
-This lets us share topic headings with others and we can all agree on what they mean.
+This let's us share topic headings with others and we can all agree on what they mean.
 We can also agree on the codes used to represent each topic.
 
 Vocabularies like MeSH are very useful, but each takes effort to develop and there all have a defined scope.
@@ -155,7 +155,7 @@ And we can also find the Wikidata term for MeSH:
 
 ## Again on the command line
 
-Now lets do all this on the command line.
+Now let's do all this on the command line.
 
     curl -H 'Accepts: application/json' 'https://api.openalex.org/works/w2764299839'
 
@@ -164,14 +164,14 @@ We need to ask "curl" to follow the redirects:
 
     curl -L -H 'Accepts: application/json' 'https://api.openalex.org/works/w2764299839'
 
-We can see more informatio being passed with the `-v` "verbose" option.
+We can see more information being passed with the `-v` "verbose" option.
 
     curl -v -H 'Accepts: application/json' 'https://api.openalex.org/works/w2764299839' 2>&1 | less
 
 Note that the request is on lines starting with a ">"
 and the response headers are on lines starting with "<".
 
-Lets save the json response:
+Let's save the json response:
 
     curl -L -H 'Accepts: application/json' 'https://api.openalex.org/works/w2764299839' > mosq.json
 
@@ -184,7 +184,7 @@ The `jq` tool can work on the command line as well.
 
 Flask is a very simple python framework for making web applications.
 Here is a Flask app showing how a web server works.
-Lets set up the virtual envrionment and run Flask.
+Let's set up the virtual envrionment and run Flask.
 
     $ source ~/venv/bin/activate
     $ pip install flask
@@ -195,14 +195,14 @@ This is a special address, in that on any computer in the world, 127.0.0.1 refer
 This is also called the "localhost".
 The 5000 says the server is listening on port 5000 on the current computer.
 Open a web browser and type in the URL `localhost:5000`.
-You will see a page showing "Hello World".
+You will see a page showing "Hello World."
 This is because in the file `app.py` we match that route and say to return that text.
-We also have a route to match any path that begins with `/topic/` so lets try that in the browser.
+We also have a route to match any path that begins with `/topic/` so let's try that in the browser.
 Enter "localhost:5000/topic/2343453465" in the browser, you will see a page that has the text
 
     You asked for 2343453465
 
-All webservers follower similar designs: they listen on a port for routes (or pages), and then depending on the page being asked for, run different pieces of code to return a response.
+All web servers follow similar designs: they listen on a port for routes (or pages), and then depending on the page being asked for, run different pieces of code to return a response.
 
 ## Resources
 

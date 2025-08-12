@@ -2,9 +2,9 @@
 
 The goals for the week 4 lab are to:
 
-1. Create git repositories. Commit changes. Create and merge branches.
-1. Create a GitHub account
-1. Make a pull request
+1. Create git repositories, commit changes and create and merge branches.
+2. Create a GitHub account.
+3. Make a pull request.
 
 ## Tutorial
 
@@ -18,7 +18,7 @@ This is what I entered, change the name and email to be yours.
     git config --global user.name "Don Brower"
     git config --global user.email "dbrower@nd.edu"
 
-While the default editor is set to be "nano", lets make it explicit:
+While the default editor is set to be "nano", let's make it explicit:
 
     git config --global core.editor nano
 
@@ -30,7 +30,7 @@ We will make sure that is configured for us:
     git config --global init.defaultBranch main
 
 Git tracks changes to the files inside an entire directory.
-Lets make a directory to work in.
+Let's make a directory to work in.
 We will make a new Git repository in this directory for us to practice making commits.
 
     $ mkdir first-repo
@@ -93,7 +93,7 @@ Git uses them to remind you of the current branch and the files making up
 the commit.
 
 A commit message should consist of at least one line giving a brief summary of the changes.
-Then if more information is desired, enter a blank line and then write as much as you care to.
+Then, if more information is desired, enter a blank line and then write as much as you care to.
 Since this is the first commit, nothing has changed yet, so the standard practice is to use "Initial commit".
 Exit nano with CTRL-X and save the message.
 We've made a commit.
@@ -115,7 +115,7 @@ Most commits will have one parent.
 A few may have more than one parent (these are "merge commits").
 Since this was the first commit there are no parent commits this time.
 
-Lets make a change to the README file.
+Let's make a change to the README file.
 Change 'A' to 'The' and add a second line.
 
     $ nano README.md
@@ -135,7 +135,7 @@ The diff command shows how the files have been changed.
 Lines that were added are prefixed with a plus sign `+`,
 lines that were removed are prefixed with a minus sign `-`.
 Other lines are there to help provide context for the changes.
-Now lets make a new commit with these changes.
+Now let's make a new commit with these changes.
 
     $ git add README.md
     $ git commit
@@ -144,7 +144,7 @@ This makes a second commit.
 Notice that we needed to "add" the README file, even though it was already tracked.
 This is because a commit does not automatically contain all the changes in the working copy.
 The add means "add the changes in this file to the next commit."
-The need to add files to then commit changes is called "staging" the files.
+The need to add files before committing changes is called "staging" the files.
 The idea is that you might change many files, but only want to save some of the changes.
 For example, you might have needed to change a configuration file or some other
 setting so the code works on your computer, but you don't want those changes to
@@ -186,7 +186,7 @@ In fact, good practice is to never remove the private file from this VM image.
 The `id_ed25519.pub` file is the public key.
 You share the public key with others and then they can use it to verify who you are since this VM is the only place with the corresponding private key.
 
-Lets add the public key to your GitHub account.
+Let's add the public key to your GitHub account.
 Open Firefox in the VM and sign in to GitHub.
 Once in, go to the menu in the upper right (your profile picture) and choose "Settings".
 Then choose "SSH and GPG keys" from the left-hand side.
@@ -196,7 +196,7 @@ and then paste in the public key we put on the terminal.
 
 ### Push to a GitHub Repository
 
-Lets practice pushing a commit to a repository.
+Let's practice pushing a commit to a repository.
 First, check out the repository I have prepared, [cicf-2025](https://github.com/dbrower/cicf-2025).
 
     $ cd
@@ -238,12 +238,12 @@ Use the browser to visit [the repo](https://github.com/dbrower/cicf-2025)
 on the GitHub service and choose "fork" to make your own copy of it.
 
 When GitHub is done making your forked copy of the repository,
-get a copy of the repository location by chosing the green `<> Code` button and then
+get a copy of the repository location by choosing the green `<> Code` button and then
 choosing the SSH tab and you should see a path similar to `git@github.com:dbrower/cicf-2025`.
 Copy the path by clicking the clipboard icon next to it.
 At the command line add it to the checked out repository:
 
-    git remote add origin _your forked repo_ # <-- paste in the path here
+    git remote add origin <our-forked-repo-path> # <-- paste in the path here
 
 Push your changes to your copy:
 
@@ -266,12 +266,12 @@ the public key you generated on your VM.
 The process is outlined above in the [Working with GitHub](#working-with-github) section.
 In summary you should:
 
-1. Make a GitHub account if you haven't already
-2. Fork the [cicf-2025] repository to make your own copy
-3. Clone your copy to your VM
+1. Make a GitHub account if you haven't already.
+2. Fork the [cicf-2025] repository to make your own copy.
+3. Clone your copy to your VM.
 4. Copy your **public key** (the file ending with a `.pub`) to the cloned repository and make a commit adding it
-5. Push your commit back to your copy of the repository
-6. Make a Pull Request to merge your commit into the main repository [cicf-2025]
+5. Push your commit back to your copy of the repository.
+6. Make a Pull Request to merge your commit into the main repository [cicf-2025].
 
 [cicf-2025]: https://github.com/dbrower/cicf-2025
 
