@@ -3,7 +3,7 @@
 The goals for the week 1 lab are to:
 
 1. Install and use the provided Linux virtual machine (VM)
-2. Use the terminal emulator and execute commands from the command-line
+2. Use the terminal emulator and execute commands from the commandline
 3. Use Git to clone this repo to your VM
 
 ## Tutorial
@@ -21,7 +21,7 @@ This will open a window with a prompt:
 
     cicf@cicf-vm:~$ 
 
-This is the prompt for the command-line, or shell.
+This is the prompt for the command line, or shell.
 Every shell starts in your home directory.
 The `$` is the prompt, and tells us that the shell is ready for us to type a command to run.
 The tilde `~` in the prompt indicates we are currently in the home directory.
@@ -29,7 +29,7 @@ The tilde `~` in the prompt indicates we are currently in the home directory.
 Type `pwd` and press "return".
 You should see `/home/cicf/` appear.
 We have just run the command `pwd`.
-This command prints the current working directory to the command-line.
+This command prints the current working directory to the command line.
 ("pwd" stands for "present working directory". Most commands are abbreviations).
 After the shell prints the directory it will then print a new prompt.
 
@@ -172,7 +172,7 @@ The shell also provides primitives such as conditional statements and loops, mak
 
 
 
-The shell and the command-line bring together many more topics that you can read about if interested:
+The shell and the command line bring together many more topics that you can read about if interested:
 
 * [the PATH](https://www.cs.purdue.edu/homes/bb/cs348/www-S08/unix_path.html)
 * [Exit Codes](https://www.redhat.com/sysadmin/linux-shell-command-exit-codes)
@@ -183,12 +183,12 @@ The shell and the command-line bring together many more topics that you can read
 
 ## Resources
 
-There are a lot of other tutorials on the command-line.
+There are a lot of other tutorials on the command line.
 Especially recommended is The Software Carpentry course.
 - Software Carpentry [course on the Unix shell](https://swcarpentry.Github.io/shell-novice/).
 - [The Shell Scripting Tutorial](https://www.shellscript.sh/)
-- [Introduction to the Unix command-line](https://codethechange.stanford.edu/guides/guide_unix_commands.html#)
-- [The command-line: a comprehensive Guide](https://hackernoon.com/the-command-line-a-comprehensive-guide)
+- [Introduction to the Unix command line](https://codethechange.stanford.edu/guides/guide_unix_commands.html#)
+- [The command line: a comprehensive Guide](https://hackernoon.com/the-command-line-a-comprehensive-guide)
 - [Bash Reference Manual](https://www.gnu.org/software/bash/manual/html_node/index.html) exhaustive reference manual. Extremely detailed list of everything the Bash shell can do.
 
 For SSH
