@@ -52,7 +52,7 @@ Skip to the section [Using the VM Image](#using-the-vm-image).
 
 We use VirtualBox to run the VMs on Windows.
 Download and install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) for Windows hosts.
-Once VirtualBox is installed, download the the `cicf-y4.ova` file from the CICF shared drive.
+Once VirtualBox is installed, download the `cicf-y4.ova` file from the CICF shared drive.
 Choose the "File > Import Appliance..." menu option, and then select the file you just downloaded.
 The import will take a few minutes.
 Once done, choose the "Start" button to boot the image.
