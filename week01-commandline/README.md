@@ -8,14 +8,14 @@ The goals for Week 1 are:
 
 ## Tutorial
 
-The command line is probably the fundemental technology for working with cyberinfrastructure.
-The provide a lot of percision, they are easy to extend by adding commands and by repackaging commands into scripts.
-The text interface is easy to export accross a network,
+The command line is probably the fundamental technology for working with cyberinfrastructure.
+It provides precision, and it is easy to extend by adding commands and by making scripts.
+The text interface is easy to export across a network,
 and they allow us to repeat commands in a reproducible way.
 You will almost certainly have to work with one as you continue working on computing systems.
 In exit surveys, many previous fellows have commented that having more familiarity with the command line would be helpful.
 
-To make sure we all have a common expierence, we will use the command line prompt that is in GitHub Codespaces for this course.
+To make sure we all have a common experience, we will use the command line prompt that is in GitHub Codespaces for this course.
 This command line is a Linux based container, and it will very similar to other Linux and Unix-like systems you will encounter.
 
 This tutorial assumes you have done the steps in the [Getting Started](../getting-started/README.md) document,
@@ -24,7 +24,7 @@ and that you have a working Codespace.
 <!-- revise below for code spaces -->
 
 Open up the codespace and the terminal will be in the bottom window pane.bring up the terminal.
-Make the terminal full screen by chosing the four corner box in that pane's title bar.
+Make the terminal full screen by choosing the four corner box in that pane's title bar.
 
 Your terminal window will have a prompt similar to the following:
 
@@ -52,9 +52,9 @@ Run `ls -a`.
 The `-l` and `-a` are _options_ for `ls`.
 They appear after the command name, and are separated from the command name by a space.
 Each command can take different options, and will interpret the options differently.
-For the `ls` command, the option `-a` tells it to list _every_ file, including those
-whose names start with a period (aka "dot").
-These are files whose names start with a dot and are collectively called "dotfiles".
+For the `ls` command, the `-l` option will list more details for each file, such as modification dates and permissions.
+The option `-a` tells it to list _every_ file, including those whose names start with a period (aka "dot").
+There are files whose names start with a dot and are collectively called "dotfiles".
 By default `ls` does not display them, so they are useful for configuration files, caches, and other files and directories that would otherwise clutter up the directory listing.
 (This was also from a bug in 1972 and people decided they liked the behavior and kept it.)
 
@@ -64,7 +64,7 @@ What happens if we mistype a command? We get an error message:
     bash: asdf: command not found
 
 This is the shell telling us that it has no idea how to execute the command `asdf`.
-It could be that we mistyped the command.
+It could be that we mis-typed the command.
 Or maybe the program is not installed.
 Or maybe the program is not where the shell looks for commands to run.
 
@@ -79,7 +79,7 @@ The second command displayed `/usr/bin/ls` which is the path to the program "ls"
 i.e. it is telling is where the program is in the file system.
 
 Typing commands gets old, so the shell provides some features to help you,
-such as **cursor control**, **tab compleation**, and **history**.
+such as **cursor control**, **tab completion**, and **history**.
 
 **Cursor Control** You can move the cursor around without using the mouse.
 Control-A (so pressing the Control key and the A key without pressing the shift key)
@@ -109,7 +109,7 @@ The fix, press up arrow and then you can navigate around the command line, adjus
 you can use a wildcard to match all file names matching a pattern.
 You type a wildcard pattern in the command line where you want a list of files to appear, and then before
 running the command, the shell will replace the pattern with all of the matching file names, with each name separated by a space.
-The most used wildcard is the astrisk `*`, which matches any number of non-slash characters.
+The most used wildcard is the asterisk `*`, which matches any number of non-slash characters.
 For example, to list all files that end in `.txt` you can use the wildcard pattern `*.txt`.
 
 	ls *.txt
@@ -121,7 +121,7 @@ The above will list only the files that end in `.txt`.
 
 This will make a new directory and copy all files that start with `e` and end with `.sh` into the new directory.
 
-This simple pattern matching with astriskes is historically called "globbing" and you will see it used is many other places
+This simple pattern matching with asterisks is historically called "globbing" and you will see it used is many other places
 besides the command line.
 
 ### Moving around the filesystem
@@ -138,7 +138,7 @@ For example, go up a level by using `..` as the path
 
 	cd ..
 
-Sometimes it is tedious to type the entire directory path, this is a good oppertunity to use the tab compleation.
+Sometimes it is tedious to type the entire directory path, this is a good opportunity to use the tab completion.
 You can see which directory you are in with the `pwd` command.
 
 	pwd
@@ -194,18 +194,18 @@ Try `env | wc`. The `wc` (or word count) program counts the number of words in i
 
 ### Scripts
 
-An important apsect of the command line for science is that it provides a clear way to share the commands you ran to do an analysis or to calculate a result.
+An important aspect of the command line for science is that it provides a clear way to share the commands you ran to do an analysis or to calculate a result.
 Since all the commands you type are text, we can also save these commands into a text file and have the shell
 run many commands in a sequence.
-Moreover these commands can be recorded as scripts that are sharable and repeatable.
-The shell also has basic flow-control commands to
+Moreover these commands can be recorded as scripts that are shareable and repeatable.
+The shell also has basic control commands implementing conditionals and loops.
 
-**Comments** Shell scripts can have comments, which are text and notes that are skipped and unrun.
-Comments are started indicated by a hash sign `#` and continue until the end of the line.
-Comments are essential since we can use them to make notes reminding us of what we were trying to do, or
-any strange bugs or workarounds we needed to do.
+**Comments** Shell scripts can have comments, which are text and notes that are skipped and not executed.
+Comments are started by a hash sign `#` and continue until the end of the line.
+Comments allow us to make notes reminding us of what we were trying to do, what we need to do, or
+any strange bugs we had to work around.
 
-**Loops** There are for loops and while loops. A for loop will iterate over words in a list.
+**Loops** There are both "for" loops and "while" loops. A "for" loop will iterate over words in a list.
 The list can either be provided or can be generated by a command:
 
 	for name in 1 2 3 4 5; do
@@ -231,13 +231,14 @@ Lets delete all these files. Here are three ways of doing the same thing:
 
 **Conditional Statements** There is an if/then/else statement.
 
-	if [ -a x-1 ]; then
+	if [ -e x-1 ]; then
 		echo "File x-1 exists"
 	fi
 
-The `if` statement is really just checking the exit status of the commands, and there is a command named `[`, also known as `test`. This also works and does the same thing
+The `if` statement is really just checking the exit status of the commands, and the bracket `[` is actually a command!
+The `[` command is also known as `test`. The following is equivalent to the above:
 
-	if test -a x-1; then
+	if test -e x-1; then
 		echo "File x-1 exists"
 	fi
 
@@ -278,6 +279,7 @@ It is a text-based format that separates values with commas, with each line cont
 and each column representing a different attribute of the data.
 
     cat Meteorite_Landings.csv | head -n 5
+
 
 ## Resources
 
