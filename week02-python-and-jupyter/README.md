@@ -2,65 +2,19 @@
 
 The goals for the week 2 lab are:
 
-1. Install and use the Jupyter notebook application on your VM.
-2. Be able to create, edit, and run notebooks.
-3. Use the NumPy and MatPlotLib packages.
-4. Download data from LIGO and know what an HDF5 file is.
-
-Start your VM, launch a terminal, and be prepared to run a few
-commands in that terminal.
-
-## Update your copy of CICF repository
-
-You should have done a `git clone` of the CICF repository in the home
-directory of your VM in the first week itself.  In case you have not
-done that yet, go back to the [previous week's instructions][week1],
-and follow the instructions under the section titled "Git".
-
-[week1]: ../week01-commandline/README.md#Git
-
-Since we will be updating the repository throughout the course, you
-will have to make sure you have the latest changes in your local copy.
-Change to `~/cicf` directory and then do a `git pull`:
-
-```console
-cd ~/cicf
-git pull
-```
+1. Download data from LIGO and know what an HDF5 file is.
+2. Use the NumPy and MatPlotLib packages.
+3. Be able to create, edit, and run Jupyter notebooks.
 
 ## Install some software
-
-We need to install some Debian packages on our VM using the [apt]
-package manager.  But first, we need to run an `apt update` to update
-package information from Debian's software repositories.
-
-```console
-sudo apt update
-```
-
-Enter the password when prompted.
-
-Once that is done, run the next command:
 
 ```console
 sudo apt install python3-pip python3-venv wget
 ```
 
-Type `Y` to confirm installation.
-
-We will also need some additional Python packages. These we can
-install using [pip], inside what is called a "virtual environment."
-Create a virtual environment and activate it with these commands:
-
 ```console
 python3 -m venv ~/venv
 source ~/venv/bin/activate
-```
-
-If that worked, you should see a prompt like:
-
-```console
-(venv) cicf@debian: $
 ```
 
 Now install the Python packages:
