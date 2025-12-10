@@ -10,31 +10,40 @@ Videos and Slides are available to fellows on the shared CICF drive.
 
 CICF is divided into two parallel themes which run over the entire semester:
 the technical course and the research course.
-The technical course presents elements of cyberinfrastructure (CI),
-with the intention of introducing students with topics that are important
-to working with CI at NSF Major Facilities, but which are not typically covered
-in university classes.
-Naturally, this is a very diverse set of topics, so each will be covered in an introductory manner.
-Links will be provided should you like to go into more depth on a topic.
+
+The CICF technical program aims to give you an overview of cyberinfrastructure
+concepts, tools, and skills.
+This repository provides a way for you to try out commands and tools yourself.
+Two of the skills we most want you to develop is a familiarity with using the command line
+and comfort with using Git, a ubiquitous tool for contributing to technical projects.
+There are also links to outside resources should you like to go into more depth on a topic.
 
 For the technical class students are expected to do the following each week:
 
 * Watch the technical lecture video for the week
-* Do the technical exercises for that week
-* Come to class with questions and ready to talk about their work on the exercises
+* Do the technical exercises for that week (in this repository)
+* Take the quiz for the week
+* Come to class with questions and ready to talk about the exercises
 
-The instructors are eager to help you with understanding the material and are happy to answer questions, both in class and aschronosly between classes.
+In the technical session we will discuss the exercises for the week, answer questions, and you may be asked to present on your solution to the technical exercises.
+The instructors are happy to answer questions, both in class and between classes.
+
+**There is an expectation that you complete the exercises for each week.**
 
 ## Structure of this repository
 
-Each week has a subdirectory in this repository containing a README for that week, a test script, and some exercise scripts.
-You will be expected to complete the exercises, which will involve either completing or debugging some code.
-The test script will evaluate the exercises for correctness.
-This will let you evaluate your solutions on your own time before that week's technical session.
-In the technical session we will discuss the exercises for the week, ask and answer questions, and have students present on their solutions.
+The [getting started][started] directory contains instructions for setting up your computer for the class.
 
-In addition to the subdirectories for each week, there is also a [getting started][started] directory that
-contains instructions for setting your computer up for the class.
+There is a directory for each week of the fellowship.
+Inside each directory there is a `README` file describing the exercises for the week.
+The exercises are in files starting with the word `exercise-`.
+They may be shell scripts, or python scripts.
+
+Each directory also has a test suite that will evaluate the exercises.
+Run the test with the command `make` while you are in the current week's directory.
+The goal is to get each test to pass.
+If a test fails you can troubleshoot, and try again.
+You are be expected to complete the exercises before the week's technical session.
 
 
 ## Spring 2026 Technical Program Calendar
