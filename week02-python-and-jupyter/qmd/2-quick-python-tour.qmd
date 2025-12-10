@@ -66,7 +66,7 @@ print(integer_division, remainder, big_number)
 
 The `//` operator (two slashes next to each other) mean "divide this
 and ignore the remainder". The `%` operator means "divide this and
-**only** give us the remainder.  Finally, two asterices mean "evaluate
+**only** give us the remainder.  Finally, two asterisks mean "evaluates
 the left side raised to the right side's power".
 
 The standard order of operations that we learned in school still
@@ -88,7 +88,7 @@ print(2 ** 81)
 
 Notice how big those numbers are?  Python (at least, all modern
 versions) represent integers with 64 bits. This will hold numbers from
-positive to negative 9 billion billon, give or take a little. If you
+positive to negative 9 billion, give or take a little. If you
 want to count the atoms in a micromole, knock yourself out.
 
 Parentheses work as expected for explicitly forcing a particular order
@@ -138,7 +138,7 @@ next line.
 Variables give names to things. We've seen variables used as integers
 and as floating point numbers.  Variables can also refer to strings.
 
-Unlike Java or C++, the are not "strongly" typed.  A variable can be a
+Unlike Java or C++, they are not "strongly" typed.  A variable can be a
 number one moment and then can suddenly become a string.  You don't
 have to declare types of variables either.
 
