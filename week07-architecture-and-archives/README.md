@@ -11,6 +11,8 @@ The goals for this week are to
 
 This week we will look at web services.
 
+<!-- keep orcid in week 7? -->
+
 Start by looking at the human version of a web page.
 Open your VM, and then open the web browser and visit
 
@@ -50,6 +52,8 @@ So, let's look at OpenAlex.
 
 ## Open Alex
 
+<!-- move to week 6-->
+
 Surprisingly, there is no complete database of all academic scholarship.
 There are a few aggregators that try to index as much as they can.
 One is [Google Scholar](https://scholar.google.com/), others are [DataCite Commons](https://commons.datacite.org),
@@ -84,6 +88,8 @@ Thinking of this architecture, why do you think the servers used a redirect rath
 
 
 ### Looking at the JSON
+
+<!-- move to week 5? -->
 
 Copy the JSON response and paste it into this web page:
 
@@ -180,7 +186,11 @@ The `jq` tool can work on the command line as well.
     jq .mesh[3] mosq.json
 
 
+
+
 ## Flask
+
+<!-- Yaxue start here -->
 
 Flask is a very simple python framework for making web applications.
 Here is a Flask app showing how a web server works.
@@ -203,6 +213,15 @@ Enter "localhost:5000/topic/2343453465" in the browser, you will see a page that
     You asked for 2343453465
 
 All web servers follow similar designs: they listen on a port for routes (or pages), and then depending on the page being asked for, run different pieces of code to return a response.
+
+
+<!-- Yaxue figure out how to make an exercise for this?
+
+maybe start with existing flask app, and alter it to either add a new route, or to do something in addition
+
+-->
+
+
 
 ## Resources
 
