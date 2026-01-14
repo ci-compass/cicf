@@ -81,7 +81,7 @@ import requests
 
 response = requests.get("https://google.com")
 
-print("Respnse status code: ", response.status_code)
+print("Response status code: ", response.status_code)
 print("Response headers: ", response.headers)
 print("Response text: ", response.text)
 ```
@@ -138,7 +138,7 @@ Python.  There are Anaconda packages written in other programming
 languages also.  Similar to `pip`, `conda` is Anaconda's package
 manager, and [Anaconda.org] is its package repository.
 
-Although we are not going to the details now, Anaconda is popular in
+Although we are not going into the details now, Anaconda is popular in
 science, AI, and data science communities, so they are worth
 mentioning here.
 
@@ -149,7 +149,7 @@ mentioning here.
 ## Yet another example: the NumPy package
 
 The `math` module is part of the Python standard library.  It
-implements a routines to calculate few standard functions and some
+implements a routine to calculate few standard functions and some
 basic probability distributions.  
 
 However, since Python's built-in support for numerical calculations is
@@ -192,7 +192,7 @@ print(a)
 ```
 
 The `array()` function will turn nested lists into an array.
-You can also make new arrays by asking for a zero array of a given size
+You can also make new arrays by asking for an array of zeros of a given size
 
 ```{python}
 z = np.zeros(3)

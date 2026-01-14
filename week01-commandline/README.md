@@ -6,6 +6,10 @@ The goals for Week 1 are:
 1. Navigate the filesystem, read, and create files using the command line
 1. Create simple shell scripts
 
+Note: these tutorials assume you are working in a Linux/Unix environment.
+You should be if you are using the Github codespace. These commands will
+probably not work in a Windows command line.
+
 ## Tutorial
 
 The command line is probably the fundamental technology for working with cyberinfrastructure.

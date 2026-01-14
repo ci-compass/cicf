@@ -40,7 +40,7 @@ We will make a new Git repository in this directory for us to practice making co
 
 The "git init" command tells Git to make a new repository in the current
 directory. This new repository is completely empty—none of the files have been added to it yet.
-It is good for every project to have a README file to contain the project name and a description for it.
+It is good for every project to have a README file that contains the project name and a description for it.
 
     nano README.md
 

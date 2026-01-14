@@ -5,7 +5,7 @@ notebook and opened it.
 
 Jupyter is a convenient and productive way to **keep notes and code
 together**. Think of it as being like a regular old paper Lab
-Notebook, except this notebook can have runable code in it that can be
+Notebook, except this notebook can have runnable code in it that can be
 **run directly from the notebook**.
 
 A Jupyter notebook consists of a bunch of _cells_ which contain either
@@ -111,7 +111,7 @@ total execution count goes up by one and is printed inside that cell's
 brackets.
 
 Why is this important? One of the handy things about Jupyter is that
-you can runs cells in any order, not just top-to-bottom. By looking at
+you can run cells in any order, not just top-to-bottom. By looking at
 the numbers in brackets, you can tell what order the cells were run
 in. This can be handy when you're jumping around.
 

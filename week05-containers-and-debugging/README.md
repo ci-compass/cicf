@@ -11,6 +11,7 @@ The goals for week 5 lab are:
 First, install Docker
 
 ```
+$ cd week05-containers-and-debugging
 $ sudo apt update
 $ ./install-docker.sh
 ```
@@ -51,7 +52,7 @@ cat Dockerfile-hello
 We start with the official base python image, we copy in our script,
 and then we specify the command to run when the container is
 started.
-(Don't forget the period at the end!)
+(Don't forget the "." at the end!)
 
 ```
 docker build -t hello -f Dockerfile-hello .
@@ -228,7 +229,7 @@ another breakpoint or until the program ends.
 - [Apptainer](https://apptainer.org/)
   ([docs](https://apptainer.org/docs/user/latest/)) is a container
   system, like Docker, that is more common in High Performance
-  Computing envrionments.
+  Computing environments.
 - [List of Docker images for the IceCube Neutrino Observatory](https://hub.docker.com/u/icecube)
   and their [instructions](https://docs.icecube.aq/icetray/main/index.html)
   for using the software.

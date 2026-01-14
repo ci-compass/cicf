@@ -58,6 +58,7 @@ There is also a metadata file:
 
     $ nano sampling_effort_daily_cellres_05_metadata.json
 
+(To exit `nano` and return to the command line type Ctrl-X).
 This file is in JSON-LD (how do we know? There is a field named `@context`).
 It describes the authors, and each variable in the file.
 
