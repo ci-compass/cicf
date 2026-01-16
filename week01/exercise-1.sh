@@ -6,6 +6,6 @@
 #
 # Add a wildcard argument to the following command to only list files
 # starting with the letter 'e'.
-# Keep the `-1` option, which has `ls` list each file on its line.
+# Keep the `-1` option, which tells `ls` to list each file on its line.
 
 ls -1

@@ -11,6 +11,11 @@ This week is a hands-on guide working in a supercomputing environment at the [Te
 * [SETI@Home](https://setiathome.berkeley.edu/) is the original distributed computing project. No longer distributing tasks, though.
 * TACC's [Frontera User Guide](https://docs.tacc.utexas.edu/hpc/frontera/)
 
+For SSH
+
+- GitHub [How to make an SSH keypair](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+
+
 **Networking Performance Links**
 
 * [Latency and IP](https://www.potaroo.net/ispcolumn/2000-09-latency.html) by Geoff Huston, September 2000.

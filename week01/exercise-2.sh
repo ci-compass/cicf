@@ -12,7 +12,6 @@ for i in $(seq 100); do
     echo $RANDOM
 done > source.txt
 
-# now sort the file into `sorted.txt`
-
-# replace this line
+# now sort the file and store the sorted list in the file `sorted.txt`
+# The following line is a placeholder. replace it with your solution
 cp source.txt sorted.txt

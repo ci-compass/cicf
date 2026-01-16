@@ -71,7 +71,7 @@ The CICF course was created and is run by the following team:
 * Angela Murillo
 * Nicole Virdone
 * Don Brower
-* Yaxue Guo 
+* Yaxue Guo
 * Sarowar Hossain
 * Jaya Bharti
 * Christina Clark
@@ -99,7 +99,7 @@ license.
 <!-- References -->
 
 [started]: ./getting-started
-[week01]: ./week01-commandline
+[week01]: ./week01
 [week02]: ./week02-python-and-jupyter
 [week03]: ./week03-scientific-computing
 [week04]: ./week04-git-and-coding-standards

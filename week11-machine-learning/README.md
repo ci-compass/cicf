@@ -42,3 +42,4 @@ Other interesting links:
 - [Cornell Machine Learning Course](https://www.cs.cornell.edu/courses/cs4780/2015fa/page4/)
 - [Google Machine Learning Course](https://developers.google.com/machine-learning/crash-course/ml-intro)
 - [Library of Statistical Techniques](https://lost-stats.github.io/)
+- [Bias-Variance Tradeoff](https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff)
