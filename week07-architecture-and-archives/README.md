@@ -2,9 +2,9 @@
 
 The goals for this week are to
 
-1. Call a web service from the command line
-1. Be able to specify HTTP headers with `curl` requests
-1. Be able to manipulate JSON files
+1. Use Swagger UI to explore API endpoints (GET, POST, PATCH, DELETE)
+2. Build a simple Flask web application to interact with a live web API using HTTP
+3. Understand the basics of software architecture and design patterns in the context of web services
 
 
 ## Tutorial
@@ -186,44 +186,123 @@ The `jq` tool can work on the command line as well.
     jq .mesh[3] mosq.json
 
 
+## Data, Archives, and APIs
 
+In this module, we treat the API as a simple gateway to an archive:
 
-## Flask
+- Data is stored in structured form (JSON)
+- The API defines how data can be accessed
+- Clients do not access data files directly
 
-<!-- Yaxue start here -->
+This separation is common in real systems where archives must be
+stable, reusable, and accessible by many tools.
+
+    [ Browser / curl / Swagger UI ]
+            |
+        HTTP
+            |
+    [ API ]
+            |
+    Data Storage (JSON files, databases, etc.)
+
+### Try API with Swagger UI
+
+Open this url in a browser:
+
+    https://yaxue1123.github.io/api-swagger-playground/
+
+In the `POST /users endpoint`, click "Try it out", input your basic informtion per the JSON requires 
+in the "Request body" box:
+
+```json
+{
+  "name": "string",
+  "email": "string",
+  "age": 0,
+  "year": 0
+}
+```
+
+Then click the "Execute" button. You will see the request and response details, including the request URL, the request body, and the response body. Code `201` means the request was successful and a new resource was created. The response body contains the information of the new user you just created.
+
+```
+curl -X 'POST' \
+  'https://api-swagger-playground.onrender.com/users' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "name": "User1",
+  "email": "user1@email.com",
+  "age": 21,
+  "year": 3
+}'
+```
+
+Then in the `GET /users` endpoint, click "Try it out" and then click "Execute". You will see the request and response details again. Code `200` means the request was successful. The response body contains the information of all users, including the user you just created.
+
+### Essential Concepts 
+
+#### Common HTTP Methods
+
+| Method | What it does | Example use in this week |
+|------|-------------|--------------------------|
+| GET  | Retrieve data from a server | Get a list of users |
+| POST | Send new data to a server | Add a new user |
+| PUT  | Update existing data | Update user info |
+| DELETE | Remove data | Delete a user |
+
+#### Common HTTP Status Codes
+
+| Code range | Meaning | Example |
+|-----------|--------|---------|
+| 2xx | Success | 200 OK, 201 Created |
+| 3xx | Redirection | 301 Moved Permanently |
+| 4xx | Client error | 400 Bad Request, 404 Not Found |
+| 5xx | Server error | 500 Internal Server Error |
+
+## Build a simple Flask app
 
 Flask is a very simple python framework for making web applications.
 Here is a Flask app showing how a web server works.
 Let's set up the virtual envrionment and run Flask.
 
     $ source ~/venv/bin/activate
-    $ pip install flask
+    $ pip install flask requests
     $ flask --app app run
 
-You will see some text, including that the server is running on "http://127.0.0.1:5000".
-This is a special address, in that on any computer in the world, 127.0.0.1 refers to the current computer.
-This is also called the "localhost".
-The 5000 says the server is listening on port 5000 on the current computer.
-Open a web browser and type in the URL `localhost:5000`.
-You will see a page showing "Hello World."
-This is because in the file `app.py` we match that route and say to return that text.
-We also have a route to match any path that begins with `/topic/` so let's try that in the browser.
-Enter "localhost:5000/topic/2343453465" in the browser, you will see a page that has the text
+You will see some text, including that the server is running on localhost "http://127.0.0.1:5000".
+127.0.0.1 refers to the current computer. The 5000 says the server is listening on port 5000 on the current computer.
+Open a web browser and type in the URL `localhost:5000`. You will see a page showing "Hello World." 
+This is because in the file `app.py` we match that route `/` and say to return that text.
+Enter `localhost:5000/users` in the browser, you will see a page with the table of all users we just created in the Swagger UI.
 
-    You asked for 2343453465
-
-All web servers follow similar designs: they listen on a port for routes (or pages), and then depending on the page being asked for, run different pieces of code to return a response.
-
-
-<!-- Yaxue figure out how to make an exercise for this?
-
-maybe start with existing flask app, and alter it to either add a new route, or to do something in addition
-
--->
+- **Your Computer**
+  - **Web Server** (running)
+    - **Port 5000** (`http://localhost:5000`)
+      - **Route `/`**
+        - Code runs in `app.py`
+        - Browser shows: **Hello World**
+      - **Route `/users`**
+        - Code runs in `app.py`
+        - Browser shows: **Users table**
 
 
+### Data Visualization 
+
+Next, we will add data visualization to our Flask app.
+We will create:
+
+- a pie chart showing the distribution of students by school year
+
+- a bar chart showing the distribution of students by age
+
+These visualizations will help us better understand the user data.
+
+<!-- Yaxue TODO: Confirm tutorial scope and timing with Don -->
 
 ## Resources
+
+<!-- Yaxue TODO: Update Resources list based on tutorial scope -->
 
 * [Glue work and systems design](https://apenwarr.ca/log/?m=202012)
 * [Building and operating a pretty big storage system](https://www.allthingsdistributed.com/2023/07/building-and-operating-a-pretty-big-storage-system.html)
