@@ -14,8 +14,9 @@ In this module, we treat the API as a simple gateway to an archive:
 - The API defines how data can be accessed
 - Clients do not access data files directly
 
-This separation is common in real systems where archives must be
-stable, reusable, and accessible by many tools.
+This separation allows archives to remain stable and reusable, while different clients—web browsers, scripts, and applications—can access the same archive through the API.
+
+This architectural pattern is common in real-world systems, especially digital archives, where records must remain consistent and accessible over long periods of time.
 
     [ Browser / curl / Swagger UI ]
             |
@@ -210,21 +211,11 @@ Your task is to complete the missing code so that the bar chart correctly displa
 
 ## Digital archives in production: OpenAlex
 
-So far, we have worked with a simple teaching API. Now let's look at a real-world example of a digital archive and how it is accessed through an API.
+So far, we have worked with a simple teaching API, where the structure and behavior were easy to see. Now, let's look at a real-world example of a digital archive and how it provides access to its data through an API.
 
-A digital archive is a system that collects, organizes, preserves, and provides access to structured information over time. Instead of allowing direct access to its internal database, the archive exposes an API so that users and programs can retrieve and reuse its records.
+Last week, we used OpenAlex to examine the JSON responses. This week, we revisit OpenAlex from a broader perspective. OpenAlex is a large-scale digital archive, and its API is the interface that makes this archive accessible to the outside world.
 
-There is no single complete archive of all academic scholarship. Instead, several large digital archives and aggregators attempt to index as much scholarly work as possible. For example:
-
-- [Google Scholar](https://scholar.google.com/)
-- [DataCite Commons](https://commons.datacite.org)
-- [OpenAlex](https://openalex.org)
-
-There are also more specialized databases, such as [PubMed](https://pubmed.ncbi.nlm.nih.gov/) for medical research.
-
-OpenAlex is a large-scale digital archive of scholarly knowledge. It stores structured records about papers, authors, institutions, datasets, and citations.
-
-The OpenAlex website provides a human-readable interface for people, while its API provides a machine-readable interface for programs. Both access the same underlying archive.
+A digital archive is a system that collects, organizes, preserves, and provides access to structured information over time. Rather than allowing direct access to its internal database, the archive exposes an API so that users and programs can retrieve and reuse its records.
 
 ---
 
