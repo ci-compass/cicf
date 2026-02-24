@@ -99,15 +99,15 @@ You can also try the `DELETE /users/{user_id}` endpoint. This endpoint deletes a
 Flask is a very simple python framework for making web applications.
 Here is a Flask app showing how a web server works.
 
-First, activate your virtual environment and install the required packages:
+First, create and activate a virtual environment, then install the required packages:
 
+    $ python3 -m venv venv
     $ source venv/bin/activate
     $ pip install flask requests
 
 Then start the Flask development server:
 
     $ python app.py
-
 
 You should see output similar to:
 
