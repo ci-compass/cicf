@@ -221,26 +221,19 @@ A digital archive is a system that collects, organizes, preserves, and provides 
 
 ## Human-readable page vs API endpoint
 
-In your browser, visit:
-
-    ```https://openalex.org/works/w2764299839```
-
+In your browser, visit: `https://openalex.org/works/w2764299839`
 
 This is a human-readable web page designed for people.
 
 To see the machine-readable data behind it, open the Inspect tool in your browser, go to the Network tab, refresh the page, and click the OpenAlex API call. The Response tab shows the data in JSON format, which is a machine-readable version.
 
-Now let's try the request in: 
+Now let's try the request in:  `https://base64.guru/tools/http-request-online`
 
-```https://base64.guru/tools/http-request-online```
-
-If you request the same URL: ```https://openalex.org/works/w2764299839```
+If you request the same URL: `https://openalex.org/works/w2764299839`
 
 You'll see the response body in HTML format, which is designed for browsers. 
 
-Also, OpenAlex provides a dedicated API endpoint for programmatic access:
-
-    ```https://api.openalex.org/works/w2764299839```
+Also, OpenAlex provides a dedicated API endpoint for programmatic access: `https://api.openalex.org/works/w2764299839`
 
 Request this URL instead.
 
@@ -252,9 +245,7 @@ You'll now see the response body in JSON format, which is designed for programs 
 
 When requesting this API endpoint, you may notice something interesting in the response.
 
-The JSON response contains the identifier:
-
-```https://openalex.org/W2764299839```
+The JSON response contains the identifier: `https://openalex.org/W2764299839`
 
 
 Notice that the identifier uses a capital **W**, even if the original request used a lowercase **w**.
