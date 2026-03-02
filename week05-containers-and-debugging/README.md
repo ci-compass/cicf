@@ -1,6 +1,6 @@
 # CICF Week 5
 
-The goals for week 5 lab are:
+The goals for week 5 tutorial are:
 
 1. Make and run a simple Docker image.
 1. Run a service packaged in an external Docker image.
@@ -8,36 +8,32 @@ The goals for week 5 lab are:
 
 ## Tutorial
 
-First, install Docker
+Surprise! You have already been using containers since Codespaces are
+implemented as a container.
+Try
 
-```
-$ cd week05-containers-and-debugging
-$ sudo apt update
-$ ./install-docker.sh
-```
-
-You will need to then enter your password for sudo and press `Y` to
-agree to installing the packages.
-Then we need to add us to the Docker group.
-(You can type `$USER`, the shell will expand the variable to be the current username).
-
-```
-sudo usermod -aG docker $USER
-```
-
-Now, **choose "Log Out..." from the menu in the upper right corner and
-then sign back in** to get the group membership to be cached.
-
-Log back in, and docker should be set up.
-We can verify this by running
-
-```
-docker ps
-```
+    $ docker ps
 
 This lists all the containers that are currently running.
 There should be no containers running, but the important thing is
 that there are no errors.
+
+> [!NOTE]
+> If the `docker` command does not work we need to update the codespace container.
+>
+>     $ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /etc/apt/keyrings/yarn-archive-keyring.gpg > /dev/null
+>     $ git pull	# inside /workspaces/cicf
+>
+> At this point you will be asked to rebuild your container. Say yes.
+> If you accedentially chose "no" you can rebuild your container
+> by chosing the command bar and start typing ">rebuild"; an option to rebuild the
+> container will appear below and select it.
+> (Why did it ask to rebuild? because the `.devcontainer/devcontainer.json` file
+> was updated during the "git pull".)
+
+<!-- NOTE: the above note won't be necessary after Spring 2026
+The pubkey update is from https://github.com/yarnpkg/yarn/issues/6885
+-->
 
 ### Build an image
 
@@ -45,188 +41,191 @@ Our first task is to create a container image.
 The `Dockerfile-hello` contains the instructions on how to build the
 image.
 
-```
-cat Dockerfile-hello
-```
+    $ cat Dockerfile-hello
+    FROM python:3.12-slim
+    COPY hello.py /hello.py
+    CMD ["python", "hello.py"]
 
-We start with the official base python image, we copy in our script,
-and then we specify the command to run when the container is
-started.
-(Don't forget the "." at the end!)
+We start with an official base python image, we copy in our script,
+and then we specify the command to run when the container is started.
+The `docker build` will follow this receipe to make an container image:
+(n.b. don't forget the "." at the end)
 
-```
-docker build -t hello -f Dockerfile-hello .
-```
+    $ docker build -t hello -f Dockerfile-hello .
 
-This is making an image from that instruction file and we are naming
-the image `hello`.
+This is making an image from that instruction file and names the image "hello".
 
-```
-docker images
-```
+    $ docker images
+    IMAGE          ID             DISK USAGE   CONTENT SIZE   EXTRA
+    hello:latest   05bf3d415042        177MB         43.3MB
 
-And then to run the image we use:
+And then to run the image:
 
-```
-docker run hello
-```
+    $ docker run hello
+    Hello World
 
-We can see the layers, (i.e. sequence of commands to make the image)
+We can see the layers (i.e. sequence of commands to make the image)
 with the "history" command:
 
-```
-docker history hello
-```
+    $ docker history hello
+    IMAGE          CREATED         CREATED BY                                      SIZE      COMMENT
+    05bf3d415042   3 minutes ago   CMD ["python" "hello.py"]                       0B        buildkit.dockerfile.v0
+    <missing>      3 minutes ago   COPY hello.py /hello.py # buildkit              8.19kB    buildkit.dockerfile.v0
+    <missing>      3 days ago      CMD ["python3"]                                 0B        buildkit.dockerfile.v0
+    <missing>      3 days ago      RUN /bin/sh -c set -eux;  for src in idle3 p…   16.4kB    buildkit.dockerfile.v0
+    <missing>      3 days ago      RUN /bin/sh -c set -eux;   savedAptMark="$(a…   41.5MB    buildkit.dockerfile.v0
+    <missing>      3 days ago      ENV PYTHON_SHA256=a97d5549e9ad81fe17159ed02c…   0B        buildkit.dockerfile.v0
+    <missing>      3 days ago      ENV PYTHON_VERSION=3.14.3                       0B        buildkit.dockerfile.v0
+    <missing>      3 days ago      RUN /bin/sh -c set -eux;  apt-get update;  a…   4.94MB    buildkit.dockerfile.v0
+    <missing>      3 days ago      ENV PATH=/usr/local/bin:/usr/local/sbin:/usr…   0B        buildkit.dockerfile.v0
+    <missing>      6 days ago      # debian.sh --arch 'amd64' out/ 'trixie' '@1…   87.4MB    debuerreotype 0.17
 
-The most recent change is at the top and the oldest change is at the
-bottom.
+The most recent change is at the top and the oldest change is at the bottom.
 
 We can see the all containers (whether running or not) with the
 `-a` option on the `ps` command:
 
-```
-docker ps -a
-```
+    $ docker ps -a
 
 Okay, let's see if the execution environment is really restricted:
 
-```
-docker run -it hello bash
-```
+    $ docker run -it hello bash
 
 This has less of everything:
 
-```
-env
-ping
-python3
-```
+    env
+    ping
+    python3
 
 Also, by default, containers have no network access.
 
+We can make a second version of hello.
+Edit `hello.py` to read:
 
-### Object Store
+>    #!/usr/bin/env python3
+>
+>    print("Hello World Again!!!!")
+
+When we rebuild the container we have a choice: we can keep the same name (`hello:latest`) or we can give it a version tag.
+Lets tag it as version 2.
+(There is nothing special about "2", you can use any string as a label.)
+
+    $ docker build -t hello:2 -f Dockerfile-hello .
+
+And then we use the tag to refer to it.
+
+    $ docker run hello:2
+    Hello World Again!!!!
+    $ docker run hello
+    Hello World
+
+<!-- current edit point -->
+### Network Store
 
 We are going to run a service using docker.
 
-This is something called an object store, which we will visit when we
-talk about cloud computing.  For now the important thing is that we
-will run it inside a container.
-
-First, get the container image:
-
-```
-docker pull minio/minio
-```
-
-See that it has been downloaded:
-
-```
-docker images
-```
-
-We will now run it.  This looks complicated since we need to pass some
-configuration on the command line.  By default containers don't have
-network access, so we first need to tell docker to allow us to access
-this container on ports 9000 and 9001.
-
-We then need to configure where we want the service to store data.
-And we need to configure a root user and password.
-
-```
-mkdir -p data
-
-docker run -d -p 9000:9000 -p 9001:9001 -v $(pwd)/data:/data -e "MINIO_ROOT_USER=cicf" -e "MINIO_ROOT_PASSWORD=cicf1234" minio/minio server /data --console-address ":9001"
-```
+    $ docker run -d -p 6379:6379 redis
 
 The container should have started and be running in the background.
-Docker printed the ID for this container.  We will let `{id}` refer to
-the first few letters/digits of this id.
 
-```
-docker ps
-docker logs {id}
-```
+    $ docker ps
+    CONTAINER ID   IMAGE                       COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+    c9b559f30c43   redis                       "docker-entrypoint.s…"   2 minutes ago    Up 2 minutes    0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp   brave_cohen
+    $ docker logs {id} | tail
+    1:M 13 Feb 2026 15:56:59.145 * <ReJSON> Exported RedisJSON_V3 API
+    1:M 13 Feb 2026 15:56:59.145 * <ReJSON> Exported RedisJSON_V4 API
+    1:M 13 Feb 2026 15:56:59.145 * <ReJSON> Exported RedisJSON_V5 API
+    1:M 13 Feb 2026 15:56:59.145 * <ReJSON> Exported RedisJSON_V6 API
+    1:M 13 Feb 2026 15:56:59.145 * <ReJSON> Enabled diskless replication
+    1:M 13 Feb 2026 15:56:59.145 * <ReJSON> Initialized shared string cache, thread safe: true.
+    1:M 13 Feb 2026 15:56:59.145 * Module 'ReJSON' loaded from /usr/local/lib/redis/modules//rejson.so
+    1:M 13 Feb 2026 15:56:59.145 * <search> Acquired RedisJSON_V6 API
+    1:M 13 Feb 2026 15:56:59.145 * Server initialized
+    1:M 13 Feb 2026 15:56:59.145 * Ready to accept connections tcp
 
-Okay, let's set it up. In the web browser, visit `http://localhost:9001`
-Sign in with our username and password `cicf` and `cicf1234` Create a new
-bucket named "cicf-data".
+This is running a network cache store called "Redis".
+It provides a server (not web based, though) to store and cache values between server computers.
+This is very common service to have running to support a web portal.
+We can interact with it via python.
 
-Create a new access key named "test-account".  Download the secret
-info and move it into our current directory:
+    pip install redis
 
-```
-mv ~/Downloads/credentials.json .
-```
+<!-- TODO: update requirements.txt to include redis module -->
 
-The file is in JSON format.
+And now:
 
-```
-cat credentials.json
-```
+    $ python
+    >>> import redis
+    >>> r = redis.Redis(host='localhost', port=6379, decode_responses=True)
+    >>> r.get("qwerty")
+    >>> r.set("qwerty", "this key is the first")
+    True
+    >>> r.get("qwerty")
+    'this key is the first'
 
-Aside: there is a great tool for working with JSON files.
+Redis can do a lot more than just act as a network-attached hash map.
+For one thing, keys can expire after a set amount of time.
 
-```
-sudo apt install jq
-jq . credentials.json
-```
+    >>> r.set("test", "this will be gone in 30 seconds", ex=30)
+    >>> r.get("test")
+    'this will be gone in 30 seconds'
+    >>> # wait 20 seconds
+    >>> r.get("test")
+    >>>
 
-Grant the new key sufficient access privileges.  Copy the `minio-policy`
-policy file:
+We can load a web UI for redis
 
-```
-cat minio-policy
-```
+    $ docker run -d --name redisinsight -p 5540:5540 redis/redisinsight:latest
+    $ docker ps
+    CONTAINER ID   IMAGE                       COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+    d1932500487f   redis/redisinsight:latest   "./docker-entry.sh n…"   1 minute ago     Up 1 minute     0.0.0.0:5540->5540/tcp, [::]:5540->5540/tcp   redisinsight
+    c9b559f30c43   redis                       "docker-entrypoint.s…"   58 minutes ago   Up 58 minutes   0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp   brave_cohen
+    $ docker inspect brave_cohen | grep IPAddress
+    172.17.0.2
 
-Edit the key we just created by pasting in the file contents.  And then
-save it.
+In place of "brave_cohen" above, use the identifier for your redis container.
+Copy the IP Address and then click the button to view the 5540 port in a new browser window.
+(If the pop-up dialog disappeared, you can do it by chosing the "PORT" tab and then clicking on the globe icon for port 5540).
 
-Now upload some files.  We want `hello.py`.
+Agree to the EULA, and then add a new database.
+Replace the `127.0.0.1` address with the one we copied.
+You will see keys we have added to our redis instance.
+Add a key named `fib-45` with the type "string" and the value '' (the empty string).
 
-We will install the Python [minio] library.  We created a virtual
-environment in the home directory for installing Python packages
-earlier in week 2.  We will reuse that environment here:
+On the command line run our `store.py` script.
 
-[minio]: https://pypi.org/project/minio/
-
-```
-source ~/venv/bin/activate
-```
-
-Now we can install the `minio` Python package inside that virtual
-environment:
-
-```
-pip3 install minio
-```
-
-Copy the credentials into the store.py file.  Run `store.py`.  Refresh
-the bucket, nothing should have happened.  
-
-Now upload the `fib-first` file to the bucket and rerun `store.py`.
-Refresh the bucket, there should be a new object named `result-first`
-It should contain the 16th Fibonacci number, which is 987.
-
-The name is not quite right.  Let's put a breakpoint into the file
-Before line 25 insert the line `breakpoint()`.
-
-When we run the script, it will stop in the debugger.  We can see
-variables with `p` prefix.  There are three ways to advance execution:
-stepping, next, or continuing. Step will take the smallest possible
-increase, in that it will go into functions and stop.  Next will stop
-at the next line of the program.  Continue will keep running until
-another breakpoint or until the program ends.
+Switch back to the redis viewer. The value for key `fib-45` should be 1134903170.
 
 
-## Notes
+<!-- TODO: do pdb example -->
 
-tracing: strace, ltrace, python trace
-debugger: pdb
-print statements
+## Other Debugging tools
 
+To find a bug you need information to understand what is happening.
+If print statements or pdb doesn't help find a bug, sometimes it helps
+to trace the execution with more detailed tools.
+One is called "strace", for "system trace".
+This command will run the program and log every system call to STDERR.
 
+    $ strace python hello.py
+    execve("/usr/local/bin/python", ["python", "hello.py"], 0x7ffd179a6d88 /* 58 vars */) = 0
+    brk(NULL)                               = 0x57b513b24000
+    mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x763891923000
+    readlinkat(AT_FDCWD, "/proc/self/exe", "/usr/local/bin/python3.13", 4096) = 25
+    access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+    openat(AT_FDCWD, "/usr/local/bin/../lib/glibc-hwcaps/x86-64-v3/libpython3.13.so.1.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+    newfstatat(AT_FDCWD, "/usr/local/bin/../lib/glibc-hwcaps/x86-64-v3/", 0x7fff44c7e1f0, 0) = -1 ENOENT (No such file or directory)
+    openat(AT_FDCWD, "/usr/local/bin/../lib/glibc-hwcaps/x86-64-v2/libpython3.13.so.1.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+    newfstatat(AT_FDCWD, "/usr/local/bin/../lib/glibc-hwcaps/x86-64-v2/", 0x7fff44c7e1f0, 0) = -1 ENOENT (No such file or directory)
+    openat(AT_FDCWD, "/usr/local/bin/../lib/libpython3.13.so.1.0", O_RDONLY|O_CLOEXEC) = 3
+    [...385 more lines]
 
+Python also has a tracing module which will print every line as it is executed
+
+    $ python -m trace -t hello.py
+     --- modulename: hello, funcname: <module>
+    hello.py(3):  print("Hello World")
+    Hello World
 
 ## Resources
 

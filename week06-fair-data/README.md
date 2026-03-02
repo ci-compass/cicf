@@ -4,113 +4,165 @@ The goals for the week 6 lab are to:
 
 1. Look at data catalogues
 1. Download data and plot it
+1. Interact with an API to get data
 
 ## Tutorial
 
+A data catalogue is a site that provides a way to search for papers and datasets, but dosen't store the actual data.
+This means they are not repositories, but they do help us find data that is in repositories.
+This helps with the findable part of FAIR and is a use case anticipated by the 2016 FAIR paper,
+where machine agents that look for data both on their own, and at our behest was envisioned.
 
-Let's start by looking at data catalogues.
-These are sites that index papers and datasets, but don't store the actual data themselves.
-So they are not repositories, but they do help us find data that is in repositories.
-This is very FAIR, and definitely a use case anticipated by the 2016 FAIR paper.
+## ORCID
 
-### DataCite Commons
+Lets start by looking at an ORCID record.
+Visit the ORCID record [0000-0002-1825-0097](https://orcid.org/0000-0002-1825-0097).
+This is (or should be) the only fictional person with an ORCID record.
+The page displays his name and some information about him.
+It is the page for humans.
 
-Running a data catalogue is non-trivial.
-There are _many_ records, and you need to have processes to collect the newer records from various places as well as having a way to update records.
-DataCite is one of the organizations that keep records for DOIs, so it is natural that they spend some effort to make a nice public search interface.
 
-In the browser, go to the [DataCite Commons][] page.
-You can see a search box.
-Type in a search query, we will do "mosquito".
-We get 37,570 works.
-These are a combination of item types, years published, etc.
-The facets on the left-hand side give an overview of the results.
-Each record shows a title, list of authors, description, item type, item language, and a DOI.
+<!-- TODO: needs revision for ORCID API
 
-Let's choose "2025" as a facet year.
-We now see (at the time of this writing) 410 items.
-The 6th item or so is "[Sampling Effort Data][]" by Mosquito Alert.
-Clicking on the title takes us to the item page in Zenodo.
+Let's look at this under the hood.
+Make a new browser tab and go to this website:
 
-**Zenodo** is a general purpose repository.
-And the interesting thing with this record is that it is an archived version of a GitHub repository.
-[Mosquito Alert][] is a citizen science project to collect mosquito information from volunteers using a mobile app.
-(They also have a [data portal][]).
+    https://base64.guru/tools/http-request-online
 
-Why would you want to archive a GitHub repository?
-Git repositories are great collaboration tools.
-But they have two drawbacks with respect to scholarship:
-1) it is hard to cite a particular version of a Git repository, and 2) GitHub (or any other hosting site) is not archival storage.
-For (1), while each version and commit in a git repository has a well-defined name—the commit hash—these names are not considered persistent identifiers since they do not fit into a global schema. In addition to the commit hash, you also need to know the repository name, and where to find the repository, and these things can change. Also, for a citation you need to provide information such as the release year, the creators, the license, and it is much easier to put everything into an archival repository and use that.
-This is not to say Git is not useful; it is still extremely useful for the day-to-day running and collaboration on a project.
+We will first look at HTTP requests with this and then from the command line.
+Enter the previous ORCID URL into the URL box.
+Choose HTTP request version 1.1.
 
-Download the data file (from the command line!).
+We see the request sent.
+It has the HTTP method, `GET`, and a few headers.
+These headers are standard boilerplate.
 
-    wget -i zenodo-links
+Then below we see the response headers.
+The first line has the response code, in this case "200 OK".
+We have some more headers describing the data:
+it is `text/html`.
+There are some other headers, some are important to the client, and some are for debugging.
 
-It is a zip file, so let's look at it.
+Below the response headers is the response body, and we have some HTML encoded text which is the displayed webpage.
+So this shows the distinction between HTTP—the transport protocol—and HTML—the text that forms the "web page".
 
-    $ unzip sampling_effort_data-v2025.02.25.zip
-    $ cd Mosquito-Alert-sampling_effort_data-0b57d8f
+We can add other headers to our request.
+Of course, if the server doesn't understand a header it can ignore it or return an error, its choice.
 
-There is a README file, A LICENSE file, and a CITATION file.
-There is also a metadata file:
+I would then look at this using the JSON response ORCID can provide, but
+the website now requires a sign-in before providing this.
 
-    $ nano sampling_effort_daily_cellres_05_metadata.json
+-->
 
-(To exit `nano` and return to the command line type Ctrl-X).
-This file is in JSON-LD (how do we know? There is a field named `@context`).
-It describes the authors, and each variable in the file.
+## Open Alex
 
-    $ gzip -d sampling_effort_daily_cellres_05.csv.gz
+Surprisingly, there is no complete database of all academic scholarship.
+There are a few aggregators that try to index as much as they can.
+Some of these are [Google Scholar](https://scholar.google.com/),
+[DataCite Commons](https://commons.datacite.org),
+and [OpenAlex](https://openalex.org).
+There are also more specialized databases, such as [PubMed](https://pubmed.ncbi.nlm.nih.gov/) for biomedical research.
 
-This is a huge file in CSV format, a very common format to receive data values in.
-Each row is an individual data point, and each column names an attribute for that data point.
+OpenAlex is a catalog of open science papers, people, datasets, institutions, and so on.
+In the browser visit [the following page](https://openalex.org/works/w2764299839):
 
-This file is quite big, and we need to use a tool to get some summary statistics.
+    https://openalex.org/works/w2764299839
 
-    $ source ~/venv/bin/activate
-    $ pip install pandas
-    $ python3
+This is the human readable page provided by the catalog.
+Let's try asking for a JSON representation by using the HTTP header `Accepts: application/json`.
+In this case, we get a page that wants us to use javascript.
+This seems to be a newer technique to prevent bots from scraping data off a page.
+But the information is all available at the API endpoint by using `api.openalex.org`:
 
-OK, in the Python interactive environment let's load the CSV file.
+    curl -H 'Accepts: application/json' https://api.openalex.org/works/W2764299839 > alex.json
 
-```python
->>> import pandas as pd
->>> data = pd.read_csv("sampling_effort_daily_cellres_05.csv")
+The JSON returned is considered "human readable" since it is not encoded as a binary stream.
+However, it is quite hard to actually understand it.
+We can reformat it to make it nicer:
 
->>> data.head()
->>> data.tail()
->>> data.info()
+    $ jq . alex.json | less
 
->>> data['masked_lon'].max()
->>> data['masked_lon'].min()
+
+### Looking at JSON (aside)
+
+JSON is a simple way of structuring data to send between computers.
+Since it is text-based, it is easy for people to inspect it.
+However there is no support for comments, so it is not ideal for ongoing things that a human might be editing, such as configuration files.
+There are also online tools to work with JSON data.
+Copy the JSON response and paste it into the box labeled "JSON" on the [JQ playground](https://jqplay.org) web page.
+In the box labeled "Query" enter a single period, `.`.
+A formatted version of the JSON will appear in the right-hand box.
+
+There are 6 kinds of values in JSON:
+* numbers
+* strings
+* true/false
+* null
+* objects
+* arrays
+
+Most JSON is packaged up as an object, which is indicated by a matching pair of curly braces, `{}`.
+Inside the curly braces of an object there are a list of
+key-value pairs separated by commas.
+
+The Query box takes a pattern and returns the pieces of the input that match.
+Try entering `.title` in the Query box.
+You should see the following JSON:
+
+```json
+"Citizen science provides a reliable and scalable tool to track disease-carrying mosquitoes"
 ```
 
-Type Control-D to exit the interactive prompt.
-We want to view a histogram, so start Jupyter and open the notebook `mosquito-alert.ipynb`.
+Now try `.mesh`.
+You should see a big list.
+Now do `.mesh[3]`:
 
-    $ jupyter notebook
+```json
+{
+  "descriptor_ui": "D000071244",
+  "descriptor_name": "Zika Virus",
+  "qualifier_ui": "Q000502",
+  "qualifier_name": "physiology",
+  "is_major_topic": false
+}
 
+```
 
-[DataCite Commons]: https://commons.datacite.org/
-[Sampling Effort Data]: https://commons.datacite.org/doi.org/10.5281/zenodo.5802476
-[Mosquito Alert]: https://www.mosquitoalert.com/
-[data portal]: https://labs.mosquitoalert.com/metadata_public_portal/README.html
+The `jq` tool can work on the command line as well.
 
+    jq .mesh[3] alex.json
+
+MeSH are subject headings maintained by the National Library of Medicine.
+We can look up this term. Go to the [MeSH home page](https://www.ncbi.nlm.nih.gov/mesh/).
+Search for `D000071244`.
+You will see the entry for "Zika Virus".
+
+Vocabularies like MeSH are very useful, but they take effort to develop and maintain.
+Another useful place to define shared terms is [WikiData](https://www.wikidata.org).
+The same term for Zika virus is in WikiData with identifier [Q202864](https://www.wikidata.org/wiki/Q202864),
+and in the NCBI taxon database as [54320](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=64320)
+
+Why does the same thing show up in so many databases?
+Because each database is for a different purporse, so each shows a different aspect of the thing.
+MeSH is used for organizing papers at the NLM.
+Wikidata is a general purporse database that mostly cross-references all these other entries.
+The NCBI Taxon database is trying to be a complete catalog of species of living things (plus virus, etc).
 
 
 ### NEON
 
-Now, let's look at data provided by NEON (National Ecological Observatory Network).
+NEON (National Ecological Observatory Network) is an NSF Major Facility that
+collects and provides long-term logtududional ecological data.
 They are an interesting Major Facility since in addition to recorded measurements,
-they also have samples available for loan.
+they also have physical samples available for loan.
 
-https://data.neonscience.org/data-products/explore
+We will start at their [data portal](https://data.neonscience.org/data-products/explore)
 
-Search for "mosquito". Then select "Download data" from "Mosquitoes sampled from CO2 Traps".
-There is a grid showing which months data is available from each site.
-Choose two sites: ABBY and UNDE, and two years: 2023 and 2024.
+Search for "mosquito". Then select the item "[Mosquitoes sampled from CO2 Traps](https://data.neonscience.org/data-products/DP1.10043.001/RELEASE-2026)".
+Near the bottom of the item page there is a grid showing which months data is available from each site.
+Choose the buttom "Download Data".
+
+For the two sites WI-D16-ABBY and MI-D05-UNDE choose the data for the years 2024 and 2025.
 And then download the data.
 
 The data is organized as many files.
