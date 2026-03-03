@@ -95,6 +95,80 @@ You can also try the `DELETE /users/{user_id}` endpoint. This endpoint deletes a
 | 4xx | Client error | 400 Bad Request, 404 Not Found |
 | 5xx | Server error | 500 Internal Server Error |
 
+## Digital archives in production: OpenAlex
+
+So far, we worked with a simple teaching API where the structure and behavior were easy to observe.
+
+Now let’s look at a real-world example: OpenAlex.
+
+Last week, we used OpenAlex to examine the JSON responses. This week, we revisit OpenAlex from a broader perspective. OpenAlex is a large-scale digital archive, and its API is the interface that makes this archive accessible to the outside world.
+
+A digital archive:
+
+- Collects and organizes records
+
+- Preserves them over time
+
+- Provides structured access through an API
+
+---
+
+### Human-readable page vs API endpoint
+
+First, visit in your browser:
+
+https://openalex.org/works/w2764299839
+
+This is a human-readable webpage (HTML), designed for people.
+
+Now visit:
+
+https://api.openalex.org/works/w2764299839
+
+This is the API endpoint (JSON), designed for programs.
+
+Same resource.
+Different representation.
+
+---
+
+### Redirect and canonical URLs
+
+Now try something interesting.
+
+In your browser address bar, manually change the URL to:
+
+`https://openalex.org/works/W2764299839` and click enter.
+
+The url automatically changed to `https://openalex.org/works/w2764299839` with a lowercase `w`.
+
+A redirect occurred from the uppercase URL to the lowercase URL.
+
+OpenAlex enforces a canonical URL format.
+Even though uppercase and lowercase may logically refer to the same work, the system standardizes the path.
+
+This ensures that all requests resolve to a single canonical URL.
+
+In large digital archives:
+
+- Each record must have one stable identity
+
+- URLs must be consistent
+
+- External systems may cite and store these identifiers
+
+Canonicalization protects long-term reference integrity.
+
+### Comparison to our simple API
+
+Our simple API playground returned JSON directly, without redirects or canonicalization.
+
+Simple API:   Client --> Server --> JSON
+
+Real-world APIs often include additional layers like this to improve reliability, performance, and maintainability.
+
+OpenAlex: Client --> Redirect[Canonical URL] --> Server[API Server] --> JSON
+
 ## Build a simple Flask app
 
 Flask is a very simple python framework for making web applications.
@@ -125,7 +199,7 @@ Enter `localhost:5000/users` in the browser or click on the link `View Table`, y
 
 When running in debug mode, Flask will automatically reload when you save changes to the code. You only need to refresh the browser to see updates.
 
-## Exercise #1: Display additional user data
+### Exercise #1: Display additional user data
 
 Currently, the table only shows the user ID, name, and email. However, the API also returns additional information for each user, including their **age** and **school year**.
 
@@ -149,7 +223,7 @@ This exercise demonstrates how Flask can retrieve data from an API and dynamical
 
 ---
 
-## Production note: using `flask run`
+### Production note: using `flask run`
 
 In production or more advanced setups, Flask applications are typically started using the Flask command-line interface:
 
@@ -180,7 +254,7 @@ You will also see an empty bar chart area for the age distribution. This is beca
 
 ---
 
-## Exercise #2: Fix the bar chart
+### Exercise #2: Fix the bar chart
 
 Your task is to complete the missing code so that the bar chart correctly displays the number of students for each age.
 
@@ -208,91 +282,6 @@ Your task is to complete the missing code so that the bar chart correctly displa
       - **Route `/charts`**
         - Code runs in `app.py`
         - Browser shows: **Users Distribution Charts**
-
-## Digital archives in production: OpenAlex
-
-So far, we have worked with a simple teaching API, where the structure and behavior were easy to see. Now, let's look at a real-world example of a digital archive and how it provides access to its data through an API.
-
-Last week, we used OpenAlex to examine the JSON responses. This week, we revisit OpenAlex from a broader perspective. OpenAlex is a large-scale digital archive, and its API is the interface that makes this archive accessible to the outside world.
-
-A digital archive is a system that collects, organizes, preserves, and provides access to structured information over time. Rather than allowing direct access to its internal database, the archive exposes an API so that users and programs can retrieve and reuse its records.
-
----
-
-## Human-readable page vs API endpoint
-
-In your browser, visit: `https://openalex.org/works/w2764299839`
-
-This is a human-readable web page designed for people.
-
-To see the machine-readable data behind it, open the Inspect tool in your browser, go to the Network tab, refresh the page, and click the OpenAlex API call. The Response tab shows the data in JSON format, which is a machine-readable version.
-
-Now let's try the request in:  `https://base64.guru/tools/http-request-online`
-
-If you request the same URL: `https://openalex.org/works/w2764299839`
-
-You'll see the response body in HTML format, which is designed for browsers. 
-
-Also, OpenAlex provides a dedicated API endpoint for programmatic access: `https://api.openalex.org/works/w2764299839`
-
-Request this URL instead.
-
-You'll now see the response body in JSON format, which is designed for programs and APIs. This is similar to what we saw earlier, where the client requests JSON using HTTP headers.
-
----
-
-## Redirect and canonical URLs
-
-When requesting this API endpoint, you may notice something interesting in the response.
-
-The JSON response contains the identifier: `https://openalex.org/W2764299839`
-
-
-Notice that the identifier uses a capital **W**, even if the original request used a lowercase **w**.
-
-In fact, the server does not directly serve the lowercase version.
-
-Many HTTP tools, including base64.guru, automatically follow redirects, so you do not see the intermediate 302 Found response. Instead, you only see the final JSON response.
-
-Even though the redirect is hidden, the canonical identifier in the response confirms that the redirect occurred. This canonical identifier in the JSON response shows the final URL after the redirect.
-
----
-
-## Why use a redirect?
-
-This raises an important architectural question:
-
-> Why didn’t the server just return the JSON immediately, instead of redirecting?
-
-One reason is that the server is enforcing a **canonical URL**, which is the single official URL used to identify this resource.
-
-Even though these URLs look similar:
-
-```
-/works/w2764299839
-/works/W2764299839
-```
-
-the system wants all clients to use the same standardized form. This is especially important for digital archives, where each record must have a stable, unambiguous identifier that can be reliably referenced over time.
-
-Redirecting helps ensure:
-
-- consistency
-- unambiguous resource identifiers
-- simpler backend systems
-
-This extra step may seem unnecessary in a simple example, but it becomes important in large-scale production systems.
-
-## Comparison to our simple API
-
-Our simple API playground returned JSON directly, without redirects or canonicalization.
-
-Simple API:   Client --> Server --> JSON
-
-Real-world APIs often include additional layers like this to improve reliability, performance, and maintainability.
-
-OpenAlex: Client --> Gateway[API Gateway] --> Redirect[Redirect (canonical URL)] --> Server[API Server] --> JSON
-
 
 ## Resources
 
