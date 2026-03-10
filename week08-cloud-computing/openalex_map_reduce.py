@@ -62,7 +62,7 @@ def main():
         return
 
     # Take prefix as argument (e.g., group1/)
-    prefix = sys.argv[1] if len(sys.argv) > 1
+    prefix = sys.argv[1] if len(sys.argv) > 1 else ''
     if prefix != '' and not prefix.endswith('/'):
         prefix += '/'
 

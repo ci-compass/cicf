@@ -35,7 +35,7 @@ prefixes that include slash characters, e.g. `/.
 To make working with these kind of situations easier, APIs and libraries allow us to provide a prefix
 to filter keys by.
 
-    $ ./list-bucket.py openalex-data/1/
+    $ ./list-bucket.py group1/
 
 
 ### The Map-Reduce Paradigm

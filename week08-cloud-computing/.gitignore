@@ -1,2 +1,4 @@
 openalex-records/
 .env
+openalex_summary*.json
+
