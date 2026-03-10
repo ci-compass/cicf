@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import json
 import os
 import boto3
 import sys
@@ -15,6 +16,8 @@ BUCKET_NAME = os.getenv('DO_SPACES_BUCKET', 'cicf-object-store')
 ACCESS_KEY = os.getenv('DO_SPACES_KEY')
 SECRET_KEY = os.getenv('DO_SPACES_SECRET')
 
+TARGET_DIRECTORY = os.path.join(os.getcwd(), "openalex-records")
+
 def get_s3_client():
     session = boto3.session.Session()
     return session.client('s3',
@@ -22,50 +25,48 @@ def get_s3_client():
                          endpoint_url=ENDPOINT_URL,
                          aws_access_key_id=ACCESS_KEY,
                          aws_secret_access_key=SECRET_KEY)
-
 def main():
     if not ACCESS_KEY or not SECRET_KEY:
         print("Error: DO_SPACES_KEY and DO_SPACES_SECRET must be set in .env")
         return
 
-    # Check for prefix argument
+    # Take prefix as argument (e.g., group1/)
     prefix = sys.argv[1] if len(sys.argv) > 1 else ''
+    if prefix != '' and not prefix.endswith('/'):
+        prefix += '/'
 
-    s3 = get_s3_client()
+    # make sure the target directory exists
+    os.makedirs(TARGET_DIRECTORY, exist_ok=True)
     
-    print(f"Listing contents of bucket: '{BUCKET_NAME}'" + (f" (prefix: '{prefix}')" if prefix else ""))
-    print("-" * 60)
-    print(f"{'Key':<40} | {'Size (KB)':>10} | {'Last Modified'}")
-    print("-" * 60)
+    s3 = get_s3_client()
+
+    print(f"Downloading from bucket '{BUCKET_NAME}' with prefix '{prefix}'...")
 
     try:
+        # List objects in the prefix
         paginator = s3.get_paginator('list_objects_v2')
         pages = paginator.paginate(Bucket=BUCKET_NAME, Prefix=prefix)
-
-        count = 0
-        total_size = 0
         
         for page in pages:
-            if 'Contents' in page:
-                for obj in page['Contents']:
-                    key = obj['Key']
-                    size_kb = obj['Size'] / 1024
-                    last_modified = obj['LastModified'].strftime('%Y-%m-%d %H:%M')
-                    
-                    print(f"{key:<40} | {size_kb:>10.2f} | {last_modified}")
-                    
-                    count += 1
-                    total_size += obj['Size']
-            else:
-                print("No objects found.")
-                return
-
-        print("-" * 60)
-        print(f"Total Objects: {count}")
-        print(f"Total Size:    {total_size / (1024*1024):.2f} MB")
-
+            if not 'Contents' in page:
+                print("No objects found to download.")
+                break
+            for obj in page['Contents']:
+                key = obj['Key']
+                # 1. Determine local path
+                local_path = os.path.join(TARGET_DIRECTORY, key)
+                
+                # 2. CREATE DIRECTORIES if they don't exist
+                local_dir = os.path.dirname(local_path)
+                if not os.path.exists(local_dir):
+                    os.makedirs(local_dir, exist_ok=True)
+                
+                # 3. Download the file
+                print(f"  Downloading {key} -> {local_path}")
+                s3.download_file(BUCKET_NAME, key, local_path)
     except Exception as e:
         print(f"Error: {e}")
 
 if __name__ == "__main__":
     main()
+
