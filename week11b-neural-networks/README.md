@@ -6,25 +6,12 @@ and then we will look at applications of neural networks to images.
 
 ## Tutorial
 
-In the Excel sheet, we took our dataset and produced 11 numeric columns.
-We then made two sets of weights and multiplied the columns by them to get two numbers.
-We then took these two numbers, replaced any negatives with 0 and added them together.
-This sum was then used to make our survival prediction.
-We then used the Excel solve function to adjust the weights to minimize our loss function—which is a function we used to measure how close each prediction is to being correct.
-Amazingly, this worked well enough to get an 80% accuracy rate.
+First, we need to install PyTorch. This will take a while to download.
 
-Let's think about how we would go about optimizing the weights ourselves.
-Suppose we are looking at a specific row in our dataset.
-We can feed the data into our function and look at the prediction, and calculate the loss function for it.
-We then ask, "if I were to adjust the first weight, how much would the loss function change?"
-This is the same question as asking what the derivative of our prediction and loss function is with respect to the first weight.
-And we can calculate this since each step of the calculation process is differentiable (or close enough in the case of the `max` function).
+    $ pip install torch
 
-We have the computer calculate the derivative with respect to each weight, and then we adjust all the weights up or down so as to decrease the loss function.
-
-We are now going to look at the first notebook [basic_neural_network.ipynb](basic_neural_network.ipynb) to see how a common Python framework called PyTorch can be used to create the same model that we have in the spreadsheet.
-This section is based on the following (more detailed and much better) notebook:
-https://github.com/fastai/course22/blob/master/05-linear-model-and-neural-net-from-scratch.ipynb
+The first notebook [basic_neural_network.ipynb](basic_neural_network.ipynb) will show how a Python framework called PyTorch can be used to create neural network models.
+This section is based on a [FastAI notebook]( https://github.com/fastai/course22/blob/master/05-linear-model-and-neural-net-from-scratch.ipynb).
 
 Once we have looked at making a linear network, we will look at image classification.
 This is in the second notebook [mnist.ipynb](mnist.ipynb).
@@ -41,7 +28,7 @@ These models are large, with most having more than 1 billion parameters.
 We can run some smaller models directly on our computers.
 We will use a wrapper program, called _Ollama_ to do this.
 
-Install Ollama on the VM:
+Install Ollama on the Codespace:
 
     ./install-ollama.sh
 
@@ -69,3 +56,4 @@ Once it installs, run it by typing
 - [Deep Learning is Not So Mysterious or Different](https://arxiv.org/abs/2503.02113)
 - [Ollama](https://ollama.com/)
 - [The Matrix Calculus You Need For Deep Learning](https://explained.ai/matrix-calculus/)
+
