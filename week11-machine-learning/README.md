@@ -8,24 +8,47 @@ We will then fit a decision tree and a random forest models to the data.
 This class focuses more on the tools and concepts you might encounter related to cyberinfrastructure.
 This means we are not going to cover the mathematics behind the machine learning algorithms in much depth.
 However, I encourage you to look at these materials if you find the techniques interesting.
-This tutorial and the next are based on the Practical Deep Learning for Coders lessons by Jeremy Howard. References are included in the [Resources](#Resources) section at the end of this file.
+This tutorial and the next are based on the Practical Deep Learning for Coders lessons by Jeremy Howard.
+References are included in the [Resources](#Resources) section at the end of this file.
 
-### Random Forests
+### tar.gz
 
-This section is modeled after the excellent tutorial by Jeremy Howard, titled
-["How Random Forests Really Work"](https://www.kaggle.com/code/jhoward/how-random-forests-really-work/).
-I recommend looking at this for more detail on how decision trees and random forests work.
+A file format you will probably see are `.tar.gz` files.
+This file is actually two pieces: a "tar" file, which groups many files together, just like a primitive ZIP file;
+and the whole thing is compressed using the GZIP compression algorithm.
+You can work with them with the `tar` command:
 
-Open your VM, and `git pull` in the `cicf` folder. Then run:
+To untar everything into the current directory:
 
+    tar xvfz my-file.tar.gz
+
+To list the files in the tar file
+
+    tar tvfz my-file.tar.gz
+
+(Why are they a primitive form of a ZIP file? Because a zip file has a _central directory_ at the end which
+is an index to all the files stored inside it.
+Tar files do not have that; they are just a long sequence and there is no way to extract an individual file
+without starting at the beginning.)
+
+### Random Forests and NEON Data
+
+Lets install some python packages
+
+    $ sudo apt update
     $ sudo apt install graphviz
-    $ pip install --upgrade jupyter-core nbconvert seaborn fastai
+    $ source .venv/bin/activate
+    $ pip install --upgrade jupyter-core nbconvert seaborn scikit-learn boto3 python-dotenv
 
-We are going to work with the [Titanic dataset](https://github.com/datasciencedojo/datasets/blob/master/titanic.csv).
-This dataset is a passenger manifest from the Titanic, and is a common one for machine learning examples.
-It contains both continuous and categorical values, and isn't too big.
+We are going to work with mosquito data collected by the National Ecological Observatory Network (NEON).
+The data is hosted on the CICF cloud storage in Digital Ocean.
 
-The rest of this section is in the notebook [random-forest.ipynb](random-forest.ipynb).
+In your group, you will:
+1. Download the dataset using `boto3`.
+2. Clean and preprocess the data.
+3. Train a Random Forest model to predict mosquito counts.
+
+The activity is in the notebook [mosquito-random-forest.ipynb](mosquito-random-forest.ipynb).
 
 ## Resources
 
