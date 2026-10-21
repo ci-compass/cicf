@@ -121,3 +121,4 @@ offered by some cloud vendors would be a good place to start.
 - [What is cloud computing?](https://aws.amazon.com/what-is-cloud-computing/)
 - [MapReduce: Simplified Data Processing on Large Clusters](https://www.usenix.org/legacy/event/osdi04/tech/full_papers/dean/dean_html/),
 the 2004 article by Jeffrey Dean and Sanjay Ghemawat introducing the map-reduce algorithm. (also [reprinted](https://dl.acm.org/doi/epdf/10.1145/1327452.1327492) in Communications of the ACM)
+- [S3 Files and the changing face of S3](https://www.allthingsdistributed.com/2026/04/s3-files-and-the-changing-face-of-s3.html) is an interesting read on how filesystems and object stores are different and how AWS thought about it when they made a product that lets one view a pile of data either way. There are lots of technical tradeoffs.
