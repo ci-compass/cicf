@@ -38,13 +38,11 @@ figure out the details when you need to learn the details.
 Containers are lightweight and portable environments that package an
 application and its dependencies.
 
-- Docker is the most popular implementation.
-- Others exist too, such as:
+- Docker is popular on personal computers and commercial cloud VMs.
+- Apptainer (formerly Singularity) is the standard in scientific computing, HPC, and NSF cyberinfrastructure.
+- Others exist too: Podman, LXC/LXD, Kubernetes cri-o.
 
-  - Podman, Apptainer (formerly Singularity), LXC/LXD, CoreOS rkt (or
-    "Rocket"), Kubernetes cri-o
-
-Let us just stay with Docker here.
+We will focus on Apptainer here, and see how it works with container images.
 
 ::: {.notes}
 
@@ -52,8 +50,8 @@ Let us look at:
 
 - What are containers?
 - What problems they solve?
-- How to use them? and
-- How do they work?
+- Why scientific cyberinfrastructure uses Apptainer; and
+- How to use Apptainer to run programs and services.
 
 Containers enable consistent deployment across different computing
 platforms.  If your application was built and tested on some old
@@ -61,11 +59,9 @@ Debian stable version, you would be able to "containerize" it, and
 then you can run it on a different machine running the latest Ubuntu,
 for example.
 
-You can even run the same container on macOS or Windows hosts.  You
-just need to you have a working container runtime on the target
-machine.
-
-We will look at Docker here, but the fundamentals are the same.
+In scientific research and HPC, Apptainer provides containerization
+without requiring root permissions, making it safe and effective on
+shared clusters.
 
 :::
 
@@ -160,104 +156,78 @@ Or you can use a docker feature called _volumes_.
 :::
 
 
-## A quick look at `docker` commands
+## A quick look at `apptainer` commands
 
-
-![](./docker-help.png)
-
-<!-- ``` -->
-<!-- $ docker help -->
-
-<!-- Usage:  docker [OPTIONS] COMMAND -->
-
-<!-- A self-sufficient runtime for containers -->
-
-<!-- Common Commands: -->
-<!--   run         Create and run a new container from an image -->
-<!--   exec        Execute a command in a running container -->
-<!--   ps          List containers -->
-<!--   build       Build an image from a Dockerfile -->
-<!--   pull        Download an image from a registry -->
-<!--   push        Upload an image to a registry -->
-<!--   images      List images -->
-<!--   login       Authenticate to a registry -->
-<!--   logout      Log out from a registry -->
-<!--   search      Search Docker Hub for images -->
-<!--   version     Show the Docker version information -->
-<!--   info        Display system-wide information -->
-
-<!-- [...] -->
-<!-- ``` -->
+- `apptainer build` - builds an image (`.sif`) from a definition file.
+- `apptainer run` - runs the default `%runscript` of a container.
+- `apptainer exec` - executes an arbitrary command in a container.
+- `apptainer shell` - starts an interactive shell inside a container.
+- `apptainer pull` - downloads an image (e.g. from Docker Hub) into a `.sif` file.
+- `apptainer instance` - manages background services (`start`, `list`, `stop`).
 
 ::: {.notes}
 
-If you run `docker help`, it will print a longish message, with some
-hints about subcommands.  We will look at some of the commonly used
-subcommands.
-
-This might look confusing at first, but things will become more clear
-as you get some practice with docker.
-
-- `docker build` is used to build images, using the steps specified in
-a Dokerfile.
-- `docker run` is used to run a containerized program.
-- `docker exec` is used to execute a command in a running container.
-- `docker images` will list the images present in your local setup.
-- `docker ps` will list the running containers.
-
+Apptainer commands are straightforward and modular:
+- `apptainer run <image>` runs the image's default command.
+- `apptainer exec <image> <cmd>` runs any specific command inside the container.
+- `apptainer shell <image>` drops you into an interactive container shell.
+- `apptainer build <target.sif> <recipe.def>` compiles a new SIF file.
+- `apptainer instance start/list/stop` controls background services.
 
 :::
 
-## What is a `Dockerfile`?
+## What is an Apptainer Definition File?
 
-```Dockerfile
-# Base image with Python 3.12
-FROM python:3.12-slim
+```apptainer
+Bootstrap: docker
+From: python:3-slim
 
-# Set working directory in container
-WORKDIR /app
+%files
+    hello.py /hello.py
 
-# Copy all project files to container
-COPY . .
-RUN pip install .
+%runscript
+    python /hello.py "$@"
 
-# Container listens on port 5000
-EXPOSE 5000
-
-# Command to run the application
-CMD ["python", "app.py"]
+%labels
+    Author CICF
+    Version v1.0
 ```
 
 ::: {.notes}
 
-A Dockerfile is a text file that contains instructions about how to
-build a docker image. When you run `docker build`, it will use the
-instructions from the Dockerfile.
+An Apptainer definition file (conventionally `.def`) is a plain text file
+that contains the recipe for building a Singularity Image Format (`.sif`) file.
 
-In the Dockerfile, you will usually specify:
+In a definition file, you specify:
 
-- a base image
-- environment setup
-- installation steps
-- network ports to expose
-- start-up commands to run when you run the container
-- and possibly other things.
+- `Bootstrap: docker` and `From`: the base image from Docker Hub or OCI registry
+- `%files`: files copied from host into the container
+- `%post`: installation commands run during build time
+- `%environment`: environment variables available at runtime
+- `%runscript`: default command to execute when running the container
+- `%labels`: metadata describing the image
 
 :::
 
 
-## What do you do with a `Dockerfile`?
+## What do you do with a `.def` file?
 
-You can build container images! You can run them!
+You build a standalone `.sif` container image, and run it!
 
+```bash
+apptainer build hello.sif hello.def
+ls -lh hello.sif
+apptainer run hello.sif
+# Or execute it directly like a binary:
+./hello.sif
 ```
-docker build --tag "app:latest" .
-docker images
-docker run app:latest
-```
 
-In the tutorial we will use a simpler `Dockerfile` and slightly
-different options with `docker build`, but you get the idea.
+In the tutorial we build `hello.sif` and then inspect its metadata:
+
+```bash
+apptainer inspect hello.sif
+apptainer inspect --runscript hello.sif
+```
 
 
 ## Containers under the hood
@@ -349,46 +319,32 @@ semantic versioning.
 :::
 
 
-## `docker compose`
+## Running services: Apptainer Instances
 
-A way to run related services together:
+A way to run background services (databases, servers, caches):
 
-```yaml
-# compose.yml
-version: '3'
-services:
-  web:
-    build: .
-    ports:
-      - "8000:8000"
-    environment:
-      - DATABASE_URL=postgresql://myuser:password@db:5432/myapp
-  db:
-    image: postgres
-    environment:
-      - POSTGRES_USER=myuser
-      - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=myapp
+```bash
+# Start a service from an image on Docker Hub
+apptainer instance start docker://redis:latest redis-server
+
+# List running background instances
+apptainer instance list
+
+# Execute commands inside the running instance
+apptainer exec instance://redis-server redis-cli ping
+
+# Stop the service
+apptainer instance stop redis-server
 ```
-
-You will run `docker compose up` and `docker compose down`.
 
 ::: {.notes}
 
-- Docker Compose is a tool for defining and running multi-container
-  Docker applications.  This is a nice way for setting up development
-  environments and for testing.
-  
-- We will write a `compose.yml` or `docker-compose.yml` file. In the
-  file, we will define the container images to run, and how to set
-  them up.  
-  
-- And then we will run `docker compose up` command.  That will set up
-  networking between the services, mount volumes, set up environment
-  variables, and then start all the services.
-  
-- In the example we have a web application and a database. We are
-  omitting some details here about how the web app
+- While Docker uses background daemons and `docker compose`, Apptainer
+  uses **instances** to manage background services without root privileges.
+- An instance runs in the background in user space.
+- By default, Apptainer shares the host network namespace, so services
+  like Redis immediately bind to `localhost` without requiring port mapping.
+- When finished, you stop the instance with `apptainer instance stop`.
 
 :::
 

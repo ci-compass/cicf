@@ -1,0 +1,16 @@
+Bootstrap: docker
+From: python:3-slim
+
+%files
+    hello.py /hello.py
+
+%runscript
+    python /hello.py "$@"
+
+%labels
+    Author CICF
+    Version v1.0
+    Description Hello World test container in Apptainer
+
+%help
+    This is a simple Apptainer container running a Python Hello World script.
