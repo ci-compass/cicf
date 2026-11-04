@@ -6,7 +6,7 @@ The goals for Week 1 are:
 1. Navigate the filesystem, read, and create files using the command line
 1. Create simple shell scripts
 
-If you haven't already, do the steps in [Getting Started](../getting-started/README.md) to get a working Codespace.
+If you haven't already, do the steps in [Getting Started](../getting-started/README.md) to get a working NDP workspace.
 
 ## Tutorial
 
@@ -15,22 +15,28 @@ The textual interface makes it easy to work with devices across a network,
 and it allow us to repeat commands in a reproducible way.
 You will almost certainly have to use it as you continue working on computing systems.
 In exit surveys, many previous fellows have commented that having more familiarity with the command line would be helpful.
-We will use the command line prompt inside GitHub Codespaces for this course.
-The Codespace is a Linux based container, and provides a good way to get used to using Linux and Unix-like systems.
+We will use the command line prompt inside the NDP JupyterHub workspace for this course.
+The workspace is a Linux based environment, and provides a good way to get used to using Linux and Unix-like systems.
 
-Open up the codespace and the terminal will be in the bottom window pane.bring up the terminal.
-Make the terminal full screen by choosing the four corner box in that pane's title bar.
+Open up your JupyterHub workspace and launch a Terminal from the Launcher.
+
+> **Tip:** You can read this tutorial and type commands side by side.
+> In JupyterLab, open this `README.md` file (right-click it and choose
+> **Open With > Markdown Preview** for a rendered view). Then click the
+> **+** button to open a new Launcher and select **Terminal**. Drag the
+> Terminal tab to the right side of the editor area to create a split
+> view — instructions on the left, terminal on the right.
 
 Your terminal window will have a prompt similar to the following:
 
-    @dbrower ➜ /workspaces/cicf (main) $
+    user@server:~/cicf$
 
 This is the shell prompt, and it is waiting for a command.
 The shell expects commands to have a certain structure:
 the first word is the program name, and then everything following it is optional text that will be passed to the program.
 
 Type `pwd` and press the return key.
-Underneath the prompt you should see the words `/workspaces/cicf`.
+Underneath the prompt you should see the path to the `cicf` directory.
 The command `pwd` prints the current working directory, which is where we are in the filesystem.
 ("pwd" stands for "present working directory". Most commands are abbreviations).
 
@@ -47,7 +53,7 @@ By default `ls` does not display them, so they are useful for configuration file
 
 Mistyping a command will get an error message:
 
-    @dbrower ➜ /workspaces/cicf (main) $ asdf
+    user@server:~/cicf$ asdf
     bash: asdf: command not found
 
 This is the shell telling us that it has no idea how to execute the command `asdf`.

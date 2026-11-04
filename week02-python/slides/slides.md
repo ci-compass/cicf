@@ -640,7 +640,7 @@ They are kind of like paper lab notebooks, but in a browser window.
  
 - You can preview notebooks from GitHub.com, sometimes.
 
-- [GitHub Codespaces](https://github.com/codespaces) has support for
+- The [NDP JupyterHub](https://www.nationaldiscoveryplatform.org/) workspace has built-in support for
   notebooks.
 :::
 

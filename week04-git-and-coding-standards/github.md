@@ -1,7 +1,6 @@
 # GitHub
 
-Using the codespace is nice since you already have a connection to Github.
-If you are not in a codespace then you need to do a little set-up yourself.
+If you are working outside the NDP JupyterHub workspace, you may need to do a little set-up yourself to connect to GitHub.
 The other Git hosting services are similar.
 
 First, you need a way for Git to log in to Github.

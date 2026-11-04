@@ -1,11 +1,12 @@
 Getting Started
 ---------------
 
-To provide a consistent environment for everyone, these tutorials use GitHub Codespaces
-to provide a free, web-based virtual machine that has a command line.
+To provide a consistent environment for everyone, these tutorials use the
+[NDP (National Discovery Platform)](https://www.nationaldiscoveryplatform.org/) JupyterHub
+to provide a web-based workspace with a terminal and notebook environment.
 
 1. If you don't have one already, sign up for a (free) GitHub account.
-2. Start a codespace for this repository.
+2. Launch an NDP workspace using JupyterHub.
 
 ## Signing up for GitHub account
 
@@ -14,45 +15,67 @@ Accounts are free.
 
 **Please send an email to <cicf@ci-compass.org> telling us your GitHub user name.**
 
-<!-- save forking for week 4
-## Fork this repository
+## Sign up / Login to NDP
 
-Sign in to your account on GitHub and then visit this repository's page, [ci-compass/cicf](https://github.com/ci-compass/cicf).
-Choose the "Fork" drop down on the upper right of the page, and then make a fork of the repository
-into your own space, so the owner will be your account and keep the repository name `cicf`.
-After some time you will have your own copy of the CICF repository.
--->
+Use the institutional email address you used when applying for CICF to log in. An account will be automatically created for you. A member of our team will then add you to the CICF classroom.
 
-## Start a Codespace for this repository
+## Launching an NDP Workspace
 
-Choose the big plus sign `+` along the top right of the screen and then "Create a new Codespace" from the dropdown menu.
-Base the codespace on this repository (`ci-compass/cicf`),
-on the `main` branch,
-and use the default configuration, region, and machine type.
-You may see a message that the "Codespace usage for this repository is paid for by ...".
-Do not worry, the code space is free.
-This message is just indicating that you are the owner of this Codespace.
+1. **Launch JupyterHub.**
 
-After selecting "Create Codespace", a virtual machine is created and a new browser window should open.
-The window provides a web-based interface to your codespace.
-It should look similar to the following screenshot.
-![Picture of codespace window](./codespace-marked.png)
-In the screenshot a few regions are marked in red.
-There is a file pane, which lists the files in the virtual machine;
-an editor pane where you can edit files (in the screenshot nothing is being edited, so nothing is displayed);
-and at the bottom there is a prompt that should look similar to `@dbrower ➜ /workspaces/cicf (main) $`,
-this is the terminal window.
+   Click Launch at the bottom of the module to open NDP JupyterHub.
 
-You can make the terminal window larger by choosing the "full screen" button on the terminal pane.
-You can also hide the file pane using the panel controls.
+2. **Start your JupyterLab server.**
 
-## Using the Codespace
+   Use the default resource settings and click Start Server. Wait for JupyterLab to open.
 
-The Codespace is persistent and will exist even if the browser window is closed.
-One way to return to the codespace is to bookmark the URL for it.
-You can also find the codespace again from your GitHub dashboard.
-Sign in to GitHub and then from the hamburger menu in the top left corner choose "Codespaces" and then at the bottom of the page you will see a list of all your active Codespaces.
-Choosing a Codespace in this list will then open a new browser window for it.
+3. **Open your persistent storage.**
+
+   In the JupyterLab File Browser, open `_User-Persistent-Storage_`. Save your work in this
+   directory so that it remains available after your server is stopped.
+
+   > **Important:** Storage is limited to 10 GB. Only files saved inside
+   > `_User-Persistent-Storage_` are preserved between sessions. Files stored
+   > elsewhere on the server are non-persistent and will be lost when your
+   > server is stopped.
+
+4. **Select the course workspace.**
+
+   Open the NDP Widget and select the workspace for the current week.
+
+5. **Clone the course repository.**
+
+   In the NDP Widget, use Clone Repository to clone the CICF GitHub repository
+   into your current folder.
+
+6. **Install the required Python packages.**
+
+   After cloning the repository, click Install requirements.txt in the NDP
+   Widget. Wait for the installation to complete before continuing. This will
+   install the Python packages needed for the course materials.
+
+   > **Important:** Required packages are installed for your current JupyterHub
+   > session and are not preserved when you stop your server. You will need to
+   > click Install requirements.txt again each time you launch a new JupyterHub
+   > server.
+
+7. **Open a Terminal.**
+
+   In JupyterLab, click the **+** button to open the Launcher, then select
+   Terminal. You can drag the Terminal tab to create a split view alongside a
+   tutorial file, allowing you to read instructions and run commands without
+   switching between tabs.
+
+## Using the NDP Workspace
+
+The NDP workspace runs on a JupyterHub server. When you stop your server,
+only files inside `_User-Persistent-Storage_` are kept. Installed packages
+and files outside that directory are lost.
+
+To return to your workspace, launch JupyterHub again and navigate to
+`_User-Persistent-Storage_` to find your saved work.
+
+When you are finished working, go to **File > Hub Control Panel > Stop My Server**.
 
 ## Running Exercises
 
@@ -62,9 +85,9 @@ Do the task of the exercise and then you can see how you did by running the comm
 This will run tests and output the results to the terminal.
 Successful tests appear as green, and unsuccessful tests appear as red.
 
-## Updating your Codespace
+## Updating your Repository
 
-You can update your codespace with the current `ci-compass/cicf` repository by using Git:
+You can update your local copy with the current `ci-compass/cicf` repository by using Git:
 
 	git pull
 
@@ -80,6 +103,3 @@ Or you can "stash" your changes and try to then re-apply them:
 	git stash
 	git pull
 	git stash pop
-
-
-

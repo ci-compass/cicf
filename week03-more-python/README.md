@@ -10,11 +10,10 @@ The goals for this tutorial are:
 
 ## Tutorial
 
-You can run Jupyter notebooks in the Codespace.
-Open the [first notebook](./1-introduction.ipynb) in a tab (either click on the file in the left-side file browser, or use the `code` command at the command line).
-When the notebook opens, there should be a button at the top left to "Select kernel".
-Click it and then choose the second option, the installed python version.
-And this point you can execute the code cells in the notebook by putting the curser in the cell and typing Ctrl-Return.
+You can run Jupyter notebooks in the NDP JupyterHub workspace.
+Open the [first notebook](./1-introduction.ipynb) by clicking on it in the JupyterLab File Browser.
+When the notebook opens, select a Python kernel if prompted.
+You can then execute the code cells in the notebook by putting the cursor in the cell and typing Shift-Return.
 
 
 ## Pandas

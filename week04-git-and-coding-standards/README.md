@@ -8,14 +8,21 @@ The goals for the week 4 tutorial are to:
 
 ## Tutorial
 
+> **Tip:** You can read this tutorial and type commands side by side.
+> In JupyterLab, open this `README.md` file (right-click it and choose
+> **Open With > Markdown Preview** for a rendered view). Then click the
+> **+** button to open a new Launcher and select **Terminal**. Drag the
+> Terminal tab to the right side of the editor area to create a split
+> view — instructions on the left, terminal on the right.
+
 Git has become ubiquitous in all of computing, not just scientific computing.
 Git is useful in any situation that involves sharing text files between people.
 Git tracks changes at the directory level.
 This means you make changes not just to a single file, but to _groups_ of files at a time.
 
-Git is already installed and configured in your Codespace:
+Git is already installed and configured in your NDP JupyterHub workspace:
 
-    @dbrower ➜ /workspaces/cicf (main) $  git config list | grep user
+    user@server:~/cicf$ git config list | grep user
     user.name=Don Brower
     user.email=dbrower@nd.edu
 
@@ -30,7 +37,7 @@ These are what Git uses to identify you when you make changes to the repository.
 >     git config --global user.email "dbrower@nd.edu"
 >
 > And while you are at it, set the default editor as well. If you don't
-> have an editor yet, use `nano`. (you don't need to do this in the codespace though).
+> have an editor yet, use `nano`.
 > 
 >     git config --global core.editor nano
 
@@ -56,33 +63,30 @@ This tells us what branch we are on, whether our current version matches
 the version in our remote repository named `origin/main`.
 It lists any files with changes and also the _untracked_ files, that is
 files that exist in the directory but which have not been added to the repository.
-The exact files you see in these lists depends on the exact changes in your Codespace.
+The exact files you see in these lists depends on the exact changes in your workspace.
 
 You can also see the history of the changes in the repository.
 
     $ git log --graph
 
 This displays the commits in the `ci-compass/cicf` repository starting from the
-version your codespace is at and going backward in time to the first commit.
+current version and going backward in time to the first commit.
 
 ## Using a test repository
 
 The best way to experiment with Git is to make a new repository to work on.
-For this section we will make another Git repository in the codespace at `/workspaces/test`.
+For this section we will make another Git repository in your workspace.
 
-    $ cd /workspaces
-    $ mkdir test
-    $ cd test
+    $ mkdir ~/test
+    $ cd ~/test
     $ git init
-    Initialized empty Git repository in /workspaces/test/.git/
+    Initialized empty Git repository in /home/user/test/.git/
 
 The `git init` command makes a new repository in the current directory.
 This new repository is completely empty—no files have been added to it yet.
 It is good for every project to have a README file that contains the project name and a description for it.
 
-    $ code README.md
-
-Type the following:
+Using a text editor, create a file called `README.md` with the following content:
 
 ```
 Test Repository
@@ -127,8 +131,7 @@ Git uses them to remind you of the current branch and the files that are part of
 A commit message should consist of at least one line giving a brief summary of the changes.
 Then, if more information is desired, enter a blank line and then write as much as you care to.
 Since this is the first commit, nothing has changed yet, so the standard practice is to use "Initial commit".
-In the Codespace window you will see a blue button that says "Commit".
-Click it.
+Save and close the editor.
 We've made a commit.
 
 Run `git status`.
@@ -153,9 +156,8 @@ A few may have more than one parent (these are "merge commits").
 Since this was the first commit there are no parents.
 
 Let's make a change to the README file.
-Change 'A' to 'The' and add a second line.
+Change 'A' to 'The' and add a second line. Open the file in a text editor, make the change, and save it.
 
-    $ code README.md
     $ git diff
     diff --git a/README.md b/README.md
     index 6bbab16..d7ff0d7 100644
@@ -207,21 +209,21 @@ And then, if we feel like it we can merge branches together to share the changes
 
 The easiest way to make a branch is to just tell Git we want to start a branch from our current location:
 
-    # in /workspaces/test
+    # in ~/test
     $ git checkout -b new-branch
     Switched to a new branch 'new-branch'
 
 We will usually name the branch in clearer way.
 The status message will now show that we are on the new branch:
 
-    # in /workspaces/test
+    # in ~/test
     $ git status
     On branch new-branch
     nothing to commit, working tree clean
 
 Lets add some numbers to the README (the two carets will _append_ the output to the specified file)
 
-    # in /workspaces/test
+    # in ~/test
     $ seq 10 >> README.md
     $ git add README.md
     $ git commit
@@ -230,19 +232,19 @@ Lets add some numbers to the README (the two carets will _append_ the output to 
 
 Now we can see the changes between our branch and the main branch
 
-    # in /workspaces/test
+    # in ~/test
     $ git diff main
 
 This is showing us that the branch has lines added.
 One nice thing about branches is that you can switch between them if you have a few projects going on.
 
-    # in /workspaces/test
+    # in ~/test
     $ git checkout main
 
 This will change all the files to be as they are on the "main" branch.
 You can then make commits or switch to other branches.
 
-    # in /workspaces/test
+    # in ~/test
     $ git checkout new-branch
 
 You will eventually want to combine the changes in the branch with other branches or the main branch.
@@ -251,7 +253,7 @@ But for small repositories you will merge branches yourself.
 You can do this via a Pull Request on GitHub, or you can do it on the command line.
 We'll first do it on the command line.
 
-    # in /workspaces/test
+    # in ~/test
     $ git checkout main
     $ git merge new-branch
 
@@ -295,17 +297,16 @@ In your local repository you can give nicknames the remotes.
 The default nickname for the first remote repository is "origin".
 This is usually the place where you will get all the new changes from and push your changes to.
 
-We need to make an access token so we can get to our repositories from the Codespace
-(by default the codespace can just push changes to your copy of `ci-compass/cicf`).
+We need to make an access token so we can push to our repositories from the JupyterHub workspace.
 Follow [this link](https://github.com/settings/personal-access-tokens/new?name=CICF+token&description=Write%20code%20and%20push%20it%20to%20main%21&contents=write&pull_requests=write&workflows=write&expires_in=90) to open a browser window that lets you create the access token.
 An access token is just a sequence of characters.
-Once you make the token, copy it and paste it into the following command line in your Codespace:
+Once you make the token, copy it and paste it into the following command line in your Terminal:
 
     export GH_TOKEN="paste token here inside the quotes"
 
 > [!NOTE]
-> If you start a new codespace you will need to make a new token for it.
-> Likewise, if you close a codespace you can delete the token on your GitHub profile in Settings > Developer Settings > Personal Access Tokens > [Fine-grained Tokens](https://github.com/settings/personal-access-tokens).
+> If you start a new JupyterHub server you will need to set the token again.
+> You can manage your tokens on your GitHub profile in Settings > Developer Settings > Personal Access Tokens > [Fine-grained Tokens](https://github.com/settings/personal-access-tokens).
 > There is also [more info on creating a fine-grained personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token).
 
 OK, now lets make a copy of the test repository on GitHub.
@@ -315,12 +316,12 @@ It will be empty.
 
 At the command line add it to the "test" repository:
 
-    # in /workspaces/test
+    # in ~/test
     $ git remote add origin "https://$GITHUB_USER:$GH_TOKEN@github.com/$GITHUB_USER/cicf-test"
 
 Now push your changes to GitHub:
 
-    # in /workspaces/test
+    # in ~/test
     git push origin main
 
 You can see the remotes configured for this repository with:
@@ -335,7 +336,7 @@ We have already done "pulls": this does a two step operation of first getting ch
 and then updating your current branch to contain all the new changes on it.
 There is also a "fetch" that just gets the changes from the remote but doesn't do the update step.
 
-    # in /workspaces/test
+    # in ~/test
     $ git fetch
     $ git pull
 
@@ -344,7 +345,7 @@ This is called a "push".
 Git doesn't match branch names up automatically, so we need to tell Git that our "main" branch is the same as the remote's "main" branch.
 That is why we type "origin main" on the command line.
 
-    # in /workspaces/test
+    # in ~/test
     $ git push origin main
 
 Now you will see these changes on GitHub.
@@ -365,12 +366,12 @@ You should see a path similar to `git@github.com:dbrower/cicf`.
 Copy the path by clicking the clipboard icon next to it.
 At the command line add it to the checked out repository:
 
-    # in /workspaces/cicf
+    # in ~/cicf
     git remote add personal <our-forked-repo-path> # <-- paste in the path here
 
 Now lets make a branch.
 
-    # in /workspaces/cicf
+    # in ~/cicf
     git checkout -b my-patch
 
 You can now make the changes you want and then when the branch looks good:

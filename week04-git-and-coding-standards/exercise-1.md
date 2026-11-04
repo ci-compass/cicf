@@ -5,7 +5,7 @@ Do the following.
 
 1. Fork the repository [dbrower/cicf-2025](https://github.com/dbrower/cicf-2025).
 (yes, this is reusing something from last year).
-2. Make a clone of your fork on your codespace (perhaps at `/workspaces/cicf-2025`)
+2. Make a clone of your fork in your JupyterHub workspace
   (Important! you will need an access token as described in the readme.)
 3. Make a branch named `add-random`
 4. Make a file named for your username (e.g. `dbrower` for me), and containing a random number between 0 and 1 million.
