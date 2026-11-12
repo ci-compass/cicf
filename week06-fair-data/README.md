@@ -156,19 +156,13 @@ collects and provides long-term logtududional ecological data.
 They are an interesting Major Facility since in addition to recorded measurements,
 they also have physical samples available for loan.
 
-We will start at their [data portal](https://data.neonscience.org/data-products/explore)
+We will use the [NEON data portal](https://data.neonscience.org/data-products/explore) to download the [Mosquitoes sampled from CO2 traps](https://data.neonscience.org/data-products/DP1.10043.001) product (DP1.10043.001).
 
-Search for "mosquito". Then select the item "[Mosquitoes sampled from CO2 Traps](https://data.neonscience.org/data-products/DP1.10043.001/RELEASE-2026)".
-Near the bottom of the item page there is a grid showing which months data is available from each site.
-Choose the buttom "Download Data".
+You can explore the catalog without an account, but NEON now requires an account to download data. Create a free NEON account if you do not already have one, then sign in to the portal before downloading.
 
-For the two sites WI-D16-ABBY and MI-D05-UNDE choose the data for the years 2024 and 2025.
-And then download the data.
+Search for "mosquito" and open the product page. Review the data availability grid, then choose **Download Data**. In the release options, select **Latest and Provisional**. For this lab, we will use the 2026 selection: the latest released data together with provisional data that have not yet been included in a release. Choose data from 2024 and 2025, where available, for WI-D16-ABBY and MI-D05-UNDE. Availability can differ by site and month, so use the availability shown in the portal when choosing dates.
 
-The data is organized as many files.
-For the mosquito counts, there is one CSV file per site location per month.
-Each file includes a line for every mosquito collected.
-We want to count mosquitoes by month and by site.
+The download is a ZIP package containing nested folders and multiple files. The mosquito identification table has processed CSV files organized by site and month. A row is an identified taxon/sex record, not necessarily one individual mosquito; use the `individualCount` field when examining counts, and consult the product documentation before interpreting those values as total sample abundance. We will group the downloaded observations by month and site.
 
 
 
